@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator;
 
     private float targetDashTimer = 0.0f;
+    private float targetDashCooldownTimer = 0.0f;
     private float dashCoolDown = 3.0f;
 
     private bool isGrounded;
@@ -18,9 +20,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
 
+    private float moveX = 0;
+    private float moveZ = 0;
 
     private void Start()
     {
+        Debug.Log(transform.position.x);
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         animator.SetBool("isInCombat", true);
@@ -28,28 +33,36 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Time.fixedTime < targetDashTimer) // dash
+        {
+            controller.Move(new Vector3(moveX, 0, moveZ) * dashSpeed);
+            return;
+
+        }
+
         isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);
         if (isGrounded && moveDirection.y < 0)
             moveDirection.y = -2.0f; //to avoid ground issues
 
         animator.SetBool("Dash", false);
 
-        float moveZ = Input.GetAxisRaw("Vertical");
-        float moveX = Input.GetAxisRaw("Horizontal");
-
-        Debug.Log("Z: " + moveZ);
-        Debug.Log("X: " + moveX);
+        moveZ = Input.GetAxisRaw("Vertical");
+        moveX = Input.GetAxisRaw("Horizontal");
 
         moveDirection = new Vector3(moveX, 0, moveZ);
 
+        if (moveDirection != Vector3.zero)
+            transform.forward = new Vector3(-moveZ, 0, moveX); //fix rotation issue
+
         if (moveDirection != Vector3.zero && !isGrounded)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashTimer)
+            if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashCooldownTimer)
             {
                 animator.SetBool("Dash", true);
                 moveDirection *= dashSpeed;
                 controller.Move(moveDirection);
-                targetDashTimer = Time.fixedTime + dashCoolDown;
+                targetDashCooldownTimer = Time.fixedTime + dashCoolDown;
+                targetDashTimer = Time.fixedTime + animator.GetCurrentAnimatorStateInfo(0).length / 3; // dash animation length 
                 return;
             }
             else
