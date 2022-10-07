@@ -421,6 +421,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7057341634507496126, guid: 4806b9aae1492194eae960b81fbed3c5, type: 3}
+      propertyPath: rotationSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057341634507496126, guid: 4806b9aae1492194eae960b81fbed3c5, type: 3}
       propertyPath: groundMask.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -506,6 +510,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5954542140759468357, guid: 5d257b99e9d945b44b02a656b225b6f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954542140759468357, guid: 5d257b99e9d945b44b02a656b225b6f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.59
+      objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609011, guid: 5d257b99e9d945b44b02a656b225b6f8, type: 3}
       propertyPath: m_Name
       value: Dungeon_3

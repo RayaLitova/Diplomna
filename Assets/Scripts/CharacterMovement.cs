@@ -6,8 +6,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private int runSpeed;
     [SerializeField] private int walkSpeed;
     [SerializeField] private int dashSpeed;
+    [SerializeField] private int rotationSpeed;
 
     private Vector3 moveDirection;
+    private Vector3 rotationDirection;
+
     private CharacterController controller;
     private Animator animator;
 
@@ -50,9 +53,14 @@ public class CharacterMovement : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
 
         moveDirection = new Vector3(moveX, 0, moveZ);
-
+        rotationDirection = new Vector3(-moveZ, 0, moveX);
         if (moveDirection != Vector3.zero)
-            transform.forward = new Vector3(-moveZ, 0, moveX); //fix rotation issue
+        {
+            Quaternion toRotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
+
+        }
+            //transform.forward = new Vector3(-moveZ, 0, moveX); //fix rotation issue
 
         if (moveDirection != Vector3.zero && !isGrounded)
         {
