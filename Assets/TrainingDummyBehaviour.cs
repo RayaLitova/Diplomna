@@ -8,6 +8,8 @@ public class TrainingDummyBehaviour : MonoBehaviour
     private Animator animator;
     private float health = 100;
 
+    private float animationTimer = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,23 +19,30 @@ public class TrainingDummyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.fixedTime > animationTimer)
+        {
+            if (health <= 0)
+            {
+                animationTimer += 5;
+                health = 100;
+                return;
+            }
+            animator.SetBool("isDead", false);
+            animator.SetBool("isPushed", false);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.collider.gameObject.name);
         if(collision.collider.gameObject.name == "Kgirls01")
         {
-            Debug.Log(health);
             animator.SetBool("isPushed", true);
             health -= 10;
+            Debug.Log(health);
             if (health <= 0)
                 animator.SetBool("isDead", true);
-            StaticFunctions.timer(3);
-            if (health <= 0)
-                Destroy(gameObject);
-            animator.SetBool("isPushed", false);
+            animationTimer = Time.fixedTime + 1.0f;
+            
         }
     }
 }

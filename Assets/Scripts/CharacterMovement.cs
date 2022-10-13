@@ -52,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
 
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
+        int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1;
 
         moveDirection = new Vector3(moveX, 0, moveZ);
         moveDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * moveDirection;
@@ -74,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashCooldownTimer)
             {
                 animator.SetBool("Dash", true);
-                moveDirection *= dashSpeed;
+                moveDirection *= dashSpeed / isDiagonal;
                 controller.Move(moveDirection);
                 targetDashCooldownTimer = Time.fixedTime + dashCoolDown;
                 targetDashTimer = Time.fixedTime + animator.GetCurrentAnimatorStateInfo(0).length / 3; // dash animation length 
@@ -83,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
             else
             {
                 animator.SetBool("isMoving", true);
-                moveDirection *= animator.GetBool("isInCombat") ? runSpeed : walkSpeed;
+                moveDirection *= animator.GetBool("isInCombat") ? runSpeed / isDiagonal : walkSpeed / isDiagonal;
                 animator.SetFloat("MoveSpeed", animator.GetBool("isInCombat") ? 1 : 0);
                 controller.Move(moveDirection);
             }
