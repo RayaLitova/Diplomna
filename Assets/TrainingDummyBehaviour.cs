@@ -27,14 +27,13 @@ public class TrainingDummyBehaviour : MonoBehaviour
                 health = 100;
                 return;
             }
-            animator.SetBool("isDead", false);
             animator.SetBool("isPushed", false);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.gameObject.name == "Kgirls01")
+        /*if(collision.collider.gameObject.tag == "Player")
         {
             animator.SetBool("isPushed", true);
             health -= 10;
@@ -43,6 +42,6 @@ public class TrainingDummyBehaviour : MonoBehaviour
                 animator.SetBool("isDead", true);
             animationTimer = Time.fixedTime + 1.0f;
             
-        }
+        }*/
     }
 }

@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 5121153178044621273}
   - component: {fileID: 1406417832030070264}
   - component: {fileID: 8955194847305171237}
+  - component: {fileID: 6105645055628818721}
   m_Layer: 0
   m_Name: training_dummy
   m_TagString: Untagged
@@ -193,6 +194,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693a3af3bfe37624e95b948fe483e1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6105645055628818721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697017240656324050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512e22d7e14557b47981a9b188443b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &6774080502169825540
 GameObject:
   m_ObjectHideFlags: 0

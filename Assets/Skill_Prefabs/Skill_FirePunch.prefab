@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4017642115329959212
+--- !u!1 &2384754381084528483
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4017642115329959214}
-  - component: {fileID: 4017642115329959213}
-  - component: {fileID: 3846627673334467180}
-  - component: {fileID: 6050144977082110923}
+  - component: {fileID: 2384754381084528481}
+  - component: {fileID: 2384754381084528482}
+  - component: {fileID: 2573849188529102883}
+  - component: {fileID: 4985413882310457732}
   m_Layer: 0
-  m_Name: Skill
+  m_Name: Skill_FirePunch
   m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4017642115329959214
+--- !u!4 &2384754381084528481
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017642115329959212}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.338806, y: -508.86948, z: 177.17361}
+  m_GameObject: {fileID: 2384754381084528483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 69.62396, y: -112.94035, z: 35.178314}
   m_LocalScale: {x: 0.54118705, y: 0.54118705, z: 0.54118705}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4017642115329959213
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2384754381084528482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017642115329959212}
+  m_GameObject: {fileID: 2384754381084528483}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20a0277c66e561c469de00c846864bbe, type: 3}
@@ -50,13 +50,13 @@ MonoBehaviour:
   crit: 25
   effectFlags:
   - AOE
---- !u!136 &3846627673334467180
+--- !u!136 &2573849188529102883
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017642115329959212}
+  m_GameObject: {fileID: 2384754381084528483}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -64,13 +64,13 @@ CapsuleCollider:
   m_Height: 176.9147
   m_Direction: 1
   m_Center: {x: -0, y: 0, z: -53.379303}
---- !u!54 &6050144977082110923
+--- !u!54 &4985413882310457732
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017642115329959212}
+  m_GameObject: {fileID: 2384754381084528483}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0

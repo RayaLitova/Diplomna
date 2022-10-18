@@ -9,8 +9,11 @@ public class UI_Skill_Info : MonoBehaviour
     [SerializeField] float cooldown;
     [SerializeField] string description;
     [SerializeField] string keyBinding;
+    [SerializeField] float skillTime;
 
-    private float timer = 0.0f;
+    private float cooldownTimer = 0.0f;
+    private float lifetimeTimer = 0.0f;
+    private string fileName;
 
     private Dictionary<string, KeyCode> keyCodes;
 
@@ -21,21 +24,30 @@ public class UI_Skill_Info : MonoBehaviour
     {
         keyCodes = new Dictionary<string, KeyCode>()
         {
-            {"Q", KeyCode.Q },
-            {"E", KeyCode.E },
-            {"R", KeyCode.R },
+            {"Action key 1", KeyCode.Q },
+            {"Action key 2", KeyCode.E },
+            {"Action key 3", KeyCode.R },
         };
-        
+
+        fileName = StaticFunctions.RemoveWhitespace(skillName);
+        Debug.Log(fileName);
     }
 
     private void Update()
     {
-        if (timer > Time.time) return;
-
+        if (lifetimeTimer < Time.time && lifetimeTimer != 0)
+            Destroy(GameObject.Find(fileName + "(Clone)"));
+        if (cooldownTimer > Time.time) return;
+        
         if (Input.GetKeyDown(keyCodes[keyBinding]))
         {
-            timer = Time.time + cooldown;
+            cooldownTimer = Time.time + cooldown;
             //mana
+            GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", true);
+            GameObject.Find("Kgirls01").GetComponent<Animator>().SetFloat("SpellIndex", (1 / StaticFunctions.SkillAnimationCount) * StaticFunctions.SkillAnimationIndex[fileName]);
+
+            Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
+            lifetimeTimer = Time.time + skillTime;
             //apply ui cooldown effect
         }
     }
