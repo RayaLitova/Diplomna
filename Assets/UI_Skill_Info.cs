@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Skill_Info : MonoBehaviour
 {
@@ -37,8 +38,13 @@ public class UI_Skill_Info : MonoBehaviour
     {
         if (lifetimeTimer < Time.time && lifetimeTimer != 0)
             Destroy(GameObject.Find(fileName + "(Clone)"));
-        if (cooldownTimer > Time.time) return;
-        
+
+        if (cooldownTimer > Time.time)
+        {
+            transform.GetChild(0).GetComponent<Image>().fillAmount = ((cooldownTimer - Time.time) * 1 / cooldown);
+            return;
+        }
+
         if (Input.GetKeyDown(keyCodes[keyBinding]))
         {
             cooldownTimer = Time.time + cooldown;
@@ -48,7 +54,6 @@ public class UI_Skill_Info : MonoBehaviour
 
             Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
             lifetimeTimer = Time.time + skillTime;
-            //apply ui cooldown effect
         }
     }
 }
