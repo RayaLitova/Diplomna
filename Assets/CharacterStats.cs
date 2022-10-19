@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public int MaxHealth;
-    public int Health;
-    public int HealthRegen;
+    public float MaxHealth;
+    public float Health;
+    public float HealthRegen;
 
-    public int Mana;
-    public int MaxMana;
-    public int ManaRegen;
+    public float Mana;
+    public float MaxMana;
+    public float ManaRegen;
 
     public int ATK;
     public int DEF;
     public int Crit;
     public int Agility;
     public int MissChance;
+
+    private float lastTime = 0.0f;
 
     public int CalcDamageAgainst(CharacterStats enemy)
     {
@@ -27,5 +29,15 @@ public class CharacterStats : MonoBehaviour
         damage -= (int)((damage / 100.0f) * enemy.DEF);
         
         return damage;
+    }
+
+    private void Update()
+    {
+        if (Time.time < lastTime + 1)
+            return;
+
+        lastTime = Time.time;
+        Mana = Mathf.Min(MaxMana, Mana + ManaRegen);
+        Health = Mathf.Min(MaxHealth, Health + HealthRegen);
     }
 }

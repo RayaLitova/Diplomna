@@ -33,7 +33,7 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             animator.SetBool("isPushed", true);
             stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats) ;
-            Debug.Log(collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats));
+            Debug.Log(stats.Health);
             if (stats.Health <= 0)
                 animator.SetBool("isDead", true);
             animationTimer = Time.fixedTime + 1.0f;
