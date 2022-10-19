@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
-    [SerializeField] private float health;
-
     private Animator animator;
     private float animationTimer;
+    private CharacterStats stats;
 
     private void Start()
     {
+        stats = GetComponent<CharacterStats>();
         animator = GetComponent<Animator>();
     }
 
@@ -19,7 +19,7 @@ public class EnemyTakeDamage : MonoBehaviour
         if (Time.fixedTime < animationTimer) 
             return;
         
-        if (health <= 0)
+        if (stats.Health <= 0)
         {
             Destroy(gameObject);
         }
@@ -32,9 +32,9 @@ public class EnemyTakeDamage : MonoBehaviour
         if (collision.collider.gameObject.tag == "Skill")
         {
             animator.SetBool("isPushed", true);
-            health -= 10;
-            Debug.Log(health);
-            if (health <= 0)
+            stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats) ;
+            Debug.Log(collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats));
+            if (stats.Health <= 0)
                 animator.SetBool("isDead", true);
             animationTimer = Time.fixedTime + 1.0f;
             Destroy(collision.collider.gameObject);
