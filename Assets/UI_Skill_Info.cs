@@ -16,28 +16,23 @@ public class UI_Skill_Info : MonoBehaviour
     private float lifetimeTimer = 0.0f;
     private string fileName;
 
-    private Dictionary<string, KeyCode> keyCodes;
-
-    //cooldown control
+    private GameObject skillPointer;
     //hover control
-
-    void Start()
+    private void OnEnable()
     {
-        keyCodes = new Dictionary<string, KeyCode>()
-        {
-            {"Action key 1", KeyCode.Q },
-            {"Action key 2", KeyCode.E },
-            {"Action key 3", KeyCode.R },
-        };
-
         fileName = StaticFunctions.RemoveWhitespace(skillName);
-        Debug.Log(fileName);
+        Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
+        skillPointer = GameObject.Find("Kgirls01").transform.Find(fileName + "(Clone)").gameObject;
+        gameObject.SetActive(false);
     }
 
     private void Update()
     {
         if (lifetimeTimer < Time.time && lifetimeTimer != 0)
-            Destroy(GameObject.Find(fileName + "(Clone)"));
+        {
+            lifetimeTimer = 0;
+            gameObject.SetActive(false);
+        }
 
         if (cooldownTimer > Time.time)
         {
@@ -45,14 +40,14 @@ public class UI_Skill_Info : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(keyCodes[keyBinding]))
+        if (Input.GetKeyDown(Skills_UI.keyCodes[keyBinding]))
         {
             cooldownTimer = Time.time + cooldown;
             //mana
             GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", true);
             GameObject.Find("Kgirls01").GetComponent<Animator>().SetFloat("SpellIndex", (1 / StaticFunctions.SkillAnimationCount) * StaticFunctions.SkillAnimationIndex[fileName]);
 
-            Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
+            gameObject.SetActive(true);
             lifetimeTimer = Time.time + skillTime;
         }
     }

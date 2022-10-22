@@ -21,5 +21,6 @@ public class Skill_info : MonoBehaviour
     private void OnDestroy()
     {
         GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", false);
+        //GameObject.Find("Kgirls01").transform.Find().gameObject.active = false;
     }
 }
