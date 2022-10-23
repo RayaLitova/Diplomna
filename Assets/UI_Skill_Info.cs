@@ -9,7 +9,6 @@ public class UI_Skill_Info : MonoBehaviour
     [SerializeField] int cost;
     [SerializeField] float cooldown;
     [SerializeField] string description;
-    [SerializeField] string keyBinding;
     [SerializeField] float skillTime;
 
     private float cooldownTimer = 0.0f;
@@ -17,13 +16,16 @@ public class UI_Skill_Info : MonoBehaviour
     private string fileName;
 
     private GameObject skillPointer;
+    public string keyBinding = "Action key 1";
     //hover control
     private void OnEnable()
     {
         fileName = StaticFunctions.RemoveWhitespace(skillName);
         Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
         skillPointer = GameObject.Find("Kgirls01").transform.Find(fileName + "(Clone)").gameObject;
-        gameObject.SetActive(false);
+        skillPointer.SetActive(false);
+        Debug.Log(Skills_UI.Skills[keyBinding]);
+        Skills_UI.Skills[keyBinding] = this;
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class UI_Skill_Info : MonoBehaviour
         if (lifetimeTimer < Time.time && lifetimeTimer != 0)
         {
             lifetimeTimer = 0;
-            gameObject.SetActive(false);
+            FinishExecution();
         }
 
         if (cooldownTimer > Time.time)
@@ -39,16 +41,32 @@ public class UI_Skill_Info : MonoBehaviour
             transform.GetChild(0).GetComponent<Image>().fillAmount = ((cooldownTimer - Time.time) * 1 / cooldown);
             return;
         }
+    }
 
-        if (Input.GetKeyDown(Skills_UI.keyCodes[keyBinding]))
+    public void Execute()
+    {
+        if (cooldownTimer > Time.time) return;
+        skillPointer.SetActive(true);
+        cooldownTimer = Time.time + cooldown;
+        lifetimeTimer = Time.time + skillTime;
+        GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", true);
+        GameObject.Find("Kgirls01").GetComponent<Animator>().SetFloat("SpellIndex", (1 / Skills_UI.SkillAnimationCount) * Skills_UI.SkillAnimationIndex[fileName]);
+    }
+
+    public void FinishExecution(bool isEnemyHit = false)
+    {
+        lifetimeTimer = 0;
+        GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", false);
+        if (isEnemyHit)
         {
-            cooldownTimer = Time.time + cooldown;
-            //mana
-            GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", true);
-            GameObject.Find("Kgirls01").GetComponent<Animator>().SetFloat("SpellIndex", (1 / StaticFunctions.SkillAnimationCount) * StaticFunctions.SkillAnimationIndex[fileName]);
-
-            gameObject.SetActive(true);
-            lifetimeTimer = Time.time + skillTime;
+            skillPointer.transform.Find("FirePunch_particles").gameObject.SetActive(false);
+            skillPointer.transform.Find("FirePunch_hit").gameObject.SetActive(true);
+        }
+        else
+        {
+            skillPointer.transform.Find("FirePunch_particles").gameObject.SetActive(true);
+            skillPointer.transform.Find("FirePunch_hit").gameObject.SetActive(false);
+            skillPointer.SetActive(false);
         }
     }
 }

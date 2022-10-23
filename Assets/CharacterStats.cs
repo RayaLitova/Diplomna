@@ -20,12 +20,12 @@ public class CharacterStats : MonoBehaviour
 
     private float lastTime = 0.0f;
 
-    public int CalcDamageAgainst(CharacterStats enemy)
+    public int CalcDamageAgainst(CharacterStats enemy, Skill_info skill)
     {
-        if (Random.Range(0, 100) <= MissChance + enemy.Agility)
+        if (Random.Range(0, 100) <= MissChance + skill.missChance + enemy.Agility)
             return 0;
 
-        int damage = ATK + (Random.Range(0, 100) <= Crit ? ATK : 0);
+        int damage = ATK + skill.damage + (Random.Range(0, 100) <= Crit + skill.crit ? ATK + skill.damage : 0);
         damage -= (int)((damage / 100.0f) * enemy.DEF);
         
         return damage;

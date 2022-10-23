@@ -32,12 +32,12 @@ public class EnemyTakeDamage : MonoBehaviour
         if (collision.collider.gameObject.tag == "Skill")
         {
             animator.SetBool("isPushed", true);
-            stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats) ;
+            stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats, Skills_UI.GetCurrentSkill()) ;
             Debug.Log(stats.Health);
             if (stats.Health <= 0)
                 animator.SetBool("isDead", true);
             animationTimer = Time.fixedTime + 1.0f;
-            Destroy(collision.collider.gameObject);
+            Skills_UI.FinishSkillExecution();
         }
     }
 }

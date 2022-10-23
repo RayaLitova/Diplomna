@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7339263464435846445}
   - component: {fileID: 7339263464435846444}
   - component: {fileID: 7339263464435846446}
+  - component: {fileID: 8589813112914210309}
   m_Layer: 5
   m_Name: UI_FirePunch
   m_TagString: Untagged
@@ -171,5 +172,22 @@ MonoBehaviour:
   cooldown: 5
   description: Creates a fire around the hero's fist punching enemies and dealing
     massive single target damage.
-  keyBinding: Action key 1
   skillTime: 0.35
+  keyBinding: Action key 1
+--- !u!114 &8589813112914210309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339263464435846442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a0277c66e561c469de00c846864bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  crit: 25
+  missChance: 1
+  effectFlags:
+  - AOE
