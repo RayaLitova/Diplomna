@@ -31,7 +31,7 @@ public class Skills_UI : MonoBehaviour
 
         keyCodes = new Dictionary<string, KeyCode>()
         {
-            {"Action key 1", KeyCode.Q },
+            { "Action key 1", KeyCode.Q },
             { "Action key 2", KeyCode.E},
             { "Action key 3", KeyCode.R},
         };
