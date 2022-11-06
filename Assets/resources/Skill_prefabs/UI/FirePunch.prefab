@@ -96,7 +96,8 @@ MonoBehaviour:
   cooldown: 5
   description: Creates a fire around the hero's fist punching enemies and dealing
     massive single target damage.
-  skillTime: 0.35
+  skillTime: 0.6
+  fileName: 
   keyBinding: Action key 1
 --- !u!114 &4446863749196631173
 MonoBehaviour:

@@ -27,12 +27,15 @@ public class CharacterMovement : MonoBehaviour
 
     private float moveX;
     private float moveZ;
+    private bool isInCombat = true;
+
+    private Vector3 velocity;
 
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-        animator.SetBool("isInCombat", true);
+        animator.SetBool("isInCombat", isInCombat);
     }
 
     private void FixedUpdate()
@@ -54,11 +57,18 @@ public class CharacterMovement : MonoBehaviour
         moveZ = Input.GetAxis("Vertical");
         int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1;
 
+        /*moveDirection = moveZ * camera.transform.forward * 5;
+        moveDirection += moveX * camera.transform.right * 5;
+        if (moveDirection.magnitude > 0)
+            velocity = moveDirection;
+        else
+            velocity = Vector3.zero;
+        controller.Move(velocity);*/
         moveDirection = new Vector3(moveX, 0, moveZ);
         moveDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * moveDirection;
         moveDirection.Normalize();
 
-        float magnitude = Mathf.Clamp01(moveDirection.magnitude) * runSpeed;
+        float magnitude = Mathf.Clamp01(moveDirection.magnitude);
 
         controller.Move(moveDirection * magnitude);
 
