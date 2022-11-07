@@ -12,11 +12,21 @@ public class Skills_UI : MonoBehaviour
 
     public static int SkillAnimationCount = 6;
     public static Dictionary<string, int> SkillAnimationIndex;
- 
+
+    public RectTransform[] skillSlotTransform;
+    public Dictionary<string, Vector3> SkillSlotAnchoredPosition;
+
     private static string skillExecuted = null;
+    private static string lastSkillExecuted = null;
 
     private void Awake()
     {
+        SkillSlotAnchoredPosition = new Dictionary<string, Vector3>() {
+            { "Action key 1", skillSlotTransform[0].anchoredPosition },
+            { "Action key 2", skillSlotTransform[1].anchoredPosition },
+            { "Action key 3", skillSlotTransform[2].anchoredPosition },
+        };
+     
         SkillAnimationIndex = new Dictionary<string, int>()
         {
             {"FirePunch", 0},
@@ -52,6 +62,8 @@ public class Skills_UI : MonoBehaviour
             {
                 Skills["Action key 1"].Execute();
                 skillExecuted = "Action key 1";
+                lastSkillExecuted = skillExecuted;
+                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);    
             }
             catch (NullReferenceException) { };
         }
@@ -61,6 +73,8 @@ public class Skills_UI : MonoBehaviour
             {
                 Skills["Action key 2"].Execute();
                 skillExecuted = "Action key 2";
+                lastSkillExecuted = skillExecuted;
+                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);
             }
             catch (NullReferenceException) { };
         }
@@ -69,7 +83,9 @@ public class Skills_UI : MonoBehaviour
             try
             {
                 Skills["Action key 3"].Execute();
-                skillExecuted = "Action key 3";
+                skillExecuted = "Action key 3"; 
+                lastSkillExecuted = skillExecuted;
+                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);
             }
             catch (NullReferenceException) { };
         }
@@ -84,6 +100,12 @@ public class Skills_UI : MonoBehaviour
 
     public static Skill_info GetCurrentSkillInfo()
     {
+        if (skillExecuted == null)
+            if (lastSkillExecuted == null)
+                return null;
+            else
+                return Skills[lastSkillExecuted].gameObject.GetComponent<Skill_info>();
+
         return Skills[skillExecuted].gameObject.GetComponent<Skill_info>();
     }
 
@@ -94,6 +116,40 @@ public class Skills_UI : MonoBehaviour
 
         return Skills[skillExecuted];
         
+    }
+
+    public static UI_Skill_Info GetLastUIskillInfo()
+    {
+        if (lastSkillExecuted == null)
+            return null;
+
+        return Skills[lastSkillExecuted];
+
+    }
+
+    public string getClosestSkillSlot(Vector3 skillPosition)
+    {
+        float min = 5.0f;
+        string returnValue = null;
+        float tmp = Vector3.Distance(skillPosition, skillSlotTransform[0].position);
+        if (tmp < min)
+        {
+            min = tmp;
+            returnValue = "Action key 1";
+
+        }
+        tmp = Vector3.Distance(skillPosition, skillSlotTransform[1].position);
+        if (tmp < min)
+        {
+            min = tmp;
+            returnValue = "Action key 2";
+
+        }
+        tmp = Vector3.Distance(skillPosition, skillSlotTransform[2].position);
+        if (tmp < min)
+            returnValue = "Action key 3";
+        return returnValue;
+
     }
 
 }

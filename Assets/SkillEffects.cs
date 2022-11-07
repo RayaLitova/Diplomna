@@ -16,18 +16,20 @@ public class SkillEffects : MonoBehaviour
 
     }
 
-    static void ApplyEffect(string name)
+    public static void ApplyEffect(string name)
     {
         effects[name]();
     }
 
-    static void ApplyEffect(string[] name)
+    public static void ApplyEffect(string[] name)
     {
-        //effects[name]();
+        foreach (string flag in name)
+            effects[flag]();
+        
     }
 
     private void AOE()
     {
-        Debug.Log("AOE damage");
+        Debug.Log("AOE");
     }
 }

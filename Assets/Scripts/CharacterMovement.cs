@@ -40,6 +40,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Cursor.lockState == CursorLockMode.None)
+            return;
+
         if (Time.fixedTime < targetDashTimer) // dash
         {
             controller.Move(new Vector3(moveX, 0, moveZ) * dashSpeed);

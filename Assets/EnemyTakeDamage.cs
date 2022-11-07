@@ -31,14 +31,23 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Skill")
         {
-            animator.SetBool("isPushed", true);
-            stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats, Skills_UI.GetCurrentSkillInfo()) ;
-            Debug.Log(stats.Health);
-            if (stats.Health <= 0)
-                animator.SetBool("isDead", true);
-            animationTimer = Time.fixedTime + 1.0f;
-            transform.Find(Skills_UI.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
-            Skills_UI.FinishSkillExecution();
+            if (transform.Find(Skills_UI.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().isPlaying)
+                return;
+
+            TakeDamage(collision);
         }
+    }
+
+    public void TakeDamage(Collision collision)
+    {
+
+        animator.SetBool("isPushed", true);
+        stats.Health -= collision.collider.transform.parent.GetComponent<CharacterStats>().CalcDamageAgainst(stats, Skills_UI.GetCurrentSkillInfo());
+        Debug.Log(stats.Health);
+        if (stats.Health <= 0)
+            animator.SetBool("isDead", true);
+        animationTimer = Time.fixedTime + 1.0f;
+        transform.Find(Skills_UI.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
+        Skills_UI.FinishSkillExecution();
     }
 }
