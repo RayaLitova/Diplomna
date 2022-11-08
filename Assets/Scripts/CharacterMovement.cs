@@ -41,7 +41,12 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (Cursor.lockState == CursorLockMode.None)
+        {
+            animator.SetBool("Dash", false);
+            animator.SetBool("isMoving", false);
             return;
+
+        }
 
         if (Time.fixedTime < targetDashTimer) // dash
         {
