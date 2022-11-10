@@ -29,6 +29,8 @@ public class CharacterMovement : MonoBehaviour
     private float moveZ;
     private bool isInCombat = true;
 
+    public static bool isImmobilized = false;
+
     private void Start()
     {
         controller = transform.GetComponent<CharacterController>();
@@ -46,6 +48,9 @@ public class CharacterMovement : MonoBehaviour
             return;
 
         }
+        if (isImmobilized)
+            return;
+
         camera.GetComponent<CinemachineBrain>().enabled = true;
 
         if (Time.fixedTime < targetDashTimer) // dash animation

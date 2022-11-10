@@ -47,7 +47,8 @@ public class UI_Skill_Info : MonoBehaviour
     }
 
     public void StartExecution()
-    { 
+    {
+        CharacterMovement.isImmobilized = true;
         if (cooldownTimer > Time.time) return;
         skillPointer.SetActive(true);
         cooldownTimer = Time.time + cooldown;
@@ -59,6 +60,7 @@ public class UI_Skill_Info : MonoBehaviour
 
     public void FinishExecution()
     {
+        CharacterMovement.isImmobilized = false;
         GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", false);
         lifetimeTimer = 0;
         skillPointer.transform.Find(fileName + "_particles").gameObject.SetActive(true);

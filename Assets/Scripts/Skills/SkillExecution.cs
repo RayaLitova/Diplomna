@@ -14,6 +14,7 @@ public class SkillExecution : MonoBehaviour
         {
             foreach (Collider collider in colliders)
             {
+                Debug.Log(collider);
                 collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(collider);
                 SkillEffects.ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, collider);
             }
@@ -21,6 +22,7 @@ public class SkillExecution : MonoBehaviour
         else
         {
             colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(colliders[0]);
+            SkillEffects.ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, colliders[0]);
         }
     }
 }
