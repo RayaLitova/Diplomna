@@ -4757,6 +4757,7 @@ GameObject:
   - component: {fileID: 9042626994105061282}
   - component: {fileID: 9042626994105061280}
   - component: {fileID: 9042626994105061281}
+  - component: {fileID: 2253703994572824803}
   m_Layer: 0
   m_Name: FirePunch
   m_TagString: Skill
@@ -4810,6 +4811,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2253703994572824803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042626994105061286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a1e09ba62ec3a48ba90bb7852983c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9042626994633150353
 GameObject:
   m_ObjectHideFlags: 0

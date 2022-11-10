@@ -102,6 +102,8 @@ GameObject:
   - component: {fileID: 6256405056817510573}
   - component: {fileID: 6256405056817510575}
   - component: {fileID: 4916910446199266180}
+  - component: {fileID: 5205552627222978856}
+  - component: {fileID: 3436905297733031068}
   m_Layer: 5
   m_Name: InfernalPunch
   m_TagString: Untagged
@@ -203,5 +205,28 @@ MonoBehaviour:
   damage: 15
   crit: 25
   missChance: 1
-  effectFlags:
-  - AOE
+  effectFlags: []
+--- !u!225 &5205552627222978856
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256405056817510571}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
+--- !u!114 &3436905297733031068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256405056817510571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7a625b654afe044b360b9fc5622d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

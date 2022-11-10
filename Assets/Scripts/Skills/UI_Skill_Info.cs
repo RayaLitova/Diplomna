@@ -46,7 +46,7 @@ public class UI_Skill_Info : MonoBehaviour
         }
     }
 
-    public void Execute(bool isAOE = false)
+    public void StartExecution()
     { 
         if (cooldownTimer > Time.time) return;
         skillPointer.SetActive(true);
@@ -54,6 +54,7 @@ public class UI_Skill_Info : MonoBehaviour
         lifetimeTimer = Time.time + skillTime;
         GameObject.Find("Kgirls01").GetComponent<Animator>().SetBool("Hit", true);
         GameObject.Find("Kgirls01").GetComponent<Animator>().SetFloat("SpellIndex", (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName]);
+        skillPointer.GetComponent<SkillExecution>().ExecuteSkill();
     }
 
     public void FinishExecution()

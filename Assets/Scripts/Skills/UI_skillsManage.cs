@@ -60,10 +60,9 @@ public class UI_skillsManage : MonoBehaviour
         {
             try
             {
-                Skills["Action key 1"].Execute();
                 skillExecuted = "Action key 1";
                 lastSkillExecuted = skillExecuted;
-                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);    
+                Skills["Action key 1"].StartExecution();
             }
             catch (NullReferenceException) { };
         }
@@ -71,10 +70,9 @@ public class UI_skillsManage : MonoBehaviour
         {
             try
             {
-                Skills["Action key 2"].Execute();
                 skillExecuted = "Action key 2";
                 lastSkillExecuted = skillExecuted;
-                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);
+                Skills["Action key 2"].StartExecution();
             }
             catch (NullReferenceException) { };
         }
@@ -82,10 +80,9 @@ public class UI_skillsManage : MonoBehaviour
         {
             try
             {
-                Skills["Action key 3"].Execute();
-                skillExecuted = "Action key 3"; 
+                skillExecuted = "Action key 3";
                 lastSkillExecuted = skillExecuted;
-                SkillEffects.ApplyEffect(GetCurrentSkillInfo().effectFlags);
+                Skills["Action key 3"].StartExecution();
             }
             catch (NullReferenceException) { };
         }
@@ -113,18 +110,14 @@ public class UI_skillsManage : MonoBehaviour
     {
         if (skillExecuted == null)
             return null;
-
-        return Skills[skillExecuted];
-        
+        return Skills[skillExecuted]; 
     }
 
     public static UI_Skill_Info GetLastUIskillInfo()
     {
         if (lastSkillExecuted == null)
             return null;
-
         return Skills[lastSkillExecuted];
-
     }
 
     public string getClosestSkillSlot(Vector3 skillPosition)
@@ -136,20 +129,16 @@ public class UI_skillsManage : MonoBehaviour
         {
             min = tmp;
             returnValue = "Action key 1";
-
         }
         tmp = Vector3.Distance(skillPosition, skillSlotTransform[1].position);
         if (tmp < min)
         {
             min = tmp;
             returnValue = "Action key 2";
-
         }
         tmp = Vector3.Distance(skillPosition, skillSlotTransform[2].position);
         if (tmp < min)
             returnValue = "Action key 3";
         return returnValue;
-
     }
-
 }
