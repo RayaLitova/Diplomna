@@ -14,7 +14,7 @@ public class SkillExecution : MonoBehaviour
         {
             foreach (Collider collider in colliders)
             {
-                Debug.Log(collider);
+                Debug.Log("|AAA");
                 collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(collider);
                 SkillEffects.ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, collider);
             }
@@ -24,5 +24,13 @@ public class SkillExecution : MonoBehaviour
             colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(colliders[0]);
             SkillEffects.ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, colliders[0]);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(GameObject.Find("Kgirls01").transform.Find("Center").position, GetComponent<CapsuleCollider>().radius / 5f);
+
     }
 }
