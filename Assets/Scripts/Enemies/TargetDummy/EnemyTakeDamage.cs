@@ -32,4 +32,13 @@ public class EnemyTakeDamage : MonoBehaviour
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
         UI_skillsManage.FinishSkillExecution();
     }
+
+    public void TakeDOTdamage(int damage)
+    {
+        animator.SetBool("isPushed", true);
+        stats.Health -= damage;
+        if (stats.Health <= 0)
+            animator.SetBool("isDead", true);
+        //play burn particles
+    }
 }

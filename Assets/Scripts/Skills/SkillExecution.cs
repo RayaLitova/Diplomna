@@ -14,7 +14,6 @@ public class SkillExecution : MonoBehaviour
         {
             foreach (Collider collider in colliders)
             {
-                Debug.Log("|AAA");
                 collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(collider);
                 SkillEffects.ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, collider);
             }

@@ -13,8 +13,24 @@ public class SkillEffects : MonoBehaviour
         effects = new Dictionary<string, Action>()
         {
             { "AOE", () =>  AOE() },
+            { "Burn", () => Burn() }
         };
 
+    }
+    private void Burn()
+    {
+        //not calling
+        Debug.Log("Burn called");
+        StartCoroutine("ApplyBurn");
+    }
+
+    private IEnumerator ApplyBurn()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            enemyCollider.GetComponent<EnemyTakeDamage>().TakeDOTdamage(3);
+            yield return new WaitForSeconds(3f);
+        }
     }
     private void AOE()
     {
@@ -25,10 +41,11 @@ public class SkillEffects : MonoBehaviour
         effects[name]();
     }
 
-    public static void ApplyEffects(string[] name, Collider collider)
+    public static void ApplyEffects(string[] effectFlags, Collider collider)
     {
+        Debug.Log(effectFlags[0]);
         enemyCollider = collider;
-        foreach (string flag in name)
+        foreach (string flag in effectFlags)
             effects[flag]();
         
     }
