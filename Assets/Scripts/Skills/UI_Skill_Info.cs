@@ -48,8 +48,8 @@ public class UI_Skill_Info : MonoBehaviour
 
     public void StartExecution()
     {
-        CharacterMovement.isImmobilized = true;
         if (cooldownTimer > Time.time) return;
+        CharacterMovement.isImmobilized = true;
         skillPointer.SetActive(true);
         cooldownTimer = Time.time + cooldown;
         lifetimeTimer = Time.time + skillTime;

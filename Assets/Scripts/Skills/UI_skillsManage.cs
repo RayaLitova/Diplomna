@@ -141,4 +141,11 @@ public class UI_skillsManage : MonoBehaviour
             returnValue = "Action key 3";
         return returnValue;
     }
+
+    public static SkillEffects GetCurrentSkillEffects()
+    {
+        if (skillExecuted == null)
+            return null;
+        return Skills[skillExecuted].gameObject.GetComponent<SkillEffects>();
+    }
 }

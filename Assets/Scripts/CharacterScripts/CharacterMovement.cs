@@ -37,7 +37,6 @@ public class CharacterMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetBool("isInCombat", isInCombat);
     }
-
     private void FixedUpdate()
     {
         if (Cursor.lockState == CursorLockMode.None)
