@@ -7,11 +7,13 @@ public class EnemyTakeDamage : MonoBehaviour
     private Animator animator;
     private float animationTimer;
     private CharacterStats stats;
+    private EnemyAnimationController animationController;
 
     private void Start()
     {
         stats = GetComponent<CharacterStats>();
         animator = GetComponent<Animator>();
+        animationController = GetComponent<EnemyAnimationController>();
     }
 
     void Update()
@@ -20,25 +22,25 @@ public class EnemyTakeDamage : MonoBehaviour
             return;
         if (stats.Health <= 0)
             Destroy(gameObject);
-        animator.SetBool("isPushed", false);
+        animationController.takeDamageAnimation(false);
     }
     public void TakeDamage(Collider collider)
     {
         animationTimer = Time.fixedTime + 1.0f;
-        animator.SetBool("isPushed", true);
+        animationController.takeDamageAnimation(true);
         stats.Health -= collider.transform.GetComponent<CharacterStats>().CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
         if (stats.Health <= 0)
-            animator.SetBool("isDead", true);
+            animationController.deathAnimation(true);
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
         UI_skillsManage.FinishSkillExecution();
     }
 
     public void TakeDOTdamage(int damage)
     {
-        animator.SetBool("isPushed", true);
+        animationController.takeDamageAnimation(true);
         stats.Health -= damage;
         if (stats.Health <= 0)
-            animator.SetBool("isDead", true);
+            animationController.deathAnimation(true);
         //play burn particles
     }
 }
