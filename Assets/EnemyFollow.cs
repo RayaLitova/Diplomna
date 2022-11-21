@@ -27,27 +27,22 @@ public class EnemyFollow : MonoBehaviour
         if (interruptTimer > Time.time)
             return;
 
+        GetComponent<EnemyAttack>().FinishExecution();
         if (Vector3.Distance(startPosition, character.position) < followDistance && Vector3.Distance(transform.position, character.position) > attackDistance)
         {
-            GetComponent<EnemyAttack>().FinishExecution();
-            Vector3 moveDir = new Vector3(character.position.x - transform.position.x, 0, character.position.z - transform.position.z);
-            moveDir.Normalize();
-            float magnitude = Mathf.Clamp01(moveDir.magnitude);
-            transform.position = Vector3.MoveTowards(transform.position, character.position, Time.deltaTime);
+            Debug.Log("Follow");
+            transform.position = Vector3.MoveTowards(transform.position, character.transform.position, 2f);
 
         }
         else if (Vector3.Distance(startPosition, character.position) >= followDistance && Vector3.Distance(transform.position, startPosition) > 10)
         {
-            Vector3 moveDir = new Vector3(startPosition.x - transform.position.x, 0, startPosition.z - transform.position.z);
-            moveDir.Normalize();
-            float magnitude = Mathf.Clamp01(moveDir.magnitude);
-            transform.position += moveDir * magnitude;
+            Debug.Log(Vector3.Distance(startPosition, transform.position));
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, 1f);
+        }
+        else if (Vector3.Distance(transform.position, character.position) <= attackDistance)
+        {
             GetComponent<EnemyAttack>().StartExecution();
             interruptTimer = Time.time + 2.0f;
-        }
-        else
-        {
-            GetComponent<EnemyAttack>().FinishExecution();
         }
     }
 }
