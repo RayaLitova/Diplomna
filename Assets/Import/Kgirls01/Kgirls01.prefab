@@ -1434,6 +1434,8 @@ GameObject:
   - component: {fileID: 7057341634507496126}
   - component: {fileID: 4942999879850361343}
   - component: {fileID: 8137351939086409823}
+  - component: {fileID: 1690002759071039921}
+  - component: {fileID: 41684792598591108}
   m_Layer: 0
   m_Name: Kgirls01
   m_TagString: Untagged
@@ -1450,7 +1452,7 @@ Transform:
   m_GameObject: {fileID: 7385737107661046707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.18659787, y: 0.18659787, z: 0.18659787}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3781682595124918292}
@@ -1481,7 +1483,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 1
@@ -1498,13 +1500,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 177.8097
+  m_Radius: 36.39
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 2.432131, y: -104.104, z: 10.51859}
 --- !u!114 &7057341634507496126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,17 +1519,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967010dacdab18744810f230c5c6d16f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 1
+  runSpeed: 3
   walkSpeed: 1
-  dashSpeed: 2
-  rotationSpeed: 0
-  controller: {fileID: 0}
+  dashSpeed: 5
+  rotationSpeed: 40
+  controller: {fileID: 2223859432848078384}
   camera: {fileID: 0}
-  groundCheckDistance: 0
+  groundCheckDistance: 0.2
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
-  gravity: 0
+    m_Bits: 8
+  gravity: -9.81
 --- !u!136 &4942999879850361343
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1538,10 +1540,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 34.937218
-  m_Height: 174.83818
+  m_Radius: 36.39
+  m_Height: 177.80966
   m_Direction: 1
-  m_Center: {x: 2.4321308, y: -97.950066, z: 1.0037525}
+  m_Center: {x: 2.4321308, y: -104.104034, z: 10.518594}
 --- !u!95 &8137351939086409823
 Animator:
   serializedVersion: 4
@@ -1562,6 +1564,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1690002759071039921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385737107661046707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7fc072fdc39ee249a330eb64d03a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Health: 100
+  HealthRegen: 0.3
+  Mana: 100
+  MaxMana: 100
+  ManaRegen: 0.5
+  ATK: 10
+  DEF: 5
+  Crit: 10
+  Agility: 15
+  MissChance: 7
+--- !u!114 &41684792598591108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385737107661046707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0864385e868abaa40878ed0cd51ad4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7442845272095363081
 GameObject:
   m_ObjectHideFlags: 0

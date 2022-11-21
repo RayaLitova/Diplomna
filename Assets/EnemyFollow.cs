@@ -24,7 +24,13 @@ public class EnemyFollow : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (interruptTimer > Time.time)
+        if (GetCurrentRoom.CheckRooms(transform) == GetCurrentRoom.CheckRooms(character))
+        {
+            transform.LookAt(character);
+            //transform.position += transform.forward * .2f;
+        }
+    }
+        /*if (interruptTimer > Time.time)
             return;
 
         GetComponent<EnemyAttack>().FinishExecution();
@@ -43,6 +49,6 @@ public class EnemyFollow : MonoBehaviour
         {
             GetComponent<EnemyAttack>().StartExecution();
             interruptTimer = Time.time + 2.0f;
-        }
-    }
+        }*/
+    
 }

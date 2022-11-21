@@ -20,8 +20,6 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (Time.fixedTime < animationTimer)
             return;
-        if (stats.Health <= 0)
-            Destroy(gameObject);
         animationController.takeDamageAnimation(false);
     }
     public void TakeDamage(Collider collider)
