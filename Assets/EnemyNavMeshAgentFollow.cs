@@ -7,14 +7,34 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 {
     private NavMeshAgent agent;
     [SerializeField] private Transform character;
+
+    private Vector3 startPosition;
+    private float attackTime;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        startPosition = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        agent.SetDestination(character.position);
+        if (attackTime > Time.time)
+            return;
+
+        GetComponent<EnemyAttack>().FinishExecution();
+
+        if (GetCurrentRoom.CheckRooms(character) == GetCurrentRoom.CheckRooms(transform))
+        {
+            agent.SetDestination(character.position);
+            
+        }
+        else
+            agent.SetDestination(startPosition);
+
+        if (Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
+        {
+            GetComponent<EnemyAttack>().StartExecution();
+            attackTime = Time.time + 2f;
+        }
     }
 }

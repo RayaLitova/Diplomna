@@ -4234,12 +4234,13 @@ GameObject:
   - component: {fileID: 2296667136247125456}
   - component: {fileID: 4155015640940177662}
   - component: {fileID: 8796538251199979889}
-  - component: {fileID: 455024093015164013}
   - component: {fileID: 109170270726415086}
   - component: {fileID: 2525737321626871808}
   - component: {fileID: 3785457089026825822}
   - component: {fileID: 266313934226309673}
   - component: {fileID: 2678017954107146447}
+  - component: {fileID: 7355450708484352282}
+  - component: {fileID: 2002066191747773405}
   m_Layer: 0
   m_Name: Lich
   m_TagString: Untagged
@@ -4289,20 +4290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitAnimationVar: isPushed
   deathAnimationVar: isDead
---- !u!114 &455024093015164013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6385817234965128022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f39aab34234808b46a1d706e735c1a15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followDistance: 500
-  attackDistance: 150
 --- !u!114 &109170270726415086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4388,6 +4375,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7355450708484352282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385817234965128022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7260844fb584e8a45b6c03c0b07b5c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+--- !u!195 &2002066191747773405
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385817234965128022}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.035
+  m_Speed: 50
+  m_Acceleration: 2
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 100
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.22
+  m_BaseOffset: 0.2
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &6393551546306130318
 GameObject:
   m_ObjectHideFlags: 0
