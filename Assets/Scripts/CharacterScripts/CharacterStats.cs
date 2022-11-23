@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class CharacterStats : MonoBehaviour
     public int Agility;
     public int MissChance;
 
+    [SerializeField] private Image HealthBar = null;
+
     private float lastTime = 0.0f;
 
     public int CalcDamageAgainst(CharacterStats enemy, SkillStats skill)
@@ -33,6 +36,8 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
+        if(HealthBar != null) //remove this after adding health bars to enemies
+            HealthBar.fillAmount = Health / MaxHealth;
         if (Time.time < lastTime + 1)
             return;
 

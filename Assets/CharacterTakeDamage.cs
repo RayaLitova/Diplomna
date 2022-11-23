@@ -23,7 +23,7 @@ public class CharacterTakeDamage : MonoBehaviour
         Debug.Log("Damage Taken");
         animator.SetBool("DamageTaken", true);
         characterStats.Health -= enemy.GetComponent<CharacterStats>().CalcDamageAgainst(characterStats, enemy.GetComponent<SkillStats>());
-        animator.SetInteger("Health", Mathf.RoundToInt(characterStats.Health));
+        animator.SetFloat("Health", characterStats.Health / characterStats.MaxHealth);
         StartCoroutine("WaitForAnimationToFinish");
     }
 }
