@@ -4242,7 +4242,7 @@ GameObject:
   - component: {fileID: 7355450708484352282}
   - component: {fileID: 2002066191747773405}
   - component: {fileID: 7865490402546337533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lich
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4307,14 +4307,12 @@ MonoBehaviour:
   MaxHealth: 100
   Health: 100
   HealthRegen: 0.2
-  Mana: 0
-  MaxMana: 0
-  ManaRegen: 0
   ATK: 5
   DEF: 2
   Crit: 34
   Agility: 2
   MissChance: 1
+  HealthBar: {fileID: 0}
 --- !u!114 &2525737321626871808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4375,7 +4373,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &7355450708484352282
 MonoBehaviour:

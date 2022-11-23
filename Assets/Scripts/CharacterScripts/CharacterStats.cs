@@ -9,10 +9,6 @@ public class CharacterStats : MonoBehaviour
     public float Health;
     public float HealthRegen;
 
-    public float Mana;
-    public float MaxMana;
-    public float ManaRegen;
-
     public int ATK;
     public int DEF;
     public int Crit;
@@ -42,7 +38,6 @@ public class CharacterStats : MonoBehaviour
             return;
 
         lastTime = Time.time;
-        Mana = Mathf.Min(MaxMana, Mana + ManaRegen);
         Health = Mathf.Min(MaxHealth, Health + HealthRegen);
     }
 }

@@ -7,7 +7,6 @@ using System.Linq;
 public class UI_Skill_Info : MonoBehaviour
 {
     [SerializeField] string skillName;
-    [SerializeField] int cost;
     [SerializeField] float cooldown;
     [SerializeField] string description;
     [SerializeField] float skillTime;

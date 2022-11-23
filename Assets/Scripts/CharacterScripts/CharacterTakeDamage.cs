@@ -20,10 +20,10 @@ public class CharacterTakeDamage : MonoBehaviour
     }
     public void TakeDamage(Transform enemy)
     {
-        Debug.Log("Damage Taken");
         animator.SetBool("DamageTaken", true);
         characterStats.Health -= enemy.GetComponent<CharacterStats>().CalcDamageAgainst(characterStats, enemy.GetComponent<SkillStats>());
-        animator.SetFloat("Health", characterStats.Health / characterStats.MaxHealth);
+        Debug.Log(characterStats.Health);
+        animator.SetBool("isDead", characterStats.Health <= 0f);
         StartCoroutine("WaitForAnimationToFinish");
     }
 }

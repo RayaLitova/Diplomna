@@ -24,15 +24,13 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         GetComponent<EnemyAttack>().FinishExecution();
 
         if (GetCurrentRoom.CheckRooms(character) == GetCurrentRoom.CheckRooms(transform))
-        {
             agent.SetDestination(character.position);
-            
-        }
         else
             agent.SetDestination(startPosition);
 
         if (Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
+            transform.LookAt(character.position);
             GetComponent<EnemyAttack>().StartExecution();
             attackTime = Time.time + 2f;
         }

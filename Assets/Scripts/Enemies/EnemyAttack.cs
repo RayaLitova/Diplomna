@@ -18,7 +18,6 @@ public class EnemyAttack : MonoBehaviour
     {
         particles.gameObject.SetActive(true);
         animator.SetBool("isAttacking", true);
-        Debug.Log("Start execution");
     }
 
     public void FinishExecution()
@@ -26,6 +25,5 @@ public class EnemyAttack : MonoBehaviour
         particles.transform.localPosition = particlesStartPos;
         particles.gameObject.SetActive(false);
         animator.SetBool("isAttacking", false);
-        Debug.Log("Finish execution");
     }
 }
