@@ -9,7 +9,7 @@ public class SkillExecution : MonoBehaviour
 {
     private Vector3 spherePosition;
     private float sphereRadius;
-    public void ExecuteSkill()
+    public void ExecuteSkill() //to do: finish auto aim
     {
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position;
@@ -18,7 +18,7 @@ public class SkillExecution : MonoBehaviour
         if (colliders.Length == 0)
         {
             Debug.Log("Start second priority search");
-            spherePosition = transform.position + Vector3.right * ((transform.position.x - character.position.x) / 2);
+            spherePosition = transform.position + Vector3.left * ((transform.position.x - character.position.x) / 2);
             sphereRadius = ((transform.position.x - character.position.x) / 2) + GetComponent<CapsuleCollider>().radius / 8f;
             colliders = Physics.OverlapSphere(spherePosition, sphereRadius, LayerMask.GetMask("Enemies"));
             if (colliders.Length == 0)
@@ -50,7 +50,7 @@ public class SkillExecution : MonoBehaviour
             Debug.Log(UI_skillsManage.GetCurrentSkillInfo().effectFlags.Length);
             colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(colliders[0]);
             UI_skillsManage.GetCurrentSkillEffects().ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, colliders[0]);
-        }
+        } 
     }
 
     void OnDrawGizmos()

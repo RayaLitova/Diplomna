@@ -21,7 +21,7 @@ public class UI_skillsManage : MonoBehaviour
 
     private void Awake()
     {
-        SkillSlotAnchoredPosition = new Dictionary<string, Vector3>() {
+        SkillSlotAnchoredPosition = new Dictionary<string, Vector3>() { 
             { "Action key 1", skillSlotTransform[0].anchoredPosition },
             { "Action key 2", skillSlotTransform[1].anchoredPosition },
             { "Action key 3", skillSlotTransform[2].anchoredPosition },
@@ -120,7 +120,7 @@ public class UI_skillsManage : MonoBehaviour
         return Skills[lastSkillExecuted];
     }
 
-    public string getClosestSkillSlot(Vector3 skillPosition)
+    public string getClosestSkillSlot(Vector3 skillPosition) // for skill position change
     {
         float min = 5.0f;
         string returnValue = null;
