@@ -8,7 +8,7 @@ public class SkillEffects : MonoBehaviour
     public static string[] effects;
 
     private static Collider enemyCollider;
-    private static IEnumerator Burn()
+    private IEnumerator Burn()
     {
         Debug.Log("Burn called");
         for (int i = 0; i < 3; i++)
@@ -17,7 +17,7 @@ public class SkillEffects : MonoBehaviour
             yield return new WaitForSeconds(3f);
         }
     }
-    private static IEnumerator AOE()
+    private IEnumerator AOE()
     {
         Debug.Log("AOE CALL");
         yield return null;
