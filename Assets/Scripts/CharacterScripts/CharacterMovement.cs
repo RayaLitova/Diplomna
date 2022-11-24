@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Cursor.lockState == CursorLockMode.None)
+        if (Cursor.lockState == CursorLockMode.None) // disable movement on alt press / application unfocused
         {
             animator.SetBool("Dash", false);
             animator.SetBool("isMoving", false);
@@ -47,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
             return;
 
         }
-        if (isImmobilized)
+        if (isImmobilized) // disable movement whem immobilized
             return;
 
         camera.GetComponent<CinemachineBrain>().enabled = true;
@@ -65,7 +65,7 @@ public class CharacterMovement : MonoBehaviour
 
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
-        int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1;
+        int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1; // fix double speed on diagonal movement
 
         moveDirection = new Vector3(moveX, 0, moveZ);
         moveDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * moveDirection;//rotate towards camera
@@ -73,19 +73,19 @@ public class CharacterMovement : MonoBehaviour
 
         float magnitude = Mathf.Clamp01(moveDirection.magnitude);
 
-        controller.Move(moveDirection * magnitude);
+        controller.Move(moveDirection * magnitude); // move character
 
         if (moveDirection != Vector3.zero)
         {
-            Vector3 rotationDirection = new Vector3(-moveZ, 0, moveX);
-            rotationDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * rotationDirection;
+            Vector3 rotationDirection = new Vector3(-moveZ, 0, moveX); // rotate towards movement direction
+            rotationDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * rotationDirection; // rotate to match camera
             rotationDirection.Normalize();
             Quaternion toRotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
         }
         if (moveDirection != Vector3.zero && !isGrounded)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashCooldownTimer)
+            if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashCooldownTimer) // dash
             {
                 animator.SetBool("Dash", true);
                 moveDirection *= dashSpeed / isDiagonal;
@@ -94,7 +94,7 @@ public class CharacterMovement : MonoBehaviour
                 targetDashTimer = Time.fixedTime + animator.GetCurrentAnimatorStateInfo(0).length / 3; // dash animation length 
                 return;
             }
-            else
+            else // run
             {
                 animator.SetBool("isMoving", true);
                 moveDirection *= animator.GetBool("isInCombat") ? runSpeed / isDiagonal : walkSpeed / isDiagonal;
@@ -102,13 +102,13 @@ public class CharacterMovement : MonoBehaviour
                 controller.Move(moveDirection);
             }
         }
-        else
+        else // idle
         {
             animator.SetBool("isMoving", false);
         }
 
         moveDirection = Vector3.zero;
-        moveDirection.y += gravity;
+        moveDirection.y += gravity; // handle gravity
         controller.Move(moveDirection);
     }
 
