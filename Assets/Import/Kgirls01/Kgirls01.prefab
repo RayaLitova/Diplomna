@@ -1504,7 +1504,7 @@ CharacterController:
   m_Height: 177.8097
   m_Radius: 36.39
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.5
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 2.432131, y: -104.104, z: 10.51859}
@@ -1580,14 +1580,12 @@ MonoBehaviour:
   MaxHealth: 100
   Health: 100
   HealthRegen: 0.3
-  Mana: 100
-  MaxMana: 100
-  ManaRegen: 0.5
   ATK: 10
   DEF: 5
   Crit: 10
   Agility: 15
   MissChance: 7
+  HealthBar: {fileID: 0}
 --- !u!114 &41684792598591108
 MonoBehaviour:
   m_ObjectHideFlags: 0
