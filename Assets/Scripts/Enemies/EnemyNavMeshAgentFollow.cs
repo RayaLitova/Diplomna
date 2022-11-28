@@ -10,6 +10,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
     private Vector3 startPosition;
     private float attackTime;
+    private float attackCooldown = 0f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -28,11 +29,12 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         else
             agent.SetDestination(startPosition);
 
-        if (Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
+        if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
             transform.LookAt(character.position);
             GetComponent<EnemyAttack>().StartExecution();
             attackTime = Time.time + 2f;
+            attackCooldown = Time.time + 5f;
         }
     }
 }
