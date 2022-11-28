@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 00239cb1b3aaeb04eb474ae5b856d3f1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 6a8b549e9397301429ad7d28d643a666, type: 2}
 --- !u!1 &9867717
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +529,55 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1001 &77593806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558096, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558103, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_Name
+      value: Dungeon_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991655823837558103, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61510e8335e6d3640811745d4a7cbc02, type: 3}
 --- !u!1 &209737924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609011, guid: 5d257b99e9d945b44b02a656b225b6f8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609011, guid: 5d257b99e9d945b44b02a656b225b6f8, type: 3}
       propertyPath: m_TagString
@@ -5757,7 +5806,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255757407}
-  m_LocalRotation: {x: -0.1776035, y: -0.15001614, z: 0.10346468, w: 0.9670818}
+  m_LocalRotation: {x: -0.17760348, y: -0.15001614, z: 0.10346466, w: 0.96708184}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7100,6 +7149,10 @@ PrefabInstance:
     - target: {fileID: 120756293145255556, guid: 27bfb7cb4d25e1b4c91bb1db4653d4b5, type: 3}
       propertyPath: m_Name
       value: Dungeon_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120756293145255556, guid: 27bfb7cb4d25e1b4c91bb1db4653d4b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27bfb7cb4d25e1b4c91bb1db4653d4b5, type: 3}
