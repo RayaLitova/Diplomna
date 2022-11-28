@@ -7,6 +7,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 {
     private NavMeshAgent agent;
     [SerializeField] private Transform character;
+    [SerializeField] private GetCurrentRoom rooms;
 
     private Vector3 startPosition;
     private float attackTime;
@@ -23,12 +24,11 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             return;
 
         GetComponent<EnemyAttack>().FinishExecution();
-
-        if (GetCurrentRoom.CheckRooms(character) == GetCurrentRoom.CheckRooms(transform))
+        if (rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
             agent.SetDestination(character.position);
         else
             agent.SetDestination(startPosition);
-
+        Debug.Log(attackCooldown);
         if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
             transform.LookAt(character.position);

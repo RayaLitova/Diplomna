@@ -11,7 +11,7 @@ public class GetCurrentRoom : MonoBehaviour
         rooms = transform;
     }
 
-    public static string CheckRooms(Transform target)
+    public string CheckRooms(Transform target)
     {
         foreach (Transform room in rooms)
         {

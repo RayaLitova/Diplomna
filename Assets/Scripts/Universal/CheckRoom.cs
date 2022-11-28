@@ -13,6 +13,7 @@ public class CheckRoom : MonoBehaviour
     {
         if (other.tag != "BackgroundObjects" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
+            Debug.Log(other.tag);
             ObjectsInRoom[objectCount] = other.transform;
             objectCount++;
         }
