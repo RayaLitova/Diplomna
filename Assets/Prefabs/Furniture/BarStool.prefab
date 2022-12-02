@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4000012116079394}
   - component: {fileID: 33000013572123420}
   - component: {fileID: 23000012612847776}
-  - component: {fileID: 64000012215447058}
   m_Layer: 0
   m_Name: trn_BarStool
   m_TagString: Untagged
@@ -116,17 +115,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64000012215447058
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013607770928}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: aa775f43b5c4d7e40bf2fc8ec2e5fee4, type: 3}
