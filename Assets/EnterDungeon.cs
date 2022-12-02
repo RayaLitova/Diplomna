@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitDungeon : InteractAction
+public class EnterDungeon : InteractAction
 {
     public override void Action()
     {
-        SceneManager.LoadScene("CityScene");
+        SceneManager.LoadScene("DungeonScene");
     }
 }
