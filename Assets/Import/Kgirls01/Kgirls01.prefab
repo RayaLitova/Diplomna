@@ -1018,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4166978270538980753}
   - component: {fileID: 6053969323478282172}
+  - component: {fileID: 5347696422777804081}
   m_Layer: 0
   m_Name: CharacterInteract
   m_TagString: Untagged
@@ -1053,6 +1054,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.50000006
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5347696422777804081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421203666130458836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae96586e68946754dbed5dc592ff9617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5004739560812753600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1495,6 @@ GameObject:
   - component: {fileID: 1690002759071039921}
   - component: {fileID: 41684792598591108}
   - component: {fileID: 6389702474909131642}
-  - component: {fileID: 3573800306264259417}
   m_Layer: 0
   m_Name: Kgirls01
   m_TagString: Untagged
@@ -1655,18 +1667,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b65c54dd4daec6b4d9cccfa5594e7e6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3573800306264259417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385737107661046707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae96586e68946754dbed5dc592ff9617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7442845272095363081

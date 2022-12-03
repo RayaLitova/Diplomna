@@ -7,13 +7,25 @@ public class Interact : MonoBehaviour
     private bool interactEnabled = false;
     private InteractAction action;
 
-    private void Update()
+    private void Start()
     {
-        if (interactEnabled)
+        StartCoroutine("CheckForInteraction");
+    }
+
+    private IEnumerator CheckForInteraction()
+    {
+        while (true)
         {
-            if (Input.GetKeyDown(KeyCode.F))
-                action.Action();
-            
+            if (interactEnabled)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    Debug.Log(gameObject.name);
+                    action.Action();
+                    yield return new WaitForSeconds(3f);
+                }
+            }
+            yield return null;
         }
     }
     private void OnTriggerEnter(Collider other)
