@@ -6,14 +6,13 @@ using System.Linq;
 
 public class CheckRoom : MonoBehaviour
 {
-    private Transform[] ObjectsInRoom = new Transform[10];
+    private Transform[] ObjectsInRoom = new Transform[20];
     private int objectCount = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "BackgroundObjects" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
-            Debug.Log(other.tag);
             ObjectsInRoom[objectCount] = other.transform;
             objectCount++;
         }
@@ -32,6 +31,17 @@ public class CheckRoom : MonoBehaviour
         if (ObjectsInRoom.Contains(target))
             return true;
         return false;
+    }
+
+    public int GetNumberOfTags(string searchedTag)
+    {
+        int count = 0;
+        foreach (Transform curr in ObjectsInRoom)
+        {
+            if (curr != null && curr.tag == searchedTag)
+                count++;
+        }
+        return count;
     }
     
 }

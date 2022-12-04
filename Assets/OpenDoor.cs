@@ -13,7 +13,6 @@ public class OpenDoor : InteractAction
     }
     public override void Action()
     {
-        Debug.Log("Action");
         animator.SetBool("openDoor", !isDoorOpened);
         animator.SetBool("closeDoor", isDoorOpened);
         isDoorOpened = !isDoorOpened;

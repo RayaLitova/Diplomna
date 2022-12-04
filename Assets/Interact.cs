@@ -20,7 +20,6 @@ public class Interact : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Debug.Log(gameObject.name);
                     action.Action();
                     yield return new WaitForSeconds(3f);
                 }

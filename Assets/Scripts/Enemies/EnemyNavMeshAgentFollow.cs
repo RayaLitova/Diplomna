@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class EnemyNavMeshAgentFollow : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private Transform character;
-    [SerializeField] private GetCurrentRoom rooms;
+    private Transform character;
+    private GetCurrentRoom rooms;
 
     private Vector3 startPosition;
     private float attackTime;
@@ -15,6 +15,8 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        character = GameObject.Find("Kgirls01").transform;
+        rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();
         startPosition = transform.position;
     }
 
@@ -28,7 +30,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             agent.SetDestination(character.position);
         else
             agent.SetDestination(startPosition);
-        Debug.Log(attackCooldown);
+
         if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
             transform.LookAt(character.position);

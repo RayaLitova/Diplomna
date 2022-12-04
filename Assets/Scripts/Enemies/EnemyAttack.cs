@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] Transform particles;
+    Transform particles;
     private Vector3 particlesStartPos;
 
     private Animator animator;
     private void Start()
     {
+        particles = transform.Find("VoidBall_particles");
         animator = GetComponent<Animator>();
         particlesStartPos = particles.localPosition;
     }
