@@ -47,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
             return;
 
         }
-        if (isImmobilized) // disable movement whem immobilized
+        if (isImmobilized) // disable movement when immobilized
             return;
 
         camera.GetComponent<CinemachineBrain>().enabled = true;
