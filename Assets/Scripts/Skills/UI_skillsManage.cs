@@ -122,7 +122,7 @@ public class UI_skillsManage : MonoBehaviour
 
     public string getClosestSkillSlot(Vector3 skillPosition) // for skill position change
     {
-        float min = 5.0f;
+        float min = 115.0f;
         string returnValue = null;
         float tmp = Vector3.Distance(skillPosition, skillSlotTransform[0].position);
         if (tmp < min)
@@ -139,6 +139,7 @@ public class UI_skillsManage : MonoBehaviour
         tmp = Vector3.Distance(skillPosition, skillSlotTransform[2].position);
         if (tmp < min)
             returnValue = "Action key 3";
+        
         return returnValue;
     }
 

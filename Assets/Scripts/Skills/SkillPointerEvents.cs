@@ -22,7 +22,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         {
             Vector3 position = Input.mousePosition;
             position.z = 100.0f; //plane to camera distance
-            transform.position = Camera.main.ScreenToWorldPoint(position);
+            transform.position = position;//Camera.main.ScreenToWorldPoint(position);
 
         }
     }
