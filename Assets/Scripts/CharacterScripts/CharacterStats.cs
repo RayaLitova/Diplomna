@@ -15,17 +15,28 @@ public class CharacterStats : MonoBehaviour
     public int Agility;
     public int MissChance;
 
+    public int bonusATK;
+    public int bonusDEF;
+    public int bonusCrit;
+    public int bonusAgility;
+    public int healing;
+
+    public bool isBuffed = false;
+
+
     [SerializeField] private Image HealthBar = null;
 
     private float lastTime = 0.0f;
 
+    
+
     public int CalcDamageAgainst(CharacterStats enemy, SkillStats skill)
     {
-        if (Random.Range(0, 100) <= MissChance + skill.missChance + enemy.Agility)
+        if (Random.Range(0, 100) <= MissChance + skill.missChance + enemy.getAgility())
             return 0;
 
-        int damage = ATK + skill.damage + (Random.Range(0, 100) <= Crit + skill.crit ? ATK + skill.damage : 0);
-        damage -= (int)((damage / 100.0f) * enemy.DEF);
+        int damage = getATK() + skill.damage + (Random.Range(0, 100) <= getCrit() + skill.crit ? getATK() + skill.damage : 0);
+        damage -= (int)((damage / 100.0f) * enemy.getDEF());
         
         return damage;
     }
@@ -40,4 +51,37 @@ public class CharacterStats : MonoBehaviour
         lastTime = Time.time;
         Health = Mathf.Min(MaxHealth, Health + HealthRegen);
     }
+
+    public void ResetBuffs()
+    {
+        Debug.Log("Buff reset");
+        isBuffed = false;
+        bonusCrit = 0;
+        bonusAgility = 0;
+        bonusATK = 0;
+        bonusDEF = 0;
+        healing = 0;
+    }
+
+    public int getATK()
+    {
+        Debug.Log(ATK + bonusATK);
+        return ATK + bonusATK;
+    }
+
+    public int getAgility()
+    {
+        return Agility + bonusAgility;
+    }
+
+    public int getCrit()
+    {
+        return Crit + bonusCrit;
+    }
+
+    public int getDEF()
+    {
+        return DEF + bonusDEF;
+    }
+
 }

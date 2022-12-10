@@ -22,11 +22,11 @@ public class EnemyTakeDamage : MonoBehaviour
             return;
         animationController.takeDamageAnimation(false);
     }
-    public void TakeDamage(Collider collider)
+    public void TakeDamage(CharacterStats enemyStats)
     {
         animationTimer = Time.fixedTime + 1.0f;
         animationController.takeDamageAnimation(true);
-        stats.Health -= collider.transform.GetComponent<CharacterStats>().CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
+        stats.Health -= enemyStats.CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
         if (stats.Health <= 0)
             animationController.deathAnimation(true);
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();

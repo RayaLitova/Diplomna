@@ -7,7 +7,7 @@ public class SkillExecution : MonoBehaviour
 {
     private Vector3 spherePosition;//for auto aim
     private float sphereRadius;
-    public void ExecuteSkill()
+    public virtual void ExecuteSkill()
     {
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position; //setup sphere position
@@ -20,7 +20,7 @@ public class SkillExecution : MonoBehaviour
             colliders = Physics.OverlapSphere(spherePosition, sphereRadius, LayerMask.GetMask("Enemies")); 
             if (colliders.Length == 0)
             {
-                spherePosition = character.position; // plache sphere to third priority
+                spherePosition = character.position; // place sphere to third priority
                 sphereRadius = ((transform.position.x - character.position.x)) + GetComponent<CapsuleCollider>().radius / 8f; // change radius
                 colliders = Physics.OverlapSphere(spherePosition, sphereRadius, LayerMask.GetMask("Enemies"));
                 if (colliders.Length == 0)
@@ -32,14 +32,14 @@ public class SkillExecution : MonoBehaviour
         {
             foreach (Collider collider in colliders)
             {
-                collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(collider);
+                collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());
                 UI_skillsManage.GetCurrentSkillEffects().ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, collider);
             }
         }
         else // hit one enemy
         {
-            colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(colliders[0]);
+            colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());
             UI_skillsManage.GetCurrentSkillEffects().ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, colliders[0]);
-        } 
+        }
     }
 }

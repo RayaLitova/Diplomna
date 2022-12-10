@@ -42,7 +42,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
         string key = skillsUi.getClosestSkillSlot(transform.position);
-        string oldKey = UI_skillsManage.SkillsTemp.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Info>())
+        string oldKey = UI_skillsManage.SkillsTemp.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Execution>())
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
         if (key == null)
         {
@@ -64,7 +64,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         if(from != null)
             UI_skillsManage.SkillsTemp[from] = null;
         rectTransform.anchoredPosition = skillsUi.SkillSlotAnchoredPosition[to];
-        UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Info>();
+        UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
         if (UI_skillsManage.SkillsTemp[to] != null)
             UI_skillsManage.SkillsTemp[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, to);
         UI_skillsManage.SkillsTemp[to] = UI_skillsManage.Skills[to];

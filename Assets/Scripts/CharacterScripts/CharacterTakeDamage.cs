@@ -28,7 +28,6 @@ public class CharacterTakeDamage : MonoBehaviour
         animator.SetBool("DamageTaken", true);
         CharacterMovement.isImmobilized = true;
         characterStats.Health -= enemy.GetComponent<CharacterStats>().CalcDamageAgainst(characterStats, enemy.GetComponent<SkillStats>());
-        Debug.Log(characterStats.Health);
         animator.SetBool("isDead", characterStats.Health <= 0f);
         StartCoroutine("WaitForAnimationToFinish");
     }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4446863749196631173}
   - component: {fileID: 4455471651749847462}
   - component: {fileID: 4757353762709247229}
+  - component: {fileID: 8415081801847502702}
   m_Layer: 5
   m_Name: FirePunch
   m_TagString: Untagged
@@ -94,11 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillName: Fire Punch
-  cost: 0
-  cooldown: 5
-  description: Creates a fire around the hero's fist punching enemies and dealing
-    massive single target damage.
-  skillTime: 0.6
   fileName: 
   keyBinding: Action key 1
 --- !u!114 &4446863749196631173
@@ -142,6 +138,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
+--- !u!114 &8415081801847502702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411766693991591850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba873af7e2c8864ebc96d27f7b17c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: Fire Punch
+  cooldown: 1
+  description: 
+  skillTime: 0.6
+  skillType: damage
+  fileName: 
 --- !u!1 &9101125369537600757
 GameObject:
   m_ObjectHideFlags: 0

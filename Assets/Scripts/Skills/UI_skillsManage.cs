@@ -7,8 +7,8 @@ public class UI_skillsManage : MonoBehaviour
 {
     public static Dictionary<string, KeyCode> keyCodes;
 
-    public static Dictionary<string, UI_Skill_Info> Skills;
-    public static Dictionary<string, UI_Skill_Info> SkillsTemp;
+    public static Dictionary<string, UI_Skill_Execution> Skills;
+    public static Dictionary<string, UI_Skill_Execution> SkillsTemp;
 
     public static int SkillAnimationCount = 6;
     public static Dictionary<string, int> SkillAnimationIndex;
@@ -31,16 +31,17 @@ public class UI_skillsManage : MonoBehaviour
         {
             {"FirePunch", 0},
             {"InfernalPunch", 1},
+            {"Buff", 2},
         };
 
-        Skills = new Dictionary<string, UI_Skill_Info>()
+        Skills = new Dictionary<string, UI_Skill_Execution>()
         {
             {"Action key 1", null},
             {"Action key 2", null},
             {"Action key 3", null},
         };
 
-        SkillsTemp = new Dictionary<string, UI_Skill_Info>()
+        SkillsTemp = new Dictionary<string, UI_Skill_Execution>()
         {
             {"Action key 1", null},
             {"Action key 2", null},
@@ -106,14 +107,14 @@ public class UI_skillsManage : MonoBehaviour
         return Skills[skillExecuted].gameObject.GetComponent<SkillStats>();
     }
 
-    public static UI_Skill_Info GetCurrentUIskillInfo()
+    public static UI_Skill_Execution GetCurrentUIskillInfo()
     {
         if (skillExecuted == null)
             return null;
         return Skills[skillExecuted]; 
     }
 
-    public static UI_Skill_Info GetLastUIskillInfo()
+    public static UI_Skill_Execution GetLastUIskillInfo()
     {
         if (lastSkillExecuted == null)
             return null;
