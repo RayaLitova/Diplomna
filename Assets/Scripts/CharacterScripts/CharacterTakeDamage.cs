@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterTakeDamage : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class CharacterTakeDamage : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         CharacterMovement.isImmobilized = false;
         animator.SetBool("DamageTaken", false);
+        if (characterStats.Health <= 0f)
+            SceneManager.LoadScene("CityScene");
     }
     public void TakeDamage(Transform enemy)
     {

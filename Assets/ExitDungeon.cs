@@ -7,6 +7,8 @@ public class ExitDungeon : InteractAction
 {
     public override void Action()
     {
+        if (StaticFunctions.dungeonLevel == 1)
+            Debug.Log("GAME OVER");
         SceneManager.LoadScene("CityScene");
     }
 }

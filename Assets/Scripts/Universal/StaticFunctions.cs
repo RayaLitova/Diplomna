@@ -7,6 +7,7 @@ using System;
 
 public static class StaticFunctions
 {
+    public static int dungeonLevel = 0;
     public static string RemoveWhitespace(this string input)
     {
         return new string(input.ToCharArray()
