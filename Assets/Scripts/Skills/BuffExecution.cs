@@ -12,7 +12,6 @@ public class BuffExecution : SkillExecution
     }
     override public void ExecuteSkill()
     {
-        Debug.Log("Buff called");
         characterStats.isBuffed = true;
         characterStats.bonusATK = 10;
         characterStats.healing = 15;

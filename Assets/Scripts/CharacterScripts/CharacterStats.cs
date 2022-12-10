@@ -54,7 +54,6 @@ public class CharacterStats : MonoBehaviour
 
     public void ResetBuffs()
     {
-        Debug.Log("Buff reset");
         isBuffed = false;
         bonusCrit = 0;
         bonusAgility = 0;
@@ -65,7 +64,6 @@ public class CharacterStats : MonoBehaviour
 
     public int getATK()
     {
-        Debug.Log(ATK + bonusATK);
         return ATK + bonusATK;
     }
 
