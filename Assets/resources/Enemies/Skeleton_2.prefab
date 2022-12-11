@@ -2308,8 +2308,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4860190980791512}
   - component: {fileID: 95301192991383472}
+  - component: {fileID: 4734006626958824909}
+  - component: {fileID: 1715656230482006918}
   m_Layer: 0
-  m_Name: SkeletonOutlaw_NoArmor - LOD0
+  m_Name: Skeleton_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2354,6 +2356,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &4734006626958824909
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849936960482616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33296522
+  m_Height: 1.9631262
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95392084, z: 0.0035834312}
+--- !u!54 &1715656230482006918
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849936960482616}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1 &1851628079018304
 GameObject:
   m_ObjectHideFlags: 0

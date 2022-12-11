@@ -1271,6 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe8ea5adc1fbe64aa61c29347262a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlesName: VoidBall_particles
 --- !u!114 &3796356789262632322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitAnimationVar: isPushed
   deathAnimationVar: isDead
+  attackAnimationVar: isAttacking
 --- !u!114 &5710304036882941469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,6 +1307,12 @@ MonoBehaviour:
   Crit: 34
   Agility: 2
   MissChance: 1
+  bonusATK: 0
+  bonusDEF: 0
+  bonusCrit: 0
+  bonusAgility: 0
+  healing: 0
+  isBuffed: 0
   HealthBar: {fileID: 0}
 --- !u!114 &7904365153826196723
 MonoBehaviour:

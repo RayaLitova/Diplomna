@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
 {
-    private Animator animator;
     private float animationTimer;
     private CharacterStats stats;
     private EnemyAnimationController animationController;
@@ -12,7 +11,6 @@ public class EnemyTakeDamage : MonoBehaviour
     private void Start()
     {
         stats = GetComponent<CharacterStats>();
-        animator = GetComponent<Animator>();
         animationController = GetComponent<EnemyAnimationController>();
     }
 

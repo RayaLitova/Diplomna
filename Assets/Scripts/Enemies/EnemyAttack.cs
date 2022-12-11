@@ -6,25 +6,26 @@ public class EnemyAttack : MonoBehaviour
 {
     Transform particles;
     private Vector3 particlesStartPos;
+    private EnemyAnimationController animationController;
+    [SerializeField] string particlesName;
 
-    private Animator animator;
     private void Start()
     {
-        particles = transform.Find("VoidBall_particles");
-        animator = GetComponent<Animator>();
+        particles = transform.Find(particlesName);
         particlesStartPos = particles.localPosition;
+        animationController = GetComponent<EnemyAnimationController>();
     }
     
     public void StartExecution()
     {
         particles.gameObject.SetActive(true);
-        animator.SetBool("isAttacking", true);
+        animationController.AttackAnimation(true);
     }
 
     public void FinishExecution()
     {
         particles.transform.localPosition = particlesStartPos;
         particles.gameObject.SetActive(false);
-        animator.SetBool("isAttacking", false);
+        animationController.AttackAnimation(false);
     }
 }

@@ -15,13 +15,13 @@ public class CharacterStats : MonoBehaviour
     public int Agility;
     public int MissChance;
 
-    public int bonusATK;
-    public int bonusDEF;
-    public int bonusCrit;
-    public int bonusAgility;
-    public int healing;
+    [System.NonSerialized] public int bonusATK;
+    [System.NonSerialized] public int bonusDEF;
+    [System.NonSerialized] public int bonusCrit;
+    [System.NonSerialized] public int bonusAgility;
+    [System.NonSerialized] public int healing;
 
-    public bool isBuffed = false;
+    [System.NonSerialized] public bool isBuffed = false;
 
 
     [SerializeField] private Image HealthBar = null;
