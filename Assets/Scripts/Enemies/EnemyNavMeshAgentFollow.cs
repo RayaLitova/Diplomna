@@ -26,15 +26,14 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             return;
 
         GetComponent<EnemyAttack>().FinishExecution();
-        
-        
+
         if (rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
             agent.SetDestination(character.position);
         else
-            if( transform.position != startPosition ) 
+            if(Vector3.Distance(startPosition, transform.position) > agent.stoppingDistance) 
                 agent.SetDestination(startPosition);
 
-        if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
+        if (Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
             transform.LookAt(character.position);
             GetComponent<EnemyAttack>().StartExecution();
