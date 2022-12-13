@@ -6652,13 +6652,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3055775033351575633, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609011, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_Name
       value: Dungeon_3
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609011, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609012, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_RootOrder
@@ -6666,15 +6670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609012, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -344.475
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609012, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -94.73623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609012, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 146.30177
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6136279811240609012, guid: 76465f80340fe664bb0d0d9c4125fc08, type: 3}
       propertyPath: m_LocalRotation.w
