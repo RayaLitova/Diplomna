@@ -27,7 +27,7 @@ public class SkeletonAnimationController : EnemyAnimationController
 
     public override void deathAnimation(bool isActive)
     {
-        base.AttackAnimation(isActive);
+        base.deathAnimation(isActive);
         if (isActive)
             animator.SetFloat(deathAnimationNumberVar, (1 / deathAnimationCount) * Random.Range(0, deathAnimationCount + 1));
 
@@ -35,7 +35,7 @@ public class SkeletonAnimationController : EnemyAnimationController
 
     public override void takeDamageAnimation(bool isActive)
     {
-        base.AttackAnimation(isActive);
+        base.takeDamageAnimation(isActive);
         if (isActive)
             animator.SetFloat(hitAnimationNumberVar, (1 / hitAnimationCount) * Random.Range(0, hitAnimationCount + 1));
     }
