@@ -12,6 +12,8 @@ public class SkeletonAnimationController : EnemyAnimationController
 
     [SerializeField] string attackAnimationNumberVar;
     [SerializeField] int attackAnimationCount;
+
+    [SerializeField] int rage = 0; 
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -45,6 +47,11 @@ public class SkeletonAnimationController : EnemyAnimationController
         base.AttackAnimation(isActive);
         if (isActive)
             animator.SetFloat(attackAnimationNumberVar, (1 / attackAnimationCount) * Random.Range(0, attackAnimationCount + 1));
+    }
 
+    public override void WalkAnimation(bool isActive)
+    {
+        base.WalkAnimation(isActive);
+        animator.SetFloat("Rage", rage / 100);
     }
 }

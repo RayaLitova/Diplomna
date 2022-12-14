@@ -12,9 +12,12 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     private Vector3 startPosition;
     private float attackTime;
     private float attackCooldown = 0f;
+
+    private EnemyAnimationController animationController;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        animationController = GetComponent<EnemyAnimationController>();
         character = GameObject.Find("Kgirls01").transform;
         rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();
         startPosition = transform.position;
@@ -28,17 +31,25 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         GetComponent<EnemyAttack>().FinishExecution();
 
         if (rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
-            agent.SetDestination(character.position);
-        else
-            if(Vector3.Distance(startPosition, transform.position) > agent.stoppingDistance) 
-                agent.SetDestination(startPosition);
-
-        if (Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
         {
+            agent.SetDestination(character.position);
+            animationController.WalkAnimation(true);
+        }
+        else
+        {
+            if (Vector3.Distance(startPosition, transform.position) < agent.stoppingDistance)
+                return;
+            agent.SetDestination(startPosition);
+            animationController.WalkAnimation(true);
+        }
+
+        if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= agent.stoppingDistance)
+        {
+            animationController.WalkAnimation(false);
             transform.LookAt(character.position);
             GetComponent<EnemyAttack>().StartExecution();
             attackTime = Time.time + 2f;
-            attackCooldown = Time.time + 5f;
+            attackCooldown = Time.time + 3f;
         }
     }
 }

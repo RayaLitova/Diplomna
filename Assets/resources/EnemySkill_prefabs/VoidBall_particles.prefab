@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 7732503300736285469}
   - component: {fileID: 7732503300736285470}
   - component: {fileID: 7732503300736285471}
+  - component: {fileID: 2635459633776632054}
+  - component: {fileID: 7974029026417625502}
+  - component: {fileID: 2803838518671062867}
+  - component: {fileID: 6035394925523682689}
   m_Layer: 6
   m_Name: VoidBall_particles
   m_TagString: Untagged
@@ -4756,6 +4760,60 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2635459633776632054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732503300736285466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d69b580310bf4542a0acec108a1808a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7974029026417625502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732503300736285466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71072af0877d2354186c54b758589a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &2803838518671062867
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732503300736285466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 28.400005
+  m_Height: 56.80001
+  m_Direction: 1
+  m_Center: {x: -0.0000009536743, y: 0, z: 0}
+--- !u!54 &6035394925523682689
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732503300736285466}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7732503301663349439
 GameObject:
   m_ObjectHideFlags: 0

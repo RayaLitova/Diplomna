@@ -8,6 +8,7 @@ public class EnemyAnimationController : MonoBehaviour
     [SerializeField] protected string hitAnimationVar;
     [SerializeField] protected string deathAnimationVar;
     [SerializeField] protected string attackAnimationVar;
+    [SerializeField] protected string walkAnimationVar = "";
 
     private void Start()
     {
@@ -25,5 +26,11 @@ public class EnemyAnimationController : MonoBehaviour
     public virtual void AttackAnimation(bool isActive)
     {
         animator.SetBool(attackAnimationVar, isActive);
+    }
+
+    public virtual void WalkAnimation(bool isActive)
+    {
+        if(walkAnimationVar != "")
+            animator.SetBool(walkAnimationVar, isActive);
     }
 }
