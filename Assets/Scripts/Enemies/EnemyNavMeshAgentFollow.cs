@@ -30,16 +30,18 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
         GetComponent<EnemyAttack>().FinishExecution();
 
-        if (rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
+        if (Vector3.Distance(character.position, transform.position) > agent.stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
         {
-            agent.SetDestination(character.position);
+            //agent.SetDestination(character.position);
+            transform.position = Vector3.MoveTowards(transform.position, character.position, 1f);
             animationController.WalkAnimation(true);
         }
         else
         {
             if (Vector3.Distance(startPosition, transform.position) < agent.stoppingDistance)
                 return;
-            agent.SetDestination(startPosition);
+            //agent.SetDestination(startPosition);
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, 1f);
             animationController.WalkAnimation(true);
         }
 
