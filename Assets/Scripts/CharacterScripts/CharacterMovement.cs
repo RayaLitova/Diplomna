@@ -9,107 +9,114 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float rotationSpeed;
 
-    [SerializeField] private CharacterController controller;
     [SerializeField] private Transform mainCamera;
 
-    private Vector3 moveDirection;
+    private CharacterAnimationController animationController;
+    private CharacterController controller;
 
-    private Animator animator;
-
-    private float targetDashTimer = 0.0f;
-    private float targetDashCooldownTimer = 0.0f;
+    private float dashEndTime = 0.0f;
+    private float dashCooldownEndTime = 0.0f;
     private float dashCooldown = 3.0f;
 
-    private bool isGrounded;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
 
     private float moveX;
     private float moveZ;
-    private bool isInCombat = true;
+    private Vector3 moveDirection;
 
     public static bool isImmobilized = false;
 
     private void Start()
     {
-        controller = transform.GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
-        animator.SetBool("isInCombat", isInCombat);
+        controller = GetComponent<CharacterController>();
+        animationController = GetComponent<CharacterAnimationController>();
+        animationController.SetIsInCombat(true);
+        isImmobilized = false;
     }
     private void FixedUpdate()
     {
-        if (Cursor.lockState == CursorLockMode.None) // disable movement on alt press / application unfocused
+        GravityHandler();
+
+        if (Cursor.lockState == CursorLockMode.None || isImmobilized) // disable movement on alt press / application unfocused
         {
-            animator.SetBool("Dash", false);
-            animator.SetBool("isMoving", false);
-            mainCamera.GetComponent<CinemachineBrain>().enabled = false;
+            Immobilize();
             return;
-
         }
-        if (isImmobilized) // disable movement when immobilized
-            return;
-
+        
         mainCamera.GetComponent<CinemachineBrain>().enabled = true;
 
-        if (Time.fixedTime < targetDashTimer) // dash animation
+        if (Time.fixedTime < dashEndTime) // disable movement while dashing
         {
             controller.Move(new Vector3(moveX, 0, moveZ) * dashSpeed);
             return;
         }
-        animator.SetBool("Dash", false);
+        animationController.SetDash(false);
+        MovementDirectionHandler();
 
-        isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundMask);//gravity check
-        if (isGrounded && moveDirection.y < 0)
-            moveDirection.y = -2.0f; //to avoid ground issues
+        if (moveDirection == Vector3.zero)
+        {
+            animationController.SetMove(false);
+            return;
+        }
+        
+        RotationHandler();
+        MoveHandler();//handles run/walk and dash
+        
+        
+    }
 
+    private void Immobilize()
+    {
+        animationController.SetDash(false);
+        animationController.SetMove(false);
+        mainCamera.GetComponent<CinemachineBrain>().enabled = false;
+    }
+
+    private void GravityHandler()
+    {
+        controller.Move(new Vector3(0, gravity, 0));
+    }
+
+    private void MovementDirectionHandler()
+    {
         moveX = Input.GetAxis("Horizontal");
         moveZ = Input.GetAxis("Vertical");
-        int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1; // fix double speed on diagonal movement
 
         moveDirection = new Vector3(moveX, 0, moveZ);
+        if (moveDirection == Vector3.zero)
+            return;
+
         moveDirection = Quaternion.AngleAxis(mainCamera.rotation.eulerAngles.y, Vector3.up) * moveDirection;//rotate towards camera
         moveDirection.Normalize();
+    }
 
-        float magnitude = Mathf.Clamp01(moveDirection.magnitude);
+    private void RotationHandler()
+    {
+        Vector3 rotationDirection = new Vector3(-moveZ, 0, moveX); // rotate towards movement direction
+        rotationDirection = Quaternion.AngleAxis(mainCamera.rotation.eulerAngles.y, Vector3.up) * rotationDirection; // rotate to match camera
+        rotationDirection.Normalize();
+        Quaternion toRotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
+    }
 
-        controller.Move(moveDirection * magnitude); // move character
-
-        if (moveDirection != Vector3.zero)
+    private void MoveHandler()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > dashCooldownEndTime) // dash
         {
-            Vector3 rotationDirection = new Vector3(-moveZ, 0, moveX); // rotate towards movement direction
-            rotationDirection = Quaternion.AngleAxis(mainCamera.rotation.eulerAngles.y, Vector3.up) * rotationDirection; // rotate to match camera
-            rotationDirection.Normalize();
-            Quaternion toRotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
+            animationController.SetDash(true);
+            moveDirection *= dashSpeed;
+            controller.Move(moveDirection);
+            dashCooldownEndTime = Time.fixedTime + dashCooldown;
+            dashEndTime = Time.fixedTime + animationController.GetCurrentAnimatorStateInfo().length / 3; // dash animation length 
         }
-        if (moveDirection != Vector3.zero && !isGrounded)
+        else // run
         {
-            if (Input.GetKey(KeyCode.LeftShift) && Time.fixedTime > targetDashCooldownTimer) // dash
-            {
-                animator.SetBool("Dash", true);
-                moveDirection *= dashSpeed / isDiagonal;
-                controller.Move(moveDirection);
-                targetDashCooldownTimer = Time.fixedTime + dashCooldown;
-                targetDashTimer = Time.fixedTime + animator.GetCurrentAnimatorStateInfo(0).length / 3; // dash animation length 
-                return;
-            }
-            else // run
-            {
-                animator.SetBool("isMoving", true);
-                moveDirection *= animator.GetBool("isInCombat") ? runSpeed / isDiagonal : walkSpeed / isDiagonal;
-                animator.SetFloat("MoveSpeed", animator.GetBool("isInCombat") ? 1 : 0);
-                controller.Move(moveDirection);
-            }
+            animationController.SetMove(true);
+            moveDirection *= animationController.GetIsInCombat() ? runSpeed : walkSpeed;
+            controller.Move(moveDirection);
         }
-        else // idle
-        {
-            animator.SetBool("isMoving", false);
-        }
-
-        moveDirection = Vector3.zero;
-        moveDirection.y += gravity; // handle gravity
-        controller.Move(moveDirection);
     }
 
 }
