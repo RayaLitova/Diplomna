@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
     [SerializeField] private CharacterController controller;
-    [SerializeField] private Transform camera;
+    [SerializeField] private Transform mainCamera;
 
     private Vector3 moveDirection;
 
@@ -43,14 +43,14 @@ public class CharacterMovement : MonoBehaviour
         {
             animator.SetBool("Dash", false);
             animator.SetBool("isMoving", false);
-            camera.GetComponent<CinemachineBrain>().enabled = false;
+            mainCamera.GetComponent<CinemachineBrain>().enabled = false;
             return;
 
         }
         if (isImmobilized) // disable movement when immobilized
             return;
 
-        camera.GetComponent<CinemachineBrain>().enabled = true;
+        mainCamera.GetComponent<CinemachineBrain>().enabled = true;
 
         if (Time.fixedTime < targetDashTimer) // dash animation
         {
@@ -68,7 +68,7 @@ public class CharacterMovement : MonoBehaviour
         int isDiagonal = (moveX != 0 && moveZ != 0) ? 2 : 1; // fix double speed on diagonal movement
 
         moveDirection = new Vector3(moveX, 0, moveZ);
-        moveDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * moveDirection;//rotate towards camera
+        moveDirection = Quaternion.AngleAxis(mainCamera.rotation.eulerAngles.y, Vector3.up) * moveDirection;//rotate towards camera
         moveDirection.Normalize();
 
         float magnitude = Mathf.Clamp01(moveDirection.magnitude);
@@ -78,7 +78,7 @@ public class CharacterMovement : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             Vector3 rotationDirection = new Vector3(-moveZ, 0, moveX); // rotate towards movement direction
-            rotationDirection = Quaternion.AngleAxis(camera.rotation.eulerAngles.y, Vector3.up) * rotationDirection; // rotate to match camera
+            rotationDirection = Quaternion.AngleAxis(mainCamera.rotation.eulerAngles.y, Vector3.up) * rotationDirection; // rotate to match camera
             rotationDirection.Normalize();
             Quaternion toRotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
