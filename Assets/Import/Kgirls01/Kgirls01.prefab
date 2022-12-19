@@ -1495,6 +1495,7 @@ GameObject:
   - component: {fileID: 1690002759071039921}
   - component: {fileID: 41684792598591108}
   - component: {fileID: 6389702474909131642}
+  - component: {fileID: 2918772641798605070}
   m_Layer: 0
   m_Name: Kgirls01
   m_TagString: Untagged
@@ -1583,8 +1584,7 @@ MonoBehaviour:
   walkSpeed: 1
   dashSpeed: 5
   rotationSpeed: 40
-  controller: {fileID: 2223859432848078384}
-  camera: {fileID: 0}
+  mainCamera: {fileID: 0}
   groundCheckDistance: 0.2
   groundMask:
     serializedVersion: 2
@@ -1667,6 +1667,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b65c54dd4daec6b4d9cccfa5594e7e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2918772641798605070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385737107661046707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d5ef7fccd58ec4a80276a5256cf3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7442845272095363081

@@ -63,8 +63,6 @@ public class CharacterMovement : MonoBehaviour
         
         RotationHandler();
         MoveHandler();//handles run/walk and dash
-        
-        
     }
 
     private void Immobilize()
