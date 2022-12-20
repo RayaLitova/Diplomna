@@ -22,9 +22,12 @@ public class SkeletonAnimationController : EnemyAnimationController
 
     IEnumerator IdleEventHandler()
     {
-        if (!animator.GetBool("isInIdleEvent"))
-            animator.SetBool("isInIdleEvent", true);
-        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        while (true)
+        {
+            if (!animator.GetBool("isInIdleEvent"))
+                animator.SetBool("isInIdleEvent", true);
+            yield return new WaitForSeconds(Random.Range(5f, 10f));
+        }
     }
 
     public override void deathAnimation(bool isActive)

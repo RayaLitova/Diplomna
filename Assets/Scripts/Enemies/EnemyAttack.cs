@@ -24,6 +24,9 @@ public class EnemyAttack : MonoBehaviour
 
     public void FinishExecution()
     {
+        if (!particles.gameObject.activeInHierarchy) //optimization
+            return;
+
         particles.transform.localPosition = particlesStartPos;
         particles.gameObject.SetActive(false);
         animationController.AttackAnimation(false);

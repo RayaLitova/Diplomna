@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 5564104439543897158}
   - component: {fileID: 5682288080899296785}
   - component: {fileID: 5471839735373372217}
-  - component: {fileID: 498526348251939281}
   - component: {fileID: 1842035495407577566}
   m_Layer: 7
   m_Name: Skeleton_2
@@ -94,7 +93,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &9136702299808219623
 MonoBehaviour:
@@ -111,7 +110,7 @@ MonoBehaviour:
   hitAnimationVar: isDamageTaken
   deathAnimationVar: isDead
   attackAnimationVar: isAttacking
-  walkAnimationVar: 
+  walkAnimationVar: isMoving
   hitAnimationNumberVar: DamageNumber
   hitAnimationCount: 3
   deathAnimationNumberVar: DeathNumber
@@ -177,28 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7260844fb584e8a45b6c03c0b07b5c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &498526348251939281
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809680881062764}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.34
-  m_Speed: 1000
-  m_Acceleration: 1
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 10
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 3
+  stoppingDistance: 60
 --- !u!114 &1842035495407577566
 MonoBehaviour:
   m_ObjectHideFlags: 0

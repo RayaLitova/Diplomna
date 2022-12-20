@@ -10,7 +10,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     private Vector3 startPosition;
     private float attackTime;
     private float attackCooldown = 0f;
-    [SerializeField] float stoppingDistance = 60f;
+    [SerializeField] float stoppingDistance = 55f;
 
     private EnemyAnimationController animationController;
     void Start()
@@ -28,31 +28,32 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
         GetComponent<EnemyAttack>().FinishExecution();
 
-        if (attackCooldown < Time.time && Vector3.Distance(character.position, transform.position) <= stoppingDistance + 5f)
+        if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance)
         {
             animationController.WalkAnimation(false);
-            transform.LookAt(character.position);
+            if (attackCooldown > Time.time)
+                return;
             GetComponent<EnemyAttack>().StartExecution();
             attackTime = Time.time + 2f;
             attackCooldown = Time.time + 3f;
             return;
         }
-
-        if (Vector3.Distance(character.position, transform.position) > stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
+        else if (Vector3.Distance(character.position, transform.position) > stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
         {
             animationController.WalkAnimation(true);
-            transform.position = Vector3.MoveTowards(transform.position, character.position, 1f);
-            transform.LookAt(character.position);
+            transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotating on y axis
+            transform.position += transform.forward;
+        }
+        else if (Vector3.Distance(startPosition, transform.position) < stoppingDistance)
+        {
+            animationController.WalkAnimation(false);
         }
         else
-        {
-            if (Vector3.Distance(startPosition, transform.position) < stoppingDistance)
-                return;
+        { 
             animationController.WalkAnimation(true);
-            transform.position = Vector3.MoveTowards(transform.position, startPosition, 1f);
-            transform.LookAt(startPosition);
+            transform.LookAt(new Vector3(startPosition.x, transform.position.y, startPosition.z)); // fix rotating on y axis
+            transform.position += transform.forward;
         }
 
-        
     }
 }
