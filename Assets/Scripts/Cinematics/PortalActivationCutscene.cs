@@ -11,18 +11,21 @@ public class PortalActivationCutscene : MonoBehaviour
 
     private Renderer portalUnactiveRenderer;
     private Color portalUnactiveColor;
-    private GameObject camera;
-
-    private void Start()
+    private GameObject mainCamera;
+    private void OnEnable()
     {
+        cinematicCamera = GameObject.Find("CinematicCamera");
         portalUnactiveRenderer = portalUnactive.GetComponent<Renderer>();
         portalUnactiveColor = portalUnactiveRenderer.material.color;
     }
     public void StartCutscene()
     {
-        camera = Camera.main.gameObject;
-        camera.SetActive(false);
+        mainCamera = Camera.main.gameObject;
+        mainCamera.SetActive(false);
         cinematicCamera.SetActive(true);
+        cinematicCamera.transform.position = portalActive.transform.position;
+        cinematicCamera.transform.position -= portalActive.transform.forward * 100f;
+        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + new Vector3(0, -90, 0); 
 
         portalActive.SetActive(true);
         StartCoroutine("FadeOut");
@@ -43,7 +46,6 @@ public class PortalActivationCutscene : MonoBehaviour
         
         portalUnactive.SetActive(false);
 
-        camera.SetActive(true);
-        cinematicCamera.SetActive(false);
+        cinematicCamera.GetComponent<FinishCutscene>().StopCutscene();
     }
 }

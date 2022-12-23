@@ -6,12 +6,10 @@ using UnityEngine.AI;
 public class MoveTowardsBoss : MonoBehaviour
 {
     private Transform boss;
-
-    [SerializeField] private GameObject mainCamera;
-
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
+        GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
     }
 
     private void FixedUpdate()
@@ -25,8 +23,12 @@ public class MoveTowardsBoss : MonoBehaviour
     private IEnumerator WaitForLichAnimation()
     {
         yield return new WaitForSeconds(3f);
-        mainCamera.SetActive(true);
-        gameObject.SetActive(false);
+        GetComponent<FinishCutscene>().StopCutscene();
+    }
+
+    private void OnDisable()
+    {
+        Destroy(this);
     }
 
 }

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3665231532738296795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8fe3603ad9d99646baa02d9b5491928, type: 3}
   m_Name: 
@@ -199,7 +199,7 @@ MonoBehaviour:
   portalActive: {fileID: 8560236354885356949}
   portalUnactive: {fileID: 1097140495206829023}
   particles: {fileID: 7869217876191321187}
-  cinematicCamera: {fileID: 5385130653528900050}
+  cinematicCamera: {fileID: 0}
 --- !u!1 &5385130653528900050
 GameObject:
   m_ObjectHideFlags: 0
