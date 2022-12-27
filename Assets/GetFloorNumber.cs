@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GetFloorNumber : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         GetComponent<Text>().text = LoadDungeon.dungeonLevel.ToString();
     }

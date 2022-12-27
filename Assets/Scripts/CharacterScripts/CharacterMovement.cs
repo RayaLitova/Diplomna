@@ -65,13 +65,6 @@ public class CharacterMovement : MonoBehaviour
         MoveHandler();//handles run/walk and dash
     }
 
-    //REMOVE ON RELEASE
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-            GetComponent<ExitDungeon>().Action();
-    }
-    //
     private void Immobilize()
     {
         animationController.SetDash(false);

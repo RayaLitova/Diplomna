@@ -1,27 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor; 
 using UnityEngine.UI;
 
 
 public class TextFadeOut : MonoBehaviour
 {
+    [SerializeField] float fadeoutTime = .001f;
+    public enum AfterFadingAction { Destroy, SetInactive }
+    public AfterFadingAction action;
+    private Text text;
 
     void OnEnable()
     {
+        text = GetComponent<Text>();
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
         StartCoroutine("FadeOut");
     }
     IEnumerator FadeOut()
-    { 
-        Text floor_text1 = transform.GetChild(0).GetComponent<Text>();
-        Text floor_text2 = transform.GetChild(1).GetComponent<Text>();
-        
-        while (floor_text1.color.a > 0.0f)
+    {
+        while (text.color.a > 0.0f)
         {
-            floor_text1.color = new Color(floor_text1.color.r, floor_text1.color.g, floor_text1.color.b, floor_text1.color.a - .001f);
-            floor_text2.color = new Color(floor_text2.color.r, floor_text2.color.g, floor_text2.color.b, floor_text2.color.a - .001f);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - fadeoutTime);
             yield return null;
         }
-        Destroy(gameObject);
+        switch (action)
+        {
+            case AfterFadingAction.Destroy:
+                Destroy(gameObject);
+                break;
+
+            case AfterFadingAction.SetInactive:
+                gameObject.SetActive(false);
+                break;
+        }
     }
 }
