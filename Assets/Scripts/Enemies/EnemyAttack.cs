@@ -11,9 +11,10 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        particles = transform.Find(particlesName);
-        particlesStartPos = particles.localPosition;
         animationController = GetComponent<EnemyAnimationController>();
+        particles = transform.Find(particlesName);
+        FinishExecution(); //set particles to inactive after getting the reference
+        particlesStartPos = particles.localPosition;
     }
     
     public void StartExecution()

@@ -8,7 +8,7 @@ public class LoadDungeon : MonoBehaviour
     public static int dungeonLevel = 0;
     public static Vector3 cinematicCameraRotation = Vector3.zero;
 
-    private void Awake()
+    private void Start()
     {
         dungeonLevel++;
         int dungeonNumber = Random.Range(1, dungeon_count + 1);

@@ -12,7 +12,7 @@ public class PortalActivationCutscene : MonoBehaviour
     private Renderer portalUnactiveRenderer;
     private Color portalUnactiveColor;
     private GameObject mainCamera;
-    private void OnEnable()
+    private void Start()
     {
         cinematicCamera = GameObject.Find("CinematicCamera");
         portalUnactiveRenderer = portalUnactive.GetComponent<Renderer>();
