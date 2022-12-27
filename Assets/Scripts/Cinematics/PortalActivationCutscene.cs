@@ -25,7 +25,7 @@ public class PortalActivationCutscene : MonoBehaviour
         cinematicCamera.SetActive(true);
         cinematicCamera.transform.position = portalActive.transform.position;
         cinematicCamera.transform.position -= portalActive.transform.forward * 100f;
-        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + new Vector3(0, -90, 0); 
+        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; 
 
         portalActive.SetActive(true);
         StartCoroutine("FadeOut");
