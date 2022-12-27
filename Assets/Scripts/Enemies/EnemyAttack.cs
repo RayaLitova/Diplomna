@@ -13,8 +13,8 @@ public class EnemyAttack : MonoBehaviour
     {
         animationController = GetComponent<EnemyAnimationController>();
         particles = transform.Find(particlesName);
-        FinishExecution(); //set particles to inactive after getting the reference
         particlesStartPos = particles.localPosition;
+        FinishExecution(); //set particles to inactive after getting the reference
     }
     
     public void StartExecution()
@@ -27,8 +27,8 @@ public class EnemyAttack : MonoBehaviour
     {
         if (!particles.gameObject.activeInHierarchy) //optimization
             return;
-
         particles.transform.localPosition = particlesStartPos;
+
         particles.gameObject.SetActive(false);
         animationController.AttackAnimation(false);
     }
