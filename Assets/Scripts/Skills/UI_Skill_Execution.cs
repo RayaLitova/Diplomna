@@ -7,9 +7,9 @@ public class UI_Skill_Execution : MonoBehaviour
 {
     private float cooldownTimer = 0.0f;
     private float lifetimeTimer = 0.0f;
-    [SerializeField] string skillName;
-    [SerializeField] float cooldown;
-    [SerializeField] string description;
+    public string skillName;
+    public float cooldown;
+    public string description;
     [SerializeField] float skillTime;
 
     [Tooltip("damage / buff")] // shows message in the inspector

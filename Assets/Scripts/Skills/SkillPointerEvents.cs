@@ -10,10 +10,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     private bool isBeingDragged = false;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
+    private UI_skillsManage skillsUi;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
+        skillsUi = GameObject.Find("Skills").GetComponent<UI_skillsManage>();
     }
 
     private void FixedUpdate()
@@ -22,13 +24,20 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         {
             Vector3 position = Input.mousePosition;
             position.z = 100.0f; //plane to camera distance
-            transform.position = position;//Camera.main.ScreenToWorldPoint(position);
+            transform.position = position;
 
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (transform.parent.name != "Skills")
+        {
+
+            GameObject dub = Instantiate(gameObject, transform.parent);
+
+            dub.transform.SetSiblingIndex(2);
+        }
         isBeingDragged = true;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.5f;
@@ -36,8 +45,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     }
 
     public void OnPointerUp(PointerEventData eventData)
-    {
-        UI_skillsManage skillsUi = transform.parent.GetComponent<UI_skillsManage>();
+    {   
         isBeingDragged = false;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
@@ -60,8 +68,13 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     public void moveSkill(string to, string from)
     {
-        UI_skillsManage skillsUi = transform.parent.GetComponent<UI_skillsManage>();
-        if(from != null)
+        transform.SetParent(skillsUi.gameObject.transform);
+        transform.localScale = new Vector3(0.8604978f, 0.8604978f, 0.8604978f); //scale to fit in slot
+        transform.GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);//size to fit in slot
+        transform.GetComponent<UI_Skill_Execution>().enabled = true; 
+        transform.GetComponent<UI_Skill_Info>().enabled = true;
+
+        if (from != null)
             UI_skillsManage.SkillsTemp[from] = null;
         rectTransform.anchoredPosition = skillsUi.SkillSlotAnchoredPosition[to];
         UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();

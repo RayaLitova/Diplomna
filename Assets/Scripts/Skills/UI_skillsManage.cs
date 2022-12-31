@@ -41,7 +41,7 @@ public class UI_skillsManage : MonoBehaviour
             {"Action key 3", null},
         };
 
-        SkillsTemp = new Dictionary<string, UI_Skill_Execution>()
+        SkillsTemp = new Dictionary<string, UI_Skill_Execution>() //used for moving skills
         {
             {"Action key 1", null},
             {"Action key 2", null},

@@ -9,8 +9,6 @@ public class UI_Skill_Info : MonoBehaviour
     [SerializeField] string skillName;
     public string fileName;
     public string keyBinding;
-
-    //hover control
     private void OnEnable()
     {
         //add skill to Action bar and make it executable
