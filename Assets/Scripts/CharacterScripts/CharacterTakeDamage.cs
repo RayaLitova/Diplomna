@@ -21,13 +21,18 @@ public class CharacterTakeDamage : MonoBehaviour
         CharacterMovement.isImmobilized = false;
         animator.SetBool("DamageTaken", false);
         if (characterStats.Health <= 0f)
+        {
+            LoadDungeon.dungeonLevel--;
             SceneManager.LoadScene("CityScene");
+        }
     }
     public void TakeDamage(Transform enemy)
     {
         CharacterMovement.isImmobilized = true;
         animator.SetBool("DamageTaken", true);
-        characterStats.Health -= enemy.GetComponent<CharacterStats>().CalcDamageAgainst(characterStats, enemy.GetComponent<SkillStats>());
+        int damage = enemy.GetComponent<CharacterStats>().CalcDamageAgainst(characterStats, enemy.GetComponent<SkillStats>());
+        characterStats.Health -= damage;
+        //ShowDamagePopups.ShowPopup(enemy.GetComponent<CharacterStats>().DamagePopupType, damage, transform.position);
         animator.SetBool("isDead", characterStats.Health <= 0f);
         StartCoroutine("WaitForAnimationToFinish");
     }

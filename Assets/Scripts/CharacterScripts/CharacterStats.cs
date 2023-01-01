@@ -28,14 +28,23 @@ public class CharacterStats : MonoBehaviour
 
     private float lastTime = 0.0f;
 
-    
+    [System.NonSerialized] public string DamagePopupType; //Crit, Miss, Normal
+
 
     public int CalcDamageAgainst(CharacterStats enemy, SkillStats skill)
     {
+        DamagePopupType = "Normal";
         if (Random.Range(0, 100) <= MissChance + skill.missChance + enemy.getAgility())
+        {
+            DamagePopupType = "Miss";
             return 0;
+        }
 
         int damage = getATK() + skill.damage + (Random.Range(0, 100) <= getCrit() + skill.crit ? getATK() + skill.damage : 0);
+
+        if (damage > getATK() + skill.damage)
+            DamagePopupType = "Crit";
+
         damage -= (int)((damage / 100.0f) * enemy.getDEF());
         
         return damage;

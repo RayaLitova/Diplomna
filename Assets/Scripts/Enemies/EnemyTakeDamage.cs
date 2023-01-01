@@ -20,11 +20,15 @@ public class EnemyTakeDamage : MonoBehaviour
             return;
         animationController.takeDamageAnimation(false);
     }
-    public void TakeDamage(CharacterStats enemyStats)
+    public void TakeDamage(CharacterStats playerStats)
     {
         animationTimer = Time.fixedTime + 1.0f;
         animationController.takeDamageAnimation(true);
-        stats.Health -= enemyStats.CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
+        int damage = playerStats.CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
+        stats.Health -= damage;
+        ShowDamagePopups.ShowPopup(playerStats.DamagePopupType, damage, transform.position);
+
+
         if (stats.Health <= 0)
             animationController.deathAnimation(true);
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
