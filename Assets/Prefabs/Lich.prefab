@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 6601988000615973098}
   m_Layer: 7
   m_Name: Lich
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,6 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7260844fb584e8a45b6c03c0b07b5c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoppingDistance: 55
 --- !u!195 &6157562070469220142
 NavMeshAgent:
   m_ObjectHideFlags: 0

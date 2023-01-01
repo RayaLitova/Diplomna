@@ -13,14 +13,16 @@ public class CheckRoom : MonoBehaviour
     {
         if (other.tag != "BackgroundObjects" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
-            ObjectsInRoom[objectCount] = other.transform;
-            objectCount++;
-        }
             
+            ObjectsInRoom[objectCount] = other.transform; 
+            objectCount++;
+
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag != "BackgroundObjects")
+        if (other.tag == "Player")
         {
             ObjectsInRoom = ObjectsInRoom.Where(val => val != other.transform).ToArray();
             objectCount--;

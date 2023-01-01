@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9097904942101854912}
   m_Layer: 0
   m_Name: Rooms
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 2907075941487761156}
   m_Layer: 3
   m_Name: Floor (15)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 5004147460916609293}
   m_Layer: 0
   m_Name: Room5
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 2846452419625572152}
   m_Layer: 0
   m_Name: Rock 1 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 8051727646934960751}
   m_Layer: 0
   m_Name: GameObject (8)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 1739885242717920704}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 251524308090182259}
   m_Layer: 0
   m_Name: Chain Hook
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 251524308903378818}
   m_Layer: 0
   m_Name: Chain Hook
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 251524308599978168}
   m_Layer: 0
   m_Name: Chain Hook
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 56581140465029091}
   m_Layer: 0
   m_Name: Rock 5 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 2405185828626243887}
   m_Layer: 0
   m_Name: GameObject (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 3384177790135528866}
   m_Layer: 0
   m_Name: Pillar (17)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 2517417179220742874}
   m_Layer: 0
   m_Name: Torch Holder
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 7475620032496355785}
   m_Layer: 3
   m_Name: Floors
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 4357010696844654657}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5786,7 +5786,7 @@ GameObject:
   - component: {fileID: 4357010696951605705}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10598,7 +10598,7 @@ GameObject:
   - component: {fileID: 4357010696996436163}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15410,7 +15410,7 @@ GameObject:
   - component: {fileID: 4357010697031026058}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20222,7 +20222,7 @@ GameObject:
   - component: {fileID: 4357010696544892177}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25034,7 +25034,7 @@ GameObject:
   - component: {fileID: 4357010696571067854}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29846,7 +29846,7 @@ GameObject:
   - component: {fileID: 4357010696666079237}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34658,7 +34658,7 @@ GameObject:
   - component: {fileID: 4357010696719501599}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39470,7 +39470,7 @@ GameObject:
   - component: {fileID: 4357010696437937499}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44282,7 +44282,7 @@ GameObject:
   - component: {fileID: 4357010696023273895}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49094,7 +49094,7 @@ GameObject:
   - component: {fileID: 4357010696144520948}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53906,7 +53906,7 @@ GameObject:
   - component: {fileID: 4357010695712072494}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58718,7 +58718,7 @@ GameObject:
   - component: {fileID: 4357010695867232526}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63530,7 +63530,7 @@ GameObject:
   - component: {fileID: 4357010695928222511}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68342,7 +68342,7 @@ GameObject:
   - component: {fileID: 4357010695955332522}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73154,7 +73154,7 @@ GameObject:
   - component: {fileID: 4357010695941684712}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77966,7 +77966,7 @@ GameObject:
   - component: {fileID: 4357010695945529235}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82778,7 +82778,7 @@ GameObject:
   - component: {fileID: 4357010695506130645}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87590,7 +87590,7 @@ GameObject:
   - component: {fileID: 4357010695563818707}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92402,7 +92402,7 @@ GameObject:
   - component: {fileID: 4357010695614391356}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97214,7 +97214,7 @@ GameObject:
   - component: {fileID: 4357010695227851330}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102026,7 +102026,7 @@ GameObject:
   - component: {fileID: 4357010695300846455}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106838,7 +106838,7 @@ GameObject:
   - component: {fileID: 4357010695367025473}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111650,7 +111650,7 @@ GameObject:
   - component: {fileID: 4357010694943019767}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116462,7 +116462,7 @@ GameObject:
   - component: {fileID: 4357010695062589461}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121274,7 +121274,7 @@ GameObject:
   - component: {fileID: 8298290271965341450}
   m_Layer: 0
   m_Name: Room4
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121332,7 +121332,7 @@ GameObject:
   - component: {fileID: 4014106610854671549}
   m_Layer: 0
   m_Name: Rock 3 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121413,7 +121413,7 @@ GameObject:
   - component: {fileID: 2000782982297849684}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121444,7 +121444,7 @@ GameObject:
   - component: {fileID: 8306454799588356961}
   m_Layer: 0
   m_Name: GameObject (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121477,7 +121477,7 @@ GameObject:
   - component: {fileID: 8880228874865566343}
   m_Layer: 0
   m_Name: Rock 4 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121561,7 +121561,7 @@ GameObject:
   - component: {fileID: 2500051221630061911}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121662,7 +121662,7 @@ GameObject:
   - component: {fileID: 2500051221639482705}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121763,7 +121763,7 @@ GameObject:
   - component: {fileID: 2500051221546426296}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121864,7 +121864,7 @@ GameObject:
   - component: {fileID: 2500051221442517162}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121965,7 +121965,7 @@ GameObject:
   - component: {fileID: 2500051221216003630}
   m_Layer: 0
   m_Name: Torch (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122066,7 +122066,7 @@ GameObject:
   - component: {fileID: 2500051221202355820}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122167,7 +122167,7 @@ GameObject:
   - component: {fileID: 2500051221206473751}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122268,7 +122268,7 @@ GameObject:
   - component: {fileID: 2500051221256284331}
   m_Layer: 0
   m_Name: Torch (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122369,7 +122369,7 @@ GameObject:
   - component: {fileID: 2500051221329234570}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122470,7 +122470,7 @@ GameObject:
   - component: {fileID: 2500051222217238899}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122571,7 +122571,7 @@ GameObject:
   - component: {fileID: 2500051222139677585}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122672,7 +122672,7 @@ GameObject:
   - component: {fileID: 2500051221903976691}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122773,7 +122773,7 @@ GameObject:
   - component: {fileID: 2500051221964945862}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122874,7 +122874,7 @@ GameObject:
   - component: {fileID: 2500051221835929797}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122975,7 +122975,7 @@ GameObject:
   - component: {fileID: 2500051222771279434}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123076,7 +123076,7 @@ GameObject:
   - component: {fileID: 2500051222745091733}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123177,7 +123177,7 @@ GameObject:
   - component: {fileID: 2500051222588371611}
   m_Layer: 0
   m_Name: Torch (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123278,7 +123278,7 @@ GameObject:
   - component: {fileID: 2500051222669155201}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123379,7 +123379,7 @@ GameObject:
   - component: {fileID: 2500051222445327301}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123480,7 +123480,7 @@ GameObject:
   - component: {fileID: 2500051222296182286}
   m_Layer: 0
   m_Name: Torch (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123581,7 +123581,7 @@ GameObject:
   - component: {fileID: 2500051222328673095}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123682,7 +123682,7 @@ GameObject:
   - component: {fileID: 2500051222346764877}
   m_Layer: 0
   m_Name: Torch (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123783,7 +123783,7 @@ GameObject:
   - component: {fileID: 2500051223301409315}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123884,7 +123884,7 @@ GameObject:
   - component: {fileID: 2500051223154507120}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123985,7 +123985,7 @@ GameObject:
   - component: {fileID: 2500051222910766815}
   m_Layer: 0
   m_Name: Torch (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124085,7 +124085,7 @@ GameObject:
   - component: {fileID: 3253551569722884409}
   m_Layer: 0
   m_Name: Chest Hinge
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124167,7 +124167,7 @@ GameObject:
   - component: {fileID: 5500102087833719305}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124261,7 +124261,7 @@ GameObject:
   - component: {fileID: 5500102087744584467}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124355,7 +124355,7 @@ GameObject:
   - component: {fileID: 5500102087986366237}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124449,7 +124449,7 @@ GameObject:
   - component: {fileID: 5500102087995781058}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124543,7 +124543,7 @@ GameObject:
   - component: {fileID: 5500102088116263877}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124637,7 +124637,7 @@ GameObject:
   - component: {fileID: 5500102088037878479}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124731,7 +124731,7 @@ GameObject:
   - component: {fileID: 5500102088072492934}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124825,7 +124825,7 @@ GameObject:
   - component: {fileID: 5500102088156105293}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124919,7 +124919,7 @@ GameObject:
   - component: {fileID: 5500102088386475256}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125013,7 +125013,7 @@ GameObject:
   - component: {fileID: 5500102088541471659}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125107,7 +125107,7 @@ GameObject:
   - component: {fileID: 5500102088663746391}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125201,7 +125201,7 @@ GameObject:
   - component: {fileID: 5500102086769055280}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125295,7 +125295,7 @@ GameObject:
   - component: {fileID: 5500102086812304601}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125389,7 +125389,7 @@ GameObject:
   - component: {fileID: 5500102086853248223}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125483,7 +125483,7 @@ GameObject:
   - component: {fileID: 5500102087021888258}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125577,7 +125577,7 @@ GameObject:
   - component: {fileID: 5500102086958539043}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125671,7 +125671,7 @@ GameObject:
   - component: {fileID: 5500102086967414694}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125765,7 +125765,7 @@ GameObject:
   - component: {fileID: 5500102086974789023}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125859,7 +125859,7 @@ GameObject:
   - component: {fileID: 5500102086978899940}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125953,7 +125953,7 @@ GameObject:
   - component: {fileID: 5500102087143559458}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126047,7 +126047,7 @@ GameObject:
   - component: {fileID: 5500102087287366169}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126141,7 +126141,7 @@ GameObject:
   - component: {fileID: 5500102087440425211}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126235,7 +126235,7 @@ GameObject:
   - component: {fileID: 5500102087586910541}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126329,7 +126329,7 @@ GameObject:
   - component: {fileID: 5500102087726280782}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126423,7 +126423,7 @@ GameObject:
   - component: {fileID: 5500102087655121275}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126516,7 +126516,7 @@ GameObject:
   - component: {fileID: 2488107176564425247}
   m_Layer: 0
   m_Name: GameObject (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126547,7 +126547,7 @@ GameObject:
   - component: {fileID: 7719227150617235812}
   m_Layer: 0
   m_Name: GameObject (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126580,7 +126580,7 @@ GameObject:
   - component: {fileID: 9106453637105171218}
   m_Layer: 0
   m_Name: Room3
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126636,7 +126636,7 @@ GameObject:
   - component: {fileID: 2726198917897592749}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126668,7 +126668,7 @@ GameObject:
   - component: {fileID: 8310398684436787893}
   m_Layer: 0
   m_Name: Particle Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126761,7 +126761,7 @@ GameObject:
   - component: {fileID: 6136279810873122390}
   m_Layer: 0
   m_Name: Debris
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126825,7 +126825,7 @@ GameObject:
   - component: {fileID: 6136279810890246015}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126919,7 +126919,7 @@ GameObject:
   - component: {fileID: 6136279810944775399}
   m_Layer: 0
   m_Name: Door Pillar (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126966,7 +126966,7 @@ GameObject:
   - component: {fileID: 6136279810967950966}
   m_Layer: 0
   m_Name: Door Pillar (8)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127002,7 +127002,7 @@ GameObject:
   - component: {fileID: 6136279811013944733}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127096,7 +127096,7 @@ GameObject:
   - component: {fileID: 6136279811127432235}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127190,7 +127190,7 @@ GameObject:
   - component: {fileID: 6136279811147524332}
   m_Layer: 0
   m_Name: Door Pillar (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127238,7 +127238,7 @@ GameObject:
   - component: {fileID: 6136279811177009714}
   m_Layer: 0
   m_Name: Door Pillar (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127285,7 +127285,7 @@ GameObject:
   - component: {fileID: 6136279811185891798}
   m_Layer: 0
   m_Name: Door Pillar (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127332,7 +127332,7 @@ GameObject:
   - component: {fileID: 6136279811240609012}
   m_Layer: 0
   m_Name: Dungeon_3
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127374,7 +127374,7 @@ GameObject:
   - component: {fileID: 6136279811266016552}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127468,7 +127468,7 @@ GameObject:
   - component: {fileID: 6136279811329827869}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127561,7 +127561,7 @@ GameObject:
   - component: {fileID: 6136279811337391394}
   m_Layer: 0
   m_Name: Pillars
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127640,7 +127640,7 @@ GameObject:
   - component: {fileID: 6136279811416871766}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127733,7 +127733,7 @@ GameObject:
   - component: {fileID: 6136279811426813444}
   m_Layer: 0
   m_Name: Rocks
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127775,7 +127775,7 @@ GameObject:
   - component: {fileID: 6136279811538253573}
   m_Layer: 0
   m_Name: Door Pillar (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127823,7 +127823,7 @@ GameObject:
   - component: {fileID: 6136279811561416798}
   m_Layer: 0
   m_Name: Door Pillar (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127871,7 +127871,7 @@ GameObject:
   - component: {fileID: 6136279811601170873}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127964,7 +127964,7 @@ GameObject:
   - component: {fileID: 6136279811627113085}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128047,7 +128047,7 @@ GameObject:
   - component: {fileID: 6136279811638569526}
   m_Layer: 0
   m_Name: Door Pillar (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128095,7 +128095,7 @@ GameObject:
   - component: {fileID: 6136279811644146111}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128189,7 +128189,7 @@ GameObject:
   - component: {fileID: 6136279811702998628}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128283,7 +128283,7 @@ GameObject:
   - component: {fileID: 6136279811739488505}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128377,7 +128377,7 @@ GameObject:
   - component: {fileID: 6136279811743894146}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128471,7 +128471,7 @@ GameObject:
   - component: {fileID: 6136279811749153472}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128565,7 +128565,7 @@ GameObject:
   - component: {fileID: 6136279811756794949}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128659,7 +128659,7 @@ GameObject:
   - component: {fileID: 6136279811841446980}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128753,7 +128753,7 @@ GameObject:
   - component: {fileID: 6136279811899911820}
   m_Layer: 0
   m_Name: Door Pillar (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128801,7 +128801,7 @@ GameObject:
   - component: {fileID: 6136279811919334483}
   m_Layer: 0
   m_Name: Door Pillar (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128849,7 +128849,7 @@ GameObject:
   - component: {fileID: 6136279811939545502}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128943,7 +128943,7 @@ GameObject:
   - component: {fileID: 6136279812060235469}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129037,7 +129037,7 @@ GameObject:
   - component: {fileID: 6136279812199252529}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129130,7 +129130,7 @@ GameObject:
   - component: {fileID: 6136279812283716980}
   m_Layer: 0
   m_Name: Objects
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129199,7 +129199,7 @@ GameObject:
   - component: {fileID: 6136279812493334383}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129293,7 +129293,7 @@ GameObject:
   - component: {fileID: 6136279812529296532}
   m_Layer: 0
   m_Name: Door Pillar
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129341,7 +129341,7 @@ GameObject:
   - component: {fileID: 6136279812588715637}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129434,7 +129434,7 @@ GameObject:
   - component: {fileID: 6136279812607738058}
   m_Layer: 0
   m_Name: Doors
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129470,7 +129470,7 @@ GameObject:
   - component: {fileID: 6136279812609223332}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129564,7 +129564,7 @@ GameObject:
   - component: {fileID: 6136279812616585851}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129657,7 +129657,7 @@ GameObject:
   - component: {fileID: 6136279812632854642}
   m_Layer: 0
   m_Name: Pillar Torch
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129692,7 +129692,7 @@ GameObject:
   - component: {fileID: 6136279812746747555}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129786,7 +129786,7 @@ GameObject:
   - component: {fileID: 6136279812799967968}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129880,7 +129880,7 @@ GameObject:
   - component: {fileID: 6136279812807808340}
   m_Layer: 0
   m_Name: Pillar Torch (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129929,7 +129929,7 @@ GameObject:
   - component: {fileID: 6136279812832464809}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130023,7 +130023,7 @@ GameObject:
   - component: {fileID: 6136279812963362482}
   m_Layer: 0
   m_Name: Door Pillar (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130070,7 +130070,7 @@ GameObject:
   - component: {fileID: 6136279812983721771}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130166,7 +130166,7 @@ GameObject:
   - component: {fileID: 2770747087883494276}
   m_Layer: 0
   m_Name: Barrel (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130261,7 +130261,7 @@ GameObject:
   - component: {fileID: 2508840342949212618}
   m_Layer: 0
   m_Name: Spawn Positions
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130321,7 +130321,7 @@ GameObject:
   - component: {fileID: 6136279812546342979}
   m_Layer: 0
   m_Name: Wall (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130418,7 +130418,7 @@ GameObject:
   - component: {fileID: 6182297370872421409}
   m_Layer: 0
   m_Name: Pillar.002 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130516,7 +130516,7 @@ GameObject:
   - component: {fileID: 6136279812554693600}
   m_Layer: 0
   m_Name: Wall.001 (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130613,7 +130613,7 @@ GameObject:
   - component: {fileID: 6136279812560479231}
   m_Layer: 0
   m_Name: Wall (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130709,7 +130709,7 @@ GameObject:
   - component: {fileID: 4821635958620289918}
   m_Layer: 0
   m_Name: Rock 7
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130792,7 +130792,7 @@ GameObject:
   - component: {fileID: 4821635958611986369}
   m_Layer: 0
   m_Name: Debris.008
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130876,7 +130876,7 @@ GameObject:
   - component: {fileID: 6136279812469757052}
   m_Layer: 0
   m_Name: Wall (21)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130973,7 +130973,7 @@ GameObject:
   - component: {fileID: 6136279812477503487}
   m_Layer: 0
   m_Name: Pillar (17)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131070,7 +131070,7 @@ GameObject:
   - component: {fileID: 6136279812493229577}
   m_Layer: 0
   m_Name: Wall (24)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131167,7 +131167,7 @@ GameObject:
   - component: {fileID: 6136279812516878562}
   m_Layer: 0
   m_Name: Wall (18)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131264,7 +131264,7 @@ GameObject:
   - component: {fileID: 6136279812524016418}
   m_Layer: 0
   m_Name: Wall (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131360,7 +131360,7 @@ GameObject:
   - component: {fileID: 4821635958774895324}
   m_Layer: 0
   m_Name: Debris.003
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131444,7 +131444,7 @@ GameObject:
   - component: {fileID: 4101743461611987497}
   m_Layer: 0
   m_Name: Door Way (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131542,7 +131542,7 @@ GameObject:
   - component: {fileID: 6136279812697589691}
   m_Layer: 0
   m_Name: Pillar.001
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131639,7 +131639,7 @@ GameObject:
   - component: {fileID: 6136279812699528781}
   m_Layer: 0
   m_Name: Pillar (16)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131735,7 +131735,7 @@ GameObject:
   - component: {fileID: 4821635958707113171}
   m_Layer: 0
   m_Name: Debris.007 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131819,7 +131819,7 @@ GameObject:
   - component: {fileID: 6136279812543240423}
   m_Layer: 0
   m_Name: Barrel (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131915,7 +131915,7 @@ GameObject:
   - component: {fileID: 4821635958659850082}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131998,7 +131998,7 @@ GameObject:
   - component: {fileID: 4821635958665208334}
   m_Layer: 0
   m_Name: Rock 1
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132082,7 +132082,7 @@ GameObject:
   - component: {fileID: 6136279812796850261}
   m_Layer: 0
   m_Name: Wall.001 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132179,7 +132179,7 @@ GameObject:
   - component: {fileID: 6136279812802020164}
   m_Layer: 0
   m_Name: Wall.001 (12)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132276,7 +132276,7 @@ GameObject:
   - component: {fileID: 6136279812845202542}
   m_Layer: 0
   m_Name: Crate (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132373,7 +132373,7 @@ GameObject:
   - component: {fileID: 6136279812849690584}
   m_Layer: 0
   m_Name: Pillar.001 (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132469,7 +132469,7 @@ GameObject:
   - component: {fileID: 4821635958290443534}
   m_Layer: 0
   m_Name: Rock 5 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132552,7 +132552,7 @@ GameObject:
   - component: {fileID: 4821635958292352191}
   m_Layer: 0
   m_Name: Rock 3
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132636,7 +132636,7 @@ GameObject:
   - component: {fileID: 4503184831562940910}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132733,7 +132733,7 @@ GameObject:
   - component: {fileID: 4821635958320796562}
   m_Layer: 0
   m_Name: Debris.005 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132817,7 +132817,7 @@ GameObject:
   - component: {fileID: 6136279812776326400}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132917,7 +132917,7 @@ GameObject:
   - component: {fileID: 6136279812938493659}
   m_Layer: 0
   m_Name: Wall.001 (23)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133014,7 +133014,7 @@ GameObject:
   - component: {fileID: 6136279812981528093}
   m_Layer: 0
   m_Name: Crate (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133111,7 +133111,7 @@ GameObject:
   - component: {fileID: 6136279812988621532}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133208,7 +133208,7 @@ GameObject:
   - component: {fileID: 6136279812872074141}
   m_Layer: 0
   m_Name: Wall (20)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133304,7 +133304,7 @@ GameObject:
   - component: {fileID: 4821635958427342449}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133387,7 +133387,7 @@ GameObject:
   - component: {fileID: 4821635958401128632}
   m_Layer: 0
   m_Name: Debris.009
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133470,7 +133470,7 @@ GameObject:
   - component: {fileID: 4821635958420974615}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133554,7 +133554,7 @@ GameObject:
   - component: {fileID: 6136279811997662636}
   m_Layer: 0
   m_Name: Pillar.002 (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133651,7 +133651,7 @@ GameObject:
   - component: {fileID: 6136279812020391814}
   m_Layer: 0
   m_Name: Pillar.002 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133748,7 +133748,7 @@ GameObject:
   - component: {fileID: 6136279812026296682}
   m_Layer: 0
   m_Name: Stool
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133845,7 +133845,7 @@ GameObject:
   - component: {fileID: 6136279812037992321}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133942,7 +133942,7 @@ GameObject:
   - component: {fileID: 6136279812037787714}
   m_Layer: 0
   m_Name: Pillar.001 (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134039,7 +134039,7 @@ GameObject:
   - component: {fileID: 6136279812043768909}
   m_Layer: 0
   m_Name: Wall.001 (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134136,7 +134136,7 @@ GameObject:
   - component: {fileID: 6136279811932014366}
   m_Layer: 0
   m_Name: Wall (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134232,7 +134232,7 @@ GameObject:
   - component: {fileID: 4821635958024422890}
   m_Layer: 0
   m_Name: Wood.004
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134316,7 +134316,7 @@ GameObject:
   - component: {fileID: 6136279811944410839}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134412,7 +134412,7 @@ GameObject:
   - component: {fileID: 4821635958038567025}
   m_Layer: 0
   m_Name: Debris.003 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134495,7 +134495,7 @@ GameObject:
   - component: {fileID: 4821635958003425758}
   m_Layer: 0
   m_Name: Rock 5
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134579,7 +134579,7 @@ GameObject:
   - component: {fileID: 6136279811984412774}
   m_Layer: 0
   m_Name: Wall (16)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134676,7 +134676,7 @@ GameObject:
   - component: {fileID: 7703965459776296760}
   m_Layer: 0
   m_Name: Door Way (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134774,7 +134774,7 @@ GameObject:
   - component: {fileID: 6136279812144786718}
   m_Layer: 0
   m_Name: Wall.001 (13)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134870,7 +134870,7 @@ GameObject:
   - component: {fileID: 4821635958242785459}
   m_Layer: 0
   m_Name: Debris.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134954,7 +134954,7 @@ GameObject:
   - component: {fileID: 6136279812170186884}
   m_Layer: 0
   m_Name: Candelabra (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135050,7 +135050,7 @@ GameObject:
   - component: {fileID: 4821635958178847990}
   m_Layer: 0
   m_Name: Debris.002
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135134,7 +135134,7 @@ GameObject:
   - component: {fileID: 6136279812091781776}
   m_Layer: 0
   m_Name: Pillar (14)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135231,7 +135231,7 @@ GameObject:
   - component: {fileID: 6136279812103648115}
   m_Layer: 0
   m_Name: Crate (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135328,7 +135328,7 @@ GameObject:
   - component: {fileID: 6136279812983381881}
   m_Layer: 0
   m_Name: Chair
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135425,7 +135425,7 @@ GameObject:
   - component: {fileID: 6136279812829144851}
   m_Layer: 0
   m_Name: Barrel (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135522,7 +135522,7 @@ GameObject:
   - component: {fileID: 6136279812322345101}
   m_Layer: 0
   m_Name: Pillar (13)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135618,7 +135618,7 @@ GameObject:
   - component: {fileID: 4821635957809068699}
   m_Layer: 0
   m_Name: Debris.010 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135701,7 +135701,7 @@ GameObject:
   - component: {fileID: 4821635957805817996}
   m_Layer: 0
   m_Name: Rock 4
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135785,7 +135785,7 @@ GameObject:
   - component: {fileID: 6136279812195741507}
   m_Layer: 0
   m_Name: Wall.001 (14)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135881,7 +135881,7 @@ GameObject:
   - component: {fileID: 4821635957758988307}
   m_Layer: 0
   m_Name: Debris.010
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135965,7 +135965,7 @@ GameObject:
   - component: {fileID: 6136279812208099916}
   m_Layer: 0
   m_Name: Wall.001 (16)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136061,7 +136061,7 @@ GameObject:
   - component: {fileID: 4821635957780554965}
   m_Layer: 0
   m_Name: Wood (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136144,7 +136144,7 @@ GameObject:
   - component: {fileID: 4821635957733813337}
   m_Layer: 0
   m_Name: Debris.007 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136227,7 +136227,7 @@ GameObject:
   - component: {fileID: 4821635957718525603}
   m_Layer: 0
   m_Name: Wood (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136311,7 +136311,7 @@ GameObject:
   - component: {fileID: 6136279812243948573}
   m_Layer: 0
   m_Name: Wall.001
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136408,7 +136408,7 @@ GameObject:
   - component: {fileID: 6136279812247552837}
   m_Layer: 0
   m_Name: Wall.001 (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136505,7 +136505,7 @@ GameObject:
   - component: {fileID: 6136279812251661259}
   m_Layer: 0
   m_Name: Pillar.002 (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136601,7 +136601,7 @@ GameObject:
   - component: {fileID: 4821635957736015092}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136685,7 +136685,7 @@ GameObject:
   - component: {fileID: 6395124622672475547}
   m_Layer: 0
   m_Name: Pillar.002 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136782,7 +136782,7 @@ GameObject:
   - component: {fileID: 4821635957974596072}
   m_Layer: 0
   m_Name: Debris.007 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136866,7 +136866,7 @@ GameObject:
   - component: {fileID: 6136279812427928612}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136963,7 +136963,7 @@ GameObject:
   - component: {fileID: 6136279812442331034}
   m_Layer: 0
   m_Name: Wall.001 (21)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137060,7 +137060,7 @@ GameObject:
   - component: {fileID: 6136279812441961490}
   m_Layer: 0
   m_Name: Barrel (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137156,7 +137156,7 @@ GameObject:
   - component: {fileID: 4821635957936888844}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137240,7 +137240,7 @@ GameObject:
   - component: {fileID: 6136279812311624121}
   m_Layer: 0
   m_Name: Table 1
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137337,7 +137337,7 @@ GameObject:
   - component: {fileID: 6136279812457868283}
   m_Layer: 0
   m_Name: Wall.001 (17)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137434,7 +137434,7 @@ GameObject:
   - component: {fileID: 6136279812342066733}
   m_Layer: 0
   m_Name: Pillar.001 (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137531,7 +137531,7 @@ GameObject:
   - component: {fileID: 6136279812354712725}
   m_Layer: 0
   m_Name: Hook
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137628,7 +137628,7 @@ GameObject:
   - component: {fileID: 6136279812793608391}
   m_Layer: 0
   m_Name: Crate (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137724,7 +137724,7 @@ GameObject:
   - component: {fileID: 4821635957882610673}
   m_Layer: 0
   m_Name: Wood.004 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137807,7 +137807,7 @@ GameObject:
   - component: {fileID: 4821635957872132094}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137891,7 +137891,7 @@ GameObject:
   - component: {fileID: 6136279812388247223}
   m_Layer: 0
   m_Name: Barrel (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137988,7 +137988,7 @@ GameObject:
   - component: {fileID: 6136279811452808839}
   m_Layer: 0
   m_Name: Pillar.002 (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138085,7 +138085,7 @@ GameObject:
   - component: {fileID: 6136279811477555222}
   m_Layer: 0
   m_Name: Pillar (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138182,7 +138182,7 @@ GameObject:
   - component: {fileID: 6136279811478464993}
   m_Layer: 0
   m_Name: Chain
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138280,7 +138280,7 @@ GameObject:
   - component: {fileID: 6136279811480639035}
   m_Layer: 0
   m_Name: Wall (15)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138376,7 +138376,7 @@ GameObject:
   - component: {fileID: 4821635959678468033}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138459,7 +138459,7 @@ GameObject:
   - component: {fileID: 4821635959664449256}
   m_Layer: 0
   m_Name: Debris.004
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138543,7 +138543,7 @@ GameObject:
   - component: {fileID: 6136279811385167670}
   m_Layer: 0
   m_Name: Barrel (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138639,7 +138639,7 @@ GameObject:
   - component: {fileID: 4821635959641908279}
   m_Layer: 0
   m_Name: Debris.011 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138723,7 +138723,7 @@ GameObject:
   - component: {fileID: 6136279811389921231}
   m_Layer: 0
   m_Name: Pillar (18)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138820,7 +138820,7 @@ GameObject:
   - component: {fileID: 6136279812516928033}
   m_Layer: 0
   m_Name: Chair (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138917,7 +138917,7 @@ GameObject:
   - component: {fileID: 6136279811673216363}
   m_Layer: 0
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139014,7 +139014,7 @@ GameObject:
   - component: {fileID: 6136279811423131479}
   m_Layer: 0
   m_Name: Wall.001 (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139110,7 +139110,7 @@ GameObject:
   - component: {fileID: 4821635959601510977}
   m_Layer: 0
   m_Name: Debris.011
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139194,7 +139194,7 @@ GameObject:
   - component: {fileID: 6136279811438698870}
   m_Layer: 0
   m_Name: Pillar (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139291,7 +139291,7 @@ GameObject:
   - component: {fileID: 6136279811593158084}
   m_Layer: 0
   m_Name: Wall.001 (8)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139387,7 +139387,7 @@ GameObject:
   - component: {fileID: 4821635959834297158}
   m_Layer: 0
   m_Name: Debris.006
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139471,7 +139471,7 @@ GameObject:
   - component: {fileID: 6136279811607771597}
   m_Layer: 0
   m_Name: Wall.001 (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139568,7 +139568,7 @@ GameObject:
   - component: {fileID: 6136279811612969862}
   m_Layer: 0
   m_Name: Wall (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139665,7 +139665,7 @@ GameObject:
   - component: {fileID: 6136279811634867590}
   m_Layer: 0
   m_Name: Pillar.002 (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139762,7 +139762,7 @@ GameObject:
   - component: {fileID: 6136279812898585960}
   m_Layer: 0
   m_Name: Crate 4
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139859,7 +139859,7 @@ GameObject:
   - component: {fileID: 6136279811641079381}
   m_Layer: 0
   m_Name: Wall.001 (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139956,7 +139956,7 @@ GameObject:
   - component: {fileID: 6136279811528165849}
   m_Layer: 0
   m_Name: Pillar.001 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140053,7 +140053,7 @@ GameObject:
   - component: {fileID: 6136279811536853869}
   m_Layer: 0
   m_Name: Barrel (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140150,7 +140150,7 @@ GameObject:
   - component: {fileID: 6136279811542132682}
   m_Layer: 0
   m_Name: Wall (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140247,7 +140247,7 @@ GameObject:
   - component: {fileID: 6136279811556056294}
   m_Layer: 0
   m_Name: Wall.001 (18)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140343,7 +140343,7 @@ GameObject:
   - component: {fileID: 4821635959760643895}
   m_Layer: 0
   m_Name: Wood.001
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140427,7 +140427,7 @@ GameObject:
   - component: {fileID: 6136279811580504854}
   m_Layer: 0
   m_Name: Pillar (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140524,7 +140524,7 @@ GameObject:
   - component: {fileID: 6136279812590657224}
   m_Layer: 0
   m_Name: Pillar.002
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140621,7 +140621,7 @@ GameObject:
   - component: {fileID: 2847409894003502612}
   m_Layer: 0
   m_Name: Door Way
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140719,7 +140719,7 @@ GameObject:
   - component: {fileID: 6136279811781196365}
   m_Layer: 0
   m_Name: Wall (23)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140815,7 +140815,7 @@ GameObject:
   - component: {fileID: 4821635959371803400}
   m_Layer: 0
   m_Name: Debris.002 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140899,7 +140899,7 @@ GameObject:
   - component: {fileID: 6136279811664736819}
   m_Layer: 0
   m_Name: Barrel (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140996,7 +140996,7 @@ GameObject:
   - component: {fileID: 6136279811668604997}
   m_Layer: 0
   m_Name: Pillar (5)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141093,7 +141093,7 @@ GameObject:
   - component: {fileID: 6136279811691609153}
   m_Layer: 0
   m_Name: Wall (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141190,7 +141190,7 @@ GameObject:
   - component: {fileID: 6136279812778100924}
   m_Layer: 0
   m_Name: Barrel (16)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141287,7 +141287,7 @@ GameObject:
   - component: {fileID: 6136279811700510015}
   m_Layer: 0
   m_Name: Wall (14)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141384,7 +141384,7 @@ GameObject:
   - component: {fileID: 6136279811713160888}
   m_Layer: 0
   m_Name: Pillar (15)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141481,7 +141481,7 @@ GameObject:
   - component: {fileID: 6136279812550151356}
   m_Layer: 0
   m_Name: Chair (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141577,7 +141577,7 @@ GameObject:
   - component: {fileID: 4821635959593512795}
   m_Layer: 0
   m_Name: Debris.005
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141661,7 +141661,7 @@ GameObject:
   - component: {fileID: 6136279812116584488}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141757,7 +141757,7 @@ GameObject:
   - component: {fileID: 4821635959544970667}
   m_Layer: 0
   m_Name: Debris.012
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141840,7 +141840,7 @@ GameObject:
   - component: {fileID: 4821635959545619502}
   m_Layer: 0
   m_Name: Debris.007
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141923,7 +141923,7 @@ GameObject:
   - component: {fileID: 4821635959509194416}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142007,7 +142007,7 @@ GameObject:
   - component: {fileID: 6136279811769691676}
   m_Layer: 0
   m_Name: Candles
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142104,7 +142104,7 @@ GameObject:
   - component: {fileID: 6136279812954524714}
   m_Layer: 0
   m_Name: Crate (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142201,7 +142201,7 @@ GameObject:
   - component: {fileID: 6136279811810539940}
   m_Layer: 0
   m_Name: Wall.001 (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142298,7 +142298,7 @@ GameObject:
   - component: {fileID: 6136279811824534961}
   m_Layer: 0
   m_Name: Pillar (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142395,7 +142395,7 @@ GameObject:
   - component: {fileID: 6136279810900917129}
   m_Layer: 0
   m_Name: Barrel (12)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142492,7 +142492,7 @@ GameObject:
   - component: {fileID: 7080505577892427062}
   m_Layer: 0
   m_Name: Door Way (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142589,7 +142589,7 @@ GameObject:
   - component: {fileID: 4821635959069163900}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142673,7 +142673,7 @@ GameObject:
   - component: {fileID: 6136279810905296818}
   m_Layer: 0
   m_Name: Wall.001 (20)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142770,7 +142770,7 @@ GameObject:
   - component: {fileID: 6136279812330727059}
   m_Layer: 0
   m_Name: Chain (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142868,7 +142868,7 @@ GameObject:
   - component: {fileID: 6136279811064277036}
   m_Layer: 0
   m_Name: Pillar (9)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142965,7 +142965,7 @@ GameObject:
   - component: {fileID: 6136279811236864538}
   m_Layer: 0
   m_Name: Pillar (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143062,7 +143062,7 @@ GameObject:
   - component: {fileID: 6136279811085404682}
   m_Layer: 0
   m_Name: Pillar.001 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143159,7 +143159,7 @@ GameObject:
   - component: {fileID: 6136279811096262684}
   m_Layer: 0
   m_Name: Pillar (8)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143255,7 +143255,7 @@ GameObject:
   - component: {fileID: 4821635959289062898}
   m_Layer: 0
   m_Name: Debris.001
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143339,7 +143339,7 @@ GameObject:
   - component: {fileID: 6136279810989157377}
   m_Layer: 0
   m_Name: Wall.001 (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143435,7 +143435,7 @@ GameObject:
   - component: {fileID: 4821635959205809508}
   m_Layer: 0
   m_Name: Debris.012
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143519,7 +143519,7 @@ GameObject:
   - component: {fileID: 6136279811017954337}
   m_Layer: 0
   m_Name: Wall.001 (22)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143615,7 +143615,7 @@ GameObject:
   - component: {fileID: 4821635959210203156}
   m_Layer: 0
   m_Name: Debris.007
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143698,7 +143698,7 @@ GameObject:
   - component: {fileID: 4821635959208334734}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143782,7 +143782,7 @@ GameObject:
   - component: {fileID: 6136279811188052661}
   m_Layer: 0
   m_Name: Wall (19)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143879,7 +143879,7 @@ GameObject:
   - component: {fileID: 967753838826110181}
   m_Layer: 0
   m_Name: Pillar.002 (7)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143977,7 +143977,7 @@ GameObject:
   - component: {fileID: 6136279811201158160}
   m_Layer: 0
   m_Name: Chain (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144075,7 +144075,7 @@ GameObject:
   - component: {fileID: 6136279811207058777}
   m_Layer: 0
   m_Name: Pillar.001 (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144172,7 +144172,7 @@ GameObject:
   - component: {fileID: 6136279811211990323}
   m_Layer: 0
   m_Name: Wall (17)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144269,7 +144269,7 @@ GameObject:
   - component: {fileID: 6136279811219537666}
   m_Layer: 0
   m_Name: Pillar (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144366,7 +144366,7 @@ GameObject:
   - component: {fileID: 6136279811627435093}
   m_Layer: 0
   m_Name: Barrel (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144462,7 +144462,7 @@ GameObject:
   - component: {fileID: 4821635958878408297}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144546,7 +144546,7 @@ GameObject:
   - component: {fileID: 6136279811904730022}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144642,7 +144642,7 @@ GameObject:
   - component: {fileID: 4821635958826859428}
   m_Layer: 0
   m_Name: Wood.003
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144726,7 +144726,7 @@ GameObject:
   - component: {fileID: 2738652501734599780}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144824,7 +144824,7 @@ GameObject:
   - component: {fileID: 6136279811136904223}
   m_Layer: 0
   m_Name: Wall.001 (15)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144921,7 +144921,7 @@ GameObject:
   - component: {fileID: 6136279811138916064}
   m_Layer: 0
   m_Name: Wall.001 (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145018,7 +145018,7 @@ GameObject:
   - component: {fileID: 6136279811179107301}
   m_Layer: 0
   m_Name: Wall (12)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145115,7 +145115,7 @@ GameObject:
   - component: {fileID: 6136279811180028937}
   m_Layer: 0
   m_Name: Wall (8)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145212,7 +145212,7 @@ GameObject:
   - component: {fileID: 6136279811288143648}
   m_Layer: 0
   m_Name: Barrel (4)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145309,7 +145309,7 @@ GameObject:
   - component: {fileID: 6136279811349200150}
   m_Layer: 0
   m_Name: Wall (13)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145406,7 +145406,7 @@ GameObject:
   - component: {fileID: 6136279811355788331}
   m_Layer: 0
   m_Name: Pillar (12)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145503,7 +145503,7 @@ GameObject:
   - component: {fileID: 6136279811360827692}
   m_Layer: 0
   m_Name: Pillar (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145600,7 +145600,7 @@ GameObject:
   - component: {fileID: 6136279812909558461}
   m_Layer: 0
   m_Name: Crate (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145696,7 +145696,7 @@ GameObject:
   - component: {fileID: 4821635959010279995}
   m_Layer: 0
   m_Name: Debris.002 (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145779,7 +145779,7 @@ GameObject:
   - component: {fileID: 4821635958974275592}
   m_Layer: 0
   m_Name: Pillar.002 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145863,7 +145863,7 @@ GameObject:
   - component: {fileID: 6136279811262185907}
   m_Layer: 0
   m_Name: Pillar (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145959,7 +145959,7 @@ GameObject:
   - component: {fileID: 4821635958938986359}
   m_Layer: 0
   m_Name: Debris.012 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146043,7 +146043,7 @@ GameObject:
   - component: {fileID: 2768445185516256710}
   m_Layer: 0
   m_Name: Barrel (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146139,7 +146139,7 @@ GameObject:
   - component: {fileID: 2514879045953056989}
   m_Layer: 0
   m_Name: Chest Top
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146222,7 +146222,7 @@ GameObject:
   - component: {fileID: 5112043786135611698}
   m_Layer: 0
   m_Name: Room1
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146278,7 +146278,7 @@ GameObject:
   - component: {fileID: 2550831471372819519}
   m_Layer: 0
   m_Name: GameObject (10)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146311,7 +146311,7 @@ GameObject:
   - component: {fileID: 2710508869471122699}
   m_Layer: 0
   m_Name: Room2
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146369,7 +146369,7 @@ GameObject:
   - component: {fileID: 8680431560726808275}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151182,7 +151182,7 @@ GameObject:
   - component: {fileID: 2986540339544999764}
   m_Layer: 0
   m_Name: Pillar (19)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151276,7 +151276,7 @@ GameObject:
   - component: {fileID: 8699576884897487834}
   m_Layer: 0
   m_Name: GameObject (6)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151309,7 +151309,7 @@ GameObject:
   - component: {fileID: 349461038855746185}
   m_Layer: 0
   m_Name: Room7
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151367,7 +151367,7 @@ GameObject:
   - component: {fileID: 6922531684165791272}
   m_Layer: 0
   m_Name: Lock
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151451,7 +151451,7 @@ GameObject:
   - component: {fileID: 8461823742831356712}
   m_Layer: 0
   m_Name: Crate 4 (1)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151546,7 +151546,7 @@ GameObject:
   - component: {fileID: 6210360716527158069}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151639,7 +151639,7 @@ GameObject:
   - component: {fileID: 2208041709565087870}
   m_Layer: 0
   m_Name: GameObject (11)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151672,7 +151672,7 @@ GameObject:
   - component: {fileID: 8868154244739371411}
   m_Layer: 0
   m_Name: Room6
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151728,7 +151728,7 @@ GameObject:
   - component: {fileID: 8590217204553775908}
   m_Layer: 0
   m_Name: GameObject (3)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151759,7 +151759,7 @@ GameObject:
   - component: {fileID: 6638811631745931496}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: BackgroundObjects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151786,6 +151786,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6136279811240609012}
     m_Modifications:
+    - target: {fileID: 1097140495206829023, guid: 8efb2fa8ce2da1345a4a9a6ebc2605aa, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundObjects
+      objectReference: {fileID: 0}
     - target: {fileID: 3665231532738296795, guid: 8efb2fa8ce2da1345a4a9a6ebc2605aa, type: 3}
       propertyPath: m_Name
       value: Teleporter
@@ -151842,7 +151846,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2405673599188955662}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8fe3603ad9d99646baa02d9b5491928, type: 3}
   m_Name: 
@@ -151969,6 +151973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7609961663911348692, guid: a0325ef1869e5414d93c4f6842917ccc, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundObjects
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0325ef1869e5414d93c4f6842917ccc, type: 3}
 --- !u!4 &2850228027158898833 stripped
@@ -151986,6 +151994,10 @@ PrefabInstance:
     - target: {fileID: 6144439361158784624, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
       propertyPath: m_Name
       value: Portcullis 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144439361158784624, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundObjects
       objectReference: {fileID: 0}
     - target: {fileID: 6777565216499334346, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
       propertyPath: m_RootOrder
@@ -152053,6 +152065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portcullis 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6144439361158784624, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundObjects
+      objectReference: {fileID: 0}
     - target: {fileID: 6777565216499334346, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -152118,6 +152134,10 @@ PrefabInstance:
     - target: {fileID: 6144439361158784624, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
       propertyPath: m_Name
       value: Portcullis 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144439361158784624, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundObjects
       objectReference: {fileID: 0}
     - target: {fileID: 6777565216499334346, guid: bb1e2ed7bb2dc324385a41d36ee4f4d8, type: 3}
       propertyPath: m_RootOrder
