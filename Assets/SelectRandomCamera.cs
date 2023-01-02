@@ -6,7 +6,7 @@ public class SelectRandomCamera : MonoBehaviour
 {
     void Start()
     {
-        transform.GetChild(Random.Range(0, transform.childCount + 1)).gameObject.SetActive(true);
+        transform.GetChild(Random.Range(0, transform.childCount)).gameObject.SetActive(true);
     }
 
 }
