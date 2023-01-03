@@ -9,6 +9,7 @@ public class ExitDungeon : InteractAction
     {
         if (LoadDungeon.dungeonLevel == 10)
             Debug.Log("GAME OVER");
+        LoadDungeon.dungeonLevel++;
         SceneManager.LoadScene("CityScene");
     }
 }
