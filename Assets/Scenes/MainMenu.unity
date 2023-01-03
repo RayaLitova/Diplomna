@@ -2077,6 +2077,26 @@ PrefabInstance:
       propertyPath: LightsModule.light
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2475062300693414604, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594929654579654011, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050595772759184112, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715339202278482633, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501188089896962660, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6728794472623789793, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
       propertyPath: m_Name
       value: Dungeon_1
@@ -2127,6 +2147,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6728794472623789798, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469698159179941120, guid: 0d37b58cd25b9d846af99c963856b714, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
