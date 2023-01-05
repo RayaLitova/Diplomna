@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour
     private Vector3 particlesStartPos;
     private EnemyAnimationController animationController;
     [SerializeField] string particlesName;
+    public bool isAttackingDisabled = false;
 
     private void Start()
     {
@@ -19,17 +20,19 @@ public class EnemyAttack : MonoBehaviour
     
     public void StartExecution()
     {
+        if (isAttackingDisabled)
+            return;
         particles.gameObject.SetActive(true);
         animationController.AttackAnimation(true);
     }
 
     public void FinishExecution()
     {
-        if (!particles.gameObject.activeInHierarchy) //optimization
+        animationController.AttackAnimation(false);
+        if (!particles.gameObject.activeInHierarchy) //for optimization
             return;
         particles.transform.localPosition = particlesStartPos;
 
         particles.gameObject.SetActive(false);
-        animationController.AttackAnimation(false);
     }
 }

@@ -30,6 +30,7 @@ public class EnemyAnimationController : MonoBehaviour
 
     public virtual void WalkAnimation(bool isActive)
     {
+        Debug.Log(animator.GetBool(attackAnimationVar) + " " + animator.GetBool(hitAnimationVar));
         if(walkAnimationVar != "")
             animator.SetBool(walkAnimationVar, isActive);
     }
