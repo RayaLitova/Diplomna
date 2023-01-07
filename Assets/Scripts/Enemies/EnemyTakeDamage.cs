@@ -20,6 +20,7 @@ public class EnemyTakeDamage : MonoBehaviour
     {
         if (Time.fixedTime < animationTimer)
             return;
+        enemyAttack.isAttackingDisabled = false;
         animationController.takeDamageAnimation(false);
     }
     public void TakeDamage(CharacterStats playerStats)
@@ -32,7 +33,6 @@ public class EnemyTakeDamage : MonoBehaviour
         ShowDamagePopups.ShowPopup(playerStats.DamagePopupType, damage, transform.position);
         if (stats.Health <= 0)
             animationController.deathAnimation(true);
-        enemyAttack.isAttackingDisabled = false;
 
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
         UI_skillsManage.FinishSkillExecution();
