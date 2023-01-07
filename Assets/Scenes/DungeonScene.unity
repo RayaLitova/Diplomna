@@ -700,6 +700,8 @@ GameObject:
   - component: {fileID: 209737925}
   - component: {fileID: 209737926}
   - component: {fileID: 209737927}
+  - component: {fileID: 209737929}
+  - component: {fileID: 209737928}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -747,6 +749,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dungeon_count: 3
+--- !u!114 &209737928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209737924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbb81d2acfa3b34792a44eec1f91ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &209737929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209737924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1666b4a9e5e74ac439646580837b160c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253112937
 GameObject:
   m_ObjectHideFlags: 0

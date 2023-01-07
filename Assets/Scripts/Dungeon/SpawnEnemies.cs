@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    [SerializeField] int enemyCount;
+    public static int enemyCount = LoadDungeon.dungeonLevel + 5;
 
     private int[] usedPositions = new int[15];
 
