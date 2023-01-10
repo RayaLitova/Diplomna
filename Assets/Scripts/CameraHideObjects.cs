@@ -37,18 +37,10 @@ public class CameraHideObjects : MonoBehaviour
                 currentlyInTheWay.Add(obj.transform);
         }
 
-        /*foreach (var hit in hits1_backward)
-        {
-            GameObject obj = hit.collider.gameObject;
-            if (!currentlyInTheWay.Contains(obj.transform) && (obj.tag == "BackgroundObjects" || obj.tag == "Interactable"))
-                currentlyInTheWay.Add(obj.transform);
-        }*/
-
         foreach (var obj in currentlyInTheWay)
         {
             if (!alreadyTransparent.Contains(obj))
             {
-                Debug.Log(obj.name + "Make transparent");
                 obj.GetComponent<MeshRenderer>().material = transparentMaterial;
                 alreadyTransparent.Add(obj);
             }
@@ -58,7 +50,6 @@ public class CameraHideObjects : MonoBehaviour
         {
             if (!currentlyInTheWay.Contains(alreadyTransparent[i]))
             {
-                Debug.Log(alreadyTransparent[i].name + "Make solid");
                 alreadyTransparent[i].GetComponent<MeshRenderer>().material = solidMaterial;
                 alreadyTransparent.Remove(alreadyTransparent[i]);
             }

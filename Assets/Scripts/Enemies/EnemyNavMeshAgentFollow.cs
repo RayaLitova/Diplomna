@@ -15,6 +15,8 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     private EnemyAnimationController animationController;
     private AudioSource audioSource;
     private bool isBossMusicPlaying = false;
+
+    public float walkSpeedMultiplier = 1;
     void Start()
     {
         animationController = GetComponent<EnemyAnimationController>();
@@ -45,7 +47,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         {
             animationController.WalkAnimation(true);
             transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotating on y axis
-            transform.position += transform.forward;
+            transform.position += transform.forward * walkSpeedMultiplier;
             if (gameObject.tag == "Boss" && !isBossMusicPlaying)
             {
                 audioSource.enabled = false;
@@ -64,7 +66,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
             animationController.WalkAnimation(true);
             transform.LookAt(new Vector3(startPosition.x, transform.position.y, startPosition.z)); // fix rotating on y axis
-            transform.position += transform.forward;
+            transform.position += transform.forward * walkSpeedMultiplier;
 
             if (gameObject.tag == "Boss" && isBossMusicPlaying)
             {

@@ -26,6 +26,7 @@ public class EnemyTakeDamage : MonoBehaviour
     public void TakeDamage(CharacterStats playerStats)
     {
         enemyAttack.isAttackingDisabled = true;
+
         animationTimer = Time.fixedTime + 1.0f;
         animationController.takeDamageAnimation(true);
         int damage = playerStats.CalcDamageAgainst(stats, UI_skillsManage.GetCurrentSkillInfo());
