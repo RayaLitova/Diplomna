@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    Transform particles;
+    public Transform particles;
     private Vector3 particlesStartPos;
     private EnemyAnimationController animationController;
     [SerializeField] string particlesName;

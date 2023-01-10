@@ -32,8 +32,10 @@ public class EnemyTakeDamage : MonoBehaviour
         stats.Health -= damage;
         ShowDamagePopups.ShowPopup(playerStats.DamagePopupType, damage, transform.position);
         if (stats.Health <= 0)
+        {
+            Destroy(enemyAttack.particles.gameObject);
             animationController.deathAnimation(true);
-
+        }
         transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
         UI_skillsManage.FinishSkillExecution();
     }
