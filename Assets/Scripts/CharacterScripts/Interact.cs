@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -20,8 +19,8 @@ public class Interact : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    action.Action();
-                    yield return new WaitForSeconds(3f);
+                    action.Action(); //Interact
+                    yield return new WaitForSeconds(3f); //Interaction cooldown
                 }
             }
             yield return null;
@@ -32,7 +31,7 @@ public class Interact : MonoBehaviour
         if (other.gameObject.tag == "Interactable")
         {
             action = other.gameObject.GetComponent<InteractAction>();
-            ShowHide_InteractionUI.text = action.description;
+            ShowHide_InteractionUI.text = action.description; //Show available interaction
             interactEnabled = true;
         }
             

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PortalActivationCutscene : MonoBehaviour
@@ -24,15 +23,15 @@ public class PortalActivationCutscene : MonoBehaviour
         mainCamera.SetActive(false);
         cinematicCamera.SetActive(true);
         cinematicCamera.transform.position = portalActive.transform.position;
-        cinematicCamera.transform.position -= portalActive.transform.forward * 100f;
-        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; 
+        cinematicCamera.transform.position -= portalActive.transform.forward * 100f; //Move to see the portal from the right position
+        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; //Rotate to see the portal from the right angle
 
         portalActive.SetActive(true);
         StartCoroutine("FadeOut");
 
     }
 
-    IEnumerator FadeOut()
+    IEnumerator FadeOut() // Portal activation cutscene
     {
         while (portalUnactiveRenderer.material.color.a > 0f)
         {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaySoundOnRandomPeriods : MonoBehaviour
@@ -18,5 +17,6 @@ public class PlaySoundOnRandomPeriods : MonoBehaviour
             audioSource.Play();
             yield return new WaitForSeconds(Random.Range(5, 20));
         }
+        
     }
 }

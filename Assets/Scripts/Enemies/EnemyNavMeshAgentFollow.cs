@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyNavMeshAgentFollow : MonoBehaviour
@@ -20,7 +18,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     void Start()
     {
         animationController = GetComponent<EnemyAnimationController>();
-        character = GameObject.Find("Kgirls01").transform;
+        character = GameObject.FindGameObjectWithTag("Player").transform;
         rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();
         startPosition = transform.position;
         audioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
@@ -28,12 +26,12 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (attackTime > Time.time)
+        if (attackTime > Time.time) //check if attack animation has finished
             return;
 
         GetComponent<EnemyAttack>().FinishExecution();
 
-        if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance)
+        if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance) // chase player
         {
             animationController.WalkAnimation(false);
             if (attackCooldown > Time.time)

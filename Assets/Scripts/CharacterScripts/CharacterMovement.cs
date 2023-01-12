@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using Cinemachine;
 
 public class CharacterMovement : MonoBehaviour
@@ -18,8 +17,6 @@ public class CharacterMovement : MonoBehaviour
     private float dashCooldownEndTime = 0.0f;
     private float dashCooldown = 3.0f;
 
-    [SerializeField] private float groundCheckDistance;
-    [SerializeField] private LayerMask groundMask;
     [SerializeField] private float gravity;
 
     private float moveX;
@@ -39,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
     {
         GravityHandler();
 
-        if (Cursor.lockState == CursorLockMode.None || isImmobilized) // disable movement on alt press / application unfocused
+        if (Cursor.lockState == CursorLockMode.None || isImmobilized) // disable movement on alt press or application unfocused
         {
             Immobilize();
             return;

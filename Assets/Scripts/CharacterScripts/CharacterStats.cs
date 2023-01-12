@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,39 +25,45 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField] private Image HealthBar = null;
 
-    private float lastTime = 0.0f;
-
     [System.NonSerialized] public string DamagePopupType; //Crit, Miss, Normal
 
 
-    public int CalcDamageAgainst(CharacterStats enemy, SkillStats skill)
+    public int CalcDamageAgainst(CharacterStats enemy, SkillStats characterSkill)
     {
         DamagePopupType = "Normal";
-        if (Random.Range(0, 100) <= MissChance + skill.missChance + enemy.getAgility())
+        if (Random.Range(0, 100) <= MissChance + characterSkill.missChance + enemy.getAgility())
         {
             DamagePopupType = "Miss";
             return 0;
         }
 
-        int damage = getATK() + skill.damage + (Random.Range(0, 100) <= getCrit() + skill.crit ? getATK() + skill.damage : 0);
+        int damage = getATK() + characterSkill.damage + (Random.Range(0, 100) <= getCrit() + characterSkill.crit ? getATK() + characterSkill.damage : 0);
 
-        if (damage > getATK() + skill.damage)
+        if (damage > getATK() + characterSkill.damage)
             DamagePopupType = "Crit";
 
         damage -= (int)((damage / 100.0f) * enemy.getDEF());
         
         return damage;
     }
+    private void Start()
+    {
+        StartCoroutine("Regen");
+    }
 
+    private IEnumerator Regen()
+    {
+        while (true)
+        {
+            Health = Mathf.Min(MaxHealth, Health + HealthRegen);
+            yield return new WaitForSeconds(1f);
+        }
+
+    }
     private void Update()
     {
         if(HealthBar != null) //remove this after adding health bars to enemies
             HealthBar.fillAmount = Health / MaxHealth;
-        if (Time.time < lastTime + 1)
-            return;
-
-        lastTime = Time.time;
-        Health = Mathf.Min(MaxHealth, Health + HealthRegen);
     }
 
     public void ResetBuffs()

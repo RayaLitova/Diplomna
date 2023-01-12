@@ -21,16 +21,13 @@ public class CameraHideObjects : MonoBehaviour
 
     void Update()
     {
-        currentlyInTheWay.Clear();
+        currentlyInTheWay.Clear(); //clear list
 
         float cameraPlayerDistance = Vector3.Magnitude(transform.position - player.position);
-        Ray ray1_forward = new Ray(transform.position, player.position - transform.position);
-        Ray ray1_backward = new Ray(player.position, transform.position - player.position); //when the camera is inside an object
+        Ray ray = new Ray(transform.position, player.position - transform.position);
+        var hits = Physics.RaycastAll(ray, cameraPlayerDistance);
 
-        var hits1_forward = Physics.RaycastAll(ray1_forward, cameraPlayerDistance);
-        var hits1_backward = Physics.RaycastAll(ray1_backward, cameraPlayerDistance);
-
-        foreach (var hit in hits1_forward) 
+        foreach (var hit in hits) 
         {
             GameObject obj = hit.collider.gameObject;
             if (!currentlyInTheWay.Contains(obj.transform) && (obj.tag == "BackgroundObjects" || obj.tag == "Interactable"))
@@ -41,7 +38,7 @@ public class CameraHideObjects : MonoBehaviour
         {
             if (!alreadyTransparent.Contains(obj))
             {
-                obj.GetComponent<MeshRenderer>().material = transparentMaterial;
+                obj.GetComponent<MeshRenderer>().material = transparentMaterial; //make transparent
                 alreadyTransparent.Add(obj);
             }
         }
@@ -50,7 +47,7 @@ public class CameraHideObjects : MonoBehaviour
         {
             if (!currentlyInTheWay.Contains(alreadyTransparent[i]))
             {
-                alreadyTransparent[i].GetComponent<MeshRenderer>().material = solidMaterial;
+                alreadyTransparent[i].GetComponent<MeshRenderer>().material = solidMaterial; //make solid
                 alreadyTransparent.Remove(alreadyTransparent[i]);
             }
 

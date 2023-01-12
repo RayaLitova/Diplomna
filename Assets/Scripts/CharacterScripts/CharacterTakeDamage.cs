@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class CharacterTakeDamage : MonoBehaviour
 {
@@ -23,7 +20,7 @@ public class CharacterTakeDamage : MonoBehaviour
         if (characterStats.Health <= 0f)
         {
             LoadDungeon.dungeonLevel--;
-            SceneManager.LoadScene("CityScene");
+            LoadScene.Load("CityScene");
         }
     }
     public void TakeDamage(Transform enemy)

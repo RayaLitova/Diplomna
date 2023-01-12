@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MoveTowardsBoss : MonoBehaviour
 {
@@ -23,12 +21,12 @@ public class MoveTowardsBoss : MonoBehaviour
     private IEnumerator WaitForLichAnimation()
     {
         yield return new WaitForSeconds(3f);
-        GetComponent<FinishCutscene>().StopCutscene();
+        GetComponent<FinishCutscene>().StopCutscene(); 
     }
 
     private void OnDisable()
     {
-        Destroy(this);
+        Destroy(this); 
     }
 
 }
