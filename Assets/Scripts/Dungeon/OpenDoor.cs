@@ -14,5 +14,6 @@ public class OpenDoor : InteractAction
         animator.SetBool("openDoor", !isDoorOpened);
         animator.SetBool("closeDoor", isDoorOpened);
         isDoorOpened = !isDoorOpened;
+        description = isDoorOpened ? "Close door" : "Open door"; //Change UI interaction text
     }
 }

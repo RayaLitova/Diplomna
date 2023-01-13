@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -32,7 +30,6 @@ public class EnemyAttack : MonoBehaviour
         if (!particles.gameObject.activeInHierarchy) //for optimization
             return;
         particles.transform.localPosition = particlesStartPos;
-
         particles.gameObject.SetActive(false);
     }
 }

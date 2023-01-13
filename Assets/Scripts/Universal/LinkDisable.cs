@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LinkDisable : MonoBehaviour
+public class LinkDisable : MonoBehaviour //Disable object if linked object is disabled
 {
     [SerializeField] GameObject linked;
     void Update()

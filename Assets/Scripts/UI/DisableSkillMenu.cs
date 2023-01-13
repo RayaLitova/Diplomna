@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DisableSkillMenu : MonoBehaviour
@@ -8,8 +6,7 @@ public class DisableSkillMenu : MonoBehaviour
 
     private void Start()
     {
-        rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();
-        
+        rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();  
     }
     private void Update()
     {
@@ -18,6 +15,5 @@ public class DisableSkillMenu : MonoBehaviour
 
         Destroy(GameObject.Find("SkillMenu"));
         Destroy(this);
-        
     }
 }

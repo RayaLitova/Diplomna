@@ -31,7 +31,7 @@ public class Interact : MonoBehaviour
         if (other.gameObject.tag == "Interactable")
         {
             action = other.gameObject.GetComponent<InteractAction>();
-            ShowHide_InteractionUI.text = action.description; //Show available interaction
+            ShowHide_InteractionUI.textString = action.description; //Show available interaction
             interactEnabled = true;
         }
             

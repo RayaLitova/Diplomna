@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectRandomCamera : MonoBehaviour
@@ -8,5 +6,4 @@ public class SelectRandomCamera : MonoBehaviour
     {
         transform.GetChild(Random.Range(0, transform.childCount)).gameObject.SetActive(true);
     }
-
 }

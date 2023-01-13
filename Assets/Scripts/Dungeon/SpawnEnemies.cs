@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public static int enemyCount = LoadDungeon.dungeonLevel + 5;
-
+    public static int enemyCount = LoadDungeon.dungeonLevel * 2 + 5;
     private int[] usedPositions = new int[15];
 
     private void Awake()
@@ -16,7 +12,7 @@ public class SpawnEnemies : MonoBehaviour
             int positionNumber;
             do {
                 positionNumber = Random.Range(0, transform.childCount);
-            } while (usedPositions[positionNumber] == 1);
+            } while (usedPositions[positionNumber] == 1); //Make sure spawn position is not used
             usedPositions[positionNumber] = 1;
             Instantiate((GameObject)Resources.Load("Enemies/Skeleton_" + Random.Range(0, 4), typeof(GameObject)), transform.GetChild(positionNumber).position, Quaternion.identity);
         }

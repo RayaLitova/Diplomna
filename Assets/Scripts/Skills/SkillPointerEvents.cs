@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
 using System.Linq;
 
 public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -10,7 +7,6 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     private bool isBeingDragged = false;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
-    private UI_skillsManage skillsUi;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -24,13 +20,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
             Vector3 position = Input.mousePosition;
             position.z = 100.0f; //plane to camera distance
             transform.position = position;
-
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (transform.parent.name != "Skills")
+        if (transform.parent.name != "Skills") //For skill menu
         {
             GameObject dub = Instantiate(gameObject, transform.parent);
             dub.transform.SetSiblingIndex(2);
@@ -38,7 +33,6 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         isBeingDragged = true;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.5f;
-
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -84,7 +78,4 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
             UI_skillsManage.SkillsTemp[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, to);
         UI_skillsManage.SkillsTemp[to] = UI_skillsManage.Skills[to];
     }
-
-
-
 }

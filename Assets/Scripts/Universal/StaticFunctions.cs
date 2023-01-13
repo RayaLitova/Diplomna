@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using System.Linq;
 using System;
@@ -18,5 +15,4 @@ public static class StaticFunctions
     {
         return Vector3.Distance(pos1, pos2);
     }
-
 }

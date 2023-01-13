@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenPortcullis : MonoBehaviour
@@ -15,7 +13,5 @@ public class OpenPortcullis : MonoBehaviour
     {
         if (targetRoom.GetNumberOfTags("Enemy") == 0)
             animator.SetBool("open", true);
-        
-
     }
 }

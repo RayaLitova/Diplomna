@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyTakeDamage : MonoBehaviour
@@ -8,7 +6,6 @@ public class EnemyTakeDamage : MonoBehaviour
     private CharacterStats stats;
     private EnemyAnimationController animationController;
     private EnemyAttack enemyAttack;
-
     private void Start()
     {
         enemyAttack = GetComponent<EnemyAttack>();

@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class BuffExecution : SkillExecution
 {
     private CharacterStats characterStats;
-
     private void Awake()
     {
         characterStats = gameObject.GetComponentInParent<CharacterStats>();

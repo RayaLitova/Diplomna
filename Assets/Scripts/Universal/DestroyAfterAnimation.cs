@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyAfterAnimation : StateMachineBehaviour
@@ -8,5 +6,4 @@ public class DestroyAfterAnimation : StateMachineBehaviour
     {
         Destroy(animator.gameObject, stateInfo.length);
     }
-
 }

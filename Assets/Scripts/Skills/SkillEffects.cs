@@ -29,7 +29,6 @@ public class SkillEffects : MonoBehaviour
             "AOE",
             "Burn"
         };
-
     }
     public void ApplyEffect(string name)
     {
@@ -38,12 +37,8 @@ public class SkillEffects : MonoBehaviour
 
     public void ApplyEffects(string[] effectFlags, Collider collider)
     {
-        Debug.Log(effectFlags[0]);
         enemyCollider = collider;
         foreach (string flag in effectFlags)
-        {
-            Debug.Log(flag);
             StartCoroutine(flag);
-        }
     }
 }

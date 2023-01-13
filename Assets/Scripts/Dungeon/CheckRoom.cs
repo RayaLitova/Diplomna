@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
@@ -13,18 +11,15 @@ public class CheckRoom : MonoBehaviour
     {
         if (other.tag != "BackgroundObjects" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
-            
-            ObjectsInRoom[objectCount] = other.transform; 
+            ObjectsInRoom[objectCount] = other.transform;  //Add element to array
             objectCount++;
-
         }
-
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            ObjectsInRoom = ObjectsInRoom.Where(val => val != other.transform).ToArray();
+            ObjectsInRoom = ObjectsInRoom.Where(val => val != other.transform).ToArray(); //Remove element from array
             objectCount--;
         }
     }

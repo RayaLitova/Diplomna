@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowHide_InteractionUI : MonoBehaviour
 {
     GameObject line;
-    GameObject text1;
+    GameObject text;
 
-    public static string text = "";
+    public static string textString = "";
 
     private void Start()
     {
         line = transform.GetChild(0).gameObject;
-        text1 = transform.GetChild(1).gameObject;
+        text = transform.GetChild(1).gameObject;
     }
     public void Show()
     {
@@ -23,7 +21,7 @@ public class ShowHide_InteractionUI : MonoBehaviour
     public void Hide()
     {
         line.SetActive(false);
-        text1.SetActive(false);
+        text.SetActive(false);
 
     }
 
@@ -31,22 +29,22 @@ public class ShowHide_InteractionUI : MonoBehaviour
     {
         if (!line.activeSelf)
             Show();
-        text1.SetActive(false);
-        text1.SetActive(true);
-        text1.GetComponent<Text>().text = text + " [F]";
+        text.SetActive(false);
+        text.SetActive(true);
+        text.GetComponent<Text>().text = textString + " [F]";
     }
 
     private void Update()
     {
-        if (text != "")
+        if (textString != "")
         {
             SetText();
-            text = "";
+            textString = "";
         }
         if (!line.activeSelf)
             return;
 
-        if (!text1.activeSelf)
+        if (!text.activeSelf)
             line.SetActive(false);
     }
 }

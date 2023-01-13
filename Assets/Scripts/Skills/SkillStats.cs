@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillStats : MonoBehaviour
@@ -13,7 +12,6 @@ public class SkillStats : MonoBehaviour
 
     public void EnterRagedMode()
     {
-        Debug.Log("Enter raged mode");
         isEnraged = true;
         damage *= 2;
         crit *= 2;
@@ -23,7 +21,6 @@ public class SkillStats : MonoBehaviour
 
     public void ExitRagedMode()
     {
-        Debug.Log("Exit raged mode");
         isEnraged = false;
         damage /= 2;
         crit /= 2;

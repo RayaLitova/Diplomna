@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FinishCutscene : MonoBehaviour
@@ -8,7 +6,7 @@ public class FinishCutscene : MonoBehaviour
     [SerializeField] GameObject canvas;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //skip cutscene on Escape pressed
             StopCutscene();
     }
 

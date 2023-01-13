@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SkeletonAnimationController : EnemyAnimationController
@@ -35,14 +34,15 @@ public class SkeletonAnimationController : EnemyAnimationController
     {
         base.deathAnimation(isActive);
         if (isActive)
+            //Choose random death animation
             animator.SetFloat(deathAnimationNumberVar, (1 / deathAnimationCount) * Random.Range(0, deathAnimationCount + 1));
-
     }
 
     public override void takeDamageAnimation(bool isActive)
     {
         base.takeDamageAnimation(isActive);
         if (isActive)
+            //Choose random take damage animation
             animator.SetFloat(hitAnimationNumberVar, (1 / hitAnimationCount) * Random.Range(0, hitAnimationCount + 1));
     }
 
@@ -51,10 +51,11 @@ public class SkeletonAnimationController : EnemyAnimationController
         base.AttackAnimation(isActive);
         if (isActive)
         {
+            //Choose random attack animation
             animator.SetFloat(attackAnimationNumberVar, (1 / attackAnimationCount) * Random.Range(0, attackAnimationCount + 1));
             if (!stats.isEnraged)
             {
-                stats.rage += Random.Range(10, 50);
+                stats.rage += Random.Range(10, 50); 
                 if (stats.rage >= 100)
                     stats.EnterRagedMode();
             }

@@ -56,12 +56,10 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         }
         else if (Vector3.Distance(startPosition, transform.position) < stoppingDistance)
         {
-
             animationController.WalkAnimation(false);
         }
         else
-        {
-
+        { 
             animationController.WalkAnimation(true);
             transform.LookAt(new Vector3(startPosition.x, transform.position.y, startPosition.z)); // fix rotating on y axis
             transform.position += transform.forward * walkSpeedMultiplier;
@@ -74,7 +72,6 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
                 isBossMusicPlaying = false;
             }
         }
-
     }
 
     private void OnDestroy()

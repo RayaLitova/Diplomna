@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadDungeon : MonoBehaviour
@@ -12,6 +10,6 @@ public class LoadDungeon : MonoBehaviour
     {
         int dungeonNumber = Random.Range(1, dungeon_count + 1);
         Instantiate((GameObject)Resources.Load("DungeonPrefabs/Dungeon_" + dungeonNumber, typeof(GameObject)), Vector3.zero, Quaternion.identity);
-        cinematicCameraRotation.y = dungeonNumber == 2 ? 90 : -90;
+        cinematicCameraRotation.y = dungeonNumber == 2 ? 90 : -90; //Rotate camera for portal activation cutscene
     }
 }
