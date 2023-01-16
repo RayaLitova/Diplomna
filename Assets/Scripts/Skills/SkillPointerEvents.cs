@@ -45,17 +45,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         string key = skillsUi.getClosestSkillSlot(transform.position);
         string oldKey = UI_skillsManage.SkillsTemp.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Execution>())
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
+
         if (key == null)
-        {
-            if (oldKey != null)
-            {
-                UI_skillsManage.Skills[oldKey] = null;
-                UI_skillsManage.SkillsTemp[oldKey] = null;
-            }
+        { 
             Destroy(gameObject);
             return;
         }
-        Debug.Log(key + " " + oldKey);
         moveSkill(key, oldKey);
     }
 
@@ -66,14 +61,31 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         transform.GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);//size to fit in slot
         transform.GetComponent<UI_Skill_Execution>().enabled = true; 
         transform.GetComponent<UI_Skill_Info>().enabled = true;
-        transform.GetComponent<UI_Skill_Info>().keyBinding = to;
 
-        if (from != null)
-            UI_skillsManage.SkillsTemp[from] = null;
         rectTransform.anchoredPosition = skillsUi.SkillSlotAnchoredPosition[to];
-        UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
-        if (UI_skillsManage.SkillsTemp[to] != null)
-            UI_skillsManage.SkillsTemp[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, to);
-        UI_skillsManage.SkillsTemp[to] = UI_skillsManage.Skills[to];
+
+        if (from == null) // Move from skill menu (or for swap)
+        {
+            UI_skillsManage.SkillsTemp[to] = gameObject.GetComponent<UI_Skill_Execution>();
+            UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[to];
+
+        }
+        else // Move from action bar
+        {
+            if (UI_skillsManage.SkillsTemp[to] == null) // New slot is empty
+            {
+                UI_skillsManage.SkillsTemp[from] = null;
+                UI_skillsManage.Skills[from] = UI_skillsManage.SkillsTemp[from];
+
+                UI_skillsManage.SkillsTemp[to] = gameObject.GetComponent<UI_Skill_Execution>();
+                UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[to];
+            }
+            else // Swap with skill from new slot
+            {
+                UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[from];
+                UI_skillsManage.SkillsTemp[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, null);
+                UI_skillsManage.SkillsTemp[to] = UI_skillsManage.Skills[to];
+            }
+        }
     }
 }
