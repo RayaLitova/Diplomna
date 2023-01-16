@@ -7,10 +7,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     private bool isBeingDragged = false;
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
+    private UI_skillsManage skillsUi;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
+        skillsUi = GameObject.Find("Skills").GetComponent<UI_skillsManage>();
     }
 
     private void FixedUpdate()
@@ -37,8 +39,6 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        UI_skillsManage skillsUi = GameObject.Find("Skills").GetComponent<UI_skillsManage>();
-
         isBeingDragged = false;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
@@ -61,8 +61,6 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     public void moveSkill(string to, string from)
     {
-        UI_skillsManage skillsUi = GameObject.Find("Skills").GetComponent<UI_skillsManage>();
-
         transform.SetParent(skillsUi.gameObject.transform);
         transform.localScale = new Vector3(0.8604978f, 0.8604978f, 0.8604978f); //scale to fit in slot
         transform.GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);//size to fit in slot
