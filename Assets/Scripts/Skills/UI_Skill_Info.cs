@@ -7,7 +7,7 @@ public class UI_Skill_Info : MonoBehaviour
     private void OnEnable()
     {
         fileName = StaticFunctions.RemoveWhitespace(skillName);
-        Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Kgirls01").transform);
+        Instantiate((GameObject)Resources.Load("Skill_prefabs/Skills/" + fileName, typeof(GameObject)), GameObject.Find("Player").transform);
     }
 
 }

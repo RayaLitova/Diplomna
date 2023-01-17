@@ -20,8 +20,8 @@ public class UI_Skill_Execution : MonoBehaviour
     private void Start()
     {
         fileName = GetComponent<UI_Skill_Info>().fileName;
-        characterAnimator = GameObject.Find("Kgirls01").GetComponent<Animator>();
-        skillObject = GameObject.Find("Kgirls01").transform.Find(fileName + "(Clone)").gameObject;
+        characterAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        skillObject = GameObject.Find("Player").transform.Find(fileName + "(Clone)").gameObject;
         skillObject.SetActive(false);
     }
     private void Update()
@@ -43,7 +43,7 @@ public class UI_Skill_Execution : MonoBehaviour
         if (cooldownTimer > Time.time)
             return;
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
-        skillObject.SetActive(true); // activate skill (Kgirls01 child object)
+        skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
         lifetimeTimer = Time.time + skillTime;
         characterAnimator.SetBool("Hit", true);
@@ -54,7 +54,7 @@ public class UI_Skill_Execution : MonoBehaviour
     public void FinishExecution()
     {
         if (skillType == "damage")
-            GameObject.Find("Kgirls01").GetComponent<CharacterStats>().ResetBuffs();
+            GameObject.Find("Player").GetComponent<CharacterStats>().ResetBuffs();
         CharacterMovement.isImmobilized = false;
         characterAnimator.SetBool("Hit", false);
         lifetimeTimer = 0;

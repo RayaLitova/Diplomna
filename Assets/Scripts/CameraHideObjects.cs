@@ -13,7 +13,7 @@ public class CameraHideObjects : MonoBehaviour
     Material transparentMaterial;
     void Start()
     {
-        player = GameObject.Find("Kgirls01").transform;
+        player = GameObject.Find("Player").transform;
 
         solidMaterial = Resources.Load<Material>("Materials/solid");
         transparentMaterial = Resources.Load<Material>("Materials/transparent");
