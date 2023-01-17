@@ -1272,7 +1272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe8ea5adc1fbe64aa61c29347262a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 0}
   particlesName: VoidBall_particles
+  isAttackingDisabled: 0
 --- !u!114 &3796356789262632322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistance: 55
+  walkSpeedMultiplier: 1
 --- !u!114 &2565678863443665422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,6 +1404,8 @@ MonoBehaviour:
   crit: 10
   missChance: 2
   effectFlags: []
+  rage: 0
+  isEnraged: 0
 --- !u!114 &6601988000615973098
 MonoBehaviour:
   m_ObjectHideFlags: 0
