@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
     private Animator characterAnimator;
     private GameObject skillObject;
-    public string fileName;
+    [NonSerialized] public string fileName;
 
     private void Start()
     {

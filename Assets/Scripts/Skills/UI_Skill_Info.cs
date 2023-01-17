@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class UI_Skill_Info : MonoBehaviour
 {
     [SerializeField] string skillName;
-    public string fileName;
+    [NonSerialized] public string fileName;
     private void OnEnable()
     {
         fileName = StaticFunctions.RemoveWhitespace(skillName);

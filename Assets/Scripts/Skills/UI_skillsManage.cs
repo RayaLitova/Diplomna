@@ -31,6 +31,7 @@ public class UI_skillsManage : MonoBehaviour
             {"FirePunch", 0},
             {"InfernalPunch", 1},
             {"Buff", 2},
+            {"FireRain", 3},
         };
 
         Skills = new Dictionary<string, UI_Skill_Execution>()
