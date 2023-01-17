@@ -61,4 +61,9 @@ public class UI_Skill_Execution : MonoBehaviour
         lifetimeTimer = 0;
         skillObject.SetActive(false);
     }
+
+    public void DestroySkill()
+    {
+        Destroy(skillObject);
+    }
 }

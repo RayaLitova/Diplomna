@@ -47,7 +47,10 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
 
         if (key == null)
-        { 
+        {
+            if (oldKey != null)
+                GetComponent<UI_Skill_Execution>().DestroySkill();
+
             Destroy(gameObject);
             return;
         }
