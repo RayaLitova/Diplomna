@@ -43,7 +43,7 @@ public class UI_Skill_Execution : MonoBehaviour
         if (cooldownTimer > Time.time)
             return;
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
-        skillObject.SetActive(true); // activate skill (Kgirls01 child object)
+        skillObject.SetActive(true); // activate skill (players child object)
         cooldownTimer = Time.time + cooldown;
         lifetimeTimer = Time.time + skillTime;
         characterAnimator.SetBool("Hit", true);
@@ -59,5 +59,10 @@ public class UI_Skill_Execution : MonoBehaviour
         characterAnimator.SetBool("Hit", false);
         lifetimeTimer = 0;
         skillObject.SetActive(false);
+    }
+
+    public void DestroySkill()
+    {
+        Destroy(skillObject);
     }
 }
