@@ -5752,10 +5752,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Interactable
       objectReference: {fileID: 0}
-    - target: {fileID: 5054781768488061241, guid: 7551e4f770a1f5f44b3e96710059ce76, type: 3}
-      propertyPath: m_UpdateWhenOffscreen
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5757086442859792674, guid: 7551e4f770a1f5f44b3e96710059ce76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.116513655
