@@ -14,7 +14,7 @@ public class SpawnEnemies : MonoBehaviour
                 positionNumber = Random.Range(0, transform.childCount);
             } while (usedPositions[positionNumber] == 1); //Make sure spawn position is not used
             usedPositions[positionNumber] = 1;
-            Instantiate((GameObject)Resources.Load("Enemies/Skeleton_" + Random.Range(0, 4), typeof(GameObject)), transform.GetChild(positionNumber).position, Quaternion.identity);
+            Instantiate((GameObject)Resources.Load<GameObject>("Enemies/Skeleton_" + Random.Range(0, 4)), transform.GetChild(positionNumber).position, Quaternion.identity);
         }
     }
 }

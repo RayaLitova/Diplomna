@@ -9,7 +9,7 @@ public class LoadDungeon : MonoBehaviour
     private void Awake()
     {
         int dungeonNumber = Random.Range(1, dungeon_count + 1);
-        Instantiate((GameObject)Resources.Load("DungeonPrefabs/Dungeon_" + dungeonNumber, typeof(GameObject)), Vector3.zero, Quaternion.identity);
+        Instantiate(Resources.Load<GameObject>("DungeonPrefabs/Dungeon_" + dungeonNumber), Vector3.zero, Quaternion.identity);
         cinematicCameraRotation.y = dungeonNumber == 2 ? 90 : -90; //Rotate camera for portal activation cutscene
     }
 }
