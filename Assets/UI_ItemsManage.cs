@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UI_ItemsManage : MonoBehaviour
 {
-    public static Dictionary<string, ItemActivation> items;
-    public static Dictionary<string, ItemActivation> itemsTmp;
+    public static Dictionary<string, DisplayItem> items;
+    public static Dictionary<string, DisplayItem> itemsTmp;
 
     public RectTransform[] itemSlotTransform;
     public Dictionary<string, Vector3> itemSlotAnchoredPosition;
@@ -18,14 +17,14 @@ public class UI_ItemsManage : MonoBehaviour
             { "Slot 3", itemSlotTransform[2].anchoredPosition },
         };
 
-        items = new Dictionary<string, ItemActivation>()
+        items = new Dictionary<string, DisplayItem>()
         {
             {"Slot 1", null},
             {"Slot 2", null},
             {"Slot 3", null},
         };
 
-        itemsTmp = new Dictionary<string, ItemActivation>() //used for moving skills
+        itemsTmp = new Dictionary<string, DisplayItem>() //used for moving skills
         {
             {"Slot 1", null},
             {"Slot 2", null},

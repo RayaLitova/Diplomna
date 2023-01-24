@@ -7,12 +7,13 @@ public class Item : ScriptableObject
     public new string description;
     public Sprite icon;
 
-    public int bonusATK;
-    public int bonusDEF;
-    public int bonusCrit;
-    public int bonusAgility;
-    public int bonusMaxHealth;
-    public int bonusRegen;
+    public int bonusATK = 0;
+    public int bonusDEF = 0;
+    public int bonusCrit = 0;
+    public int bonusAgility = 0;
+    public int bonusMaxHealth = 0;
+    public int bonusRegen = 0;
 
     public new string skillUnlocked; //?
+    public bool isOwned = true;
     }
