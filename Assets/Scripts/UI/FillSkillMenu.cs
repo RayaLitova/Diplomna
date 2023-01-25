@@ -6,7 +6,7 @@ public class FillSkillMenu : MonoBehaviour
 {
     void Start()
     {
-        DirectoryInfo dir = new DirectoryInfo("Assets/resources/Skill_prefabs/UI");
+        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/StreamingAssets/UI");
         FileInfo[] info = dir.GetFiles("*.prefab");
         int childNum = 0;
         foreach (FileInfo f in info)

@@ -66,13 +66,15 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         
         if (from == null) // Move from skill menu (or for swap)
         {
-            UI_ItemsManage.itemsTmp[to].Display(gameObject.GetComponent<DisplayItem>().GetItem());
+            Debug.Log("Add");
             UI_ItemsManage.itemsTmp[to] = gameObject.GetComponent<DisplayItem>();
+            UI_ItemsManage.itemsTmp[to].Display(gameObject.GetComponent<DisplayItem>().GetItem());
             UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
 
         }
         else // Move from action bar
         {
+            Debug.Log("Move"); 
             if (UI_ItemsManage.itemsTmp[to] == null) // New slot is empty
             {
                 UI_ItemsManage.itemsTmp[from].Remove();
@@ -84,8 +86,9 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             }
             else // Swap with skill from new slot
             {
-                UI_ItemsManage.items[to].Display(UI_ItemsManage.itemsTmp[from].GetItem());
+                Debug.Log("Swap");
                 UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[from];
+                UI_ItemsManage.items[to].Display(UI_ItemsManage.itemsTmp[from].GetItem());
                 UI_ItemsManage.itemsTmp[to].gameObject.GetComponent<PointerEvents>().moveSkill(from, null);
                 UI_ItemsManage.itemsTmp[to] = UI_ItemsManage.items[to];
             }

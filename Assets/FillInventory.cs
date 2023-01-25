@@ -5,7 +5,7 @@ public class FillInventory : MonoBehaviour
 {
     void Start()
     {
-        DirectoryInfo dir = new DirectoryInfo("Assets/resources/Items");
+        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/StreamingAssets/Items");
         FileInfo[] info = dir.GetFiles("*.asset");
         int childNum = 0;
         foreach (FileInfo f in info)
