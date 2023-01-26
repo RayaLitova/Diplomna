@@ -14,10 +14,16 @@ public class DisplayItem : MonoBehaviour
         }
     }
 
-    public void Display(Item item = null)
+    public void Display(Item itemRef = null)
     {
+        if (itemRef != null)
+        {
+            item = itemRef;
+            GetComponent<ItemActivation>().enabled = true; //?
+        }
+
         Image image = GetComponent<Image>();
-        image.sprite = (item == null) ? this.item.icon : item.icon;
+        image.sprite = item.icon;
         image.color = new Color(image.color.r, image.color.g, image.color.r, 1f);
         if (item.isOwned)
             mask.SetActive(false);
@@ -25,6 +31,7 @@ public class DisplayItem : MonoBehaviour
 
     public void Remove()
     {
+        GetComponent<ItemActivation>().enabled = false;
         Image image = GetComponent<Image>();
         image.sprite = null;
         image.color = new Color(image.color.r, image.color.g, image.color.r, 0f);

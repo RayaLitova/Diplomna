@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class UI_ItemsManage : MonoBehaviour
 {
-    public static Dictionary<string, DisplayItem> items;
-    public static Dictionary<string, DisplayItem> itemsTmp;
+    public static Dictionary<string, Item> items;
+    public static Dictionary<string, Item> itemsTmp;
+    public static Dictionary<string, DisplayItem> itemSlotDisplayItem;
 
     public RectTransform[] itemSlotTransform;
     public Dictionary<string, Vector3> itemSlotAnchoredPosition;
@@ -17,14 +18,21 @@ public class UI_ItemsManage : MonoBehaviour
             { "Slot 3", itemSlotTransform[2].anchoredPosition },
         };
 
-        items = new Dictionary<string, DisplayItem>()
+        itemSlotDisplayItem = new Dictionary<string, DisplayItem>()
+        {
+            { "Slot 1", itemSlotTransform[0].gameObject.GetComponent<DisplayItem>() },
+            { "Slot 2", itemSlotTransform[1].gameObject.GetComponent<DisplayItem>() },
+            { "Slot 3", itemSlotTransform[2].gameObject.GetComponent<DisplayItem>() },
+        };
+
+        items = new Dictionary<string, Item>()
         {
             {"Slot 1", null},
             {"Slot 2", null},
             {"Slot 3", null},
         };
 
-        itemsTmp = new Dictionary<string, DisplayItem>() //used for moving skills
+        itemsTmp = new Dictionary<string, Item>() //used for moving skills
         {
             {"Slot 1", null},
             {"Slot 2", null},
@@ -36,6 +44,7 @@ public class UI_ItemsManage : MonoBehaviour
         float min = 115.0f;
         string returnValue = null;
         float tmp = Vector3.Distance(itemPosition, itemSlotTransform[0].position);
+        Debug.Log(tmp);
         if (tmp < min)
         {
             min = tmp;
