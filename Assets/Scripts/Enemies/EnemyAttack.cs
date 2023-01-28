@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -26,7 +27,12 @@ public class EnemyAttack : MonoBehaviour
 
     public void FinishExecution()
     {
-        animationController.AttackAnimation(false);
+        try
+        {
+            animationController.AttackAnimation(false);
+        }
+        catch (NullReferenceException) { };
+            
         if (!particles.gameObject.activeInHierarchy) //for optimization
             return;
         particles.transform.localPosition = particlesStartPos;

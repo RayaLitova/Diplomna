@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class EnemyAnimationController : MonoBehaviour
 {
@@ -14,21 +15,39 @@ public class EnemyAnimationController : MonoBehaviour
     }
     public virtual void takeDamageAnimation(bool isActive)
     {
-        animator.SetBool(hitAnimationVar, isActive);
+        try
+        {
+            animator.SetBool(hitAnimationVar, isActive);
+        }
+        catch (NullReferenceException) { };
     }
     public virtual void deathAnimation(bool isActive)
     {
-        animator.SetBool(deathAnimationVar, isActive);
+        try
+        {
+            animator.SetBool(deathAnimationVar, isActive);
+        }
+        catch (NullReferenceException) { };
+
     }
 
     public virtual void AttackAnimation(bool isActive)
     {
         animator.SetBool(attackAnimationVar, isActive);
+        try
+        {
+            animator.SetBool(attackAnimationVar, isActive);
+        }
+        catch (NullReferenceException) { };
     }
 
     public virtual void WalkAnimation(bool isActive)
     {
-        if(walkAnimationVar != "")
-            animator.SetBool(walkAnimationVar, isActive);
+        try
+        {
+            if (walkAnimationVar != "")
+                animator.SetBool(walkAnimationVar, isActive);
+        }
+        catch (NullReferenceException) { };
     }
 }

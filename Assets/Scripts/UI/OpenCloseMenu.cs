@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class OpenCloseMenu : MonoBehaviour
 {
+    public KeyCode keyCode;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(keyCode))
             ChangeMenuVisibility();
     }
 

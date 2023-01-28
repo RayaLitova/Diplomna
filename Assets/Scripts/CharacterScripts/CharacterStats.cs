@@ -96,4 +96,23 @@ public class CharacterStats : MonoBehaviour
         return DEF + bonusDEF;
     }
 
+    public void AddItem(Item item)
+    {
+        ATK += item.bonusATK;
+        DEF += item.bonusDEF;
+        Agility += item.bonusAgility;
+        Crit += item.bonusCrit;
+        MaxHealth += item.bonusMaxHealth;
+        HealthRegen += item.bonusRegen;
+    }
+
+    public void RemoveItem(Item item)
+    {
+        ATK -= item.bonusATK;
+        DEF -= item.bonusDEF;
+        Agility -= item.bonusAgility;
+        Crit -= item.bonusCrit;
+        MaxHealth -= item.bonusMaxHealth;
+        HealthRegen -= item.bonusRegen;
+    }
 }
