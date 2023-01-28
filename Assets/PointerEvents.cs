@@ -42,19 +42,18 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         isBeingDragged = false;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
-        Debug.Log(transform.position);
         string key = itemsUI.getClosestItemSlot(transform.position);
-        string oldKey = UI_ItemsManage.itemsTmp.Where(pair => pair.Value == GetComponent<DisplayItem>())
+        string oldKey = UI_ItemsManage.itemsTmp.Where(pair => pair.Value == GetComponent<DisplayItem>().GetItem())
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
 
         transform.position = initialPosition;
-        Debug.Log(key + " " + oldKey);
         if (key == null)
         {
-            if (GetComponent<ItemActivation>().enabled == true)
+            if (oldKey != null)
             {
-                GetComponent<ItemActivation>().enabled = false;
-                GetComponent<DisplayItem>().Remove();
+                UI_ItemsManage.itemSlotDisplayItem[oldKey].Remove();
+                UI_ItemsManage.itemsTmp[oldKey] = null;
+                UI_ItemsManage.items[oldKey] = null;
             }
             return;
         }
@@ -68,26 +67,30 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             UI_ItemsManage.itemsTmp[to] = GetComponent<DisplayItem>().GetItem();
             UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
-            UI_ItemsManage.itemSlotDisplayItem[to].Display(UI_ItemsManage.items[to]);
+            UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
 
         }
         else // Move from action bar
         {
             if (UI_ItemsManage.itemsTmp[to] == null) // New slot is empty
             {
+                UI_ItemsManage.itemsTmp[to] = gameObject.GetComponent<DisplayItem>().GetItem();
+                UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
+                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
+
                 UI_ItemsManage.itemSlotDisplayItem[from].Remove();
                 UI_ItemsManage.itemsTmp[from] = null;
                 UI_ItemsManage.items[from] = null;
-
-                UI_ItemsManage.itemsTmp[to] = gameObject.GetComponent<DisplayItem>().GetItem();
-                UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
             }
             else // Swap with skill from new slot
             {
-                UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[from];
-                UI_ItemsManage.itemSlotDisplayItem[to].Display(UI_ItemsManage.itemsTmp[from]);
-                UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveSkill(from, null);
+                Item item = UI_ItemsManage.items[from]; //save item
+                UI_ItemsManage.itemsTmp[from] = null; //condition for "new slot is empty"
+
+                UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveSkill(from, to); //clear new slot
+                UI_ItemsManage.items[to] = item;
                 UI_ItemsManage.itemsTmp[to] = UI_ItemsManage.items[to];
+                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
             }
         }
     }

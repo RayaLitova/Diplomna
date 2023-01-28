@@ -20,9 +20,9 @@ public class UI_ItemsManage : MonoBehaviour
 
         itemSlotDisplayItem = new Dictionary<string, DisplayItem>()
         {
-            { "Slot 1", itemSlotTransform[0].gameObject.GetComponent<DisplayItem>() },
-            { "Slot 2", itemSlotTransform[1].gameObject.GetComponent<DisplayItem>() },
-            { "Slot 3", itemSlotTransform[2].gameObject.GetComponent<DisplayItem>() },
+            { "Slot 1", itemSlotTransform[0].Find("Item").gameObject.GetComponent<DisplayItem>() },
+            { "Slot 2", itemSlotTransform[1].Find("Item").gameObject.GetComponent<DisplayItem>() },
+            { "Slot 3", itemSlotTransform[2].Find("Item").gameObject.GetComponent<DisplayItem>() },
         };
 
         items = new Dictionary<string, Item>()
@@ -44,7 +44,6 @@ public class UI_ItemsManage : MonoBehaviour
         float min = 115.0f;
         string returnValue = null;
         float tmp = Vector3.Distance(itemPosition, itemSlotTransform[0].position);
-        Debug.Log(tmp);
         if (tmp < min)
         {
             min = tmp;
