@@ -26,10 +26,12 @@ public class DisplayItem : MonoBehaviour
             mask.SetActive(false);
     }
 
-    public void Activate(Item itemRef = null)
+    public void Activate(Item itemRef = null, bool playParticles = true)
     {
         Display(itemRef);
         GetComponent<ItemActivation>().enabled = true;
+        if(playParticles)
+            GetComponent<ItemActivation>().PlayParticles();
     }
 
     public void Remove()

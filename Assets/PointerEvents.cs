@@ -67,7 +67,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             UI_ItemsManage.itemsTmp[to] = GetComponent<DisplayItem>().GetItem();
             UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
-            UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
+            UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], true);
 
         }
         else // Move from action bar
@@ -76,7 +76,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             {
                 UI_ItemsManage.itemsTmp[to] = gameObject.GetComponent<DisplayItem>().GetItem();
                 UI_ItemsManage.items[to] = UI_ItemsManage.itemsTmp[to];
-                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
+                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], false);
 
                 UI_ItemsManage.itemSlotDisplayItem[from].Remove();
                 UI_ItemsManage.itemsTmp[from] = null;
@@ -90,7 +90,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveSkill(from, to); //clear new slot
                 UI_ItemsManage.items[to] = item;
                 UI_ItemsManage.itemsTmp[to] = UI_ItemsManage.items[to];
-                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to]);
+                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], false);
             }
         }
     }
