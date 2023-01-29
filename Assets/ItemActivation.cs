@@ -12,6 +12,7 @@ public class ItemActivation : MonoBehaviour
     { 
         particles.SetActive(true);
     }
+
     private void OnDisable()
     {
         GameObject.Find("Player").GetComponent<CharacterStats>().RemoveItem(GetComponent<DisplayItem>().GetItem());

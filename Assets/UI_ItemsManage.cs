@@ -4,7 +4,6 @@ using UnityEngine;
 public class UI_ItemsManage : MonoBehaviour
 {
     public static Dictionary<string, Item> items;
-    public static Dictionary<string, Item> itemsTmp;
     public static Dictionary<string, DisplayItem> itemSlotDisplayItem;
 
     public RectTransform[] itemSlotTransform;
@@ -26,13 +25,6 @@ public class UI_ItemsManage : MonoBehaviour
         };
 
         items = new Dictionary<string, Item>()
-        {
-            {"Slot 1", null},
-            {"Slot 2", null},
-            {"Slot 3", null},
-        };
-
-        itemsTmp = new Dictionary<string, Item>() //used for moving skills
         {
             {"Slot 1", null},
             {"Slot 2", null},
@@ -61,5 +53,4 @@ public class UI_ItemsManage : MonoBehaviour
 
         return returnValue;
     }
-
 }
