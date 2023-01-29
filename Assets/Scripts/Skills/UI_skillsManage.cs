@@ -7,7 +7,6 @@ public class UI_skillsManage : MonoBehaviour
     public static Dictionary<string, KeyCode> keyCodes;
 
     public static Dictionary<string, UI_Skill_Execution> Skills;
-    public static Dictionary<string, UI_Skill_Execution> SkillsTemp;
 
     public static int SkillAnimationCount = 6;
     public static Dictionary<string, int> SkillAnimationIndex;
@@ -35,13 +34,6 @@ public class UI_skillsManage : MonoBehaviour
         };
 
         Skills = new Dictionary<string, UI_Skill_Execution>()
-        {
-            {"Action key 1", null},
-            {"Action key 2", null},
-            {"Action key 3", null},
-        };
-
-        SkillsTemp = new Dictionary<string, UI_Skill_Execution>() //used for moving skills
         {
             {"Action key 1", null},
             {"Action key 2", null},
