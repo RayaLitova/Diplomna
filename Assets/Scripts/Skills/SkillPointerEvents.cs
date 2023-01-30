@@ -43,7 +43,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
         string key = skillsUi.getClosestSkillSlot(transform.position);
-        string oldKey = UI_skillsManage.SkillsTemp.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Execution>())
+        string oldKey = UI_skillsManage.Skills.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Execution>())
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
 
         if (key == null)
@@ -69,25 +69,21 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
         if (from == null) // Move from skill menu (or for swap)
         {
-            UI_skillsManage.SkillsTemp[to] = gameObject.GetComponent<UI_Skill_Execution>();
-            UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[to];
+            UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
 
         }
         else // Move from action bar
         {
-            if (UI_skillsManage.SkillsTemp[to] == null) // New slot is empty
+            if (UI_skillsManage.Skills[to] == null) // New slot is empty
             {
-                UI_skillsManage.SkillsTemp[from] = null;
-                UI_skillsManage.Skills[from] = UI_skillsManage.SkillsTemp[from];
-
-                UI_skillsManage.SkillsTemp[to] = gameObject.GetComponent<UI_Skill_Execution>();
-                UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[to];
+                UI_skillsManage.Skills[from] = null;
+                UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
             }
             else // Swap with skill from new slot
             {
-                UI_skillsManage.Skills[to] = UI_skillsManage.SkillsTemp[from];
-                UI_skillsManage.SkillsTemp[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, null);
-                UI_skillsManage.SkillsTemp[to] = UI_skillsManage.Skills[to];
+                var tmp = UI_skillsManage.Skills[from];
+                UI_skillsManage.Skills[to].gameObject.GetComponent<SkillPointerEvents>().moveSkill(from, null);
+                UI_skillsManage.Skills[to] = tmp;
             }
         }
     }
