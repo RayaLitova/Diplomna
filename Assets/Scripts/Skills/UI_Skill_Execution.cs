@@ -5,11 +5,9 @@ using UnityEngine.UI;
 public class UI_Skill_Execution : MonoBehaviour
 {
     private float cooldownTimer = 0.0f;
-    private float lifetimeTimer = 0.0f;
     public string skillName;
     public float cooldown;
     public string description;
-    [SerializeField] float skillTime;
 
     [Tooltip("damage / buff")] // shows message in the inspector
     [SerializeField] string skillType;
@@ -26,14 +24,7 @@ public class UI_Skill_Execution : MonoBehaviour
         skillObject.SetActive(false);
     }
     private void Update()
-    {
-        if (lifetimeTimer < Time.time && lifetimeTimer != 0) // skill lifetime after execution
-        {
-            characterAnimator.SetBool("Hit", false);
-            lifetimeTimer = 0;
-            FinishExecution();
-        }
-
+    { 
         if (cooldownTimer > Time.time) // UI cooldown control
             transform.GetChild(0).GetComponent<Image>().fillAmount = ((cooldownTimer - Time.time) * 1 / cooldown);
         
@@ -46,7 +37,6 @@ public class UI_Skill_Execution : MonoBehaviour
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
-        lifetimeTimer = Time.time + skillTime;
         characterAnimator.SetBool("Hit", true);
         characterAnimator.SetFloat("SpellIndex", (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName]);
         skillObject.GetComponent<SkillExecution>().ExecuteSkill();
@@ -58,7 +48,6 @@ public class UI_Skill_Execution : MonoBehaviour
             GameObject.Find("Player").GetComponent<CharacterStats>().ResetBuffs();
         CharacterMovement.isImmobilized = false;
         characterAnimator.SetBool("Hit", false);
-        lifetimeTimer = 0;
         skillObject.SetActive(false);
     }
 
