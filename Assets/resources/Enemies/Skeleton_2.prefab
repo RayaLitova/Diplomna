@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5682288080899296785}
   - component: {fileID: 5471839735373372217}
   - component: {fileID: 1842035495407577566}
+  - component: {fileID: 7809535069486079358}
   m_Layer: 7
   m_Name: Skeleton_2
   m_TagString: Enemy
@@ -117,7 +118,6 @@ MonoBehaviour:
   deathAnimationCount: 2
   attackAnimationNumberVar: AttackNumber
   attackAnimationCount: 3
-  rage: 0
 --- !u!114 &3053660449843262834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe8ea5adc1fbe64aa61c29347262a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 0}
   particlesName: Particles
+  isAttackingDisabled: 0
 --- !u!114 &5564104439543897158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistance: 60
+  walkSpeedMultiplier: 1
 --- !u!114 &1842035495407577566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +196,21 @@ MonoBehaviour:
   crit: 20
   missChance: 1
   effectFlags: []
+  rage: 0
+  isEnraged: 0
+--- !u!114 &7809535069486079358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809680881062764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd2c05f5ba77c04ab3754a29b9bb501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chance: 100
 --- !u!1 &131037452217076572
 GameObject:
   m_ObjectHideFlags: 0

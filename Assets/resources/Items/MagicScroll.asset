@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
+  m_Name: MagicScroll
+  m_EditorClassIdentifier: 
+  name: Magic Scroll
+  description: Gives you the power of regeneration
+  icon: {fileID: 21300000, guid: 25a34cd34eb85d742b002c5842e7fa89, type: 3}
+  bonusATK: 0
+  bonusDEF: 0
+  bonusCrit: 0
+  bonusAgility: 0
+  bonusMaxHealth: 0
+  bonusRegen: 7
+  skillUnlocked: 
+  isOwned: 0

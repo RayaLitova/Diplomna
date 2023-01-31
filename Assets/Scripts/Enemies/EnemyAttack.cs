@@ -33,7 +33,7 @@ public class EnemyAttack : MonoBehaviour
         }
         catch (NullReferenceException) { };
             
-        if (!particles.gameObject.activeInHierarchy) //for optimization
+        if (particles == null || !particles.gameObject.activeInHierarchy) //for optimization
             return;
         particles.transform.localPosition = particlesStartPos;
         particles.gameObject.SetActive(false);

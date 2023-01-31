@@ -61,6 +61,15 @@ public class DisplayItem : MonoBehaviour
 
     public void HideItemDescription()
     {
-        GameObject.Find("ItemDescription").gameObject.SetActive(false);
+        transform.parent.parent.parent.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void AcquireItem()
+    {
+        if (item == null || item.isOwned)
+            return;
+
+        item.isOwned = true;
+        Display();
     }
 }
