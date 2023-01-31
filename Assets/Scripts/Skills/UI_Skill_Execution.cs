@@ -35,7 +35,7 @@ public class UI_Skill_Execution : MonoBehaviour
         if (cooldownTimer > Time.time)
             return;
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
-        skillObject.SetActive(true); // activate skill (Player child object)
+        //skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
         characterAnimator.SetBool("Hit", true);
         characterAnimator.SetFloat("SpellIndex", (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName]);
