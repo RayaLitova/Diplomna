@@ -69,8 +69,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
         if (from == null) // Move from skill menu (or for swap)
         {
+            if (UI_skillsManage.Skills[to] != null)
+            {
+                UI_skillsManage.Skills[to].DestroySkill();
+                Destroy(UI_skillsManage.Skills[to].gameObject);
+            }
             UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
-
         }
         else // Move from action bar
         {
