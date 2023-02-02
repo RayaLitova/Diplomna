@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10691bcc28441154f8252f5d58b630b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: CATRigRLegAnkle_06
   skillName: Fire Rain
 --- !u!114 &2905719044391682289
 MonoBehaviour:
@@ -153,7 +154,6 @@ MonoBehaviour:
   skillName: Fire Rain
   cooldown: 5
   description: Kicks in the air creating a rain of fire
-  skillTime: 1.37
   skillType: damage
 --- !u!1 &7757712429919047809
 GameObject:

@@ -94,9 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10691bcc28441154f8252f5d58b630b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: CATRigRindex1_028
   skillName: Infernal Punch
-  fileName: InfernalPunch
-  keyBinding: Action key 2
 --- !u!114 &2609475470027965841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +113,8 @@ MonoBehaviour:
   missChance: 1
   effectFlags:
   - Burn
+  rage: 0
+  isEnraged: 0
 --- !u!225 &2897839218556124989
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -153,9 +154,7 @@ MonoBehaviour:
   skillName: Infernal Punch
   cooldown: 3
   description: Punch with extra fire
-  skillTime: 1.22
   skillType: damage
-  fileName: InfernalPunch
 --- !u!1 &7479747069207647713
 GameObject:
   m_ObjectHideFlags: 0

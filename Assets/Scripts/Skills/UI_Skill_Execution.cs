@@ -20,7 +20,7 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         fileName = GetComponent<UI_Skill_Info>().fileName;
         characterAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        skillObject = GameObject.Find("Player").transform.Find(fileName + "(Clone)").gameObject;
+        skillObject = GameObject.Find(GetComponent<UI_Skill_Info>().parentName).transform.Find(fileName + "(Clone)").gameObject;
         skillObject.SetActive(false);
     }
     private void Update()

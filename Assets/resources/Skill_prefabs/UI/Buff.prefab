@@ -183,9 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10691bcc28441154f8252f5d58b630b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: Object_6
   skillName: Buff
-  fileName: Buff
-  keyBinding: Action key 3
 --- !u!114 &9158927382698363327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +201,8 @@ MonoBehaviour:
   crit: 25
   missChance: 1
   effectFlags: []
+  rage: 0
+  isEnraged: 0
 --- !u!114 &9185204918215484572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +242,4 @@ MonoBehaviour:
   skillName: Buff
   cooldown: 5
   description: Buffs u
-  skillTime: 1.1
   skillType: buff
-  fileName: Buff

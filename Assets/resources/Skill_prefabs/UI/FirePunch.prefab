@@ -94,9 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10691bcc28441154f8252f5d58b630b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: CATRigLindex1_018
   skillName: Fire Punch
-  fileName: FirePunch
-  keyBinding: Action key 1
 --- !u!114 &2905719044391682289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +113,8 @@ MonoBehaviour:
   missChance: 1
   effectFlags:
   - AOE
+  rage: 0
+  isEnraged: 0
 --- !u!114 &2895916591109631442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +154,7 @@ MonoBehaviour:
   skillName: Fire Punch
   cooldown: 1
   description: Punch but fire
-  skillTime: 0.6
   skillType: damage
-  fileName: FirePunch
 --- !u!1 &7757712429919047809
 GameObject:
   m_ObjectHideFlags: 0
