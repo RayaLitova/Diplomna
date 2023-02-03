@@ -9,7 +9,7 @@ public class SkillExecution : MonoBehaviour
     {
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position; //setup sphere position
-        sphereRadius = GetComponent<CapsuleCollider>().radius / 8f; //setup sphere radius
+        sphereRadius = (GetComponent<CapsuleCollider>().radius / 4f) * transform.localScale.x; //setup sphere radius
         Collider[] colliders = Physics.OverlapSphere(spherePosition, sphereRadius, LayerMask.GetMask("Enemies")); // check for enemies hit
         if (colliders.Length == 0)
         {

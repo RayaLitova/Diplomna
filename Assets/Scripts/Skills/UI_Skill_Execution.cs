@@ -34,12 +34,23 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         if (cooldownTimer > Time.time)
             return;
+
+        UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
         characterAnimator.SetBool("Hit", true);
-        characterAnimator.SetFloat("SpellIndex", (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName]);
+
+        float index = (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName];
+        index += index == 0f ? 0f : (1.0f / UI_skillsManage.SkillAnimationCount) / 2; //make sure the right animation is playing
+
+        characterAnimator.SetFloat("SpellIndex", index);
         skillObject.GetComponent<SkillExecution>().ExecuteSkill();
+        try
+        {
+            GetComponent<UI_Buff_additional>().ExecuteBuff();
+        }
+        catch (Exception e) { };
     }
 
     public void FinishExecution()
@@ -54,5 +65,11 @@ public class UI_Skill_Execution : MonoBehaviour
     public void DestroySkill()
     {
         Destroy(skillObject);
+    }
+
+    public void ApplyTBSCooldown() // time between skills
+    {
+        if (cooldownTimer < Time.time)
+            cooldownTimer = Time.time + UI_skillsManage.timeBetweenSkills;
     }
 }

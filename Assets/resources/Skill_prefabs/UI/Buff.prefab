@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10691bcc28441154f8252f5d58b630b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quaternion: {x: 0, y: 0.008726535, z: 0, w: 0.9999619}
   parentName: Object_6
   skillName: Buff
 --- !u!114 &9158927382698363327

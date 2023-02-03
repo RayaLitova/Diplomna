@@ -8,9 +8,9 @@ public class BuffExecution : SkillExecution
     override public void ExecuteSkill()
     {
         characterStats.isBuffed = true;
-        characterStats.bonusATK = 10;
-        characterStats.healing = 15;
-        characterStats.bonusCrit = 15;
+        characterStats.bonusATK += 10;
+        characterStats.healing += 20;
+        characterStats.bonusCrit += 15;
     }
 
 }

@@ -50,7 +50,7 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2943665026954093263}
-    m_Position: {x: 135, y: 555, z: 0}
+    m_Position: {x: -110, y: 470, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1171,7 +1171,7 @@ BlendTree:
     m_DirectBlendParameter: MoveSpeed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 23dace5115a816c40aaa367be7bdd810, type: 2}
+    m_Motion: {fileID: 7400000, guid: 3a76e1f379111ba41b94e1cd1a2ae2ed, type: 2}
     m_Threshold: 0.8
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1179,7 +1179,7 @@ BlendTree:
     m_DirectBlendParameter: MoveSpeed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5452f0c783545084e96cadd34f379feb, type: 2}
+    m_Motion: {fileID: 7400000, guid: 23dace5115a816c40aaa367be7bdd810, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

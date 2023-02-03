@@ -17,6 +17,9 @@ public class UI_skillsManage : MonoBehaviour
     private static string skillExecuted = null;
     private static string lastSkillExecuted = null;
 
+    public static float timeBetweenSkills = 1f;
+
+
     private void Awake()
     {
         SkillSlotAnchoredPosition = new Dictionary<string, Vector3>() { 
@@ -31,6 +34,7 @@ public class UI_skillsManage : MonoBehaviour
             {"InfernalPunch", 1},
             {"Buff", 2},
             {"FireRain", 3},
+            {"FireHurricane", 4},
         };
 
         Skills = new Dictionary<string, UI_Skill_Execution>()
@@ -141,5 +145,11 @@ public class UI_skillsManage : MonoBehaviour
         if (skillExecuted == null)
             return null;
         return Skills[skillExecuted].gameObject.GetComponent<SkillEffects>();
+    }
+
+    public static void ApplyTimeBetweenSkillsCooldown()
+    {
+        for (int i = 1; i <= 3; i++)
+            Skills["Action key " + i].ApplyTBSCooldown();
     }
 }
