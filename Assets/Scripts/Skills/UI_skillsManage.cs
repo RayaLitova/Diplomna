@@ -17,7 +17,7 @@ public class UI_skillsManage : MonoBehaviour
     private static string skillExecuted = null;
     private static string lastSkillExecuted = null;
 
-    public static float timeBetweenSkills = 1f;
+    public static float timeBetweenSkills = 2f;
 
 
     private void Awake()
