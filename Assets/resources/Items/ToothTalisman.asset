@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: ToothTalisman
   m_EditorClassIdentifier: 
   name: Tooth Talisman
-  description: A small, fierce-looking talisman crafted from a collection of animal
-    teeth strung together on a leather cord. It is said to imbue its bearer with
-    increased attack power, granting them the ferocity and power of the beasts from
-    which the teeth were taken.
+  description: A small talisman crafted from a collection of animal teeth. It is
+    said to imbue its bearer with increased attack power.
   icon: {fileID: 21300000, guid: 4262879ce87e90e42a731d9af0d2a253, type: 3}
   bonusATK: 5
   bonusDEF: 0

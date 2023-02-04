@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: AxeofDoom
   m_EditorClassIdentifier: 
   name: Axe of Doom
-  description: A massive, imposing axe, its blade forged from the blackest iron and
-    its handle wrapped in the finest leather. It is said to grant its wielder increased
-    attack power, but at the cost of longer cooldown times for their skills.
+  description: A massive axe. It is said to grant its wielder increased attack, but
+    at the cost of longer cooldown times for their skills.
   icon: {fileID: 21300000, guid: 15bfc068dd808fa429471eb75d4cc3eb, type: 3}
   bonusATK: 10
   bonusDEF: 0

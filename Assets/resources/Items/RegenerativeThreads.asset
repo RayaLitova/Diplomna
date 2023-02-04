@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: RegenerativeThreads
   m_EditorClassIdentifier: 
   name: Regenerative Threads
-  description: A set of enchanted threads, woven into a garment or tapestry. They
-    are said to grant their wearer increased health regeneration, but at the cost
-    of reduced maximum health.
+  description: A set of enchanted threads, said to grant their wearer increased health
+    regeneration at the cost of reduced maximum health.
   icon: {fileID: 21300000, guid: c7ff97ded0ce9f94a99342be0fd9100a, type: 3}
   bonusATK: 0
   bonusDEF: 0

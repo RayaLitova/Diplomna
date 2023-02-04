@@ -19,7 +19,7 @@ public class UI_skillsManage : MonoBehaviour
 
     public static float timeBetweenSkills = 2f;
 
-
+    public static float cooldownReduction = 0f;
     private void Awake()
     {
         SkillSlotAnchoredPosition = new Dictionary<string, Vector3>() { 
@@ -155,7 +155,17 @@ public class UI_skillsManage : MonoBehaviour
 
     public static void ReduceCooldowns(float sec)
     {
+        cooldownReduction += sec;
         for (int i = 1; i <= 3; i++)
             Skills["Action key " + i].cooldown -= sec;
+    }
+
+    public static void ReduceCooldown(string skillKey)
+    {
+        if (Skills[skillKey].isCDRapplied)
+            return;
+
+        Skills[skillKey].cooldown -= cooldownReduction;
+        Skills[skillKey].isCDRapplied = true;
     }
 }

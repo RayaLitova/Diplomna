@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: CriticalStrikeRing
   m_EditorClassIdentifier: 
   name: Critical Strike Ring
-  description: A sleek, silver ring, its surface adorned with sharp, angular lines.
-    It is said to grant its wearer increased critical strike chance, but at the cost
-    of reduced defense.
+  description: A sleek, silver ring. It is said to grant its wearer increased critical
+    strike chance, but at the cost of reduced defense.
   icon: {fileID: 21300000, guid: 062be565ddbea724e86e3c40a88b93ca, type: 3}
   bonusATK: 0
   bonusDEF: -10

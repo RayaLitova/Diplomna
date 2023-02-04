@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SlimySubstance
   m_EditorClassIdentifier: 
   name: Slimy Substance
-  description: A slippery, gooey substance, said to grant its user reduced cooldowns,
-    but at the cost of decreased agility. It is extracted from a rare, magical slime
-    found deep in the caves of the earth.
+  description: 'A slippery, gooey substance, said to grant its user reduced cooldowns,
+    but at the cost of decreased agility. '
   icon: {fileID: 21300000, guid: b27e53383897e0e4dbe197174cf7de08, type: 3}
   bonusATK: 0
   bonusDEF: 0
@@ -24,4 +23,4 @@ MonoBehaviour:
   bonusMaxHealth: 0
   bonusRegen: 0
   cooldownReduction: 2
-  isOwned: 1
+  isOwned: 0

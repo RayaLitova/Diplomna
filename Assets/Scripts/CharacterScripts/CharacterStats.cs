@@ -115,5 +115,6 @@ public class CharacterStats : MonoBehaviour
         Crit -= item.bonusCrit;
         MaxHealth -= item.bonusMaxHealth;
         HealthRegen -= item.bonusRegen;
+        UI_skillsManage.ReduceCooldowns(-item.cooldownReduction);
     }
 }

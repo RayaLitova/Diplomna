@@ -15,6 +15,7 @@ public class UI_Skill_Execution : MonoBehaviour
     private Animator characterAnimator;
     private GameObject skillObject;
     [NonSerialized] public string fileName;
+    public bool isCDRapplied = false; //cooldown reduction
 
     private void Start()
     {

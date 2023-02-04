@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: DefensiveShield
   m_EditorClassIdentifier: 
   name: Defensive Shield
-  description: A sturdy, impenetrable shield, its surface etched with ancient runes
-    of protection. It is said to grant its bearer increased defense, but at the cost
-    of decreased attack power.
+  description: A sturdy, impenetrable shield. It is said to grant its bearer increased
+    defense, but at the cost of decreased attack power.
   icon: {fileID: 21300000, guid: 1c405b44f81d8f2419c82514f26927ab, type: 3}
   bonusATK: -5
   bonusDEF: 15

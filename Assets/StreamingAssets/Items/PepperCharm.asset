@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: PepperCharm
   m_EditorClassIdentifier: 
   name: Pepper Charm
-  description: A small, pendant charm made of a single, dried red pepper. It is said
-    to grant its bearer increased critical strike, imbuing them with the fiery spirit
-    of the pepper.
+  description: A charm made of red pepper, said to grant its bearer increased critical
+    strike, imbuing them with the fiery spirit of the pepper.
   icon: {fileID: 21300000, guid: c2e43b0938771eb44ab8d20d64365116, type: 3}
   bonusATK: 0
   bonusDEF: 0

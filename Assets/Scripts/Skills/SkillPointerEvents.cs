@@ -75,6 +75,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
                 Destroy(UI_skillsManage.Skills[to].gameObject);
             }
             UI_skillsManage.Skills[to] = gameObject.GetComponent<UI_Skill_Execution>();
+            UI_skillsManage.ReduceCooldown(to);
         }
         else // Move from action bar
         {

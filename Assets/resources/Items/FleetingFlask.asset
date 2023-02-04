@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: FleetingFlask
   m_EditorClassIdentifier: 
   name: Fleeting Flask
-  description: 'A shimmering, glass flask filled with a bubbling, green liquid, said
-    to grant its drinker increased agility, but at the cost of reduced health regeneration.
-    It is brewed from a rare, magical plant. '
+  description: A glass flask filled with green liquid, said to grant its drinker
+    increased agility, but at the cost of reduced health regeneration.
   icon: {fileID: 21300000, guid: fafe0feaae3e9f94ca5a9349e82ca79d, type: 3}
   bonusATK: 0
   bonusDEF: 0

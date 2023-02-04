@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: RobustFlesh
   m_EditorClassIdentifier: 
   name: Robust Flesh
-  description: A piece of strange, rubbery flesh, said to grant its consumer increased
-    maximum health, but at the cost of reduced attack power. It is harvested from
-    a powerful, magical beast.
+  description: A piece of strange flesh, said to grant its consumer increased maximum
+    health, but at the cost of reduced attack power.
   icon: {fileID: 21300000, guid: 79fcd82f24770a84bade4627359dacef, type: 3}
   bonusATK: -10
   bonusDEF: 0

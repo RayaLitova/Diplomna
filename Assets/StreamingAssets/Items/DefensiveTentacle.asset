@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: DefensiveTentacle
   m_EditorClassIdentifier: 
   name: Defensive Tentacle
-  description: A writhing, rubbery appendage, said to grant its wielder increased
-    defense, but at the cost of increased skill cooldowns. It is harvested from a
-    giant, magical sea creature.
+  description: A rubbery appendage, said to grant its wielder increased defense,
+    but at the cost of increased skill cooldowns.
   icon: {fileID: 21300000, guid: 1545aeaa85b57564eaf1deee4087a341, type: 3}
   bonusATK: 0
   bonusDEF: 15

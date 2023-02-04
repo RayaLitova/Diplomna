@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crystal Talisman
   description: A small, shimmering crystal. It is said to grant its bearer increased
-    mental clarity, shortening all ability cooldowns, and imbuing them with the clarity
-    of thought and purpose that is the hallmark of the crystal.
+    mental clarity, shortening all ability cooldowns.
   icon: {fileID: 21300000, guid: 89e4e6a9645af97418ee2a3f35e09d4d, type: 3}
   bonusATK: 0
   bonusDEF: 0

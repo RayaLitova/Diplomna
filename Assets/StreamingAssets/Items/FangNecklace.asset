@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: FangNecklace
   m_EditorClassIdentifier: 
   name: Fang Necklace
-  description: A dark, sinister necklace made from sharp vampire fangs. It is said
-    to grant its wearer increased attack power at the cost of a portion of their
-    maximum health.
+  description: A necklace of sharp vampire fangs, said to grant its wearer increased
+    attack at the cost of a portion of their max health.
   icon: {fileID: 21300000, guid: 1017cbd78a12f2548acffcd60160f2f6, type: 3}
   bonusATK: 10
   bonusDEF: 0

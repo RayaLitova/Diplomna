@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VitalHeart
   m_EditorClassIdentifier: 
   name: Vital Heart
-  description: A pulsing, glowing heart, said to grant its owner increased maximum
-    health. It is harvested from a magical, mythical creature.
+  description: A pulsing heart, said to grant its owner increased maximum health.
+    It is harvested from a magical, mythical creature.
   icon: {fileID: 21300000, guid: fc537a3b8b3998040adcde4e1cd55718, type: 3}
   bonusATK: 0
   bonusDEF: 0

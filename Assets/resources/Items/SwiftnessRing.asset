@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SwiftnessRing
   m_EditorClassIdentifier: 
   name: Swiftness Ring
-  description: A sleek, shiny ring with misterious green cristal, said to grant its
-    wearer increased agility, but at the cost of reduced maximum health. It is crafted
-    from a mysterious, magical metal.
+  description: A ring with misterious green cristal, said to grant its wearer increased
+    agility, but at the cost of reduced maximum health.
   icon: {fileID: 21300000, guid: 4372b2d248f7b7e43a88ce39f4a43d85, type: 3}
   bonusATK: 0
   bonusDEF: 0
@@ -24,4 +23,4 @@ MonoBehaviour:
   bonusMaxHealth: -10
   bonusRegen: 0
   cooldownReduction: 0
-  isOwned: 1
+  isOwned: 0
