@@ -9,6 +9,6 @@ public class UnlockItem : MonoBehaviour
             return;
         Debug.Log("unlock");
         Transform inventory = GameObject.Find("Inventory").transform.GetChild(0).GetChild(0);
-        inventory.GetChild(1/*Random.Range(0, inventory.childCount)*/).GetChild(1).GetComponent<DisplayItem>().AcquireItem();
+        inventory.GetChild(Random.Range(0, inventory.childCount)).GetChild(1).GetComponent<DisplayItem>().AcquireItem();
     }
 }

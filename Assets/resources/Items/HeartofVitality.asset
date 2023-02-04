@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
-  m_Name: MagicScroll
+  m_Name: HeartofVitality
   m_EditorClassIdentifier: 
-  name: Magic Scroll
-  description: Gives you the power of regeneration
-  icon: {fileID: 21300000, guid: 25a34cd34eb85d742b002c5842e7fa89, type: 3}
+  name: Heart of Vitality
+  description: A glowing jar containing a pulsing heart, said to grant its bearer
+    increased maximum health but at the cost of reduced critical strike chance.
+  icon: {fileID: 21300000, guid: cb0b438cf8ac49843950c2412467e155, type: 3}
   bonusATK: 0
   bonusDEF: 0
-  bonusCrit: 0
+  bonusCrit: -15
   bonusAgility: 0
-  bonusMaxHealth: 0
-  bonusRegen: 7
-  skillUnlocked: 
+  bonusMaxHealth: 15
+  bonusRegen: 0
+  cooldownReduction: 0
   isOwned: 0

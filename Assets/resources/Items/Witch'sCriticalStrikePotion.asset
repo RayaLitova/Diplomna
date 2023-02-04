@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
+  m_Name: Witch'sCriticalStrikePotion
+  m_EditorClassIdentifier: 
+  name: Witch's Critical Strike Potion
+  description: A mysterious, dark brew, said to grant its drinker increased critical
+    strike chance, but at the cost of reduced health regeneration. It is brewed by
+    witches, using secret ingredients and potent magic.
+  icon: {fileID: 21300000, guid: 998aaf61d3befa94b96555099811a81c, type: 3}
+  bonusATK: 0
+  bonusDEF: 0
+  bonusCrit: 20
+  bonusAgility: 0
+  bonusMaxHealth: 0
+  bonusRegen: -2
+  cooldownReduction: 0
+  isOwned: 0

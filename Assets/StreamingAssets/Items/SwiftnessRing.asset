@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
-  m_Name: Bone
+  m_Name: SwiftnessRing
   m_EditorClassIdentifier: 
-  name: Bone
-  description: Gives you additional attack
-  icon: {fileID: 21300000, guid: 1ebf148ce50fcab459615809bb29036f, type: 3}
-  bonusATK: 5
+  name: Swiftness Ring
+  description: A sleek, shiny ring with misterious green cristal, said to grant its
+    wearer increased agility, but at the cost of reduced maximum health. It is crafted
+    from a mysterious, magical metal.
+  icon: {fileID: 21300000, guid: 4372b2d248f7b7e43a88ce39f4a43d85, type: 3}
+  bonusATK: 0
   bonusDEF: 0
   bonusCrit: 0
-  bonusAgility: 0
-  bonusMaxHealth: 0
+  bonusAgility: 10
+  bonusMaxHealth: -10
   bonusRegen: 0
-  skillUnlocked: 
+  cooldownReduction: 0
   isOwned: 1

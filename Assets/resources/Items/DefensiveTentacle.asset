@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
+  m_Name: DefensiveTentacle
+  m_EditorClassIdentifier: 
+  name: Defensive Tentacle
+  description: A writhing, rubbery appendage, said to grant its wielder increased
+    defense, but at the cost of increased skill cooldowns. It is harvested from a
+    giant, magical sea creature.
+  icon: {fileID: 21300000, guid: 1545aeaa85b57564eaf1deee4087a341, type: 3}
+  bonusATK: 0
+  bonusDEF: 15
+  bonusCrit: 0
+  bonusAgility: 0
+  bonusMaxHealth: 0
+  bonusRegen: 0
+  cooldownReduction: -1
+  isOwned: 0

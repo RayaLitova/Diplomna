@@ -13,7 +13,7 @@ public class Item : ScriptableObject
     public int bonusAgility = 0;
     public int bonusMaxHealth = 0;
     public int bonusRegen = 0;
+    public float cooldownReduction = 0f;
 
-    public new string skillUnlocked; //?
     public bool isOwned = true;
     }

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
-  m_Name: Skull
+  m_Name: SkullDefenseTalisman
   m_EditorClassIdentifier: 
-  name: Skull
+  name: Skull Defense Talisman
   description: Gives you defense and agility
   icon: {fileID: 21300000, guid: fadb5b31c0cae4141a51ec7158eabcaa, type: 3}
   bonusATK: 0
-  bonusDEF: 20
+  bonusDEF: 5
   bonusCrit: 0
-  bonusAgility: 5
+  bonusAgility: 0
   bonusMaxHealth: 0
   bonusRegen: 0
-  skillUnlocked: 
-  isOwned: 0
+  cooldownReduction: 0
+  isOwned: 1

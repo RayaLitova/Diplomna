@@ -152,4 +152,10 @@ public class UI_skillsManage : MonoBehaviour
         for (int i = 1; i <= 3; i++)
             Skills["Action key " + i].ApplyTBSCooldown();
     }
+
+    public static void ReduceCooldowns(float sec)
+    {
+        for (int i = 1; i <= 3; i++)
+            Skills["Action key " + i].cooldown -= sec;
+    }
 }

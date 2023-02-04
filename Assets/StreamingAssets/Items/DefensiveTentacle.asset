@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
-  m_Name: Skull
+  m_Name: DefensiveTentacle
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 21300000, guid: fadb5b31c0cae4141a51ec7158eabcaa, type: 3}
+  name: Defensive Tentacle
+  description: A writhing, rubbery appendage, said to grant its wielder increased
+    defense, but at the cost of increased skill cooldowns. It is harvested from a
+    giant, magical sea creature.
+  icon: {fileID: 21300000, guid: 1545aeaa85b57564eaf1deee4087a341, type: 3}
   bonusATK: 0
-  bonusDEF: 20
+  bonusDEF: 15
   bonusCrit: 0
-  bonusAgility: 5
+  bonusAgility: 0
   bonusMaxHealth: 0
   bonusRegen: 0
-  skillUnlocked: 
-  isOwned: 1
+  cooldownReduction: -1
+  isOwned: 0

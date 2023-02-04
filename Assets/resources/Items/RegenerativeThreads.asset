@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c272885d047734242aaea3c3a10ec52c, type: 3}
+  m_Name: RegenerativeThreads
+  m_EditorClassIdentifier: 
+  name: Regenerative Threads
+  description: A set of enchanted threads, woven into a garment or tapestry. They
+    are said to grant their wearer increased health regeneration, but at the cost
+    of reduced maximum health.
+  icon: {fileID: 21300000, guid: c7ff97ded0ce9f94a99342be0fd9100a, type: 3}
+  bonusATK: 0
+  bonusDEF: 0
+  bonusCrit: 0
+  bonusAgility: 0
+  bonusMaxHealth: -15
+  bonusRegen: 4
+  cooldownReduction: 0
+  isOwned: 0
