@@ -153,7 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Infernal Punch
   cooldown: 3
-  description: Punch with extra fire
+  description: 'With this blazing strike that harnesses the power of the underworld
+    you unleash a blast of fire, delivering a devastating punch that sends your enemies
+    reeling. '
   skillType: damage
 --- !u!1 &7479747069207647713
 GameObject:
