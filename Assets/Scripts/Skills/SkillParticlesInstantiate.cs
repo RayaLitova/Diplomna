@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class UI_Skill_Info : MonoBehaviour
+public class SkillParticlesInstantiate : MonoBehaviour
 {
     public string parentName = "Player";
     [SerializeField] string skillName;

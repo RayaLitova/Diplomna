@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
+using System;
+
 
 public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -62,9 +64,12 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         transform.SetParent(skillsUi.gameObject.transform);
         transform.localScale = new Vector3(0.8604978f, 0.8604978f, 0.8604978f); //scale to fit in slot
         transform.GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);//size to fit in slot
-        transform.GetComponent<UI_Skill_Execution>().enabled = true; 
-        transform.GetComponent<UI_Skill_Info>().enabled = true;
-
+        transform.GetComponent<UI_Skill_Execution>().enabled = true;
+        try
+        {
+            transform.GetComponent<SkillParticlesInstantiate>().enabled = true; // if particles already exist
+        }
+        catch (Exception) { };
         rectTransform.anchoredPosition = skillsUi.SkillSlotAnchoredPosition[to];
 
         if (from == null) // Move from skill menu (or for swap)

@@ -19,10 +19,11 @@ public class UI_Skill_Execution : MonoBehaviour
 
     private void Start()
     {
-        fileName = GetComponent<UI_Skill_Info>().fileName;
+        fileName = GetComponent<SkillParticlesInstantiate>().fileName;
         characterAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        skillObject = GameObject.Find(GetComponent<UI_Skill_Info>().parentName).transform.Find(fileName + "(Clone)").gameObject;
+        skillObject = GameObject.Find(GetComponent<SkillParticlesInstantiate>().parentName).transform.Find(fileName + "(Clone)").gameObject;
         skillObject.SetActive(false);
+        Destroy(GetComponent<SkillParticlesInstantiate>()); // prevents second particles being instantiated
     }
     private void Update()
     { 
@@ -49,9 +50,9 @@ public class UI_Skill_Execution : MonoBehaviour
         UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
         try
         {
-            GetComponent<UI_Buff_additional>().ExecuteBuff();
+            GetComponent<UI_Buff_additional>().ExecuteBuff(); //if it's already destroyed
         }
-        catch (Exception e) { };
+        catch (Exception) { };
     }
 
     public void FinishExecution()
