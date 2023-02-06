@@ -11,7 +11,10 @@ public class OpenPortcullis : MonoBehaviour
     }
     private void Update()
     {
-        if (targetRoom.GetNumberOfTags("Enemy") == 0)
-            animator.SetBool("open", true);
+        if (targetRoom.GetNumberOfTags("Enemy") != 0)
+            return;
+
+        GetComponent<AudioSource>().Play();
+        animator.SetBool("open", true);
     }
 }
