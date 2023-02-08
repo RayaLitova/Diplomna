@@ -33,7 +33,6 @@ public class LoadScene : MonoBehaviour
 
         while (sceneLoad.progress < 0.8)
         {
-            Debug.Log(sceneLoad.progress);
             yield return null;
         }
 

@@ -14,6 +14,8 @@ public class CharacterStats : MonoBehaviour
     public int Agility;
     public int MissChance;
 
+    [SerializeField] private GameObject buffedParticles;
+
     [System.NonSerialized] public int bonusATK;
     [System.NonSerialized] public int bonusDEF;
     [System.NonSerialized] public int bonusCrit;
@@ -62,12 +64,16 @@ public class CharacterStats : MonoBehaviour
     }
     private void Update()
     {
+        if (!buffedParticles.activeSelf && isBuffed)
+            buffedParticles.SetActive(true);
+            
         if(HealthBar != null) //remove this after adding health bars to enemies
             HealthBar.fillAmount = Health / MaxHealth;
     }
 
     public void ResetBuffs()
     {
+        buffedParticles.SetActive(false);
         isBuffed = false;
         bonusCrit = 0;
         bonusAgility = 0;

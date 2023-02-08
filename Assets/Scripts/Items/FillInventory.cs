@@ -8,6 +8,7 @@ public class FillInventory : MonoBehaviour
         DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/StreamingAssets/Items");
         FileInfo[] info = dir.GetFiles("*.asset");
         int childNum = 0;
+
         foreach (FileInfo f in info)
         {
             Transform itemSlot = transform.GetChild(childNum).GetChild(1);

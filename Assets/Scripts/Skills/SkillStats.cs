@@ -9,9 +9,11 @@ public class SkillStats : MonoBehaviour
     public string[] effectFlags;
     public int rage;
     public bool isEnraged = false;
+    [SerializeField] private GameObject ragedParticles;
 
     public void EnterRagedMode()
     {
+        ragedParticles.SetActive(true);
         isEnraged = true;
         damage *= 2;
         crit *= 2;
@@ -21,6 +23,7 @@ public class SkillStats : MonoBehaviour
 
     public void ExitRagedMode()
     {
+        ragedParticles.SetActive(false);
         isEnraged = false;
         damage /= 2;
         crit /= 2;

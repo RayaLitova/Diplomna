@@ -3,12 +3,21 @@ using UnityEngine;
 public class UnlockItem : MonoBehaviour
 {
     [SerializeField] private int chance = 50;
+    public static GameObject unlockParticles;
+    public static int itemCount = 0;
     private void OnDestroy()
     {
         if (Random.Range(0, 100) > chance)
             return;
-        Debug.Log("unlock");
+
+        unlockParticles.SetActive(true);
+
         Transform inventory = GameObject.Find("Inventory").transform.GetChild(0).GetChild(0);
-        inventory.GetChild(Random.Range(0, inventory.childCount)).GetChild(1).GetComponent<DisplayItem>().AcquireItem();
+        DisplayItem item;
+        do //make sure the item is not already acquired 
+        {
+            item = inventory.GetChild(Random.Range(0, itemCount)).GetChild(1).GetComponent<DisplayItem>();
+        } while (item.GetItem().isOwned);
+        item.AcquireItem();
     }
 }
