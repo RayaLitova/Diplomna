@@ -30,6 +30,9 @@ public class CameraHideObjects : MonoBehaviour
         foreach (var hit in hits) 
         {
             GameObject obj = hit.collider.gameObject;
+            if (obj.name == "PortalActive") //fix portal texture issue
+                continue;
+
             if (!currentlyInTheWay.Contains(obj.transform) && (obj.tag == "BackgroundObjects" || obj.tag == "Interactable"))
                 currentlyInTheWay.Add(obj.transform);
         }
