@@ -28,10 +28,8 @@ public class UI_Skill_Execution : MonoBehaviour
         buff = GetComponent<UI_Buff_additional>();
     }
     private void Update()
-    { 
-        if (cooldownTimer > Time.time) // UI cooldown control
-            transform.GetChild(0).GetComponent<Image>().fillAmount = ((cooldownTimer - Time.time) * 1 / cooldown);
-        
+    {
+        transform.GetChild(0).GetComponent<Image>().fillAmount = ((cooldownTimer - Time.time) * 1 / cooldown); //UI cooldown
     }
 
     public void StartExecution()
