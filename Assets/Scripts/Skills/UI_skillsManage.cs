@@ -149,13 +149,6 @@ public class UI_skillsManage : MonoBehaviour
         return returnValue;
     }
 
-    public static SkillEffects GetCurrentSkillEffects()
-    {
-        if (skillExecuted == null)
-            return null;
-        return Skills[skillExecuted].gameObject.GetComponent<SkillEffects>();
-    }
-
     public static void ApplyTimeBetweenSkillsCooldown()
     {
         for (int i = 1; i <= 3; i++)

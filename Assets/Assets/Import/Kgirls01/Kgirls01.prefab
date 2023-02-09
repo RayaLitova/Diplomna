@@ -15665,7 +15665,6 @@ GameObject:
   - component: {fileID: 4942999879850361343}
   - component: {fileID: 8137351939086409823}
   - component: {fileID: 1690002759071039921}
-  - component: {fileID: 41684792598591108}
   - component: {fileID: 6389702474909131642}
   - component: {fileID: 2918772641798605070}
   - component: {fileID: 5531758819863810828}
@@ -15802,18 +15801,6 @@ MonoBehaviour:
   MissChance: 7
   buffedParticles: {fileID: 0}
   HealthBar: {fileID: 0}
---- !u!114 &41684792598591108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385737107661046707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0864385e868abaa40878ed0cd51ad4c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6389702474909131642
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ public class SkillStats : MonoBehaviour
     public int damage;
     public float crit;
     public int missChance; 
-    public string[] effectFlags;
     public int rage;
     public bool isEnraged = false;
     [SerializeField] private GameObject ragedParticles;
