@@ -10,6 +10,11 @@ public class UI_Buff_additional : MonoBehaviour
 
     private CharacterStats characterStats;
 
+    private void Start()
+    {
+        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+    }
+
     public void ExecuteBuff()
     {
         characterStats.isBuffed = true;

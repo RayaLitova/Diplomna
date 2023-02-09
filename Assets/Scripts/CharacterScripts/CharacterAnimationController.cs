@@ -33,4 +33,14 @@ public class CharacterAnimationController : MonoBehaviour
     {
         return animationController.GetCurrentAnimatorStateInfo(0);
     }
+
+    public void SetTakeDamage(bool isActive)
+    {
+        animationController.SetBool("DamageTaken", isActive);
+    }
+
+    public void SetIsDead(bool isActive)
+    {
+        animationController.SetBool("isDead", isActive);
+    }
 }

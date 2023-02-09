@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BuffExecution : SkillExecution
 {
     private CharacterStats characterStats;
@@ -5,7 +7,7 @@ public class BuffExecution : SkillExecution
     {
         characterStats = gameObject.GetComponentInParent<CharacterStats>();
     }
-    override public void ExecuteSkill()
+    override public void ExecuteSkill(UI_Buff_additional buff = null)
     {
         characterStats.isBuffed = true;
         characterStats.bonusATK += 10;

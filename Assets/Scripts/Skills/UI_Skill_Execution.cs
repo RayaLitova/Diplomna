@@ -16,6 +16,7 @@ public class UI_Skill_Execution : MonoBehaviour
     private GameObject skillObject;
     [NonSerialized] public string fileName;
     public bool isCDRapplied = false; //cooldown reduction
+    private UI_Buff_additional buff;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class UI_Skill_Execution : MonoBehaviour
         skillObject = GameObject.Find(GetComponent<SkillParticlesInstantiate>().parentName).transform.Find(fileName + "(Clone)").gameObject;
         skillObject.SetActive(false);
         Destroy(GetComponent<SkillParticlesInstantiate>()); // prevents second particles being instantiated
+        buff = GetComponent<UI_Buff_additional>();
     }
     private void Update()
     { 
@@ -36,7 +38,7 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         if (cooldownTimer > Time.time)
             return;
-
+        
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
@@ -45,23 +47,25 @@ public class UI_Skill_Execution : MonoBehaviour
         float index = (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName];
         index += index == 0f ? 0f : (1.0f / UI_skillsManage.SkillAnimationCount) / 2; //make sure the right animation is playing
 
+
         characterAnimator.SetFloat("SpellIndex", index);
-        skillObject.GetComponent<SkillExecution>().ExecuteSkill();
         UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
-        try
-        {
-            GetComponent<UI_Buff_additional>().ExecuteBuff(); //if it's already destroyed
-        }
-        catch (Exception) { };
+        skillObject.GetComponent<SkillExecution>().ExecuteSkill(buff);
     }
 
-    public void FinishExecution()
+    public void FinishExecution(bool hasBeenExcuted = false)
     {
-        if (skillType == "damage")
-            GameObject.Find("Player").GetComponent<CharacterStats>().ResetBuffs();
         CharacterMovement.isImmobilized = false;
         characterAnimator.SetBool("Hit", false);
         skillObject.SetActive(false);
+
+        if (hasBeenExcuted) //because of UI_skillsManage.FinishSkillExecution()
+        {
+            if (skillType == "damage")
+                GameObject.Find("Player").GetComponent<CharacterStats>().ResetBuffs();
+            if (buff != null)
+                buff.ExecuteBuff();
+        }
     }
 
     public void DestroySkill()
@@ -71,7 +75,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
     public void ApplyTBSCooldown() // time between skills
     {
-        if (cooldownTimer < Time.time)
+        if (cooldownTimer < UI_skillsManage.timeBetweenSkills + Time.time)
             cooldownTimer = Time.time + UI_skillsManage.timeBetweenSkills;
     }
 }

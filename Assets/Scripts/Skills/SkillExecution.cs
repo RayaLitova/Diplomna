@@ -1,11 +1,10 @@
-using System.Linq;
 using UnityEngine;
 
 public class SkillExecution : MonoBehaviour
 {
     private Vector3 spherePosition;//for auto aim
     private float sphereRadius;
-    public virtual void ExecuteSkill()
+    public virtual void ExecuteSkill(UI_Buff_additional buff = null)
     {
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position; //setup sphere position
@@ -26,18 +25,7 @@ public class SkillExecution : MonoBehaviour
             }
             transform.parent.LookAt(colliders[0].transform.position); // rotate character
         }
-        if (UI_skillsManage.GetCurrentSkillInfo().effectFlags.Contains("AOE")) // hit multiple enemies
-        {
-            foreach (Collider collider in colliders)
-            {
-                collider.transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());
-                UI_skillsManage.GetCurrentSkillEffects().ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, collider);
-            }
-        }
-        else // hit one enemy
-        {
-            colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());
-            UI_skillsManage.GetCurrentSkillEffects().ApplyEffects(UI_skillsManage.GetCurrentSkillInfo().effectFlags, colliders[0]);
-        }
+        
+        colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());        
     }
 }

@@ -83,13 +83,22 @@ public class UI_skillsManage : MonoBehaviour
             }
             catch (NullReferenceException) { };
         }
+       
     }
 
     public static void FinishSkillExecution()
     {
-        if (skillExecuted != null)
-            Skills[skillExecuted].FinishExecution();
-        skillExecuted = null;
+        for (int i = 1; i <= 3; i++) //prevent particles not being disabled
+        {
+            try
+            {
+                Skills["Action key " + i].FinishExecution("Action key " + i == skillExecuted);
+            }
+            catch (Exception) 
+            {
+                continue;
+            };
+        }
     }
 
     public static SkillStats GetCurrentSkillInfo()
@@ -150,7 +159,16 @@ public class UI_skillsManage : MonoBehaviour
     public static void ApplyTimeBetweenSkillsCooldown()
     {
         for (int i = 1; i <= 3; i++)
-            Skills["Action key " + i].ApplyTBSCooldown();
+        {
+            try
+            {
+                Skills["Action key " + i].ApplyTBSCooldown();
+            }
+            catch (Exception)
+            {
+                continue;
+            }
+        }
     }
 
     public static void ReduceCooldowns(float sec)
