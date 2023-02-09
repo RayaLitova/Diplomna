@@ -5,7 +5,9 @@ public class LinkDisable : MonoBehaviour //Disable object if linked object is di
     [SerializeField] GameObject linked;
     void Update()
     {
-        if (!linked.activeInHierarchy)
-            gameObject.SetActive(false);
+        if (linked.activeInHierarchy)
+            return;
+        ItemActivation.isCanvasDisabled = true;
+        gameObject.SetActive(false);
     }
 }

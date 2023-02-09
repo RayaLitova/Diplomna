@@ -64,7 +64,7 @@ public class CharacterStats : MonoBehaviour
     }
     private void Update()
     {
-        if (!buffedParticles.activeSelf && isBuffed)
+        if (isBuffed && !buffedParticles.activeSelf)
             buffedParticles.SetActive(true);
             
         if(HealthBar != null) //remove this after adding health bars to enemies

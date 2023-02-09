@@ -5630,7 +5630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &74915151104173442
 Transform:
   m_ObjectHideFlags: 0
@@ -15800,6 +15800,7 @@ MonoBehaviour:
   Crit: 10
   Agility: 15
   MissChance: 7
+  buffedParticles: {fileID: 0}
   HealthBar: {fileID: 0}
 --- !u!114 &41684792598591108
 MonoBehaviour:

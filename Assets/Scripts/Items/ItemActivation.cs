@@ -3,8 +3,14 @@ using UnityEngine;
 public class ItemActivation : MonoBehaviour
 {
     [SerializeField] private GameObject particles;
+    public static bool isCanvasDisabled = false;
     private void OnEnable()
     {
+        if (isCanvasDisabled)
+        {
+            isCanvasDisabled = false;
+            return;
+        }
         GameObject.Find("Player").GetComponent<CharacterStats>().AddItem(GetComponent<DisplayItem>().GetItem());
     }
 
@@ -15,6 +21,8 @@ public class ItemActivation : MonoBehaviour
 
     private void OnDisable()
     {
+        if (isCanvasDisabled)
+            return;
         GameObject.Find("Player").GetComponent<CharacterStats>().RemoveItem(GetComponent<DisplayItem>().GetItem());
         GetComponent<DisplayItem>().Remove();
     }
