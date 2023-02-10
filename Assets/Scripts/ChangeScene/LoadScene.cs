@@ -38,4 +38,9 @@ public class LoadScene : MonoBehaviour
 
         sceneLoad.allowSceneActivation = true;
     }
+
+    public static string GetCurrentSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 }
