@@ -18,10 +18,7 @@ public class CharacterTakeDamage : MonoBehaviour
         CharacterMovement.isImmobilized = false;
         animator.SetTakeDamage(false);
         if (characterStats.Health <= 0f)
-        {
-            LoadDungeon.dungeonLevel--;
             LoadScene.Load("CityScene");
-        }
     }
     public void TakeDamage(Transform enemy)
     {
