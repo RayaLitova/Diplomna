@@ -10,6 +10,8 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
     private UI_skillsManage skillsUi;
+
+    private bool isFromMenu = false;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -33,9 +35,9 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         {
             GameObject dub = Instantiate(gameObject, transform.parent);
             dub.transform.SetSiblingIndex(2);
+            isFromMenu = true;
         }
         isBeingDragged = true;
-        canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.5f;
     }
 
@@ -74,7 +76,7 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
 
         if (from == null) // Move from skill menu (or for swap)
         {
-            if (UI_skillsManage.Skills[to] != null)
+            if (UI_skillsManage.Skills[to] != null && isFromMenu)
             {
                 UI_skillsManage.Skills[to].DestroySkill();
                 Destroy(UI_skillsManage.Skills[to].gameObject);
@@ -96,5 +98,6 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
                 UI_skillsManage.Skills[to] = tmp;
             }
         }
+        isFromMenu = false;
     }
 }
