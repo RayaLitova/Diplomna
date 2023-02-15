@@ -15,11 +15,6 @@ public class LoadScene : MonoBehaviour
         StartCoroutine(LoadAsync());
     }
 
-    public void Load()
-    {
-        Load(sceneName);
-    }
-
     public static void Load(string name)
     {
         LoadScene.name = name;

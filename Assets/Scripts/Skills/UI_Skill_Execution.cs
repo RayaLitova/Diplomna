@@ -8,9 +8,10 @@ public class UI_Skill_Execution : MonoBehaviour
     public string skillName;
     public float cooldown;
     public string description;
+    public enum SkillTypes { damage, buff }
+    [SerializeField] SkillTypes skillType;
 
-    [Tooltip("damage / buff")] // shows message in the inspector
-    [SerializeField] string skillType;
+
 
     private Animator characterAnimator;
     private GameObject skillObject;
@@ -59,7 +60,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
         if (hasBeenExcuted) //because of UI_skillsManage.FinishSkillExecution()
         {
-            if (skillType == "damage")
+            if (skillType == SkillTypes.damage)
                 GameObject.Find("Player").GetComponent<CharacterStats>().ResetBuffs();
             if (buff != null)
                 buff.ExecuteBuff();

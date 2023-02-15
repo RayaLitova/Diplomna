@@ -200,9 +200,9 @@ MonoBehaviour:
   damage: 10
   crit: 25
   missChance: 1
-  effectFlags: []
   rage: 0
   isEnraged: 0
+  ragedParticles: {fileID: 0}
 --- !u!114 &9185204918215484572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,4 +244,5 @@ MonoBehaviour:
   description: A powerful ability that imbues the user with a fiery burst of power
     for one attack. It increases attack power and critical strike and heals the user
     for 20 hit points.
-  skillType: buff
+  skillType: 1
+  isCDRapplied: 0
