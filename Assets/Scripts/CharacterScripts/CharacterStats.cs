@@ -39,10 +39,13 @@ public class CharacterStats : MonoBehaviour
             return 0;
         }
 
-        int damage = getATK() + characterSkill.damage + (Random.Range(0, 100) <= getCrit() + characterSkill.crit ? getATK() + characterSkill.damage : 0);
+        int damage = getATK() + characterSkill.damage;
 
-        if (damage > getATK() + characterSkill.damage)
+        if (Random.Range(0, 100) <= getCrit() + characterSkill.crit)
+        {
+            damage *= 2;
             DamagePopupType = "Crit";
+        }
 
         damage -= (int)((damage / 100.0f) * enemy.getDEF());
         

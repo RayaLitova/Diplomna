@@ -54,10 +54,10 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             }
             return;
         }
-        moveSkill(key, oldKey);
+        moveItem(key, oldKey);
     }
 
-    public void moveSkill(string to, string from)
+    public void moveItem(string to, string from)
     {
         
         if (from == null) // Move from skill menu (or for swap)
@@ -81,7 +81,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 Item item = UI_ItemsManage.items[from]; //save item
                 UI_ItemsManage.items[from] = null; //condition for "new slot is empty"
 
-                UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveSkill(from, to); //clear new slot
+                UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveItem(from, to); //clear new slot
                 UI_ItemsManage.items[to] = item;
                 UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], false);
             }

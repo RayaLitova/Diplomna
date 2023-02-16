@@ -4,7 +4,7 @@ public class SkillExecution : MonoBehaviour
 {
     private Vector3 spherePosition;//for auto aim
     private float sphereRadius;
-    public virtual void ExecuteSkill(UI_Buff_additional buff = null)
+    public virtual void ExecuteSkill()
     {
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position; //setup sphere position

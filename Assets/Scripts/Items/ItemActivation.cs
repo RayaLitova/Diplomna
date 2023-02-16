@@ -3,10 +3,10 @@ using UnityEngine;
 public class ItemActivation : MonoBehaviour
 {
     [SerializeField] private GameObject particles;
-    public static bool isCanvasDisabled = false;
+    public static bool isCanvasDisabled = false; //for cutscenes
     private void OnEnable()
     {
-        if (isCanvasDisabled)
+        if (isCanvasDisabled) //cutscene
         {
             isCanvasDisabled = false;
             return;
@@ -21,9 +21,9 @@ public class ItemActivation : MonoBehaviour
 
     private void OnDisable()
     {
-        if (isCanvasDisabled)
+        if (isCanvasDisabled) //cutscene
             return;
+
         GameObject.Find("Player").GetComponent<CharacterStats>().RemoveItem(GetComponent<DisplayItem>().GetItem());
-        GetComponent<DisplayItem>().Remove();
     }
 }

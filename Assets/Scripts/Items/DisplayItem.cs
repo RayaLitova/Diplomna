@@ -16,6 +16,9 @@ public class DisplayItem : MonoBehaviour
 
     public void Display(Item itemRef = null)
     {
+        if (item != null)
+            Remove();
+
         if (itemRef != null)
             item = itemRef;
         

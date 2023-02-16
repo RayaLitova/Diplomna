@@ -49,7 +49,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
         characterAnimator.SetFloat("SpellIndex", index);
         UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
-        skillObject.GetComponent<SkillExecution>().ExecuteSkill(buff);
+        skillObject.GetComponent<SkillExecution>().ExecuteSkill();
     }
 
     public void FinishExecution(bool hasBeenExcuted = false)
