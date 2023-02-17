@@ -31,7 +31,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
         GetComponent<EnemyAttack>().FinishExecution();
 
-        if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance) // chase player
+        if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance) // attack
         {
             animationController.WalkAnimation(false);
             if (attackCooldown > Time.time)
@@ -41,10 +41,10 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             attackCooldown = Time.time + 3f;
             return;
         }
-        else if (Vector3.Distance(character.position, transform.position) > stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform))
+        else if (Vector3.Distance(character.position, transform.position) > stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform)) //chase
         {
             animationController.WalkAnimation(true);
-            transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotating on y axis
+            transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotation on y axis
             transform.position += transform.forward * walkSpeedMultiplier;
             if (gameObject.tag == "Boss" && !isBossMusicPlaying)
             {
@@ -54,14 +54,14 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
                 isBossMusicPlaying = true;
             }
         }
-        else if (Vector3.Distance(startPosition, transform.position) < stoppingDistance)
+        else if (Vector3.Distance(startPosition, transform.position) < stoppingDistance) //idle
         {
             animationController.WalkAnimation(false);
         }
-        else
+        else //return to starting position
         { 
             animationController.WalkAnimation(true);
-            transform.LookAt(new Vector3(startPosition.x, transform.position.y, startPosition.z)); // fix rotating on y axis
+            transform.LookAt(new Vector3(startPosition.x, transform.position.y, startPosition.z)); // fix rotation on y axis
             transform.position += transform.forward * walkSpeedMultiplier;
 
             if (gameObject.tag == "Boss" && isBossMusicPlaying)

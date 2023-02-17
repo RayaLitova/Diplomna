@@ -2275,6 +2275,7 @@ GameObject:
   - component: {fileID: 5471839735373372217}
   - component: {fileID: 1842035495407577566}
   - component: {fileID: 3527049484505837799}
+  - component: {fileID: 6519176139284505107}
   m_Layer: 7
   m_Name: Skeleton_0
   m_TagString: Enemy
@@ -2456,7 +2457,6 @@ MonoBehaviour:
   damage: 5
   crit: 20
   missChance: 1
-  effectFlags: []
   rage: 0
   isEnraged: 0
   ragedParticles: {fileID: 1438455163832722049}
@@ -2473,6 +2473,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chance: 100
+--- !u!111 &6519176139284505107
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809680881062764}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4d1c1663ca126144f9813d9ddd1dd119, type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1813734462565108
 GameObject:
   m_ObjectHideFlags: 0

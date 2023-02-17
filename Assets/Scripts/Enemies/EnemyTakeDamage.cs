@@ -38,12 +38,4 @@ public class EnemyTakeDamage : MonoBehaviour
         UI_skillsManage.FinishSkillExecution();
     }
 
-    public void TakeDOTdamage(int damage)
-    {
-        animationController.takeDamageAnimation(true);
-        stats.Health -= damage;
-        if (stats.Health <= 0)
-            animationController.deathAnimation(true);
-        //play burn particles
-    }
 }
