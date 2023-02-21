@@ -16,7 +16,7 @@ public class DisplayItem : MonoBehaviour
 
     public void Display(Item itemRef = null)
     {
-        if (GetComponent<ItemActivation>().enabled == true)
+        if (GetComponent<ItemActivation>().enabled == true) // in case of putting an item on top of another item
             Remove();
 
         if (itemRef != null)
