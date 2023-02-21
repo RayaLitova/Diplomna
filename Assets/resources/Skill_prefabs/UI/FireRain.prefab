@@ -41,8 +41,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5, y: 1.9}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.157197, y: 0.157197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4232355249043547097
 CanvasRenderer:
@@ -111,10 +111,9 @@ MonoBehaviour:
   damage: 35
   crit: 35
   missChance: 1
-  effectFlags:
-  - AOE
   rage: 0
   isEnraged: 0
+  ragedParticles: {fileID: 0}
 --- !u!114 &2895916591109631442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +155,8 @@ MonoBehaviour:
   description: A devastating combination of fire and martial arts mastery. With this
     skill, you unleash a blazing blast as you deliver a powerful kick, dealing massive
     damage.
-  skillType: damage
+  skillType: 0
+  isCDRapplied: 0
 --- !u!1 &7757712429919047809
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.03666687, y: -0.26284528}
-  m_SizeDelta: {x: 65.08, y: 65.08}
+  m_SizeDelta: {x: 29, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8312503465776016476
 CanvasRenderer:

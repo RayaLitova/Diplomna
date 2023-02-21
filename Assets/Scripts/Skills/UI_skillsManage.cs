@@ -128,23 +128,19 @@ public class UI_skillsManage : MonoBehaviour
 
     public string getClosestSkillSlot(Vector3 skillPosition) // for skill position change
     {
-        float min = 115.0f;
+        float min = 130.0f;
         string returnValue = null;
-        float tmp = Vector3.Distance(skillPosition, skillSlotTransform[0].position);
-        if (tmp < min)
+        float tmp;
+
+        for (int i = 0; i < 3; i++)
         {
-            min = tmp;
-            returnValue = "Action key 1";
+            tmp = Vector3.Distance(skillPosition, skillSlotTransform[i].position);
+            if (tmp < min)
+            {
+                min = tmp;
+                returnValue = "Action key " + (i + 1);
+            }
         }
-        tmp = Vector3.Distance(skillPosition, skillSlotTransform[1].position);
-        if (tmp < min)
-        {
-            min = tmp;
-            returnValue = "Action key 2";
-        }
-        tmp = Vector3.Distance(skillPosition, skillSlotTransform[2].position);
-        if (tmp < min)
-            returnValue = "Action key 3";
         
         return returnValue;
     }
@@ -168,7 +164,13 @@ public class UI_skillsManage : MonoBehaviour
     {
         cooldownReduction += sec;
         for (int i = 1; i <= 3; i++)
-            Skills["Action key " + i].cooldown -= sec;
+        {
+            try
+            {
+                Skills["Action key " + i].cooldown -= sec;
+            }
+            catch (Exception) { };
+        }
     }
 
     public static void ReduceCooldown(string skillKey)

@@ -16,7 +16,7 @@ public class DisplayItem : MonoBehaviour
 
     public void Display(Item itemRef = null)
     {
-        if (item != null)
+        if (GetComponent<ItemActivation>().enabled == true)
             Remove();
 
         if (itemRef != null)

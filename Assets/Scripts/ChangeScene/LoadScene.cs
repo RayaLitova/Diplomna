@@ -21,6 +21,12 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene("LoadingScreen");
     }
 
+    public void Load()
+    {
+        LoadScene.name = sceneName;
+        SceneManager.LoadScene("LoadingScreen");
+    }
+
     private IEnumerator LoadAsync()
     {
         AsyncOperation sceneLoad = SceneManager.LoadSceneAsync(name);

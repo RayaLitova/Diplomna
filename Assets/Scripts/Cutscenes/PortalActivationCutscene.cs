@@ -23,8 +23,11 @@ public class PortalActivationCutscene : MonoBehaviour
         mainCamera.SetActive(false);
         cinematicCamera.SetActive(true);
         cinematicCamera.transform.position = portalActive.transform.position;
-        cinematicCamera.transform.position -= portalActive.transform.forward * 100f; //Move to see the portal from the right position
-        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; //Rotate to see the portal from the right angle
+        //Move to see the portal from the right position
+        cinematicCamera.transform.position -= portalActive.transform.forward * 100f;
+
+        //Rotate to see the portal from the right angle
+        cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; 
 
         portalActive.SetActive(true);
         StartCoroutine("FadeOut");
@@ -35,7 +38,8 @@ public class PortalActivationCutscene : MonoBehaviour
     {
         while (portalUnactiveRenderer.material.color.a > 0f)
         {
-            portalUnactiveRenderer.material.color = new Color(portalUnactiveColor.r, portalUnactiveColor.g, portalUnactiveColor.b, portalUnactiveColor.a - 0.01f);
+            portalUnactiveRenderer.material.color = new Color(portalUnactiveColor.r, portalUnactiveColor.g,
+                portalUnactiveColor.b, portalUnactiveColor.a - 0.01f);
             portalUnactiveColor.a -= 0.01f;
             if(portalUnactiveColor.a < 0.5f)
                 particles.SetActive(true);

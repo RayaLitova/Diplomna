@@ -51,7 +51,7 @@ public class SkeletonAnimationController : EnemyAnimationController
         base.AttackAnimation(isActive);
         if (isActive)
         {
-            //Choose random attack animation
+            //Select random attack animation
             animator.SetFloat(attackAnimationNumberVar, (1 / attackAnimationCount) * Random.Range(0, attackAnimationCount + 1));
             if (!stats.isEnraged)
             {

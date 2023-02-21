@@ -7,7 +7,7 @@ public class ShowDamagePopups : MonoBehaviour
     {
         GameObject popup = Instantiate(Resources.Load<GameObject>("TextPopups/" + type), GameObject.Find("DamageNumbers").transform);
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(enemyPosition);
-        popup.transform.position = screenPosition + new Vector2(Random.Range(-70f, 70f), Random.Range(-70f, 70f));
+        popup.transform.position = screenPosition + new Vector2(Random.Range(-15, 15), Random.Range(-15, 15));
         if (type == "Miss")
             return;
 

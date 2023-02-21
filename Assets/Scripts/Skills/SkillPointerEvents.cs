@@ -64,8 +64,8 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
     public void moveSkill(string to, string from)
     {
         transform.SetParent(skillsUi.gameObject.transform);
-        transform.localScale = new Vector3(0.8604978f, 0.8604978f, 0.8604978f); //scale to fit in slot
-        transform.GetComponent<RectTransform>().sizeDelta = new Vector2(65, 65);//size to fit in slot
+        transform.localScale = new Vector3(0.87f, 0.87f, 0.87f); //scale to fit in slot
+        transform.GetComponent<RectTransform>().sizeDelta = new Vector2(30, 30);//size to fit in slot
         transform.GetComponent<UI_Skill_Execution>().enabled = true;
         try
         {
