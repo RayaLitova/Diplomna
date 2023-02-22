@@ -47,13 +47,26 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
         string key = skillsUi.getClosestSkillSlot(transform.position);
-        string oldKey = UI_skillsManage.Skills.Where(pair => pair.Value == gameObject.GetComponent<UI_Skill_Execution>())
-            .Select(pair => pair.Key.ToString()).FirstOrDefault();
+        string oldKey = null;
 
+        foreach (string k in UI_skillsManage.Skills.Keys)
+        {
+            if (UI_skillsManage.Skills[k] != null && 
+                UI_skillsManage.Skills[k].gameObject.name.RemoveClones() == gameObject.name.RemoveClones())
+            {
+                oldKey = k;
+                break;
+            }
+        }
+        if (isFromMenu && oldKey != null) //if the user is trying to place the same skill twice
+        {
+            RemoveSkill(oldKey);
+            oldKey = null;
+        }
         if (key == null)
         {
             if (oldKey != null)
-                GetComponent<UI_Skill_Execution>().DestroySkill();
+                RemoveSkill(oldKey);
 
             Destroy(gameObject);
             return;
@@ -61,17 +74,24 @@ public class SkillPointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUp
         moveSkill(key, oldKey);
     }
 
+    public void RemoveSkill(string from)
+    {
+        UI_skillsManage.Skills[from].DestroySkill();
+        Destroy(UI_skillsManage.Skills[from].gameObject);
+        UI_skillsManage.Skills[from] = null;
+    }
+
     public void moveSkill(string to, string from)
     {
         transform.SetParent(skillsUi.gameObject.transform);
         transform.localScale = new Vector3(0.87f, 0.87f, 0.87f); //scale to fit in slot
         transform.GetComponent<RectTransform>().sizeDelta = new Vector2(30, 30);//size to fit in slot
-        transform.GetComponent<UI_Skill_Execution>().enabled = true;
         try
         {
             transform.GetComponent<SkillParticlesInstantiate>().enabled = true; // if particles already exist
         }
         catch (Exception) { };
+        transform.GetComponent<UI_Skill_Execution>().enabled = true;
         rectTransform.anchoredPosition = skillsUi.SkillSlotAnchoredPosition[to];
 
         if (from == null) // Move from skill menu (or for swap)

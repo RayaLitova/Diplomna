@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2897839218556124989}
   - component: {fileID: 5744535706693831305}
   - component: {fileID: 8872074421343048382}
+  - component: {fileID: 285959090062350637}
   m_Layer: 5
   m_Name: InfernalPunch
   m_TagString: Untagged
@@ -157,6 +158,17 @@ MonoBehaviour:
     reeling. '
   skillType: 0
   isCDRapplied: 0
+--- !u!210 &285959090062350637
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952419546049095358}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &7479747069207647713
 GameObject:
   m_ObjectHideFlags: 0

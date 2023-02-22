@@ -13,7 +13,6 @@ public class KillAllEnemies : MonoBehaviour
 
     IEnumerator DestroyEnemies()
     {
-        Debug.Log(GameObject.FindGameObjectWithTag("Enemy"));
         for (int i = 0; i < SpawnEnemies.enemyCount; i++)
         {
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));

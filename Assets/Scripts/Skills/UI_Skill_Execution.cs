@@ -11,10 +11,8 @@ public class UI_Skill_Execution : MonoBehaviour
     public enum SkillTypes { damage, buff }
     [SerializeField] SkillTypes skillType;
 
-
-
     private Animator characterAnimator;
-    private GameObject skillObject;
+    private Transform parentGameObject;
     [NonSerialized] public string fileName;
     public bool isCDRapplied = false; //cooldown reduction
     private UI_Buff_additional buff;
@@ -23,8 +21,8 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         fileName = GetComponent<SkillParticlesInstantiate>().fileName;
         characterAnimator = GameObject.Find("Player").GetComponent<Animator>();
-        skillObject = GameObject.Find(GetComponent<SkillParticlesInstantiate>().parentName).transform.Find(fileName + "(Clone)").gameObject;
-        skillObject.SetActive(false);
+        parentGameObject = GameObject.Find(GetComponent<SkillParticlesInstantiate>().parentName).transform;
+        parentGameObject.Find(fileName).gameObject.SetActive(false);
         Destroy(GetComponent<SkillParticlesInstantiate>()); // prevents second particles being instantiated
         buff = GetComponent<UI_Buff_additional>();
     }
@@ -37,7 +35,8 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         if (cooldownTimer > Time.time)
             return;
-        
+
+        GameObject skillObject = parentGameObject.Find(fileName).gameObject;
         CharacterMovement.isImmobilized = true; // immobilized while executing skill
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
@@ -56,7 +55,7 @@ public class UI_Skill_Execution : MonoBehaviour
     {
         CharacterMovement.isImmobilized = false;
         characterAnimator.SetBool("Hit", false);
-        skillObject.SetActive(false);
+        parentGameObject.Find(fileName).gameObject.SetActive(false);
 
         if (hasBeenExcuted) //because of UI_skillsManage.FinishSkillExecution()
         {
@@ -69,7 +68,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
     public void DestroySkill()
     {
-        Destroy(skillObject);
+        Destroy(parentGameObject.Find(fileName).gameObject);
     }
 
     public void ApplyTBSCooldown() // time between skills

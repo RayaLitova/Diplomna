@@ -9,7 +9,11 @@ public class SkillParticlesInstantiate : MonoBehaviour
     private void OnEnable()
     {
         fileName = StaticFunctions.RemoveWhitespace(skillName);
-        Instantiate(Resources.Load<GameObject>("Skill_prefabs/Skills/" + fileName), GameObject.Find(parentName).transform.position, Quaternion.identity, GameObject.Find(parentName).transform);
+        GameObject inst = Instantiate(Resources.Load<GameObject>("Skill_prefabs/Skills/" + fileName),
+                                        GameObject.Find(parentName).transform.position, 
+                                        Quaternion.identity, 
+                                        GameObject.Find(parentName).transform);
+        inst.name = inst.name.RemoveClones();
     }
 
 }

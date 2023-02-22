@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5744535706693831305}
   - component: {fileID: 8872074421343048382}
   - component: {fileID: 3964730352389919748}
+  - component: {fileID: -8302311114691181426}
   m_Layer: 5
   m_Name: FireHurricane
   m_TagString: Untagged
@@ -175,6 +176,17 @@ MonoBehaviour:
   bonusCrit: 0
   bonusAgility: 5
   healing: 0
+--- !u!210 &-8302311114691181426
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952419546049095358}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &7479747069207647713
 GameObject:
   m_ObjectHideFlags: 0

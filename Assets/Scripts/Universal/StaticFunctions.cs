@@ -11,4 +11,18 @@ public static class StaticFunctions
             .ToArray());
     }
 
+    public static string RemoveClones(this string input)
+    {
+        int index = input.Length;
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (input.ToCharArray()[i] == '(')
+            {
+                index = i;
+                break;
+            }
+        }
+        return input.Substring(0, index);
+    }
+
 }

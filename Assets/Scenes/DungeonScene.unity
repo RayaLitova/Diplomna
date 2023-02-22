@@ -531,8 +531,8 @@ CanvasGroup:
   m_GameObject: {fileID: 42354406}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
 --- !u!1 &54678360
 GameObject:
@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 55623619}
   - component: {fileID: 55623618}
   - component: {fileID: 55623620}
+  - component: {fileID: 55623621}
   m_Layer: 5
   m_Name: Image (34)
   m_TagString: Untagged
@@ -698,7 +699,18 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
+--- !u!210 &55623621
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55623616}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &171197405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1395,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &340865477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1530,7 @@ GameObject:
   - component: {fileID: 367464062}
   - component: {fileID: 367464061}
   - component: {fileID: 367464063}
+  - component: {fileID: 367464064}
   m_Layer: 5
   m_Name: Image (32)
   m_TagString: Untagged
@@ -1594,7 +1607,18 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
+--- !u!210 &367464064
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367464059}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &375340295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2108,7 @@ GameObject:
   - component: {fileID: 450289163}
   - component: {fileID: 450289162}
   - component: {fileID: 450289164}
+  - component: {fileID: 450289165}
   m_Layer: 5
   m_Name: Image (6)
   m_TagString: Untagged
@@ -2160,7 +2185,18 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
+--- !u!210 &450289165
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450289160}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &474308744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,6 +3596,7 @@ GameObject:
   - component: {fileID: 772759285}
   - component: {fileID: 772759284}
   - component: {fileID: 772759286}
+  - component: {fileID: 772759287}
   m_Layer: 5
   m_Name: Image (36)
   m_TagString: Untagged
@@ -3637,6 +3674,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!210 &772759287
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772759282}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &785168205
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,6 +4102,7 @@ GameObject:
   - component: {fileID: 879140513}
   - component: {fileID: 879140512}
   - component: {fileID: 879140514}
+  - component: {fileID: 879140515}
   m_Layer: 5
   m_Name: Image (38)
   m_TagString: Untagged
@@ -4131,6 +4180,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!210 &879140515
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879140510}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &887420969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,7 +4279,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1001 &896564518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5114,7 +5174,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1048550712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,8 +5682,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1099933753}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
 --- !u!1 &1103835262
 GameObject:
@@ -5711,8 +5771,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1103835262}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 1
 --- !u!1 &1190478650
 GameObject:
@@ -7642,7 +7702,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1362927280
 GameObject:
   m_ObjectHideFlags: 3
@@ -10054,6 +10114,7 @@ GameObject:
   - component: {fileID: 1731253775}
   - component: {fileID: 1731253777}
   - component: {fileID: 1731253776}
+  - component: {fileID: 1731253778}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -10119,6 +10180,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731253774}
   m_CullTransparentMesh: 0
+--- !u!225 &1731253778
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731253774}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1746718885
 GameObject:
   m_ObjectHideFlags: 0
@@ -11883,6 +11956,7 @@ GameObject:
   - component: {fileID: 1977397164}
   - component: {fileID: 1977397163}
   - component: {fileID: 1977397165}
+  - component: {fileID: 1977397166}
   m_Layer: 5
   m_Name: Image (40)
   m_TagString: Untagged
@@ -11960,6 +12034,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!210 &1977397166
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977397161}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1001 &1982843040
 PrefabInstance:
   m_ObjectHideFlags: 0

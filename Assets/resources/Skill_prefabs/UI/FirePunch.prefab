@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2895916591109631442}
   - component: {fileID: 6332301994694776969}
   - component: {fileID: 7002322573154974490}
+  - component: {fileID: 3258877085577996456}
   m_Layer: 5
   m_Name: FirePunch
   m_TagString: Untagged
@@ -157,6 +158,17 @@ MonoBehaviour:
     scorches your enemies.
   skillType: 0
   isCDRapplied: 0
+--- !u!210 &3258877085577996456
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232355249043547102}
+  m_Enabled: 1
+  m_SortingLayerID: -564980567
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &7757712429919047809
 GameObject:
   m_ObjectHideFlags: 0
