@@ -6146,10 +6146,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 310772112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc427a41eeccc574da611864f708b55d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eecb81269d179e40b9b80dfc5101c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Enter Dungeon
+  description: Enter dungeon
+  sceneName: DungeonScene
 --- !u!1001 &313335933
 PrefabInstance:
   m_ObjectHideFlags: 0
