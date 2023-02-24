@@ -6,15 +6,22 @@ public class EnemyAttack : MonoBehaviour
     public Transform particles;
     private Vector3 particlesStartPos;
     private EnemyAnimationController animationController;
-    [SerializeField] string particlesName;
+    [SerializeField] string particlesName = "None";
     public bool isAttackingDisabled = false;
 
     private void Start()
     {
         animationController = GetComponent<EnemyAnimationController>();
-        particles = transform.Find(particlesName);
-        particlesStartPos = particles.localPosition;
-        FinishExecution(); //set particles to inactive after getting the reference
+        try
+        {
+            particles = transform.Find(particlesName);
+            particlesStartPos = particles.localPosition;
+            FinishExecution(); //set particles to inactive after getting the reference
+        }
+        catch (Exception) 
+        {
+            particles = null;
+        }
     }
     
     public void StartExecution()
@@ -31,7 +38,7 @@ public class EnemyAttack : MonoBehaviour
         {
             animationController.AttackAnimation(false);
         }
-        catch (NullReferenceException) { };
+        catch (Exception) { };
             
         if (particles == null || !particles.gameObject.activeInHierarchy) //for optimization
             return;

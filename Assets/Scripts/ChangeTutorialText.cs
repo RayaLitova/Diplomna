@@ -6,6 +6,7 @@ public class ChangeTutorialText : MonoBehaviour
     public static bool DungeonTutorialPassed = false;
     public static bool CityTutorialPassed = false;
     public static bool TavernTutorialPassed = false;
+    public static bool TrainingRoomTutorialPassed = false;
 
     private string[] tutorialTextsDungeon = new string[] { 
         "Use WASD to move around",
@@ -36,15 +37,22 @@ public class ChangeTutorialText : MonoBehaviour
         "This is the main city",
         "Here all the citizens are your friends",
         "You can walk around and see the village",
-        "There is one particular house that you're allowed to enter - The tavern",
-        "It's located right behind the well on the main square"
+        "There are tow particular houses that you're allowed to enter - the tavern and the training room",
+        "The tavern is located right behind the well on the main square",
+        "The training room is located on the other side of the main square from the tavern."
     };
 
     private string[] tutorialTextsTavern = new string[] {
         "This is the tavern",
-        "Here you can listen to the cat's beautiful voice",
-        "Also you can talk to the bartender which will send you to you next dungeon"
+        "Here you can listen to the cat's beautiful voice and also talk to the bartender, which will send you to your next dungeon"
     };
+
+    private string[] tutorialTextsTrainingRoom = new string[] {
+        "This is the training room",
+        "Here you can test and improve your skills on the training dummies",
+        "You have access to all your skills, which can be found in the skill menu, opened with the key 'K', and all available items, which are located in your inventory, opened with the key 'I'"
+    };
+
     private int current = 0;
     private Text textRef;
     
@@ -84,21 +92,25 @@ public class ChangeTutorialText : MonoBehaviour
         string text = tutorialTextsDungeon[textNum];
         if (LoadScene.GetCurrentSceneName() == "CityScene")
             text = tutorialTextsCity[textNum];
-        else if(LoadScene.GetCurrentSceneName() == "AdventureGuildScene")
+        else if (LoadScene.GetCurrentSceneName() == "AdventureGuildScene")
             text = tutorialTextsTavern[textNum];
+        else if (LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
+            text = tutorialTextsTrainingRoom[textNum];
 
         return text;
     }
 
     private int GetTextArrLength()
     {
-        int text = tutorialTextsDungeon.Length;
+        int len = tutorialTextsDungeon.Length;
         if (LoadScene.GetCurrentSceneName() == "CityScene")
-            text = tutorialTextsCity.Length;
+            len = tutorialTextsCity.Length;
         else if (LoadScene.GetCurrentSceneName() == "AdventureGuildScene")
-            text = tutorialTextsTavern.Length;
+            len = tutorialTextsTavern.Length;
+        else if (LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
+            len = tutorialTextsTrainingRoom.Length;
 
-        return text;
+        return len;
     }
 
     private bool CheckIfTutorialIsPassed()
@@ -107,6 +119,8 @@ public class ChangeTutorialText : MonoBehaviour
             return CityTutorialPassed;
         else if (LoadScene.GetCurrentSceneName() == "AdventureGuildScene")
             return TavernTutorialPassed;
+        else if (LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
+            return TrainingRoomTutorialPassed;
         return DungeonTutorialPassed;
     }
 

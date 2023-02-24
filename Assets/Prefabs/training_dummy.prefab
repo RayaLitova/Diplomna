@@ -362,9 +362,10 @@ GameObject:
   - component: {fileID: 7084112181917832254}
   - component: {fileID: 2811878294250356786}
   - component: {fileID: 7292427421495688464}
+  - component: {fileID: 4959909381200607533}
   m_Layer: 7
   m_Name: training_dummy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,14 +462,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7fc072fdc39ee249a330eb64d03a367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
-  Health: 100
-  HealthRegen: 0.4
+  MaxHealth: 100000
+  Health: 100000
+  HealthRegen: 10
   ATK: 5
-  DEF: 20
+  DEF: 10
   Crit: 50
   Agility: 3
   MissChance: 10
+  buffedParticles: {fileID: 0}
   HealthBar: {fileID: 0}
 --- !u!114 &7292427421495688464
 MonoBehaviour:
@@ -484,6 +486,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitAnimationVar: isPushed
   deathAnimationVar: isDead
+  attackAnimationVar: 
+  walkAnimationVar: 
+--- !u!114 &4959909381200607533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636604326530140365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe8ea5adc1fbe64aa61c29347262a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
+  particlesName: None
+  isAttackingDisabled: 1
 --- !u!1001 &7401428205891976363
 PrefabInstance:
   m_ObjectHideFlags: 0

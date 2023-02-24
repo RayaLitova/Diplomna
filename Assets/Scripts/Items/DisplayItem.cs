@@ -26,7 +26,7 @@ public class DisplayItem : MonoBehaviour
         image.sprite = item.icon;
         transform.rotation = new Quaternion(0, 0, 1, 0); //z = 180
         image.color = new Color(image.color.r, image.color.g, image.color.r, 1f);
-        if (item.isOwned)
+        if (item.isOwned || LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
             mask.SetActive(false);
     }
 
