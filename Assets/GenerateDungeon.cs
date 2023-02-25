@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 public class GenerateDungeon : MonoBehaviour
 {
 
@@ -17,9 +18,19 @@ public class GenerateDungeon : MonoBehaviour
         
     }
 
+    private Dictionary<RoomType, string> RoomResourcesPath;
+
     private RoomType[,] grid;
     void Start()
-    { 
+    {
+        RoomResourcesPath = new Dictionary<RoomType, string>() {
+            { RoomType.SafeRoom, "DungeonRooms/SafeRoom" },
+            { RoomType.NormalRoom, "DungeonRooms/NormalRoom" },
+            { RoomType.BossRoom, "DungeonRooms/BossRoom" },
+            { RoomType.PortalRoom, "DungeonRooms/PortalRoom" }
+        };
+
+
         roomCount = 6 + LoadDungeon.dungeonLevel * 2;
         grid = new RoomType[7,7];
 
@@ -66,6 +77,8 @@ public class GenerateDungeon : MonoBehaviour
                 isBossRoomGenerated = true;
             if (i + currentRooms == roomsCount - 1 && !isPortalRoomGenerated)
                 roomType = RoomType.PortalRoom;
+            if (roomType == RoomType.PortalRoom && isPortalRoomGenerated)
+                roomType = RoomType.NormalRoom;
             if (roomType == RoomType.PortalRoom)
                 isPortalRoomGenerated = true;
             //
@@ -123,15 +136,15 @@ public class GenerateDungeon : MonoBehaviour
             {
                 if (grid[i, j] == RoomType.None)
                     continue;
-                GameObject room = Instantiate(Resources.Load<GameObject>("DungeonRooms/Room"), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
+                GameObject room = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[grid[i, j]]), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
 
-                if (grid[i, j + 1] != RoomType.None)
+                if (j + 1 < 7 && grid[i, j + 1] != RoomType.None)
                     room.transform.Find("3").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (grid[i + 1, j] != RoomType.None)
+                if (i + 1 < 7 && grid[i + 1, j] != RoomType.None)
                     room.transform.Find("4").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (grid[i, j - 1] != RoomType.None)
+                if (j - 1 >= 0 && grid[i, j - 1] != RoomType.None)
                     room.transform.Find("1").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (grid[i - 1, j] != RoomType.None)
+                if (i - 1 >= 0 && grid[i - 1, j] != RoomType.None)
                     room.transform.Find("2").GetComponent<ChangeWall>().ChangeToDoorWay();
             }
         }

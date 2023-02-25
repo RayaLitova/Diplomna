@@ -8,5 +8,6 @@ public class ChangeWall : MonoBehaviour
     public void ChangeToDoorWay()
     {
         GetComponent<MeshFilter>().mesh = doorWayMesh;
+        GetComponent<MeshCollider>().sharedMesh = doorWayMesh;
     }
 }

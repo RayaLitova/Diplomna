@@ -4,11 +4,12 @@ using System;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public static int enemyCount = LoadDungeon.dungeonLevel * 2 + 5;
+    public static int enemyCount;
     private bool[] usedPositions = new bool[15];
 
     private void Awake()
     {
+        enemyCount = UnityEngine.Random.Range(1, 5);
         Array.Fill(usedPositions, false);
         for (int i = 0; i < enemyCount; i++)
         {
