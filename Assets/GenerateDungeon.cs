@@ -123,7 +123,16 @@ public class GenerateDungeon : MonoBehaviour
             {
                 if (grid[i, j] == RoomType.None)
                     continue;
-                Instantiate(Resources.Load<GameObject>("DungeonRooms/Room"), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity); 
+                GameObject room = Instantiate(Resources.Load<GameObject>("DungeonRooms/Room"), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
+
+                if (grid[i, j + 1] != RoomType.None)
+                    room.transform.Find("3").GetComponent<ChangeWall>().ChangeToDoorWay();
+                if (grid[i + 1, j] != RoomType.None)
+                    room.transform.Find("4").GetComponent<ChangeWall>().ChangeToDoorWay();
+                if (grid[i, j - 1] != RoomType.None)
+                    room.transform.Find("1").GetComponent<ChangeWall>().ChangeToDoorWay();
+                if (grid[i - 1, j] != RoomType.None)
+                    room.transform.Find("2").GetComponent<ChangeWall>().ChangeToDoorWay();
             }
         }
     }
