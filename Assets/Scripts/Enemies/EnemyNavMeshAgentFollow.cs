@@ -19,7 +19,8 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     {
         animationController = GetComponent<EnemyAnimationController>();
         character = GameObject.FindGameObjectWithTag("Player").transform;
-        rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();
+        rooms = GameObject.Find("Scripts (1)").GetComponent<GetCurrentRoom>();
+        Debug.Log(rooms);
         startPosition = transform.position;
         audioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
     }

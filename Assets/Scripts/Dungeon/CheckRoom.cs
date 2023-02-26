@@ -9,16 +9,19 @@ public class CheckRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "BackgroundObjects" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
+        if (other.tag != "BackgroundObjects" && other.tag != "Untagged" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
+            Debug.Log(transform.parent.gameObject.name + " "+other.name);
             ObjectsInRoom[objectCount] = other.transform;  //Add element to array
             objectCount++;
         }
     }
     private void OnTriggerExit(Collider other)
     {
+
         if (other.tag == "Player")
         {
+            Debug.Log("Exit: "+transform.parent.gameObject.name + " " + other.name);
             ObjectsInRoom = ObjectsInRoom.Where(val => val != other.transform).ToArray(); //Remove element from array
             objectCount--;
         }

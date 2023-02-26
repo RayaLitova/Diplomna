@@ -11,10 +11,10 @@ public class GetCurrentRoom : MonoBehaviour
 
     public string CheckRooms(Transform target)
     {
-        foreach (Transform room in rooms)
+        foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {
             if (room.GetComponent<CheckRoom>().CheckForObject(target))
-                return room.gameObject.name;
+                return room.name;
         }
         return null;
     }

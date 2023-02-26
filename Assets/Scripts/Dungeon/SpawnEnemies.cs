@@ -9,9 +9,10 @@ public class SpawnEnemies : MonoBehaviour
 
     private void Awake()
     {
-        enemyCount = UnityEngine.Random.Range(1, 5);
+        int currEnemyCount = UnityEngine.Random.Range(1, 5);
+        enemyCount += currEnemyCount;
         Array.Fill(usedPositions, false);
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < currEnemyCount; i++)
         {
             if (!usedPositions.Contains(false)) //in case there are more enemies than positions
                 return;
