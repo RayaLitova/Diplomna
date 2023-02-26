@@ -9,12 +9,12 @@ public class GetCurrentRoom : MonoBehaviour
         rooms = transform;
     }
 
-    public string CheckRooms(Transform target)
+    public GameObject CheckRooms(Transform target)
     {
         foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {
             if (room.GetComponent<CheckRoom>().CheckForObject(target))
-                return room.name;
+                return room;
         }
         return null;
     }

@@ -6,7 +6,7 @@ public class DisableSkillMenu : MonoBehaviour
 
     private void Start()
     {
-        rooms = GameObject.Find("Rooms").GetComponent<GetCurrentRoom>();  
+        rooms = GameObject.Find("Scripts").GetComponent<GetCurrentRoom>();  
     }
     private void Update()
     {
