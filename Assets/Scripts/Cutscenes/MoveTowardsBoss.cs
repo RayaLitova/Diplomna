@@ -4,16 +4,22 @@ using UnityEngine;
 public class MoveTowardsBoss : MonoBehaviour
 {
     private Transform boss;
-    private Transform path;
-    private int childNum = 0;
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
         GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
-        path = GameObject.Find("StartingCutscenePath").transform;
+        transform.position = GenerateDungeon.cameraPoints[0].transform.position;
+        foreach (GameObject path in GenerateDungeon.cameraPoints)
+        {
+            while (Vector3.Distance(transform.position, path.transform.position) > 30f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, path.transform.position, 5f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, path.transform.rotation, 0.5f * Time.deltaTime);
+            }
+        }
+        StartCoroutine("WaitForLichAnimation");
     }
-
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         if (childNum == path.childCount)
             return;
@@ -25,7 +31,7 @@ public class MoveTowardsBoss : MonoBehaviour
             childNum++;
         if (childNum == path.childCount)
             StartCoroutine("WaitForLichAnimation");
-    }
+    }*/
 
     private IEnumerator WaitForLichAnimation()
     {
@@ -36,6 +42,7 @@ public class MoveTowardsBoss : MonoBehaviour
 
     private void OnDisable()
     {
+        Destroy(GameObject.Find("Scripts").GetComponent<GenerateDungeon>());
         Destroy(this); 
     }
 

@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 public class GenerateDungeon : MonoBehaviour
 {
-
     private int roomCount;
     private int currentRooms = 1;
     private bool isBossRoomGenerated = false;
     private bool isPortalRoomGenerated = false;
+    [SerializeField] GameObject cinematicCamera;
+
     private enum RoomType
     {
         None = 0,
@@ -21,6 +22,13 @@ public class GenerateDungeon : MonoBehaviour
     private Dictionary<RoomType, string> RoomResourcesPath;
 
     private RoomType[,] grid;
+
+    private int minPathLength;
+    private int currPathLength = 0;
+    private bool[,] visitedRooms;
+    private List<GameObject> currCameraPoints = new List<GameObject>();
+    public static List<GameObject> cameraPoints = new List<GameObject>();
+    private GameObject[,] allCameraPoints;
     void Start()
     {
         RoomResourcesPath = new Dictionary<RoomType, string>() {
@@ -32,6 +40,7 @@ public class GenerateDungeon : MonoBehaviour
 
 
         roomCount = 6 + LoadDungeon.dungeonLevel * 2;
+        minPathLength = roomCount; //biggest possible length
         grid = new RoomType[7,7];
 
         for (int i = 0; i < 7; i++)
@@ -40,8 +49,20 @@ public class GenerateDungeon : MonoBehaviour
             
         
         grid[4,4] = RoomType.SafeRoom;
+
+        visitedRooms = new bool[7, 7];
+
+        for (int i = 0; i < 7; i++)
+            for (int j = 0; j < 7; j++)
+                visitedRooms[i, j] = false;
+
+        allCameraPoints = new GameObject[7, 7];
+
         AddRooms(4, 4);
         DisplayDungeon();
+        GenerateStartingCutscenePath(4,4);
+        Debug.Log(cameraPoints[0]); //doesnt work
+        cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
     }
 
     private void AddRooms(int a, int b)
@@ -137,7 +158,7 @@ public class GenerateDungeon : MonoBehaviour
                 if (grid[i, j] == RoomType.None)
                     continue;
                 GameObject room = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[grid[i, j]]), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
-
+                allCameraPoints[i, j] = room.transform.Find("StartingCutscenePath").gameObject;
                 if (j + 1 < 7 && grid[i, j + 1] != RoomType.None)
                     room.transform.Find("3").GetComponent<ChangeWall>().ChangeToDoorWay();
                 if (i + 1 < 7 && grid[i + 1, j] != RoomType.None)
@@ -148,5 +169,37 @@ public class GenerateDungeon : MonoBehaviour
                     room.transform.Find("2").GetComponent<ChangeWall>().ChangeToDoorWay();
             }
         }
+    }
+
+    public void GenerateStartingCutscenePath(int a, int b)
+    {
+        
+        visitedRooms[a, b] = true;
+
+        if (grid[a, b] == RoomType.BossRoom)
+        {
+            if (currPathLength < minPathLength)
+            {
+                minPathLength = currPathLength;
+                cameraPoints = currCameraPoints;
+            }
+        }
+        else
+        {
+            currPathLength++;
+            currCameraPoints.Add(allCameraPoints[a, b]);
+            if (b + 1 < 7 && grid[a, b + 1] != RoomType.None && !visitedRooms[a, b + 1])
+                GenerateStartingCutscenePath(a, b + 1);
+            if (a + 1 < 7 && grid[a + 1, b] != RoomType.None && !visitedRooms[a + 1, b])
+                GenerateStartingCutscenePath(a + 1, b);
+            if (b - 1 >= 0 && grid[a, b - 1] != RoomType.None && !visitedRooms[a, b - 1])
+                GenerateStartingCutscenePath(a, b - 1);
+            if (a - 1 >= 0 && grid[a - 1, b] != RoomType.None && !visitedRooms[a - 1, b])
+                GenerateStartingCutscenePath(a - 1, b);
+            currPathLength--;
+            currCameraPoints.Remove(allCameraPoints[a, b]);
+        }
+
+        visitedRooms[a, b] = false;
     }
 }
