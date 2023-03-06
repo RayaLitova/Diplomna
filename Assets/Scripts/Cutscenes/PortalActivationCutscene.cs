@@ -24,14 +24,9 @@ public class PortalActivationCutscene : MonoBehaviour
         cinematicCamera.SetActive(true);
         cinematicCamera.transform.position = GameObject.Find("CutsceneCameraPosition").transform.position;
         cinematicCamera.transform.forward = GameObject.Find("CutsceneCameraPosition").transform.forward;
-        //Move to see the portal from the right position
-
-        //Rotate to see the portal from the right angle
-        //cinematicCamera.transform.eulerAngles = cinematicCamera.transform.eulerAngles + LoadDungeon.cinematicCameraRotation; 
 
         portalActive.SetActive(true);
         StartCoroutine("FadeOut");
-
     }
 
     IEnumerator FadeOut() // Portal activation cutscene
