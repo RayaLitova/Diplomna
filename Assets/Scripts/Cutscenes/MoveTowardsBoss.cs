@@ -16,24 +16,24 @@ public class MoveTowardsBoss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (pathNum == GenerateDungeon.cameraPoints.Capacity)
+        if (pathNum == GenerateDungeon.cameraPoints.Count)
             return;
 
         Transform target = GenerateDungeon.cameraPoints.ElementAt(pathNum).transform;
         transform.position = Vector3.MoveTowards(transform.position, target.position, 7f);
-        switch (GenerateDungeon.rotationList.ElementAt(pathNum))
+        switch (GenerateDungeon.rotationList.ElementAt(pathNum - 1))
         {
             case 1:
-                transform.forward = Vector3.right;
-                break;
-            case 2:
                 transform.forward = Vector3.back;
                 break;
-            case 3:
+            case 2:
                 transform.forward = Vector3.left;
                 break;
-            case 4:
+            case 3:
                 transform.forward = Vector3.forward;
+                break;
+            case 4:
+                transform.forward = Vector3.right;
                 break;
 
 
@@ -41,7 +41,7 @@ public class MoveTowardsBoss : MonoBehaviour
         //transform.rotation = Quaternion.LookRotation(target.position);
         if (Vector3.Distance(transform.position, target.position) < 30f)
             pathNum++;
-        if (pathNum == GenerateDungeon.cameraPoints.Capacity) 
+        if (pathNum == GenerateDungeon.cameraPoints.Count) 
             StartCoroutine("WaitForLichAnimation");
     }
 
