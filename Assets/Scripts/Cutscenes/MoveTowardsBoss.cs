@@ -5,17 +5,23 @@ using System.Linq;
 public class MoveTowardsBoss : MonoBehaviour
 {
     private Transform boss;
-    private bool isMovingDisabled = true;
+    private Vector3 targetRotation = Vector3.zero;
+    private float angle = 0f;
     private int pathNum = 1;
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
         GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
         transform.position = GenerateDungeon.cameraPoints.ElementAt(0).transform.position;
-        isMovingDisabled = false;
     }
     private void FixedUpdate()
     {
+        if (targetRotation != Vector3.zero && transform.forward != targetRotation)
+        {
+            transform.rotation = Quaternion.AngleAxis(angle * Time.deltaTime, Vector3.up);
+            return;
+        }
+
         if (pathNum == GenerateDungeon.cameraPoints.Count)
             return;
 
@@ -24,20 +30,23 @@ public class MoveTowardsBoss : MonoBehaviour
         switch (GenerateDungeon.rotationList.ElementAt(pathNum - 1))
         {
             case 1:
-                transform.forward = Vector3.back;
+                //transform.forward = Vector3.back;
+                targetRotation = Vector3.back;
                 break;
             case 2:
-                transform.forward = Vector3.left;
+                targetRotation = Vector3.left;
+                //transform.forward = Vector3.left;
                 break;
             case 3:
-                transform.forward = Vector3.forward;
+                targetRotation = Vector3.forward;
+                //transform.forward = Vector3.forward;
                 break;
             case 4:
-                transform.forward = Vector3.right;
+                targetRotation = Vector3.right;
+                //transform.forward = Vector3.right;
                 break;
-
-
         }
+        angle = Vector3.Angle(transform.forward, targetRotation);
         //transform.rotation = Quaternion.LookRotation(target.position);
         if (Vector3.Distance(transform.position, target.position) < 30f)
             pathNum++;
@@ -62,7 +71,7 @@ public class MoveTowardsBoss : MonoBehaviour
     }*/
     private IEnumerator WaitForLichAnimation()
     {
-        isMovingDisabled = true;
+        targetRotation = Vector3.zero;
         transform.LookAt(boss.position, Vector3.up);
         yield return new WaitForSeconds(3f);
         GetComponent<FinishCutscene>().StopCutscene();
