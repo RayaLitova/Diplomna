@@ -11,7 +11,6 @@ public class CheckRoom : MonoBehaviour
     {
         if (other.tag != "BackgroundObjects" && other.tag != "Untagged" && !Array.Exists(ObjectsInRoom, element => element == other.transform))
         {
-            Debug.Log(transform.parent.gameObject.name + " "+other.name);
             ObjectsInRoom[objectCount] = other.transform;  //Add element to array
             objectCount++;
         }
@@ -21,7 +20,6 @@ public class CheckRoom : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Debug.Log("Exit: "+transform.parent.gameObject.name + " " + other.name);
             ObjectsInRoom = ObjectsInRoom.Where(val => val != other.transform).ToArray(); //Remove element from array
             objectCount--;
         }

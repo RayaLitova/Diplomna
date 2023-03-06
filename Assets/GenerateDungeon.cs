@@ -27,7 +27,9 @@ public class GenerateDungeon : MonoBehaviour
     private int currPathLength = 0;
     private bool[,] visitedRooms;
     private List<GameObject> currCameraPoints = new List<GameObject>();
-    public static List<GameObject> cameraPoints = new List<GameObject>();
+    public static List<GameObject> cameraPoints;
+    public static List<int> rotationList;
+    public static List<int> currRotationList = new List<int>();
     private GameObject[,] allCameraPoints;
     void Start()
     {
@@ -61,7 +63,6 @@ public class GenerateDungeon : MonoBehaviour
         AddRooms(4, 4);
         DisplayDungeon();
         GenerateStartingCutscenePath(4,4);
-        Debug.Log(cameraPoints[0]); //doesnt work
         cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
     }
 
@@ -83,7 +84,6 @@ public class GenerateDungeon : MonoBehaviour
             return;
 
         int roomsCount = Random.Range(1, Mathf.Min(availableRoomsCount, roomCount - currentRooms));
-
         currentRooms += roomsCount;
         for (int i = 0; i < roomsCount; i++) 
         {
@@ -92,14 +92,16 @@ public class GenerateDungeon : MonoBehaviour
             //Edge cases
             if (roomType == RoomType.BossRoom && isBossRoomGenerated)
                 roomType = RoomType.NormalRoom;
-            if (i + currentRooms == roomsCount && !isBossRoomGenerated)
-                roomType = RoomType.BossRoom;
-            if (roomType == RoomType.BossRoom)
-                isBossRoomGenerated = true;
-            if (i + currentRooms == roomsCount - 1 && !isPortalRoomGenerated)
-                roomType = RoomType.PortalRoom;
             if (roomType == RoomType.PortalRoom && isPortalRoomGenerated)
                 roomType = RoomType.NormalRoom;
+
+            if (currentRooms == roomCount && !isBossRoomGenerated)
+                roomType = RoomType.BossRoom;
+            if (currentRooms == roomCount - 1 && !isPortalRoomGenerated)
+                roomType = RoomType.PortalRoom;
+
+            if (roomType == RoomType.BossRoom)
+                isBossRoomGenerated = true;
             if (roomType == RoomType.PortalRoom)
                 isPortalRoomGenerated = true;
             //
@@ -159,6 +161,7 @@ public class GenerateDungeon : MonoBehaviour
                     continue;
                 GameObject room = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[grid[i, j]]), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
                 allCameraPoints[i, j] = room.transform.Find("StartingCutscenePath").gameObject;
+
                 if (j + 1 < 7 && grid[i, j + 1] != RoomType.None)
                     room.transform.Find("3").GetComponent<ChangeWall>().ChangeToDoorWay();
                 if (i + 1 < 7 && grid[i + 1, j] != RoomType.None)
@@ -178,24 +181,44 @@ public class GenerateDungeon : MonoBehaviour
 
         if (grid[a, b] == RoomType.BossRoom)
         {
+            currCameraPoints.Add(allCameraPoints[a, b]);
             if (currPathLength < minPathLength)
             {
                 minPathLength = currPathLength;
-                cameraPoints = currCameraPoints;
+                cameraPoints = new List<GameObject>(currCameraPoints);
+                rotationList = new List<int>(currRotationList);
             }
         }
         else
         {
             currPathLength++;
             currCameraPoints.Add(allCameraPoints[a, b]);
+
             if (b + 1 < 7 && grid[a, b + 1] != RoomType.None && !visitedRooms[a, b + 1])
+            {
+                currRotationList.Add(1);
                 GenerateStartingCutscenePath(a, b + 1);
+                currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 1));
+            }
             if (a + 1 < 7 && grid[a + 1, b] != RoomType.None && !visitedRooms[a + 1, b])
+            {
+                currRotationList.Add(2);
                 GenerateStartingCutscenePath(a + 1, b);
+                currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 2));
+            }
             if (b - 1 >= 0 && grid[a, b - 1] != RoomType.None && !visitedRooms[a, b - 1])
+            {
+                currRotationList.Add(3);
                 GenerateStartingCutscenePath(a, b - 1);
+                currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 3));
+            }
             if (a - 1 >= 0 && grid[a - 1, b] != RoomType.None && !visitedRooms[a - 1, b])
+            { 
+                currRotationList.Add(4);
                 GenerateStartingCutscenePath(a - 1, b);
+                currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 4));
+            }
+
             currPathLength--;
             currCameraPoints.Remove(allCameraPoints[a, b]);
         }
