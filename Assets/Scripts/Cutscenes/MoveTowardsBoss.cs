@@ -54,21 +54,6 @@ public class MoveTowardsBoss : MonoBehaviour
             StartCoroutine("WaitForLichAnimation");
     }
 
-   /* private void FixedUpdate()
-    {
-        if (isMovingDisabled)
-            return;
-
-        foreach (GameObject path in GenerateDungeon.cameraPoints)
-        {
-            while (Vector3.Distance(transform.position, path.transform.position) > 30f)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, path.transform.position, 0.1f * Time.deltaTime);
-                transform.rotation = Quaternion.Slerp(transform.rotation, path.transform.rotation, 0.5f * Time.deltaTime);
-            }
-        }
-        StartCoroutine("WaitForLichAnimation");
-    }*/
     private IEnumerator WaitForLichAnimation()
     {
         targetRotation = Vector3.zero;

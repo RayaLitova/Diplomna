@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 public class GenerateDungeon : MonoBehaviour
 {
     private int roomCount;
@@ -28,7 +29,7 @@ public class GenerateDungeon : MonoBehaviour
     private int currPathLength = 0;
     private bool[,] visitedRooms;
     private List<GameObject> currCameraPoints = new List<GameObject>();
-    public static List<GameObject> cameraPoints;
+    public static List<GameObject> cameraPoints;//
     public static List<int> rotationList;
     public static List<int> currRotationList = new List<int>();
     private GameObject[,] allCameraPoints;
@@ -67,28 +68,30 @@ public class GenerateDungeon : MonoBehaviour
         cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
     }
 
-    private void AddRooms(int a, int b)
+    private void AddRooms(int x, int y)
     {
+        if (roomCount - currentRooms == 0)
+            return;
+
         int availableRoomsCount = 0;
-        for (int i = -1; i <= 1; i += 2)
+
+        for (int i = 0; i < 4; i++)
         {
-            if (a + i >= 0 && a + i < 7 && grid[a + i, b] == RoomType.None)
-                availableRoomsCount++;
-        }
-        for (int j = -1; j <= 1; j += 2)
-        {
-            if (b + j >= 0 && b + j < 7 && grid[a, b + j] == RoomType.None)
+            int newX = x + i - 1;
+            newX = i == 3 ? x : newX;
+            int newY = y + i % 2 * (i > 2 ? -1 : 1);
+            if (newX >= 0 && newX < 7 && newY >= 0 && newY < 7 && grid[newX, newY] == RoomType.None)
                 availableRoomsCount++;
         }
 
-        if (availableRoomsCount == 0 || roomCount - currentRooms == 0)
+        if (availableRoomsCount == 0)
             return;
 
         int roomsCount = Random.Range(1, Mathf.Min(availableRoomsCount, roomCount - currentRooms));
         currentRooms += roomsCount;
         for (int i = 0; i < roomsCount; i++) 
         {
-            RoomType roomType = (RoomType)Random.Range(2, 5);
+            RoomType roomType = (RoomType)Random.Range(2, (int)RoomType.Length);
 
             //Edge cases
             if (roomType == RoomType.BossRoom && isBossRoomGenerated)
@@ -108,41 +111,14 @@ public class GenerateDungeon : MonoBehaviour
             //
 
             int roomPosition = Random.Range(0, 4);
-
-            switch (roomPosition)
+            int newX = x + roomPosition - 1;
+            newX = roomPosition == 3 ? x : newX;
+            int newY = y + roomPosition % 2 * (roomPosition > 2 ? -1 : 1);
+            if (newX >= 0 && newX < 7 && newY >= 0 && newY < 7 && grid[newX, newY] == RoomType.None)
             {
-                case 0:
-                    if (b + 1 < 7 && grid[a, b + 1] == RoomType.None)
-                    {
-                        grid[a, b + 1] = roomType;
-                        AddRooms(a, b + 1);
-                        continue;
-                    }
-                    break;
-                case 1:
-                    if (a + 1 < 7 && grid[a + 1, b] == RoomType.None)
-                    {
-                        grid[a + 1, b] = roomType;
-                        AddRooms(a + 1, b);
-                        continue;
-                    }
-                    break;
-                case 2:
-                    if (b - 1 >= 0 && grid[a, b - 1] == RoomType.None)
-                    {
-                        grid[a, b - 1] = roomType;
-                        AddRooms(a, b - 1);
-                        continue;
-                    }
-                    break;
-                case 3:
-                    if (a - 1 >= 0 && grid[a - 1, b] == RoomType.None)
-                    {
-                        grid[a - 1, b] = roomType;
-                        AddRooms(a - 1, b);
-                        continue;
-                    }
-                    break;
+                grid[newX, newY] = roomType;
+                AddRooms(newX, newY);
+                continue;
             }
             i--;
             if (roomType == RoomType.BossRoom)
@@ -163,14 +139,15 @@ public class GenerateDungeon : MonoBehaviour
                 GameObject room = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[grid[i, j]]), new Vector3(i * (378.8682f * 2), 0, j * (378.8682f * 2)), Quaternion.identity);
                 allCameraPoints[i, j] = room.transform.Find("StartingCutscenePath").gameObject;
 
-                if (j + 1 < 7 && grid[i, j + 1] != RoomType.None)
-                    room.transform.Find("3").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (i + 1 < 7 && grid[i + 1, j] != RoomType.None)
-                    room.transform.Find("4").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (j - 1 >= 0 && grid[i, j - 1] != RoomType.None)
-                    room.transform.Find("1").GetComponent<ChangeWall>().ChangeToDoorWay();
-                if (i - 1 >= 0 && grid[i - 1, j] != RoomType.None)
-                    room.transform.Find("2").GetComponent<ChangeWall>().ChangeToDoorWay();
+                for (int t = 0; t < 4; t++)
+                {
+                    int newX = i + t - 1;
+                    newX = t == 3 ? i : newX;
+                    int newY = j + t % 2 * (t > 2 ? -1 : 1);
+                    if (newX >= 0 && newX < 7 && newY >= 0 && newY < 7 && grid[newX, newY] != RoomType.None)
+                        room.transform.Find(t.ToString()).GetComponent<ChangeWall>().ChangeToDoorWay();
+                }
+
             }
         }
     }
@@ -214,7 +191,7 @@ public class GenerateDungeon : MonoBehaviour
                 currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 1));
             }
             if (a - 1 >= 0 && grid[a - 1, b] != RoomType.None && !visitedRooms[a - 1, b])
-            { 
+            {
                 currRotationList.Add(2);
                 GenerateStartingCutscenePath(a - 1, b);
                 currRotationList.RemoveAt(currRotationList.FindLastIndex(x => x == 2));
@@ -226,4 +203,59 @@ public class GenerateDungeon : MonoBehaviour
 
         visitedRooms[a, b] = false;
     }
+    /* private bool isBossRoomVisited = false;
+     public static List<GameObject> cameraPoints;*/
+
+
+    /*public void GenerateStartingCutscenePath(int x, int y)
+    {
+        List<GameObject> parent = new List<GameObject>();
+        List<GameObject> currObject = new List<GameObject>();
+        List<int> queueX = new List<int>();
+        List<int> queueY = new List<int>();
+
+        int nextIndex = 0;
+
+        while (!isBossRoomVisited)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                int newX = x + i - 1;
+                newX = i == 3 ? x : newX;
+                int newY = y + i % 2 * (i > 2 ? -1 : 1);
+                if (!(newX >= 0 && newX < 7 && newY >= 0 && newY < 7))//out of range
+                    continue;
+
+                if (grid[newX, newY] == RoomType.BossRoom)
+                {
+                    isBossRoomVisited = true;
+                    break;
+                }
+
+                if (grid[newX, newY] == RoomType.None)
+                    continue;
+
+                queueX.Add(newX);
+                queueY.Add(newY);
+            }
+            parent.Add(allCameraPoints[x, y]);
+            x = queueX.ElementAt(nextIndex);
+            y = queueY.ElementAt(nextIndex);
+            currObject.Add(allCameraPoints[x, y]);
+            Debug.Log(currObject.Count);
+
+            nextIndex++;
+        }
+        nextIndex--;
+        while (true)
+        {
+            Debug.Log(nextIndex +" " + currObject.Count);
+            GameObject obj = currObject.ElementAt(nextIndex);
+            cameraPoints.Add(obj);
+            if (obj == allCameraPoints[4, 4]) //starting room
+                break;
+            nextIndex = currObject.FindIndex(x => x == parent.ElementAt(nextIndex));
+        }
+        cameraPoints.Reverse();
+    }*/
 }
