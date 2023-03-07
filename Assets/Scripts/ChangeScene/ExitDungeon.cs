@@ -4,10 +4,10 @@ public class ExitDungeon : InteractAction
 {
     public override void Action()
     {
-        if (LoadDungeon.dungeonLevel == 10)
+        if (GenerateDungeon.dungeonLevel == 10)
             Debug.Log("GAME OVER");
 
-        LoadDungeon.dungeonLevel++;
+        GenerateDungeon.dungeonLevel++;
         LoadScene.Load("CityScene");
     }
 }

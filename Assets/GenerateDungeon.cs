@@ -7,6 +7,8 @@ public class GenerateDungeon : MonoBehaviour
     private bool isBossRoomGenerated = false;
     private bool isPortalRoomGenerated = false;
     [SerializeField] GameObject cinematicCamera;
+    public static int dungeonLevel = 0;
+
 
     private enum RoomType
     {
@@ -40,7 +42,7 @@ public class GenerateDungeon : MonoBehaviour
         };
 
 
-        roomCount = 6 + LoadDungeon.dungeonLevel * 2;
+        roomCount = 6 + GenerateDungeon.dungeonLevel * 2;
         minPathLength = roomCount; //biggest possible length
         grid = new RoomType[7,7];
 
