@@ -8,6 +8,7 @@ public class MoveTowardsBoss : MonoBehaviour
     private Vector3 targetRotation = Vector3.zero;
     private float angle = 0f;
     private int pathNum = 1;
+    private float rotation = 0.05f;
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
@@ -18,7 +19,8 @@ public class MoveTowardsBoss : MonoBehaviour
     {
         if (targetRotation != Vector3.zero && transform.forward != targetRotation)
         {
-            transform.rotation = Quaternion.AngleAxis(angle * Time.deltaTime, Vector3.up);
+            transform.rotation = Quaternion.AngleAxis(angle * rotation, Vector3.up);
+            rotation += 0.05f;
             return;
         }
 
@@ -30,24 +32,22 @@ public class MoveTowardsBoss : MonoBehaviour
         switch (GenerateDungeon.rotationList.ElementAt(pathNum - 1))
         {
             case 1:
-                //transform.forward = Vector3.back;
                 targetRotation = Vector3.back;
+                angle = Vector3.Angle(transform.forward, Vector3.back);
                 break;
             case 2:
                 targetRotation = Vector3.left;
-                //transform.forward = Vector3.left;
+                angle = -Vector3.Angle(transform.forward, Vector3.right);
                 break;
             case 3:
                 targetRotation = Vector3.forward;
-                //transform.forward = Vector3.forward;
+                angle = Vector3.Angle(transform.forward, Vector3.forward);
                 break;
             case 4:
                 targetRotation = Vector3.right;
-                //transform.forward = Vector3.right;
+                angle = Vector3.Angle(transform.forward, Vector3.right);
                 break;
         }
-        angle = Vector3.Angle(transform.forward, targetRotation);
-        //transform.rotation = Quaternion.LookRotation(target.position);
         if (Vector3.Distance(transform.position, target.position) < 30f)
             pathNum++;
         if (pathNum == GenerateDungeon.cameraPoints.Count) 
