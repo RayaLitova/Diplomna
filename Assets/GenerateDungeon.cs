@@ -29,7 +29,7 @@ public class GenerateDungeon : MonoBehaviour
     private int currPathLength = 0;
     private bool[,] visitedRooms;
     private List<GameObject> currCameraPoints = new List<GameObject>();
-    public static List<GameObject> cameraPoints;//
+    //public static List<GameObject> cameraPoints;//
     public static List<int> rotationList;
     public static List<int> currRotationList = new List<int>();
     private GameObject[,] allCameraPoints;
@@ -152,7 +152,7 @@ public class GenerateDungeon : MonoBehaviour
         }
     }
 
-    public void GenerateStartingCutscenePath(int a, int b)
+    /*public void GenerateStartingCutscenePath(int a, int b)
     {
         visitedRooms[a, b] = true;
 
@@ -202,17 +202,17 @@ public class GenerateDungeon : MonoBehaviour
         }
 
         visitedRooms[a, b] = false;
-    }
-    /* private bool isBossRoomVisited = false;
-     public static List<GameObject> cameraPoints;*/
+    }*/
+    private bool isBossRoomVisited = false;
+    public static List<GameObject> cameraPoints = new();
 
 
-    /*public void GenerateStartingCutscenePath(int x, int y)
+    public void GenerateStartingCutscenePath(int x, int y)
     {
-        List<GameObject> parent = new List<GameObject>();
-        List<GameObject> currObject = new List<GameObject>();
-        List<int> queueX = new List<int>();
-        List<int> queueY = new List<int>();
+        List<GameObject> parent = new();
+        List<GameObject> currObject = new();
+        List<int> queueX = new();
+        List<int> queueY = new();
 
         int nextIndex = 0;
 
@@ -242,20 +242,20 @@ public class GenerateDungeon : MonoBehaviour
             x = queueX.ElementAt(nextIndex);
             y = queueY.ElementAt(nextIndex);
             currObject.Add(allCameraPoints[x, y]);
-            Debug.Log(currObject.Count);
 
             nextIndex++;
         }
         nextIndex--;
+
+        cameraPoints.Add(currObject.ElementAt(nextIndex));
         while (true)
         {
-            Debug.Log(nextIndex +" " + currObject.Count);
-            GameObject obj = currObject.ElementAt(nextIndex);
+            GameObject obj = parent.ElementAt(nextIndex);
             cameraPoints.Add(obj);
             if (obj == allCameraPoints[4, 4]) //starting room
                 break;
-            nextIndex = currObject.FindIndex(x => x == parent.ElementAt(nextIndex));
+            nextIndex = currObject.FindIndex(x => x == obj);
         }
         cameraPoints.Reverse();
-    }*/
+    }
 }
