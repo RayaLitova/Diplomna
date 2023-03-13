@@ -1,15 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
+
 public class GenerateDungeon : MonoBehaviour
 {
     private int roomCount;
     private int currentRooms = 1;
-    private bool isBossRoomGenerated = false;
-    private bool isPortalRoomGenerated = false;
     [SerializeField] GameObject cinematicCamera;
     public static int dungeonLevel = 0;
-
 
     public enum RoomType
     {
@@ -23,16 +22,10 @@ public class GenerateDungeon : MonoBehaviour
 
     public static Dictionary<RoomType, string> RoomResourcesPath;
 
-    private RoomType[,] grid;
-
-    private int minPathLength;
-    private int currPathLength = 0;
-    private bool[,] visitedRooms;
-    private List<GameObject> currCameraPoints = new List<GameObject>();
-    public static List<GameObject> cameraPoints;//
+    public static List<GameObject> cameraPoints = new();//
     public static List<int> rotationList;
     public static List<int> currRotationList = new List<int>();
-    private GameObject[,] allCameraPoints;
+
     public static int bossRoomNum = -1;
     public static int portalRoomNum = -1;
     void Start()
@@ -45,39 +38,20 @@ public class GenerateDungeon : MonoBehaviour
             { RoomType.PortalRoom, "DungeonRooms/PortalRoom" }
         };
 
-
-        roomCount = 6 + GenerateDungeon.dungeonLevel * 2;
-        minPathLength = roomCount; //biggest possible length
-        grid = new RoomType[7, 7];
-
-        for (int i = 0; i < 7; i++)
-            for (int j = 0; j < 7; j++)
-                grid[i, j] = RoomType.None;
-
-
-        grid[4, 4] = RoomType.SafeRoom;
-
-        visitedRooms = new bool[7, 7];
-
-        for (int i = 0; i < 7; i++)
-            for (int j = 0; j < 7; j++)
-                visitedRooms[i, j] = false;
-
-        allCameraPoints = new GameObject[7, 7];
+        roomCount = 6 + dungeonLevel * 2;
 
         Room safeRoom = new Room(4, 4, RoomType.SafeRoom);
         AddRooms(safeRoom);
         OpenDoors(safeRoom);
         GenerateStartingCutscenePath(safeRoom);
-        /*DisplayDungeon();
-        GenerateStartingCutscenePath(4, 4);
-        cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;*/
+        cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
+        GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
+        GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().setCinemacticCamera(cinematicCamera);
     }
 
     private void AddRooms(Room room)
     {
         int availableRooms = room.FindAvailable(); // fill adjacent
-
         if (currentRooms == roomCount)
             return;
         if (bossRoomNum == -1)
@@ -108,27 +82,25 @@ public class GenerateDungeon : MonoBehaviour
             if (newX >= 0 && newX < 7 && newY >= 0 && newY < 7 && room.adjacent[roomPosition] == null)
             {
                 Room newRoom = new(newX, newY, roomType);
-                room.adjacent[roomPosition] = newRoom;
                 newRoom.adjacent[roomPosition > 1 ? roomPosition - 2 : roomPosition + 2] = room;
+                room.adjacent[roomPosition] = newRoom;
                 AddRooms(newRoom);
                 continue;
             }
             i--;
         }
-
-
     }
-
     public static void OpenDoors(Room startingRoom)
     {
         startingRoom.isVisited = true;
         for (int i = 0; i < 4; i++)
         {
-            if (startingRoom.adjacent[i] == null)
+            if (startingRoom.adjacent[i] == null || startingRoom.adjacent[i].isVisited)
                 continue;
+
             startingRoom.cameraPosObj.transform.parent.Find(i.ToString()).GetComponent<ChangeWall>().ChangeToDoorWay();
-            if (!startingRoom.adjacent[i].isVisited)
-                OpenDoors(startingRoom.adjacent[i]);
+            startingRoom.adjacent[i].cameraPosObj.transform.parent.Find((i > 1 ? i - 2 : i + 2).ToString()).GetComponent<ChangeWall>().ChangeToDoorWay();
+            OpenDoors(startingRoom.adjacent[i]);
         }
         startingRoom.isVisited = false;
     }
@@ -139,15 +111,19 @@ public class GenerateDungeon : MonoBehaviour
         room.cameraPosObj = newRoom.transform.Find("StartingCutscenePath").gameObject;
     }
 
-
     private bool isBossRoomVisited = false;
     public static List<Room> queue = new();
+    public static List<Room> visited = new();
 
     public void GenerateStartingCutscenePath(Room startingRoom)
     {
+        Room safeRoom = startingRoom;
         queue.Add(startingRoom);
-        while (queue.Count != 0 && !isBossRoomVisited)
+        while (!isBossRoomVisited)
         {
+            startingRoom = queue.First();
+            queue.Remove(startingRoom);
+            visited.Add(startingRoom);
             for (int i = 0; i < 4; i++)
             {
                 if (startingRoom.adjacent[i] == null)
@@ -155,70 +131,24 @@ public class GenerateDungeon : MonoBehaviour
 
                 if (startingRoom.adjacent[i].roomType == RoomType.BossRoom)
                 {
-                    Debug.Log("aaaaaa");
+                    visited.Add(startingRoom.adjacent[i]);
                     isBossRoomVisited = true;
                     break;
                 }
-                Debug.Log("Add room");
                 queue.Add(startingRoom.adjacent[i]);
             }
-            return;
         }
-
-    }
-
-    /*    public void GenerateStartingCutscenePath(int x, int y)
+        cameraPoints = new List<GameObject>();
+        while (cameraPoints.Find(x => x == safeRoom.cameraPosObj) == null)
         {
-            List<GameObject> parent = new();
-            List<GameObject> currObject = new();
-            List<int> queueX = new();
-            List<int> queueY = new();
-
-            int nextIndex = 0;
-
-            while (!isBossRoomVisited)
-            {
-                for (int i = 0; i < 4; i++)
-                {
-                    int newX = x + i - 1;
-                    newX = i == 3 ? x : newX;
-                    int newY = y + i % 2 * (i > 2 ? -1 : 1);
-                    if (!(newX >= 0 && newX < 7 && newY >= 0 && newY < 7))//out of range
-                        continue;
-
-                    if (grid[newX, newY] == RoomType.BossRoom)
-                    {
-                        isBossRoomVisited = true;
-                        break;
-                    }
-
-                    if (grid[newX, newY] == RoomType.None)
-                        continue;
-
-                    queueX.Add(newX);
-                    queueY.Add(newY);
-                    parent.Add(allCameraPoints[x, y]);
-                }
-                x = queueX.ElementAt(nextIndex);
-                y = queueY.ElementAt(nextIndex);
-                currObject.Add(allCameraPoints[x, y]);
-
-                nextIndex++;
-            }
-            nextIndex--;
-
-            cameraPoints.Add(currObject.ElementAt(nextIndex));
-            while (true)
-            {
-                GameObject obj = parent.ElementAt(nextIndex);
-                cameraPoints.Add(obj);
-                if (obj == allCameraPoints[4, 4]) //starting room
-                    break;
-                nextIndex = currObject.FindIndex(x => x == obj);
-            }
-            cameraPoints.Reverse();
+            Room curr = visited.Last();
+            cameraPoints.Add(curr.cameraPosObj);
+            visited.Remove(visited.ElementAt(visited.Count-1));
+            while (visited.Last() != null && !visited.Last().FindAdjacent(curr))
+                visited.Remove(visited.ElementAt(visited.Count - 1));
         }
-    }*/
+        cameraPoints.Reverse();
+    }
 }
 
 public class Room
@@ -246,9 +176,10 @@ public class Room
         adjacent = new Room[4];
         this.roomType = roomType;
         GenerateDungeon.DisplayRoom(this);
+        FindAvailable(); //set adjacent
     }
 
-    public Room FindRoom(int x, int y) //ne raboti
+    public Room FindRoom(int x, int y)
     {
         Room result = null;
         isVisited = true;
@@ -258,8 +189,9 @@ public class Room
                 continue;
             if (adjacent[i].x == x && adjacent[i].y == y)
                 result = adjacent[i];
-            if (adjacent[i].FindRoom(x, y) != null)
-                result = adjacent[i].FindRoom(x, y);
+            Room findRoomRes = adjacent[i].FindRoom(x, y);
+            if (findRoomRes != null)
+                result = findRoomRes;
         }
         isVisited = false;
         return result;
@@ -279,8 +211,20 @@ public class Room
             if (room == null)
                 result++;
             else
+            {
+                room.adjacent[i > 1 ? i - 2 : i + 2] = adjacent[i];
                 adjacent[i] = room;
+            }
         }
         return result;
+    }
+    public bool FindAdjacent(Room room)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (adjacent[i] == room)
+                return true;
+        }
+        return false;
     }
 }

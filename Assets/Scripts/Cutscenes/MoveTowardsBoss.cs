@@ -12,7 +12,6 @@ public class MoveTowardsBoss : MonoBehaviour
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
-        GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
         transform.position = GenerateDungeon.cameraPoints.ElementAt(0).transform.position;
     }
     private void FixedUpdate()
