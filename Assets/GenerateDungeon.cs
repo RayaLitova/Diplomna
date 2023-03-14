@@ -93,7 +93,6 @@ public class GenerateDungeon : MonoBehaviour
         {
             if (startingRoom.adjacent[i] == null || startingRoom.adjacent[i].isVisited)
                 continue;
-            Debug.Log("Open Door " + startingRoom.roomType + " " + startingRoom.adjacent[i].roomType + " " + i);
             startingRoom.cameraPosObj.transform.parent.Find(i.ToString()).GetComponent<ChangeWall>().ChangeToDoorWay();
             startingRoom.adjacent[i].cameraPosObj.transform.parent.Find((i > 1 ? i - 2 : i + 2).ToString()).GetComponent<ChangeWall>().ChangeToDoorWay();
             OpenDoors(startingRoom.adjacent[i]);
@@ -199,7 +198,6 @@ public class Room
                 result++;
             else
             {
-                Debug.Log("Add adjacent room " + roomType + " " + room.roomType + " " + i);
                 room.adjacent[i > 1 ? i - 2 : i + 2] = adjacent[i];
                 adjacent[i] = room;
             }
