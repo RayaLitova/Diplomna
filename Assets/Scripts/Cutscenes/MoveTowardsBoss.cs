@@ -28,25 +28,7 @@ public class MoveTowardsBoss : MonoBehaviour
 
         Transform target = GenerateDungeon.cameraPoints.ElementAt(pathNum).transform;
         transform.position = Vector3.MoveTowards(transform.position, target.position, 7f);
-        /*switch (GenerateDungeon.rotationList.ElementAt(pathNum - 1))
-        {
-            case 1:
-                targetRotation = Vector3.back;
-                angle = Vector3.Angle(transform.forward, Vector3.back);
-                break;
-            case 2:
-                targetRotation = Vector3.left;
-                angle = -Vector3.Angle(transform.forward, Vector3.right);
-                break;
-            case 3:
-                targetRotation = Vector3.forward;
-                angle = Vector3.Angle(transform.forward, Vector3.forward);
-                break;
-            case 4:
-                targetRotation = Vector3.right;
-                angle = Vector3.Angle(transform.forward, Vector3.right);
-                break;
-        }*/
+        transform.LookAt(target, Vector3.up);
         if (Vector3.Distance(transform.position, target.position) < 30f)
             pathNum++;
         if (pathNum == GenerateDungeon.cameraPoints.Count) 

@@ -17,11 +17,6 @@ public class PortalActivationCutscene : MonoBehaviour
         portalUnactiveRenderer = portalUnactive.GetComponent<Renderer>();
         portalUnactiveColor = portalUnactiveRenderer.material.color;
     }
-
-    public void setCinemacticCamera(GameObject cinematicCamera)
-    {
-        this.cinematicCamera = cinematicCamera;
-    }
     public void StartCutscene()
     {
         mainCamera = Camera.main.gameObject;
