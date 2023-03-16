@@ -8,7 +8,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     private Vector3 startPosition;
     private float attackTime;
     private float attackCooldown = 0f;
-    [SerializeField] float stoppingDistance = 55f;
+    [SerializeField] float stoppingDistance = 35f;
 
     private EnemyAnimationController animationController;
     private AudioSource audioSource;

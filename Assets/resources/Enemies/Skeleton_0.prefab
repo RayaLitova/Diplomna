@@ -2439,7 +2439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7260844fb584e8a45b6c03c0b07b5c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoppingDistance: 60
   walkSpeedMultiplier: 1
 --- !u!114 &1842035495407577566
 MonoBehaviour:
@@ -3658,10 +3657,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.0442196
+  m_Radius: 0.85572857
   m_Height: 2.0884392
   m_Direction: 1
-  m_Center: {x: 0, y: -0.4948128, z: -0.44669548}
+  m_Center: {x: 0, y: -0.4948128, z: -0.6351865}
 --- !u!54 &174308349765268228
 Rigidbody:
   m_ObjectHideFlags: 0
