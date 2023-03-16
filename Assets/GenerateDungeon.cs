@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using System.ComponentModel;
+using System;
 
 public class GenerateDungeon : MonoBehaviour
 {
@@ -52,15 +52,15 @@ public class GenerateDungeon : MonoBehaviour
             return;
         if (bossRoomNum == -1)
         {
-            bossRoomNum = Random.Range(1, roomCount);
-            portalRoomNum = Random.Range(1, roomCount);
+            bossRoomNum = UnityEngine.Random.Range(1, roomCount);
+            portalRoomNum = UnityEngine.Random.Range(1, roomCount);
             if (bossRoomNum == portalRoomNum)
                 portalRoomNum--;
         }
         if (availableRooms == 0)
             return;
 
-        int roomsCount = Random.Range(1, Mathf.Min(availableRooms, roomCount - currentRooms));
+        int roomsCount = UnityEngine.Random.Range(1, Mathf.Min(availableRooms, roomCount - currentRooms));
         int currRoomsCopy = currentRooms;
         currentRooms += roomsCount;
         for (int i = 0; i < roomsCount; i++)
@@ -71,7 +71,7 @@ public class GenerateDungeon : MonoBehaviour
             if (currRoomsCopy + i == portalRoomNum)
                 roomType = RoomType.PortalRoom;
 
-            int roomPosition = Random.Range(0, 4);
+            int roomPosition = UnityEngine.Random.Range(0, 4);
             int newX = room.x + roomPosition - 1;
             newX = roomPosition == 3 ? room.x : newX;
             int newY = room.y + roomPosition % 2 * (roomPosition > 2 ? -1 : 1);
@@ -137,11 +137,15 @@ public class GenerateDungeon : MonoBehaviour
         cameraPoints = new List<GameObject>();
         while (!cameraPoints.Contains(safeRoom.cameraPosObj))
         {
-            Room curr = visited.ElementAt(visited.Count - 1);
-            cameraPoints.Add(curr.cameraPosObj);
-            visited.Remove(curr);
-            while (visited.Count > 0 && !visited.ElementAt(visited.Count - 1).FindAdjacent(curr))
-                visited.Remove(visited.ElementAt(visited.Count - 1));
+            try
+            {
+                Room curr = visited.ElementAt(visited.Count - 1);
+                cameraPoints.Add(curr.cameraPosObj);
+                visited.Remove(curr);
+                while (visited.Count > 0 && !visited.ElementAt(visited.Count - 1).FindAdjacent(curr))
+                    visited.Remove(visited.ElementAt(visited.Count - 1));
+            }
+            catch (Exception) { }
         }
         cameraPoints.Reverse();
     }
