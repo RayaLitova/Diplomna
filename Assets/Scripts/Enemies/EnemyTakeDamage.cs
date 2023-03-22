@@ -38,4 +38,9 @@ public class EnemyTakeDamage : MonoBehaviour
         UI_skillsManage.FinishSkillExecution();
     }
 
+    private void OnDestroy()
+    {
+        GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateCurrProgress();
+    }
+
 }

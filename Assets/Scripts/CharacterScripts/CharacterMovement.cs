@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (Cursor.lockState == CursorLockMode.None || isImmobilised) // disable movement on alt press or application unfocused
         {
-            Immobilize();
+            Immobilise();
             return;
         }
         
@@ -62,7 +62,7 @@ public class CharacterMovement : MonoBehaviour
         MoveHandler();//handles run/walk and dash
     }
 
-    private void Immobilize()
+    private void Immobilise()
     {
         animationController.SetDash(false);
         animationController.SetMove(false);

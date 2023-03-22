@@ -28,7 +28,6 @@ public class EnemyAnimationController : MonoBehaviour
             animator.SetBool(deathAnimationVar, isActive);
         }
         catch (NullReferenceException) { };
-
     }
 
     public virtual void AttackAnimation(bool isActive)

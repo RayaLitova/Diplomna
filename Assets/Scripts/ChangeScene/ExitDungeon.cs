@@ -7,7 +7,11 @@ public class ExitDungeon : InteractAction
         if (GenerateDungeon.dungeonLevel == 10)
             Debug.Log("GAME OVER");
 
-        GenerateDungeon.dungeonLevel++;
+        if (DungeonObjectives.completedObjectivesCount == DungeonObjectives.objectivesCount)
+        {
+            GenerateDungeon.dungeonLevel++;
+            Debug.Log("Level Passed");
+        }
         LoadScene.Load("CityScene");
     }
 }

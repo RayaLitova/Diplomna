@@ -9,6 +9,7 @@ public class GenerateDungeon : MonoBehaviour
     private int currentRooms = 1;
     [SerializeField] GameObject cinematicCamera;
     public static int dungeonLevel = 0;
+    public static int enemyCount = 0;
 
     public enum RoomType
     {
@@ -21,7 +22,7 @@ public class GenerateDungeon : MonoBehaviour
     }
 
     public static Dictionary<RoomType, string> RoomResourcesPath;
-    public static List<GameObject> cameraPoints = new();//
+    public static List<GameObject> cameraPoints = new();
 
     public static int bossRoomNum = -1;
     public static int portalRoomNum = -1;
