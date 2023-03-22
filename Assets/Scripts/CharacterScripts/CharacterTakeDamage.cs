@@ -15,14 +15,12 @@ public class CharacterTakeDamage : MonoBehaviour
     private IEnumerator WaitForAnimationToFinish()
     {
         yield return new WaitForSeconds(1.5f);
-        CharacterMovement.isImmobilized = false;
         animator.SetTakeDamage(false);
         if (characterStats.Health <= 0f)
             LoadScene.Load("CityScene");
     }
     public void TakeDamage(Transform enemy)
     {
-        CharacterMovement.isImmobilized = true;
         UI_skillsManage.FinishSkillExecution();
         animator.SetTakeDamage(true);
 

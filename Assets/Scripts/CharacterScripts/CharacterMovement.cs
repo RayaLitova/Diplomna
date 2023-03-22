@@ -23,20 +23,20 @@ public class CharacterMovement : MonoBehaviour
     private float moveZ;
     private Vector3 moveDirection;
 
-    public static bool isImmobilized = false;
+    public static bool isImmobilised = false;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         animationController = GetComponent<CharacterAnimationController>();
         animationController.SetIsInCombat(true);
-        isImmobilized = false;
+        isImmobilised = false;
     }
     private void FixedUpdate()
     {
         GravityHandler();
 
-        if (Cursor.lockState == CursorLockMode.None || isImmobilized) // disable movement on alt press or application unfocused
+        if (Cursor.lockState == CursorLockMode.None || isImmobilised) // disable movement on alt press or application unfocused
         {
             Immobilize();
             return;

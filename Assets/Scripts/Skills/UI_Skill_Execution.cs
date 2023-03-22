@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,7 +38,6 @@ public class UI_Skill_Execution : MonoBehaviour
             return;
 
         GameObject skillObject = parentGameObject.Find(fileName).gameObject;
-        CharacterMovement.isImmobilized = true; // immobilized while executing skill
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
         characterAnimator.SetBool("Hit", true);
@@ -45,15 +45,22 @@ public class UI_Skill_Execution : MonoBehaviour
         float index = (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName];
         index += index == 0f ? 0f : (1.0f / UI_skillsManage.SkillAnimationCount) / 2; //make sure the right animation is playing
 
-
         characterAnimator.SetFloat("SpellIndex", index);
         UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
+        StartCoroutine("StartSkillExecution");
+    }
+
+    private IEnumerator StartSkillExecution()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject skillObject = parentGameObject.Find(fileName).gameObject;
+
         skillObject.GetComponent<SkillExecution>().ExecuteSkill();
+
     }
 
     public void FinishExecution(bool hasBeenExcuted = false)
     {
-        CharacterMovement.isImmobilized = false;
         characterAnimator.SetBool("Hit", false);
         parentGameObject.Find(fileName).gameObject.SetActive(false);
 
