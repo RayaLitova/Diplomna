@@ -49,4 +49,9 @@ public class CharacterAnimationController : MonoBehaviour
         animationController.SetBool("Hit", isActive);
         animationController.SetFloat("SpellIndex", index);
     }
+
+    public void Gather(bool isActive)
+    {
+        animationController.SetBool("isGathering", isActive);
+    }
 }
