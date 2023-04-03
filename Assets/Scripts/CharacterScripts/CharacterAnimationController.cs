@@ -43,4 +43,10 @@ public class CharacterAnimationController : MonoBehaviour
     {
         animationController.SetBool("isDead", isActive);
     }
+
+    public void SetHit(bool isActive, float index = 0f)
+    { 
+        animationController.SetBool("Hit", isActive);
+        animationController.SetFloat("SpellIndex", index);
+    }
 }

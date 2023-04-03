@@ -34,6 +34,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
         if (Vector3.Distance(new Vector3(character.position.x, transform.position.y, character.position.z), transform.position) <= stoppingDistance) // attack
         {
             animationController.WalkAnimation(false);
+            transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotation on y axis
             if (attackCooldown > Time.time)
                 return;
             GetComponent<EnemyAttack>().StartExecution();

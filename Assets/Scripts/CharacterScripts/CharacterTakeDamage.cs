@@ -14,7 +14,7 @@ public class CharacterTakeDamage : MonoBehaviour
 
     private IEnumerator WaitForAnimationToFinish()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         animator.SetTakeDamage(false);
         if (characterStats.Health <= 0f)
             LoadScene.Load("CityScene");

@@ -12,7 +12,7 @@ public class UI_Skill_Execution : MonoBehaviour
     public enum SkillTypes { damage, buff }
     [SerializeField] SkillTypes skillType;
 
-    private Animator characterAnimator;
+    private CharacterAnimationController characterAnimator;
     private Transform parentGameObject;
     [NonSerialized] public string fileName;
     public bool isCDRapplied = false; //cooldown reduction
@@ -21,7 +21,7 @@ public class UI_Skill_Execution : MonoBehaviour
     private void Start()
     {
         fileName = GetComponent<SkillParticlesInstantiate>().fileName;
-        characterAnimator = GameObject.Find("Player").GetComponent<Animator>();
+        characterAnimator = GameObject.Find("Player").GetComponent<CharacterAnimationController>();
         parentGameObject = GameObject.Find(GetComponent<SkillParticlesInstantiate>().parentName).transform;
         parentGameObject.Find(fileName).gameObject.SetActive(false);
         Destroy(GetComponent<SkillParticlesInstantiate>()); // prevents second particles being instantiated
@@ -40,12 +40,12 @@ public class UI_Skill_Execution : MonoBehaviour
         GameObject skillObject = parentGameObject.Find(fileName).gameObject;
         skillObject.SetActive(true); // activate skill (Player child object)
         cooldownTimer = Time.time + cooldown;
-        characterAnimator.SetBool("Hit", true);
+        
 
         float index = (1.0f / UI_skillsManage.SkillAnimationCount) * UI_skillsManage.SkillAnimationIndex[fileName];
         index += index == 0f ? 0f : (1.0f / UI_skillsManage.SkillAnimationCount) / 2; //make sure the right animation is playing
 
-        characterAnimator.SetFloat("SpellIndex", index);
+        characterAnimator.SetHit(true, index);
         UI_skillsManage.ApplyTimeBetweenSkillsCooldown();
         StartCoroutine("StartSkillExecution");
     }
@@ -61,7 +61,7 @@ public class UI_Skill_Execution : MonoBehaviour
 
     public void FinishExecution(bool hasBeenExcuted = false)
     {
-        characterAnimator.SetBool("Hit", false);
+        characterAnimator.SetHit(false);
         parentGameObject.Find(fileName).gameObject.SetActive(false);
 
         if (hasBeenExcuted) //because of UI_skillsManage.FinishSkillExecution()
