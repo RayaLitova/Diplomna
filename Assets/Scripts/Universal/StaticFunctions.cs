@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Linq;
 using System;
+using UnityEngine.Windows;
+using static UnityEngine.Rendering.DebugUI;
+using System.Text.RegularExpressions;
 
 public static class StaticFunctions
 {
@@ -23,6 +26,11 @@ public static class StaticFunctions
             }
         }
         return input.Substring(0, index);
+    }
+
+    public static string AddWhitespaces(this string input)
+    {
+        return Regex.Replace(input, "([a-z])([A-Z])", "$1 $2");
     }
 
 }

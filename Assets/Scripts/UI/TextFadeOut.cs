@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TextFadeOut : MonoBehaviour
 {
-    [SerializeField] float fadeoutTime = .001f;
+    [SerializeField] float fadeoutTime = .01f;
     public enum AfterFadingAction { Destroy, SetInactive }
     public AfterFadingAction action;
     private Text text;
