@@ -10,6 +10,7 @@ public class GenerateDungeon : MonoBehaviour
     [SerializeField] GameObject cinematicCamera;
     public static int dungeonLevel = 0;
     public static int enemyCount = 0;
+    public static int herbCount = 0;
 
     public enum RoomType
     {

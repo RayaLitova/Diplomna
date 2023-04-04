@@ -18,6 +18,7 @@ public class Gather : InteractAction
         if (room != null && room.GetComponent<CheckRoom>().GetNumberOfTags("Enemy") != 0)
             return;
 
+        GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateHerbProgress();
         FinishGathering.herb = gameObject;
         ac.Gather(true);
     }

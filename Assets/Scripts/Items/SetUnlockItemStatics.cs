@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.IO;
 
 public class SetUnlockItemStatics : MonoBehaviour
 {
@@ -7,10 +6,7 @@ public class SetUnlockItemStatics : MonoBehaviour
 
     void Start()
     {
-        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/StreamingAssets/Items"); //get all items
-        FileInfo[] info = dir.GetFiles("*.asset");
-
-        UnlockItem.itemCount = info.Length;
+        UnlockItem.itemCount = Resources.LoadAll<Item>("Items").Length;
         UnlockItem.unlockParticles = unlockItemParticles;
     }
 }

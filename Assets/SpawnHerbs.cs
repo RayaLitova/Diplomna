@@ -6,6 +6,8 @@ public class SpawnHerbs : MonoBehaviour
     {
         var herbs = Resources.LoadAll<GameObject>("Herbs");
         int herbCount = Random.Range(0, 5);
+        GenerateDungeon.herbCount += herbCount;
+        GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateHerbTargetCount();
         for (int i = 0; i < herbCount; i++)
         {
             Transform pos;
