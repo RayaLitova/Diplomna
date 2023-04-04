@@ -6,6 +6,7 @@ public class Gather : InteractAction
     private CharacterAnimationController ac;
     private void Start()
     {
+        description = "Gather " + gameObject.name;
         rooms = GameObject.Find("Scripts").GetComponent<GetCurrentRoom>();
         ac = GameObject.Find("Player").GetComponent<CharacterAnimationController>();
     }
