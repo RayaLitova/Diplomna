@@ -3,6 +3,9 @@
 ## Документация на дипломната работа
 https://drive.google.com/file/d/1zu5CkqMwVTlXjPfE3IaCUbCLV9Od3OVV/view?usp=sharing
 
+## Линк към уеб демо на играта
+https://revelina.itch.io/kingdoms-keep
+
 ## Ръководство за потребителя
 
 ### Инсталация на играта
