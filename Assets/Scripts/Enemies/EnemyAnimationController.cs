@@ -8,10 +8,12 @@ public class EnemyAnimationController : MonoBehaviour
     [SerializeField] protected string deathAnimationVar;
     [SerializeField] protected string attackAnimationVar;
     [SerializeField] protected string walkAnimationVar = "";
+    private EnemySoundController soundController;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        soundController = GetComponent<EnemySoundController>();
     }
     public virtual void takeDamageAnimation(bool isActive)
     {
@@ -20,6 +22,8 @@ public class EnemyAnimationController : MonoBehaviour
             animator.SetBool(hitAnimationVar, isActive);
         }
         catch (NullReferenceException) { };
+        if (gameObject.tag == "Boss")
+            soundController.PlayTakeDamageSound();
     }
     public virtual void deathAnimation(bool isActive)
     {
@@ -28,16 +32,19 @@ public class EnemyAnimationController : MonoBehaviour
             animator.SetBool(deathAnimationVar, isActive);
         }
         catch (NullReferenceException) { };
+        if (gameObject.tag == "Boss")
+            soundController.PlayDeathSound();
     }
 
     public virtual void AttackAnimation(bool isActive)
     {
-        animator.SetBool(attackAnimationVar, isActive);
         try
         {
             animator.SetBool(attackAnimationVar, isActive);
         }
         catch (NullReferenceException) { };
+        if (gameObject.tag == "Boss")
+            soundController.PlayAttackSound();
     }
 
     public virtual void WalkAnimation(bool isActive)

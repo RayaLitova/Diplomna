@@ -1,8 +1,5 @@
-using UnityEngine;
 using System.Linq;
 using System;
-using UnityEngine.Windows;
-using static UnityEngine.Rendering.DebugUI;
 using System.Text.RegularExpressions;
 
 public static class StaticFunctions

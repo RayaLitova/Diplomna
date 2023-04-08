@@ -3,14 +3,18 @@ using UnityEngine;
 public class CharacterAnimationController : MonoBehaviour
 {
     Animator animationController;
+    CharacterSoundController soundController;
 
     private void Start()
     {
         animationController = GetComponent<Animator>();
+        soundController = GetComponent<CharacterSoundController>();
     }
     public void SetDash(bool isActive)
     {
         animationController.SetBool("Dash", isActive);
+        if (isActive)
+            soundController.PlayDashSound();
     }
 
     public bool GetIsInCombat()
@@ -37,17 +41,23 @@ public class CharacterAnimationController : MonoBehaviour
     public void SetTakeDamage(bool isActive)
     {
         animationController.SetBool("DamageTaken", isActive);
+        if (isActive)
+            soundController.PlayTakeDamageSound();
     }
 
     public void SetIsDead(bool isActive)
     {
         animationController.SetBool("isDead", isActive);
+        if (isActive)
+            soundController.PlayDeathSound();
     }
 
     public void SetHit(bool isActive, float index = 0f)
     { 
         animationController.SetBool("Hit", isActive);
         animationController.SetFloat("SpellIndex", index);
+        if(isActive)
+            soundController.PlayHitSound((int)(index * UI_skillsManage.SkillAnimationCount));
     }
 
     public void Gather(bool isActive)

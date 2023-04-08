@@ -37,6 +37,7 @@ public class MoveTowardsBoss : MonoBehaviour
 
     private IEnumerator WaitForLichAnimation()
     {
+        boss.GetComponent<EnemySoundController>().PlayCutsceneSound();
         targetRotation = Vector3.zero;
         transform.LookAt(boss.position, Vector3.up);
         yield return new WaitForSeconds(3f);

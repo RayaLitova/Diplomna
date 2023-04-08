@@ -17,6 +17,7 @@ public class Interact : MonoBehaviour
         {
             if (interactEnabled)
             {
+                action.interactAvailable = true;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     action.Action(); //Interact
@@ -40,6 +41,9 @@ public class Interact : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Interactable")
+        {
             interactEnabled = false;
+            action.interactAvailable = false;
+        }
     }
 }

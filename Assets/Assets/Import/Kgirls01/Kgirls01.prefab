@@ -15662,12 +15662,12 @@ GameObject:
   - component: {fileID: 3872188809651041136}
   - component: {fileID: 2223859432848078384}
   - component: {fileID: 7057341634507496126}
-  - component: {fileID: 4942999879850361343}
   - component: {fileID: 8137351939086409823}
   - component: {fileID: 1690002759071039921}
   - component: {fileID: 6389702474909131642}
   - component: {fileID: 2918772641798605070}
   - component: {fileID: 5531758819863810828}
+  - component: {fileID: 6444493150827794821}
   m_Layer: 0
   m_Name: Kgirls01
   m_TagString: Untagged
@@ -15745,20 +15745,6 @@ MonoBehaviour:
   rotationSpeed: 40
   mainCamera: {fileID: 0}
   gravity: -9.81
---- !u!136 &4942999879850361343
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7385737107661046707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 36.39
-  m_Height: 177.80966
-  m_Direction: 1
-  m_Center: {x: 2.4321308, y: -104.104034, z: 10.518594}
 --- !u!95 &8137351939086409823
 Animator:
   serializedVersion: 4
@@ -15841,6 +15827,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6444493150827794821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385737107661046707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572e79047c059804e8e698a11aeeea35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterAudio: {fileID: 0}
 --- !u!1 &7442845272095363081
 GameObject:
   m_ObjectHideFlags: 0

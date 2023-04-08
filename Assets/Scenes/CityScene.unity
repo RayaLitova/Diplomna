@@ -10000,6 +10000,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Enter training room
+  audioClip: {fileID: 0}
+  interactAvailable: 0
   sceneName: TargetDummyRoom
 --- !u!1001 &856372644
 PrefabInstance:
@@ -13294,6 +13296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Enter Tavern
+  audioClip: {fileID: 0}
+  interactAvailable: 0
   sceneName: AdventureGuildScene
 --- !u!1 &1139303540
 GameObject:
@@ -24276,6 +24280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2082971282}
   - component: {fileID: 2082971281}
+  - component: {fileID: 2082971283}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -24295,7 +24300,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d65076270d1c2724b97278cf8746b193, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -24394,6 +24399,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2082971283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082971280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897e6395af8828548befd0c8250de94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2083935845
 PrefabInstance:
   m_ObjectHideFlags: 0

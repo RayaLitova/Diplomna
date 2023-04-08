@@ -12,11 +12,14 @@ public class SkeletonAnimationController : EnemyAnimationController
     [SerializeField] string attackAnimationNumberVar;
     [SerializeField] int attackAnimationCount;
 
+    private EnemySoundController soundController;
+
     private SkillStats stats;
     private void Start()
     {
         stats = GetComponent<SkillStats>();
         animator = GetComponent<Animator>();
+        soundController = GetComponent<EnemySoundController>();
         StartCoroutine("IdleEventHandler");
     }
 
@@ -34,16 +37,23 @@ public class SkeletonAnimationController : EnemyAnimationController
     {
         base.deathAnimation(isActive);
         if (isActive)
+        {
             //Choose random death animation
+            soundController.PlayDeathSound();
             animator.SetFloat(deathAnimationNumberVar, (1 / deathAnimationCount) * Random.Range(0, deathAnimationCount + 1));
+        }
     }
 
     public override void takeDamageAnimation(bool isActive)
     {
         base.takeDamageAnimation(isActive);
         if (isActive)
+        {
             //Choose random take damage animation
             animator.SetFloat(hitAnimationNumberVar, (1 / hitAnimationCount) * Random.Range(0, hitAnimationCount + 1));
+            soundController.PlayTakeDamageSound();
+
+        }
     }
 
     public override void AttackAnimation(bool isActive)
@@ -59,8 +69,10 @@ public class SkeletonAnimationController : EnemyAnimationController
                 if (stats.rage >= 100)
                     stats.EnterRagedMode();
             }
+            soundController.PlayAttackSound();
         }
     }
+
 
     public override void WalkAnimation(bool isActive)
     {

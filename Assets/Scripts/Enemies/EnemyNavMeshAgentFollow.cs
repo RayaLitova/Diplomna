@@ -50,7 +50,9 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             if (gameObject.tag == "Boss" && !isBossMusicPlaying)
             {
                 audioSource.enabled = false;
+                audioSource.volume = 0;
                 audioSource.clip = Resources.Load<AudioClip>("Audio/Boss");
+                GameObject.Find("Player").GetComponent<CharacterSoundController>().FadeBackgrounMusic(audioSource, 5f, 0.3f);
                 audioSource.enabled = true;
                 isBossMusicPlaying = true;
             }
@@ -82,6 +84,9 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
 
         audioSource.enabled = false;
         audioSource.clip = Resources.Load<AudioClip>("Audio/Dungeon");
+        audioSource.volume = 0f;
         audioSource.enabled = true;
+        GameObject.Find("Player").GetComponent<CharacterSoundController>().PlayBossSlainSound();
+        GameObject.Find("Player").GetComponent<CharacterSoundController>().FadeBackgrounMusic(audioSource, 5f, 0.5f);
     }
 }
