@@ -8445,6 +8445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Exit training room
+  audioClip: {fileID: 0}
+  interactAvailable: 0
   sceneName: CityScene
 --- !u!64 &977170284
 MeshCollider:
@@ -12225,7 +12227,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d65076270d1c2724b97278cf8746b193, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 420fefce7d7fa2644b409f83cdf3d1d9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -7,7 +7,7 @@ public class DungeonObjectives : MonoBehaviour
     private int currEnemyCount = 0;
     private int targetHerbCount;
     private int currHerbCount = 0;
-    public static int objectivesCount = 1;
+    public static int objectivesCount = 2;
     public static int completedObjectivesCount = 0;
     [SerializeField] Text targetCount1;
     [SerializeField] Text currProgress1;
