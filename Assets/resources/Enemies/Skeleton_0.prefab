@@ -2370,16 +2370,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f439ee038c240f47b5ccb61374a62b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 95026947950475570}
   hitAnimationVar: isDamageTaken
   deathAnimationVar: isDead
   attackAnimationVar: isAttacking
   walkAnimationVar: isMoving
+  soundController: {fileID: 2128146976894999068}
   hitAnimationNumberVar: DamageNumber
   hitAnimationCount: 3
   deathAnimationNumberVar: DeathNumber
   deathAnimationCount: 2
   attackAnimationNumberVar: AttackNumber
   attackAnimationCount: 3
+  stats: {fileID: 1842035495407577566}
 --- !u!114 &3053660449843262834
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,17 +3,17 @@ using System;
 
 public class EnemyAnimationController : MonoBehaviour
 {
-    protected Animator animator;
+    [SerializeField] protected Animator animator;
     [SerializeField] protected string hitAnimationVar;
     [SerializeField] protected string deathAnimationVar;
     [SerializeField] protected string attackAnimationVar;
     [SerializeField] protected string walkAnimationVar = "";
-    private EnemySoundController soundController;
+    [SerializeField] protected EnemySoundController soundController;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        soundController = GetComponent<EnemySoundController>();
+        //animator = GetComponent<Animator>();
+        //soundController = GetComponent<EnemySoundController>();
     }
     public virtual void takeDamageAnimation(bool isActive)
     {

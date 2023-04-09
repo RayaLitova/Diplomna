@@ -9,10 +9,13 @@ public class MoveTowardsBoss : MonoBehaviour
     private float angle = 0f;
     private int pathNum = 1;
     private float rotation = 0.05f;
+
+    private GenerateDungeon generateDungeon;
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
         transform.position = GenerateDungeon.cameraPoints.ElementAt(0).transform.position;
+        generateDungeon = GameObject.Find("Scripts").GetComponent<GenerateDungeon>();
     }
     private void FixedUpdate()
     {
@@ -46,7 +49,7 @@ public class MoveTowardsBoss : MonoBehaviour
 
     private void OnDisable()
     {
-        Destroy(GameObject.Find("Scripts").GetComponent<GenerateDungeon>());
+        Destroy(generateDungeon);
         Destroy(this); 
     }
 

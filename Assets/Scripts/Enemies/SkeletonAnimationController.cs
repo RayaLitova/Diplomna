@@ -12,14 +12,12 @@ public class SkeletonAnimationController : EnemyAnimationController
     [SerializeField] string attackAnimationNumberVar;
     [SerializeField] int attackAnimationCount;
 
-    private EnemySoundController soundController;
-
-    private SkillStats stats;
+    [SerializeField] private SkillStats stats;
     private void Start()
     {
-        stats = GetComponent<SkillStats>();
-        animator = GetComponent<Animator>();
-        soundController = GetComponent<EnemySoundController>();
+        //stats = GetComponent<SkillStats>();
+        //animator = GetComponent<Animator>();
+        //soundController = GetComponent<EnemySoundController>();
         StartCoroutine("IdleEventHandler");
     }
 

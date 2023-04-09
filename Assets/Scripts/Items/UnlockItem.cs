@@ -15,7 +15,7 @@ public class UnlockItem : MonoBehaviour
         Transform inventory = GameObject.Find("Inventory").transform.GetChild(0).GetChild(0);
         DisplayItem item = inventory.GetChild(Random.Range(0, itemCount)).GetChild(1).GetComponent<DisplayItem>();
 
-        while (item.GetItem().isOwned) //make sure the item is not already acquired 
+        while (item.GetItem() != null && item.GetItem().isOwned) //make sure the item is not already acquired 
             item = inventory.GetChild(Random.Range(0, itemCount)).GetChild(1).GetComponent<DisplayItem>();
         
         item.AcquireItem();
