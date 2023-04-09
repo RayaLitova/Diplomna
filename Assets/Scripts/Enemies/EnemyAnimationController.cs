@@ -9,12 +9,6 @@ public class EnemyAnimationController : MonoBehaviour
     [SerializeField] protected string attackAnimationVar;
     [SerializeField] protected string walkAnimationVar = "";
     [SerializeField] protected EnemySoundController soundController;
-
-    private void Start()
-    {
-        //animator = GetComponent<Animator>();
-        //soundController = GetComponent<EnemySoundController>();
-    }
     public virtual void takeDamageAnimation(bool isActive)
     {
         try

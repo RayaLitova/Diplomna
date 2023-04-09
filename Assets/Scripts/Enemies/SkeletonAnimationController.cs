@@ -14,10 +14,7 @@ public class SkeletonAnimationController : EnemyAnimationController
 
     [SerializeField] private SkillStats stats;
     private void Start()
-    {
-        //stats = GetComponent<SkillStats>();
-        //animator = GetComponent<Animator>();
-        //soundController = GetComponent<EnemySoundController>();
+    { 
         StartCoroutine("IdleEventHandler");
     }
 
