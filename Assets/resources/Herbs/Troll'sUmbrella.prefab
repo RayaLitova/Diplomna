@@ -129,3 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 'Gather '
+  audioClip: {fileID: 0}
+  interactAvailable: 0

@@ -19,6 +19,7 @@ public class Gather : InteractAction
             return;
 
         GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateHerbProgress();
+        Resources.Load<Herb>("HerbItems/" + StaticFunctions.RemoveClones(gameObject.name)).count += Random.Range(1, 4);
         FinishGathering.herb = gameObject;
         ac.Gather(true);
     }
