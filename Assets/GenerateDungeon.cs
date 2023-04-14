@@ -29,6 +29,7 @@ public class GenerateDungeon : MonoBehaviour
     public static int portalRoomNum = -1;
     void Start()
     {
+        Debug.Log("Start");
         RoomResourcesPath = new Dictionary<RoomType, string>()
         {
             { RoomType.SafeRoom, "DungeonRooms/SafeRoom" },
@@ -45,10 +46,12 @@ public class GenerateDungeon : MonoBehaviour
         GenerateStartingCutscenePath(safeRoom);
         cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
         GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
+        Debug.Log("Start end");
     }
 
     private void AddRooms(Room room)
     {
+        Debug.Log("Add rooms");
         int availableRooms = room.FindAvailable(); // fill adjacent
         if (currentRooms == roomCount)
             return;
@@ -87,9 +90,11 @@ public class GenerateDungeon : MonoBehaviour
             }
             i--;
         }
+        Debug.Log("Add rooms end");
     }
     public static void OpenDoors(Room startingRoom)
     {
+        Debug.Log("Open doors");
         startingRoom.isVisited = true;
         for (int i = 0; i < 4; i++)
         {
@@ -100,12 +105,15 @@ public class GenerateDungeon : MonoBehaviour
             OpenDoors(startingRoom.adjacent[i]);
         }
         startingRoom.isVisited = false;
+        Debug.Log("Open doors end");
     }
 
     public static void DisplayRoom(Room room)
     {
+        Debug.Log("Display room");
         GameObject newRoom = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[room.roomType]), new Vector3(room.x * (378.8682f * 2), 0, room.y * (378.8682f * 2)), Quaternion.identity);
         room.cameraPosObj = newRoom.transform.Find("StartingCutscenePath").gameObject;
+        Debug.Log("Display room end");
     }
 
     private bool isBossRoomVisited = false;
@@ -114,6 +122,7 @@ public class GenerateDungeon : MonoBehaviour
 
     public void GenerateStartingCutscenePath(Room startingRoom)
     {
+        Debug.Log("Generate cutscene path");
         Room safeRoom = startingRoom;
         queue.Add(startingRoom);
         while (!isBossRoomVisited)
@@ -141,15 +150,16 @@ public class GenerateDungeon : MonoBehaviour
         {
             try
             {
-                Room curr = visited.ElementAt(visited.Count - 1);
+                Room curr = visited.Last();
                 cameraPoints.Add(curr.cameraPosObj);
                 visited.Remove(curr);
-                while (visited.Count > 0 && !visited.ElementAt(visited.Count - 1).FindAdjacent(curr))
-                    visited.Remove(visited.ElementAt(visited.Count - 1));
+                while (visited.Count > 0 && !visited.Last().FindAdjacent(curr))
+                    visited.Remove(visited.Last());
             }
             catch (Exception) { }
         }
         cameraPoints.Reverse();
+        Debug.Log("Generate cutscene path end");
     }
 }
 

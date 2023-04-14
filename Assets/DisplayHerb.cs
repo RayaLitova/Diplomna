@@ -18,7 +18,14 @@ public class DisplayHerb : MonoBehaviour
 
     public void UpdateCount()
     {
+        if(herb == null)
+            return;
         transform.parent.Find("Count").GetComponent<Text>().text = herb.count.ToString();
+    }
+
+    public bool CheckHerb(Herb h)
+    {
+        return h == herb;
     }
 
 }

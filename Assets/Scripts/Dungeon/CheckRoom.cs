@@ -41,5 +41,10 @@ public class CheckRoom : MonoBehaviour
         }
         return count;
     }
+
+    public bool EnemiesInRoom()
+    {
+        return (GetNumberOfTags("Enemy") + GetNumberOfTags("Boss")) > 0;
+    }
     
 }

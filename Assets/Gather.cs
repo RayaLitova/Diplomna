@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gather : InteractAction
 {
@@ -15,12 +16,18 @@ public class Gather : InteractAction
     public override void Action()
     {
         GameObject room = rooms.CheckRooms(transform);
-        if (room != null && room.GetComponent<CheckRoom>().GetNumberOfTags("Enemy") != 0)
+        if (room != null && room.GetComponent<CheckRoom>().EnemiesInRoom()) //portal room is room == null
             return;
 
         GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateHerbProgress();
-        Resources.Load<Herb>("HerbItems/" + StaticFunctions.RemoveClones(gameObject.name)).count += Random.Range(1, 4);
+        Herb herb = Resources.Load<Herb>("HerbItems/" + StaticFunctions.RemoveClones(gameObject.name));
+        herb.count += Random.Range(1, 4);
         FinishGathering.herb = gameObject;
+        Transform herbSlot = GameObject.Find("HerbBag").transform.GetChild(0).GetChild(0);
+        if (!herbSlot.gameObject.activeInHierarchy)
+            UpdateCounts.update = true;
+        else
+            herbSlot.GetComponent<FindHerbSlot>().FindSlot(herb).Find("Count").GetComponent<Text>().text = herb.count.ToString();
         ac.Gather(true);
     }
 }

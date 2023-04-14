@@ -11,7 +11,7 @@ public class OpenPortcullis : MonoBehaviour
     }
     private void Update()
     {
-        if (targetRoom.GetNumberOfTags("Enemy") != 0)
+        if (targetRoom.EnemiesInRoom())
             return;
 
         animator.SetBool("open", true);
