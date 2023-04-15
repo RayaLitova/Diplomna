@@ -28,4 +28,20 @@ public class DisplayHerb : MonoBehaviour
         return h == herb;
     }
 
+    public void ShowHerbName()
+    {
+        if (herb == null)
+            return;
+        Debug.Log("Show Herb Name");
+        Transform herbText = transform.parent.parent.parent.GetChild(1); // Item description game object
+        herbText.gameObject.SetActive(true);
+        herbText.Find("Name").GetComponent<Text>().text = herb.name; // name
+    }
+
+    public void HideHerbName()
+    {
+        Debug.Log("Hide Herb Name");
+        transform.parent.parent.parent.GetChild(1).gameObject.SetActive(false);
+    }
+
 }
