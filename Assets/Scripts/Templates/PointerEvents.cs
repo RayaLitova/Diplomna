@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Linq;
 
 public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private bool isBeingDragged = false;
     private CanvasGroup canvasGroup;
-    private UI_ItemsManage itemsUI;
+    private UI_manager manager;
 
     private Vector3 initialPosition;
+    [SerializeField] string UI_manager_obj_name;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        itemsUI = GameObject.Find("ItemSlots").GetComponent<UI_ItemsManage>();
+        manager = GameObject.Find(UI_manager_obj_name).GetComponent<UI_manager>();
         initialPosition = transform.position;
     }
 
@@ -40,8 +41,8 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         isBeingDragged = false;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1.0f;
-        string key = itemsUI.getClosestItemSlot(transform.position);
-        string oldKey = UI_ItemsManage.items.Where(pair => pair.Value == GetComponent<DisplayItem>().GetItem())
+        string key = manager.getClosestSlot(transform.position);
+        string oldKey = manager.objects.Where(pair => pair.Value == GetComponent<Display>().Get())
             .Select(pair => pair.Key.ToString()).FirstOrDefault();
 
         transform.position = initialPosition;
@@ -49,8 +50,8 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             if (oldKey != null)
             {
-                UI_ItemsManage.itemSlotDisplayItem[oldKey].Remove();
-                UI_ItemsManage.items[oldKey] = null;
+                manager.slotDisplay[oldKey].Remove();
+                manager.objects[oldKey] = null;
             }
             return;
         }
@@ -59,31 +60,31 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void moveItem(string to, string from)
     {
-        
-        if (from == null) // Move from skill menu (or for swap)
+
+        if (from == null) // Move from menu (or for swap)
         {
-            UI_ItemsManage.items[to] = GetComponent<DisplayItem>().GetItem();
-            UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], true);
+            manager.objects[to] = GetComponent<Display>().Get();
+            manager.slotDisplay[to].Activate(manager.objects[to], true);
 
         }
         else // Move from action bar
         {
-            if (UI_ItemsManage.items[to] == null) // New slot is empty
+            if (manager.objects[to] == null) // New slot is empty
             {
-                UI_ItemsManage.items[to] = gameObject.GetComponent<DisplayItem>().GetItem();
-                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], false);
+                manager.objects[to] = gameObject.GetComponent<Display>().Get();
+                manager.slotDisplay[to].Activate(manager.objects[to], false);
 
-                UI_ItemsManage.itemSlotDisplayItem[from].Remove();
-                UI_ItemsManage.items[from] = null;
+                manager.slotDisplay[from].Remove();
+                manager.objects[from] = null;
             }
             else // Swap with skill from new slot
             {
-                Item item = UI_ItemsManage.items[from]; //save item
-                UI_ItemsManage.items[from] = null; //condition for "new slot is empty"
+                Usable obj = manager.objects[from]; //save 
+                manager.objects[from] = null; //condition for "new slot is empty"
 
-                UI_ItemsManage.itemSlotDisplayItem[to].gameObject.GetComponent<PointerEvents>().moveItem(from, to); //clear new slot
-                UI_ItemsManage.items[to] = item;
-                UI_ItemsManage.itemSlotDisplayItem[to].Activate(UI_ItemsManage.items[to], false);
+                manager.slotDisplay[to].gameObject.GetComponent<PointerEvents>().moveItem(from, to); //clear new slot
+                manager.objects[to] = obj;
+                manager.slotDisplay[to].Activate(manager.objects[to], false);
             }
         }
     }

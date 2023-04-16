@@ -1,79 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayItem : MonoBehaviour
+public class DisplayItem : Display
 {
-    private Item item = null;
     [SerializeField] private GameObject mask;
 
     private void Start()
     {
-        if (item != null)
+        if (obj != null)
         {
-            Display();
+            DisplayObj();
         }
     }
 
-    public void Display(Item itemRef = null)
+    public override void DisplayObj(Usable objRef = null)
     {
         if (GetComponent<ItemActivation>().enabled == true) // in case of putting an item on top of another item
             Remove();
 
-        if (itemRef != null)
-            item = itemRef;
-        
-        Image image = GetComponent<Image>();
-        image.sprite = item.icon;
-        transform.rotation = new Quaternion(0, 0, 1, 0); //z = 180
-        image.color = new Color(image.color.r, image.color.g, image.color.r, 1f);
-        if (item.isOwned || LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
+        base.DisplayObj(objRef);
+
+        if (((Item)obj).isOwned || LoadScene.GetCurrentSceneName() == "TargetDummyRoom")
             mask.SetActive(false);
     }
 
-    public void Activate(Item itemRef = null, bool playParticles = true)
+    public override void Activate(Usable objRef = null, bool playParticles = false)
     {
-        Display(itemRef);
+        base.Activate(objRef);
         GetComponent<ItemActivation>().enabled = true;
         if(playParticles)
             GetComponent<ItemActivation>().PlayParticles();
     }
 
-    public void Remove()
+    public override void Remove()
     {
         GetComponent<ItemActivation>().enabled = false;
-        Image image = GetComponent<Image>();
-        image.sprite = null;
-        image.color = new Color(image.color.r, image.color.g, image.color.r, 0f);
-        item = null;
+        base.Remove();
     }
-
-    public Item GetItem()
-    {
-        return item;
-    }
-
-    public void ShowItemDescription()
-    {
-        if (item == null)
-            return;
-
-        Transform itemDesc = transform.parent.parent.parent.GetChild(1); // Item description game object
-        itemDesc.gameObject.SetActive(true);
-        itemDesc.GetChild(1).GetComponent<Text>().text = item.name; // name
-        itemDesc.GetChild(2).GetComponent<Text>().text = item.description; // description
-    }
-
-    public void HideItemDescription()
-    {
-        transform.parent.parent.parent.GetChild(1).gameObject.SetActive(false);
-    }
-
     public void AcquireItem()
     {
-        if (item == null || item.isOwned)
+        if (obj == null || ((Item)obj).isOwned)
             return;
 
-        item.isOwned = true;
-        Display();
+        ((Item)obj).isOwned = true;
+        DisplayObj();
     }
 }

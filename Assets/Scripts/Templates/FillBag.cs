@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class FillBag : MonoBehaviour
+{
+    [SerializeField] string folder;
+    void Start()
+    {
+        int childNum = 0;
+        foreach (Usable obj in Resources.LoadAll<Usable>(folder))
+        {
+            Transform slot = transform.GetChild(childNum).GetChild(1);
+            slot.GetComponent<Display>().DisplayObj(obj);
+            childNum++;
+        }
+    }
+}

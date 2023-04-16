@@ -8,7 +8,7 @@ public class FillHerbBag : MonoBehaviour
         foreach (Herb herb in Resources.LoadAll<Herb>("HerbItems"))
         {
             Transform herbSlot = transform.GetChild(childNum).GetChild(1);
-            herbSlot.GetComponent<DisplayHerb>().Display(herb);
+            herbSlot.GetComponent<DisplayHerb>().DisplayObj(herb);
             childNum++;
         }
     }

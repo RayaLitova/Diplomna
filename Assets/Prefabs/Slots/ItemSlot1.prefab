@@ -366,9 +366,9 @@ GameObject:
   - component: {fileID: 1544310978298400416}
   - component: {fileID: 1355991418863074000}
   - component: {fileID: 8583021326850719880}
-  - component: {fileID: 4535225433342124487}
   - component: {fileID: 4788220730502564049}
   - component: {fileID: 183057515822371205}
+  - component: {fileID: 8693337874788738880}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -460,18 +460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 7210263686285218231}
---- !u!114 &4535225433342124487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765120715950117972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d788103136489e044b028e030ba8503a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &4788220730502564049
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -502,8 +490,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8583021326850719880}
-          m_TargetAssemblyTypeName: DisplayItem, Assembly-CSharp
-          m_MethodName: HideItemDescription
+          m_TargetAssemblyTypeName: Display, Assembly-CSharp
+          m_MethodName: HideDescription
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -518,8 +506,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8583021326850719880}
-          m_TargetAssemblyTypeName: DisplayItem, Assembly-CSharp
-          m_MethodName: ShowItemDescription
+          m_TargetAssemblyTypeName: Display, Assembly-CSharp
+          m_MethodName: ShowDescription
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -529,3 +517,16 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8693337874788738880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765120715950117972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: ItemSlots

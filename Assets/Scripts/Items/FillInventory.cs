@@ -9,7 +9,7 @@ public class FillInventory : MonoBehaviour
         foreach (Item item in Resources.LoadAll<Item>("Items"))
         {
             Transform itemSlot = transform.GetChild(childNum).GetChild(1);
-            itemSlot.GetComponent<DisplayItem>().Display(item);
+            itemSlot.GetComponent<DisplayItem>().DisplayObj(item);
             childNum++;
         }
     }

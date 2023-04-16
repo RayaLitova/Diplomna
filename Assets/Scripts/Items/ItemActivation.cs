@@ -11,7 +11,7 @@ public class ItemActivation : MonoBehaviour
             isCanvasDisabled = false;
             return;
         }
-        GameObject.Find("Player").GetComponent<CharacterStats>().AddItem(GetComponent<DisplayItem>().GetItem());
+        GameObject.Find("Player").GetComponent<CharacterStats>().AddItem((Item)(GetComponent<DisplayItem>().Get()));
     }
 
     public void PlayParticles()
@@ -24,6 +24,6 @@ public class ItemActivation : MonoBehaviour
         if (isCanvasDisabled) //cutscene
             return;
 
-        GameObject.Find("Player").GetComponent<CharacterStats>().RemoveItem(GetComponent<DisplayItem>().GetItem());
+        GameObject.Find("Player").GetComponent<CharacterStats>().RemoveItem((Item)GetComponent<DisplayItem>().Get());
     }
 }
