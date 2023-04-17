@@ -14,7 +14,7 @@ public class BuffExecution : SkillExecution
     }
     override public void ExecuteSkill()
     {
-        characterStats.isBuffed = true;
+        characterStats.AddBuff();
         characterStats.bonusATK += bonusATK;
         characterStats.bonusDEF += bonusDEF;
         characterStats.bonusCrit += bonusCrit;

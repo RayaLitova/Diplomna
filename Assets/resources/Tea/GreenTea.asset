@@ -15,6 +15,10 @@ MonoBehaviour:
   name: Green Tea
   description: asdwas
   icon: {fileID: 21300000, guid: 475d508c6cf22074cac5a4d286ddef4d, type: 3}
+  cooldown: 100
+  cooldownTimer: 0
+  isCDRapplied: 0
+  ui_manager: {fileID: 0}
   type: 0
   bonusATK: 0
   bonusDEF: 0
@@ -24,5 +28,4 @@ MonoBehaviour:
   bonusRegen: 10
   cooldownReduction: 0
   healing: 100
-  timeS: 60
-  count: 0
+  count: 2

@@ -21,8 +21,11 @@ public class CharacterStats : MonoBehaviour
     [System.NonSerialized] public int bonusCrit;
     [System.NonSerialized] public int bonusAgility;
     [System.NonSerialized] public int healing;
+    [System.NonSerialized] public int bonusMaxHealth;
+    [System.NonSerialized] public int bonusRegen;
 
     [System.NonSerialized] public bool isBuffed = false;
+    [System.NonSerialized] public int buffsCount = 0;
 
 
     [SerializeField] private Image HealthBar = null;
@@ -60,7 +63,7 @@ public class CharacterStats : MonoBehaviour
     {
         while (true)
         {
-            Health = Mathf.Min(MaxHealth, Health + HealthRegen);
+            Health = Mathf.Min(MaxHealth, Health + HealthRegen + bonusRegen);
             yield return new WaitForSeconds(1f);
         }
 
@@ -76,13 +79,30 @@ public class CharacterStats : MonoBehaviour
 
     public void ResetBuffs()
     {
-        buffedParticles.SetActive(false);
-        isBuffed = false;
+        ReduceBuffs();
         bonusCrit = 0;
         bonusAgility = 0;
         bonusATK = 0;
         bonusDEF = 0;
+        bonusMaxHealth = 0;
+        bonusRegen = 0;
         healing = 0;
+    }
+
+    public void ReduceBuffs()
+    {
+        buffsCount--;
+        if (buffsCount <= 0)
+        {
+            isBuffed = false;
+            buffedParticles.SetActive(false);
+        }
+    }
+
+    public void AddBuff()
+    {
+        buffsCount++;
+        isBuffed = true;
     }
 
     public int getATK()

@@ -3,19 +3,17 @@ using UnityEngine.UI;
 
 public class Gather : InteractAction
 {
-    private GetCurrentRoom rooms;
     private CharacterAnimationController ac;
     private void Start()
     {
         string name = StaticFunctions.RemoveClones(gameObject.name);
         name = StaticFunctions.AddWhitespaces(name);
         description = "Gather " + name;
-        rooms = GameObject.Find("Scripts").GetComponent<GetCurrentRoom>();
         ac = GameObject.Find("Player").GetComponent<CharacterAnimationController>();
     }
     public override void Action()
     {
-        GameObject room = rooms.CheckRooms(transform);
+        GameObject room = GetCurrentRoom.CheckRooms(transform);
         if (room != null && room.GetComponent<CheckRoom>().EnemiesInRoom()) //portal room is room == null
             return;
 

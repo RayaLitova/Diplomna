@@ -5,6 +5,11 @@ public class FillBag : MonoBehaviour
     [SerializeField] string folder;
     void Start()
     {
+        Fill();
+    }
+
+    public void Fill()
+    {
         int childNum = 0;
         foreach (Usable obj in Resources.LoadAll<Usable>(folder))
         {

@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class DisableSkillMenu : MonoBehaviour
 {
-    private GetCurrentRoom rooms;
-
-    private void Start()
-    {
-        rooms = GameObject.Find("Scripts").GetComponent<GetCurrentRoom>();  
-    }
     private void Update()
     {
-        if (rooms.CheckRooms(transform) == null)
+        if (GetCurrentRoom.CheckRooms(transform) == null)
             return;
 
         Destroy(GameObject.Find("SkillMenu"));

@@ -19,7 +19,7 @@ public class PortalActivationCutscene : MonoBehaviour
     }
     public void StartCutscene()
     {
-        mainCamera = Camera.main.gameObject;
+        mainCamera = GameObject.Find("Main Camera");
         mainCamera.SetActive(false);
         cinematicCamera.SetActive(true);
         cinematicCamera.transform.position = GameObject.Find("CutsceneCameraPosition").transform.position;

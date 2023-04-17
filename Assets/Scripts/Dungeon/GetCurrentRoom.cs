@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class GetCurrentRoom : MonoBehaviour
 {
- 
-    public GameObject CheckRooms(Transform target)
+    public static GameObject CheckRooms(Transform target)
     {
         foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {

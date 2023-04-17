@@ -1,16 +1,31 @@
 using UnityEngine;
-using System.IO;
 
-public class FillInventory : MonoBehaviour
+public class FillInventory : FillBag
 {
+    public static Transform inventory;
+    public static int itemsToUnlock = 0;
     void Start()
     {
-        int childNum = 0;
-        foreach (Item item in Resources.LoadAll<Item>("Items"))
+        Fill();
+        inventory = transform;
+    }
+
+    private void OnEnable()
+    {
+        if (itemsToUnlock == 0)
+            return;
+
+        Transform inventory = FillInventory.inventory;
+        DisplayItem item;
+        for (int i = 0; i < itemsToUnlock; i++)
         {
-            Transform itemSlot = transform.GetChild(childNum).GetChild(1);
-            itemSlot.GetComponent<DisplayItem>().DisplayObj(item);
-            childNum++;
+            item = inventory.GetChild(Random.Range(0, UnlockItem.itemCount)).GetChild(1).GetComponent<DisplayItem>();
+
+            while (item.Get() != null && ((Item)item.Get()).isOwned) //make sure the item is not already acquired 
+                item = inventory.GetChild(Random.Range(0, UnlockItem.itemCount)).GetChild(1).GetComponent<DisplayItem>();
+
+            item.AcquireItem();
         }
+        itemsToUnlock = 0;
     }
 }

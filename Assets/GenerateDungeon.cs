@@ -45,7 +45,6 @@ public class GenerateDungeon : MonoBehaviour
         OpenDoors(safeRoom);
         GenerateStartingCutscenePath(safeRoom);
         cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
-        GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
         Debug.Log("Start end");
     }
 
@@ -113,6 +112,8 @@ public class GenerateDungeon : MonoBehaviour
         Debug.Log("Display room");
         GameObject newRoom = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[room.roomType]), new Vector3(room.x * (378.8682f * 2), 0, room.y * (378.8682f * 2)), Quaternion.identity);
         room.cameraPosObj = newRoom.transform.Find("StartingCutscenePath").gameObject;
+        if(room.roomType == RoomType.PortalRoom)
+            GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
         Debug.Log("Display room end");
     }
 

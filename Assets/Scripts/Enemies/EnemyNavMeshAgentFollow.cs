@@ -19,7 +19,6 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
     {
         animationController = GetComponent<EnemyAnimationController>();
         character = GameObject.FindGameObjectWithTag("Player").transform;
-        rooms = GameObject.Find("Scripts").GetComponent<GetCurrentRoom>();
         startPosition = transform.position;
         audioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
     }
@@ -42,7 +41,7 @@ public class EnemyNavMeshAgentFollow : MonoBehaviour
             attackCooldown = Time.time + 3f;
             return;
         }
-        else if (Vector3.Distance(character.position, transform.position) > stoppingDistance && rooms.CheckRooms(character) != null && rooms.CheckRooms(character) == rooms.CheckRooms(transform)) //chase
+        else if (Vector3.Distance(character.position, transform.position) > stoppingDistance && GetCurrentRoom.CheckRooms(character) != null && GetCurrentRoom.CheckRooms(character) == GetCurrentRoom.CheckRooms(transform)) //chase
         {
             animationController.WalkAnimation(true);
             transform.LookAt(new Vector3(character.position.x, transform.position.y, character.position.z)); // fix rotation on y axis

@@ -28,8 +28,12 @@ public class EnemyAttack : MonoBehaviour
     {
         if (isAttackingDisabled)
             return;
-        particles.gameObject.SetActive(true);
-        animationController.AttackAnimation(true);
+        try
+        {
+            particles.gameObject.SetActive(true);
+            animationController.AttackAnimation(true);
+        }
+        catch (Exception) { };
     }
 
     public void FinishExecution()

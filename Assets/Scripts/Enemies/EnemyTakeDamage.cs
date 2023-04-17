@@ -34,7 +34,6 @@ public class EnemyTakeDamage : MonoBehaviour
             Destroy(enemyAttack.particles.gameObject);
             animationController.deathAnimation(true);
         }
-        transform.Find(UI_skillsManage.GetCurrentUIskillInfo().fileName + "_hit").GetComponent<ParticleSystem>().Play();
         UI_skillsManage.FinishSkillExecution();
     }
 
