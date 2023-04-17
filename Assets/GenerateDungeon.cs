@@ -8,7 +8,6 @@ public class GenerateDungeon : MonoBehaviour
     private int roomCount;
     private int currentRooms = 1;
     [SerializeField] GameObject cinematicCamera;
-    public static int dungeonLevel = 0;
     public static int enemyCount = 0;
     public static int herbCount = 0;
 
@@ -40,7 +39,7 @@ public class GenerateDungeon : MonoBehaviour
             { RoomType.PortalRoom, "DungeonRooms/PortalRoom" }
         };
 
-        roomCount = 6 + dungeonLevel * 2;
+        roomCount = 6 + SavingManager.gameData.dungeonLevel * 2;
 
         Room safeRoom = new Room(4, 4, RoomType.SafeRoom);
         AddRooms(safeRoom);
@@ -114,8 +113,11 @@ public class GenerateDungeon : MonoBehaviour
         Debug.LogError("Display room");
         GameObject newRoom = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[room.roomType]), new Vector3(room.x * (378.8682f * 2), 0, room.y * (378.8682f * 2)), Quaternion.identity);
         room.cameraPosObj = newRoom.transform.Find("StartingCutscenePath").gameObject;
-        if(room.roomType == RoomType.PortalRoom)
+        if (room.roomType == RoomType.PortalRoom)
+        {
             GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
+            ActivatePortal.teleport = GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>();
+        }
         Debug.LogError("Display room end");
     }
 
@@ -159,7 +161,10 @@ public class GenerateDungeon : MonoBehaviour
                 while (visited.Count > 0 && !visited.Last().FindAdjacent(curr))
                     visited.Remove(visited.Last());
             }
-            catch (Exception) { }
+            catch (Exception) 
+            {
+                break;
+            }
         }
         cameraPoints.Reverse();
         Debug.LogError("Generate cutscene path end");

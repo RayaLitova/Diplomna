@@ -23,7 +23,7 @@ public class LoadScene : MonoBehaviour
 
     public void Load()
     {
-        LoadScene.name = sceneName;
+        name = sceneName;
         SceneManager.LoadScene("LoadingScreen");
     }
 

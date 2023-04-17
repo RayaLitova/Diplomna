@@ -12,7 +12,10 @@ public class DisplayHerb : Display
     {
         if(obj == null)
             return;
-        transform.parent.Find("Count").GetComponent<Text>().text = ((Herb)obj).count.ToString();
+
+        if (!SavingManager.gameData.Items["HerbItems"].ContainsKey(obj.name))
+            SavingManager.gameData.Items["HerbItems"][obj.name] = 0;
+        transform.parent.Find("Count").GetComponent<Text>().text = SavingManager.gameData.Items["HerbItems"][obj.name].ToString();
     }
 
     public bool CheckHerb(Herb h)

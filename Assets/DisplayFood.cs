@@ -12,6 +12,6 @@ public class DisplayFood : Display
     {
         if (obj == null)
             return;
-        transform.parent.Find("Count").GetComponent<Text>().text = ((Food)obj).count.ToString();
+        transform.parent.Find("Count").GetComponent<Text>().text = SavingManager.gameData.Items["Tea"][obj.name].ToString();
     }
 }

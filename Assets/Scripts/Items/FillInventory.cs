@@ -8,6 +8,7 @@ public class FillInventory : FillBag
     {
         Fill();
         inventory = transform;
+        SavingManager.gameData.Items.Remove(folder);
     }
 
     private void OnEnable()

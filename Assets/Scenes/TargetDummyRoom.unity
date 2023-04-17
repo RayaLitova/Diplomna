@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4795,6 +4795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e191626d70c57146aa167e7b602ae41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  folder: Items
 --- !u!225 &529896616
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5681,10 +5682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50294b0911e34495e1facb7e8cf6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotTransform:
-  - {fileID: 111869636}
-  - {fileID: 1418457893}
-  - {fileID: 1556112438}
+  slotTransform: []
+  displayItemGoName: 
 --- !u!1001 &597660221
 PrefabInstance:
   m_ObjectHideFlags: 0

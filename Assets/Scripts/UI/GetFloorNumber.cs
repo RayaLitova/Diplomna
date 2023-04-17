@@ -5,6 +5,6 @@ public class GetFloorNumber : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Text>().text = GenerateDungeon.dungeonLevel.ToString();
+        GetComponent<Text>().text = SavingManager.gameData.dungeonLevel.ToString();
     }
 }

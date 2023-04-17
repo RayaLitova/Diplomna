@@ -21,9 +21,6 @@ public class Food : Executable
     public int bonusRegen = 0;
     public float cooldownReduction = 0f;
     public int healing = 0;
-
-    public int count = 0;
-
     public override void Execute()
     {
         if (Time.time < cooldownTimer)
