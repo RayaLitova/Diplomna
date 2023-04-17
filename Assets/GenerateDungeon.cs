@@ -29,7 +29,9 @@ public class GenerateDungeon : MonoBehaviour
     public static int portalRoomNum = -1;
     void Start()
     {
-        Debug.Log("Start");
+        enemyCount = 0;
+        herbCount = 0;
+        Debug.LogError("Start");
         RoomResourcesPath = new Dictionary<RoomType, string>()
         {
             { RoomType.SafeRoom, "DungeonRooms/SafeRoom" },
@@ -45,12 +47,12 @@ public class GenerateDungeon : MonoBehaviour
         OpenDoors(safeRoom);
         GenerateStartingCutscenePath(safeRoom);
         cinematicCamera.GetComponent<MoveTowardsBoss>().enabled = true;
-        Debug.Log("Start end");
+        Debug.LogError("Start end");
     }
 
     private void AddRooms(Room room)
     {
-        Debug.Log("Add rooms");
+        Debug.LogError("Add rooms");
         int availableRooms = room.FindAvailable(); // fill adjacent
         if (currentRooms == roomCount)
             return;
@@ -89,11 +91,11 @@ public class GenerateDungeon : MonoBehaviour
             }
             i--;
         }
-        Debug.Log("Add rooms end");
+        Debug.LogError("Add rooms end");
     }
     public static void OpenDoors(Room startingRoom)
     {
-        Debug.Log("Open doors");
+        Debug.LogError("Open doors");
         startingRoom.isVisited = true;
         for (int i = 0; i < 4; i++)
         {
@@ -104,17 +106,17 @@ public class GenerateDungeon : MonoBehaviour
             OpenDoors(startingRoom.adjacent[i]);
         }
         startingRoom.isVisited = false;
-        Debug.Log("Open doors end");
+        Debug.LogError("Open doors end");
     }
 
     public static void DisplayRoom(Room room)
     {
-        Debug.Log("Display room");
+        Debug.LogError("Display room");
         GameObject newRoom = Instantiate(Resources.Load<GameObject>(RoomResourcesPath[room.roomType]), new Vector3(room.x * (378.8682f * 2), 0, room.y * (378.8682f * 2)), Quaternion.identity);
         room.cameraPosObj = newRoom.transform.Find("StartingCutscenePath").gameObject;
         if(room.roomType == RoomType.PortalRoom)
             GameObject.Find("Teleporter").GetComponent<PortalActivationCutscene>().enabled = true;
-        Debug.Log("Display room end");
+        Debug.LogError("Display room end");
     }
 
     private bool isBossRoomVisited = false;
@@ -123,7 +125,7 @@ public class GenerateDungeon : MonoBehaviour
 
     public void GenerateStartingCutscenePath(Room startingRoom)
     {
-        Debug.Log("Generate cutscene path");
+        Debug.LogError("Generate cutscene path");
         Room safeRoom = startingRoom;
         queue.Add(startingRoom);
         while (!isBossRoomVisited)
@@ -160,7 +162,7 @@ public class GenerateDungeon : MonoBehaviour
             catch (Exception) { }
         }
         cameraPoints.Reverse();
-        Debug.Log("Generate cutscene path end");
+        Debug.LogError("Generate cutscene path end");
     }
 }
 

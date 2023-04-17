@@ -42,7 +42,7 @@ public class UI_manager : MonoBehaviour
     }
     public string getClosestSlot(Vector3 pos) 
     {
-        float min = 115.0f;
+        float min = 215.0f;
         string returnValue = null;
         float tmp;
 
@@ -54,7 +54,9 @@ public class UI_manager : MonoBehaviour
                 min = tmp;
                 returnValue = "Slot " + (i + 1).ToString();
             }
+            Debug.LogError(tmp);
         }
+        Debug.LogError(returnValue);
         return returnValue;
     }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Timeline.Actions;
 
 [CreateAssetMenu(fileName = "New Food", menuName = "Food")]
 public class Food : Executable
