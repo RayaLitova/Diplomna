@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 
 public class SavingManager : MonoBehaviour
@@ -52,6 +53,12 @@ public class SavingManager : MonoBehaviour
     {
         readFile();
         //...
+        for(int i = 0; i < gameData.types.Count; i++)
+        {
+            if (!gameData.Items.ContainsKey(gameData.types.ElementAt(i)))
+                gameData.Items[gameData.types.ElementAt(i)] = new();
+            gameData.Items[gameData.types.ElementAt(i)][gameData.names.ElementAt(i)] = gameData.counts.ElementAt(i);
+        }
         LoadScene.Load(gameData.currScene);
     }
 
@@ -70,6 +77,7 @@ public class GameData
 
     public Dictionary<string, Dictionary<string, int>> Items = new(); //non serializable
 
+    //for serialization
     public List<string> types = new();
     public List<string> names = new();
     public List<int> counts = new();
