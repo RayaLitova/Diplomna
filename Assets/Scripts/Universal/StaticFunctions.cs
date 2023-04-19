@@ -47,7 +47,8 @@ public static class StaticFunctions
                 nameEndindex = i;
             }
         }
-
+        if (nameStartIndex == 0)
+            nameStartIndex = -1;
         return input.Substring(nameStartIndex + 1, nameEndindex - nameStartIndex - 1);
     }
 

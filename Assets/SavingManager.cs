@@ -7,10 +7,16 @@ using System.Collections.Generic;
 
 public class SavingManager : MonoBehaviour
 {
-    static string saveName = "Raya";
+    static string saveName = "";
     static string saveFile;
     public static GameData gameData = new GameData();
 
+    private void Start()
+    {
+        if (LoadScene.GetCurrentSceneName() == "MainMenu")
+            return;
+        LoadGameData();
+    }
     public bool ChangeSaveName()
     {
         saveName = GameObject.Find("InputData").GetComponent<Text>().text;
@@ -74,15 +80,20 @@ public class SavingManager : MonoBehaviour
     {
         saveName = name.text;
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+        LoadGameData();
+        LoadScene.Load(gameData.currScene);
+    }
+
+    public void LoadGameData()
+    {
         readFile();
         //...
-        for(int i = 0; i < gameData.types.Count; i++)
+        for (int i = 0; i < gameData.types.Count; i++)
         {
             if (!gameData.Items.ContainsKey(gameData.types.ElementAt(i)))
                 gameData.Items[gameData.types.ElementAt(i)] = new();
             gameData.Items[gameData.types.ElementAt(i)][gameData.names.ElementAt(i)] = gameData.counts.ElementAt(i);
         }
-        LoadScene.Load(gameData.currScene);
     }
 
     public void StartNewGame()

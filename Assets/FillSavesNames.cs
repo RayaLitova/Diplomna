@@ -9,6 +9,7 @@ public class FillSavesNames : MonoBehaviour
     public static List<string> filePaths = new();
     private void Start()
     {
+        filePaths.Clear();
         filePaths.AddRange(Directory.GetFiles(@"E:\_GameSaves\", "*.data"));
         for (int i = 0; i < transform.childCount; i++)
         {
