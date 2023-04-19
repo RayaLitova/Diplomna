@@ -28,7 +28,7 @@ public class DungeonObjectives : MonoBehaviour
 
     public void UpdateCurrProgress()
     {
-        if (currEnemyCount == targetEnemyCount)
+        if (currEnemyCount >= targetEnemyCount)
             return;
         currEnemyCount++;
         currProgress1.text = currEnemyCount.ToString();
@@ -39,7 +39,7 @@ public class DungeonObjectives : MonoBehaviour
 
     public void UpdateHerbProgress()
     {
-        if (currHerbCount == targetHerbCount)
+        if (currHerbCount >= targetHerbCount)
             return;
         currHerbCount++;
         currProgress2.text = currHerbCount.ToString();

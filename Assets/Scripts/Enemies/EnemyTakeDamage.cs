@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+
 
 public class EnemyTakeDamage : MonoBehaviour
 {
@@ -32,9 +34,13 @@ public class EnemyTakeDamage : MonoBehaviour
         ShowDamagePopups.ShowPopup(playerStats.DamagePopupType, damage, transform.position);
         if (stats.Health <= 0)
         {
-            Destroy(enemyAttack.particles.gameObject);
-            animationController.deathAnimation(true);
-        }
+            try
+            {
+                Destroy(enemyAttack.particles.gameObject);
+                animationController.deathAnimation(true);
+            }
+            catch (Exception) { }
+        } 
         UI_skillsManage.FinishSkillExecution();
     }
 

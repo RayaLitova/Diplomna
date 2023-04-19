@@ -9,16 +9,28 @@ public class MoveTowardsBoss : MonoBehaviour
     private float angle = 0f;
     private int pathNum = 1;
     private float rotation = 0.05f;
+    private bool error = false;
 
     private GenerateDungeon generateDungeon;
     private void Start()
     {
         boss = GameObject.Find("Lich").transform;
-        transform.position = GenerateDungeon.cameraPoints.ElementAt(0).transform.position;
+        GameObject startingCameraPoint = GenerateDungeon.cameraPoints.ElementAt(0);
+        if (startingCameraPoint != null)
+            transform.position = startingCameraPoint.transform.position;
+        else
+        {
+            transform.position = GameObject.Find("BossRoom(Clone)").transform.Find("StartingCutscenePath").position;
+            error = true;
+            StartCoroutine("WaitForLichAnimation");
+        }
         generateDungeon = GameObject.Find("Scripts").GetComponent<GenerateDungeon>();
     }
     private void FixedUpdate()
     {
+        if (error)
+            return;
+
         if (targetRotation != Vector3.zero && transform.forward != targetRotation)
         {
             transform.rotation = Quaternion.AngleAxis(angle * rotation, Vector3.up);
@@ -40,7 +52,6 @@ public class MoveTowardsBoss : MonoBehaviour
 
     private IEnumerator WaitForLichAnimation()
     {
-        boss.GetComponent<EnemySoundController>().PlayCutsceneSound();
         targetRotation = Vector3.zero;
         transform.LookAt(boss.position, Vector3.up);
         yield return new WaitForSeconds(3f);

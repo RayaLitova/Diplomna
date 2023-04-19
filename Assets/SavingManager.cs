@@ -47,7 +47,6 @@ public class SavingManager : MonoBehaviour
     public void writeFile()
     {
         string jsonString = JsonUtility.ToJson(gameData);
-        Debug.Log(gameData.Items);
         File.WriteAllText(saveFile, jsonString);
     }
 
@@ -71,8 +70,10 @@ public class SavingManager : MonoBehaviour
         writeFile();
     }
 
-    public void LoadGameData()
+    public void LoadGameData(Text name)
     {
+        saveName = name.text;
+        saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
         readFile();
         //...
         for(int i = 0; i < gameData.types.Count; i++)

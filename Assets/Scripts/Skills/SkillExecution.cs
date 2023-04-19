@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class SkillExecution : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class SkillExecution : MonoBehaviour
             }
             transform.parent.LookAt(colliders[0].transform.position); // rotate character
         }
-        
-        colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());        
+        try
+        {
+            colliders[0].transform.GetComponent<EnemyTakeDamage>().TakeDamage(GetComponentInParent<CharacterStats>());
+        }
+        catch (Exception) { }
     }
 }

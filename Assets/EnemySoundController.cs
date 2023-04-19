@@ -36,11 +36,4 @@ public class EnemySoundController : MonoBehaviour
         audioSource.clip = Resources.Load<AudioClip>("Audio/Enemies/" + enemyType + "/TakeDamage");
         audioSource.Play();
     }
-
-    public void PlayCutsceneSound() 
-    {
-        audioSource.loop = false;
-        audioSource.clip = Resources.Load<AudioClip>("Audio/Enemies/" + enemyType + "/CutsceneSound");
-        audioSource.Play();
-    }
 }
