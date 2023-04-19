@@ -7,9 +7,10 @@ public class SkillExecution : MonoBehaviour
     private float sphereRadius;
     public virtual void ExecuteSkill()
     {
-        if (GetCurrentRoom.CheckRooms(GameObject.Find("Player").transform) == null ||
-            GetCurrentRoom.CheckRooms(GameObject.Find("Player").transform).GetComponent<CheckRoom>().EnemiesInRoom() == false)
-            return;
+        if(LoadScene.GetCurrentSceneName() != "TargetDummyRoom")
+            if (GetCurrentRoom.CheckRooms(GameObject.Find("Player").transform) == null ||
+                GetCurrentRoom.CheckRooms(GameObject.Find("Player").transform).GetComponent<CheckRoom>().EnemiesInRoom() == false)
+                return;
 
         Transform character = transform.parent.Find("Center");
         spherePosition = transform.position; //setup sphere position

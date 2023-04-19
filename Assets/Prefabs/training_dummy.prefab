@@ -484,10 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a9ba6558ca2fa459856a1a59e714d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   hitAnimationVar: isPushed
   deathAnimationVar: isDead
   attackAnimationVar: 
   walkAnimationVar: 
+  soundController: {fileID: 0}
 --- !u!114 &4959909381200607533
 MonoBehaviour:
   m_ObjectHideFlags: 0
