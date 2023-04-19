@@ -1,16 +1,38 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
 public class SavingManager : MonoBehaviour
 {
-    string saveName = "Raya";
-    string saveFile;
+    static string saveName = "Raya";
+    static string saveFile;
     public static GameData gameData = new GameData();
-    private void Start()
+
+    public bool ChangeSaveName()
     {
-        saveFile = /*Application.persistentDataPath +*/ "E:/" + saveName + ".data";
+        saveName = GameObject.Find("InputData").GetComponent<Text>().text;
+        Transform errMessages = GameObject.Find("ErrorMessages").transform;
+        if (FillSavesNames.filePaths.Contains(saveName))
+        {
+            errMessages.GetChild(0).gameObject.SetActive(true);
+            return false;
+
+        }
+        else if (saveName == "")
+        {
+            errMessages.GetChild(2).gameObject.SetActive(true);
+            return false;
+        }
+        else if (FillSavesNames.filePaths.Count == 3)
+        {
+            errMessages.GetChild(1).gameObject.SetActive(true);
+            return false;
+        }
+        return true;
+
     }
 
     public void readFile()
@@ -60,6 +82,27 @@ public class SavingManager : MonoBehaviour
             gameData.Items[gameData.types.ElementAt(i)][gameData.names.ElementAt(i)] = gameData.counts.ElementAt(i);
         }
         LoadScene.Load(gameData.currScene);
+    }
+
+    public void StartNewGame()
+    {
+        if (!ChangeSaveName())
+            return;
+        saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+        writeFile();
+        LoadScene.Load("DungeonScene");
+    }
+
+    public void DeleteSave(string saveName)
+    {
+        FillSavesNames.filePaths.Remove(saveName);
+        File.Delete("E:/_GameSaves/" + saveName + ".data");
+    }
+
+    public void DeleteSave(GameObject nameField)
+    {
+        DeleteSave(nameField.transform.Find("Name").GetComponent<Text>().text);
+        nameField.SetActive(false);
     }
 
     public void SaveAndExit()

@@ -11,11 +11,12 @@ public class EnemyTakeDamage : MonoBehaviour
         enemyAttack = GetComponent<EnemyAttack>();
         stats = GetComponent<CharacterStats>();
         animationController = GetComponent<EnemyAnimationController>();
+        animationTimer = Time.time + 2f;
     }
 
     void Update()
     {
-        if (Time.fixedTime < animationTimer)
+        if (Time.time < animationTimer)
             return;
         enemyAttack.isAttackingDisabled = false;
         animationController.takeDamageAnimation(false);

@@ -1,6 +1,7 @@
 using System.Linq;
 using System;
 using System.Text.RegularExpressions;
+using UnityEngine;
 
 public static class StaticFunctions
 {
@@ -28,6 +29,26 @@ public static class StaticFunctions
     public static string AddWhitespaces(this string input)
     {
         return Regex.Replace(input, "([a-z])([A-Z])", "$1 $2");
+    }
+
+    public static string GetFileName(this string input)
+    {
+        int nameEndindex = input.Length;
+        int nameStartIndex = 0;
+
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (input.ToCharArray()[i] == '\\' )
+            {
+                nameStartIndex = i;
+            }
+            else if (input.ToCharArray()[i] == '.')
+            {
+                nameEndindex = i;
+            }
+        }
+
+        return input.Substring(nameStartIndex + 1, nameEndindex - nameStartIndex - 1);
     }
 
 }
