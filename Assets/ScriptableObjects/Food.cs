@@ -105,6 +105,7 @@ public class Food : Executable
 
     public Herb[] GenerateRecipe()
     {
+        this.recipe = new Herb[3];
         var lookupL = darkColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
         var lookupD = lightColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
 
@@ -212,13 +213,12 @@ public class Food : Executable
     public Herb FindHerb(Herb.HerbColor color, Herb[] occupied = null)
     {
         Debug.Log(color);
-        Debug.Log(occupied.Length);
+        Debug.Log(occupied[0] + " " + occupied[1] + " " + occupied[2]);
         Herb[] herbs = Resources.LoadAll<Herb>("HerbItems");
         Herb result = null;
         int startIndex = Random.Range(0, herbs.Length);
         for (int i = startIndex; i < herbs.Length; i++)
         {
-            Debug.Log(herbs[i]);
             if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
             {
                 result = herbs[i];
@@ -230,7 +230,6 @@ public class Food : Executable
         {
             for (int i = 0; i < startIndex; i++)
             {
-                Debug.Log(herbs[i]);
                 if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
                 {
                     result = herbs[i];

@@ -30,7 +30,7 @@ MonoBehaviour:
   healing: 100
   color: 6
   recipe:
-  - {fileID: 11400000, guid: 4f0bc931e73c52e42911f386d4e4600f, type: 2}
-  - {fileID: 11400000, guid: 7592f1482c12e0c488d1910317119dd2, type: 2}
-  - {fileID: 11400000, guid: feeca3a938fbf244a9597eeed9bfd63c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isRecipeKnown: 0

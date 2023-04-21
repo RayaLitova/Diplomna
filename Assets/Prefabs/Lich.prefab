@@ -1238,6 +1238,7 @@ GameObject:
   - component: {fileID: 5369005179356912370}
   - component: {fileID: 8653287593789862990}
   - component: {fileID: 5363655873993091718}
+  - component: {fileID: -5413560649989240656}
   m_Layer: 7
   m_Name: Lich
   m_TagString: Boss
@@ -1423,7 +1424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f010cc9d6df494693e117907c28442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleport: {fileID: 0}
 --- !u!114 &5369005179356912370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,6 +1545,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: Boss
+--- !u!114 &-5413560649989240656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594890532174464933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9edbf0f7c581b4db396d2b19556d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723675241147187544
 GameObject:
   m_ObjectHideFlags: 0
