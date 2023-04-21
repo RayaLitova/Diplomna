@@ -103,9 +103,8 @@ public class Food : Executable
     public Herb[] recipe = new Herb[3];
     public bool isRecipeKnown = false;
 
-    public void GenerateRecipe()
+    public Herb[] GenerateRecipe()
     {
-        Debug.Log("Generate");
         var lookupL = darkColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
         var lookupD = lightColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
 
@@ -154,21 +153,12 @@ public class Food : Executable
                 }
                 else if (recipe.Count == 2)
                 {
-                    switch (Random.Range(0, 2))
-                    {
-                        case 0:
-                            recipe.Add(recipe.First());
-                            break;
-                        case 1:
-                            recipe.Add(recipe.ElementAt(1));
-                            break;
-                    }
+                    if (Random.Range(0, 2) == 0 && CraftTea.herbColorCounts[recipe.First()] > 1)
+                        recipe.Add(recipe.First());
+                    else
+                        recipe.Add(recipe.ElementAt(1));
                 }
             }
-            Debug.Log(recipe.ElementAt(0));
-            Debug.Log(recipe.ElementAt(1));
-            Debug.Log(recipe.ElementAt(2));
-
         }
         else if (lookupL[color] != null)
         {
@@ -190,7 +180,7 @@ public class Food : Executable
 
             }
         }
-        FillRecipe(recipe);
+        return FillRecipe(recipe);
     }
 
     public List<Herb.HerbColor> GetRecipe(FoodColor color)
@@ -208,14 +198,15 @@ public class Food : Executable
     }
 
 
-    public void FillRecipe(List<Herb.HerbColor> colors)
+    public Herb[] FillRecipe(List<Herb.HerbColor> colors)
     {
         for (int i = 0; i < 3; i++)
         {
             Herb temp;
-            temp = FindHerb(colors.ElementAt(i), recipe);            
+            temp = FindHerb(colors.ElementAt(i), recipe);
             recipe[i] = temp;
         }
+        return recipe;
     }
 
     public Herb FindHerb(Herb.HerbColor color, Herb[] occupied = null)
@@ -243,6 +234,7 @@ public class Food : Executable
                 }
             }
         }
+        Debug.Log(result);
         return result;
     }
     public override void Execute()
@@ -295,5 +287,11 @@ public class Food : Executable
                 v.ReduceCooldown(-cooldownReduction);
             }
         }
+    }
+
+    public void UnlockRecipe()
+    {
+        isRecipeKnown = true;
+        //more
     }
 }

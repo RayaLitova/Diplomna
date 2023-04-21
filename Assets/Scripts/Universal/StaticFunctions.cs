@@ -5,6 +5,15 @@ using UnityEngine;
 
 public static class StaticFunctions
 {
+    public static bool CheckForMatch(Usable[] a, Usable[] b, int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (!b.Contains(a[i]))
+                return false;
+        }
+        return true;
+    }
     public static string RemoveWhitespace(this string input)
     {
         return new string(input.ToCharArray()

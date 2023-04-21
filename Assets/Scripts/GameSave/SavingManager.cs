@@ -19,13 +19,13 @@ public class SavingManager : MonoBehaviour
             gameData = new GameData();
             gameData.Load("HerbItems", Resources.LoadAll<Usable>("HerbItems/"));
             gameData.Load("Tea", Resources.LoadAll<Usable>("Tea/"));
+            gameData.recipes = null;
             CraftTea.FillColors();
         }
 
         if (LoadScene.GetCurrentSceneName() == "MainMenu")
             return;
-        if (LoadScene.GetCurrentSceneName() == "TeaShop" && !gameData.areRecipesGenerated)
-            StartCoroutine(gameData.GenerateRecipes(Resources.LoadAll<Food>("Tea/")));
+
         LoadGameData();
         SaveGameData();
     }
@@ -93,6 +93,8 @@ public class SavingManager : MonoBehaviour
         saveName = name.text;
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
         LoadGameData();
+        if (gameData.recipes == null)
+            LoadRecipes();
         LoadScene.Load(gameData.currScene);
     }
 
@@ -109,11 +111,26 @@ public class SavingManager : MonoBehaviour
         }
     }
 
+    public void LoadRecipes()
+    {
+        gameData.recipes = new List<string>();
+        gameData.recipes.Clear();
+        gameData.recipes.AddRange(loader.recipes);
+        foreach (var e in Resources.LoadAll<Food>("Tea/"))
+        {
+            int index = gameData.recipes.FindIndex(x => x == e.name);
+            for (int i = 0; i < 3; i++)
+                e.recipe[i] = Resources.Load<Herb>("HerbItems/" + gameData.recipes.ElementAt(index + i + 1).RemoveWhitespace());
+            
+        }
+    }
+
     public void StartNewGame()
     {
         if (!ChangeSaveName())
             return;
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+        gameData.GenerateRecipes(Resources.LoadAll<Food>("Tea/"));
         writeFile();
         LoadScene.Load("DungeonScene");
     }
@@ -150,7 +167,8 @@ public class GameData
     public List<string> names = new();
     public List<int> counts = new();
 
-    public bool areRecipesGenerated = false;
+    public List<string> recipes = new(); // food name + 3 x herbs
+
 
     public void Load(string name, Usable[] items)
     {
@@ -159,13 +177,15 @@ public class GameData
             Items[name].Add(obj.name, 0);
     }
 
-    public IEnumerator GenerateRecipes(Food[] items)
+    public void GenerateRecipes(Food[] items)
     {
-        areRecipesGenerated = true;
+        recipes = new List<string>();
         foreach (var e in items)
         {
-            e.GenerateRecipe();
-            yield return null;
+            recipes.Add(e.name);
+            foreach (var i in e.GenerateRecipe())
+                recipes.Add(i.name);
+            
         }
     }
     
