@@ -294,6 +294,8 @@ public class Food : Executable
 
     public void UnlockRecipe()
     {
+        if (isRecipeKnown)
+            return;
         isRecipeKnown = true;
         FindObjectOfType<LoadTeaRecipes>().AddTea(this);
         //more

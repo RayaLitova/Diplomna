@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7326954391219841745}
   - component: {fileID: 6441611347521264720}
+  - component: {fileID: 6434996452448208555}
   m_Layer: 5
   m_Name: Recipe
   m_TagString: Untagged
@@ -213,6 +214,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0696f62cf11a0f44787279d931608d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6434996452448208555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054889220578615718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08543d3dc68aa064aa848f079c0d023c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8652774509312663847
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +237,7 @@ GameObject:
   - component: {fileID: 8362288078420479937}
   - component: {fileID: 7625277928393904676}
   - component: {fileID: 653110655741662410}
+  - component: {fileID: 2000697059810297028}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -289,6 +303,62 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2000697059810297028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652774509312663847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 653110655741662410}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6434996452448208555}
+        m_TargetAssemblyTypeName: FillRecipeInSlots, Assembly-CSharp
+        m_MethodName: Fill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1997996690944238690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 2496062210854077368, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496062210854077368, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6912141465206566665, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
       propertyPath: m_LocalRotation.w
@@ -319,6 +393,38 @@ PrefabInstance:
     - target: {fileID: 6912141465206566665, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
       propertyPath: m_LocalRotation.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981103405597258, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981103405597258, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981103405597258, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981103405597259, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981104396266785, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981104396266785, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981104396266785, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229981104396266786, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8229981104976748100, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
       propertyPath: m_Name
@@ -418,6 +524,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229981104976748101, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484386554813990345, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484386554813990345, guid: e9ef337afc7a55d439c2f9b6a5ad0834, type: 3}
+      propertyPath: m_BlocksRaycasts
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

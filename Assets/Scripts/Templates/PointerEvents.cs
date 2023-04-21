@@ -58,7 +58,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         moveItem(key, oldKey);
     }
 
-    public void moveItem(string to, string from)
+    public void moveItem(string to, string from = null)
     {
 
         if (from == null) // Move from menu (or for swap)
