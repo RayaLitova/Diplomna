@@ -23136,6 +23136,7 @@ GameObject:
   - component: {fileID: 1065283048}
   - component: {fileID: 1065283047}
   - component: {fileID: 1065283046}
+  - component: {fileID: 1065283049}
   m_Layer: 5
   m_Name: Recipes
   m_TagString: Untagged
@@ -23180,11 +23181,11 @@ MonoBehaviour:
   m_Content: {fileID: 723308414}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 0
   m_Elasticity: 0.1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_DecelerationRate: 0.05
+  m_ScrollSensitivity: 25
   m_Viewport: {fileID: 1874648745}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 764637875}
@@ -23233,6 +23234,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065283044}
   m_CullTransparentMesh: 1
+--- !u!114 &1065283049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065283044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b6a976d09033e42a8f47d38c82c900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076482213
 GameObject:
   m_ObjectHideFlags: 0
@@ -44200,7 +44213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
+  m_ShowMaskGraphic: 1
 --- !u!114 &1874648747
 MonoBehaviour:
   m_ObjectHideFlags: 0

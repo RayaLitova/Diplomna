@@ -93,8 +93,6 @@ public class SavingManager : MonoBehaviour
         saveName = name.text;
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
         LoadGameData();
-        if (gameData.recipes == null)
-            LoadRecipes();
         LoadScene.Load(gameData.currScene);
     }
 
@@ -106,9 +104,10 @@ public class SavingManager : MonoBehaviour
         gameData.dungeonLevel = loader.dungeonLevel;
         gameData.currScene = loader.currScene;
         for (int i = 0; i < loader.types.Count; i++)
-        {
             gameData.Items[loader.types.ElementAt(i)][loader.names.ElementAt(i)] = loader.counts.ElementAt(i);
-        }
+        if(LoadScene.GetCurrentSceneName() == "TeaShop")
+            LoadRecipes();
+        
     }
 
     public void LoadRecipes()

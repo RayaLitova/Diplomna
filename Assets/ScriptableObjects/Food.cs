@@ -211,11 +211,14 @@ public class Food : Executable
 
     public Herb FindHerb(Herb.HerbColor color, Herb[] occupied = null)
     {
+        Debug.Log(color);
+        Debug.Log(occupied.Length);
         Herb[] herbs = Resources.LoadAll<Herb>("HerbItems");
         Herb result = null;
         int startIndex = Random.Range(0, herbs.Length);
         for (int i = startIndex; i < herbs.Length; i++)
         {
+            Debug.Log(herbs[i]);
             if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
             {
                 result = herbs[i];
@@ -227,6 +230,7 @@ public class Food : Executable
         {
             for (int i = 0; i < startIndex; i++)
             {
+                Debug.Log(herbs[i]);
                 if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
                 {
                     result = herbs[i];
@@ -292,6 +296,7 @@ public class Food : Executable
     public void UnlockRecipe()
     {
         isRecipeKnown = true;
+        FindObjectOfType<LoadTeaRecipes>().AddTea(this);
         //more
     }
 }
