@@ -17,7 +17,6 @@ public class LoadScene : MonoBehaviour
 
     public static void Load(string name)
     {
-        FindObjectOfType<SavingManager>().SaveGameData();
         LoadScene.name = name;
         SceneManager.LoadScene("LoadingScreen");
     }

@@ -10,6 +10,7 @@ public class ExitDungeon : InteractAction
         if (DungeonObjectives.completedObjectivesCount == DungeonObjectives.objectivesCount)
         {
             SavingManager.gameData.dungeonLevel++;
+            FindObjectOfType<SavingManager>().SaveGameData();
             Debug.LogError("Level Passed");
         }
         LoadScene.Load("CityScene");

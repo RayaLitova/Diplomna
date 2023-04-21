@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GhostMushroom
   m_EditorClassIdentifier: 
   name: Ghost Mushroom
+  description: 
   icon: {fileID: 21300000, guid: 55053b0364fc7fc49b4733d5e5e802d9, type: 3}
-  count: 0
+  color: 2

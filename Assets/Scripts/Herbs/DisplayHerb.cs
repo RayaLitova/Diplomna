@@ -13,8 +13,6 @@ public class DisplayHerb : Display
         if(obj == null)
             return;
 
-        if (!SavingManager.gameData.Items["HerbItems"].ContainsKey(obj.name))
-            SavingManager.gameData.Items["HerbItems"][obj.name] = 0;
         transform.parent.Find("Count").GetComponent<Text>().text = SavingManager.gameData.Items["HerbItems"][obj.name].ToString();
     }
 

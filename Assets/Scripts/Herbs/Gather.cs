@@ -20,11 +20,6 @@ public class Gather : InteractAction
         GameObject.Find("Scripts").GetComponent<DungeonObjectives>().UpdateHerbProgress();
         Herb herb = Resources.Load<Herb>("HerbItems/" + StaticFunctions.RemoveClones(gameObject.name));
 
-        if (!SavingManager.gameData.Items.ContainsKey("HerbItems"))
-            SavingManager.gameData.Items["HerbItems"] = new();
-        if (!SavingManager.gameData.Items["HerbItems"].ContainsKey(herb.name))
-            SavingManager.gameData.Items["HerbItems"][herb.name] = 0;
-
         SavingManager.gameData.Items["HerbItems"][herb.name] += Random.Range(1, 4);
         FinishGathering.herb = gameObject;
         Transform herbSlot = GameObject.Find("HerbBag").transform.GetChild(0).GetChild(0);

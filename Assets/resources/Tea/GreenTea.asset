@@ -28,4 +28,9 @@ MonoBehaviour:
   bonusRegen: 10
   cooldownReduction: 0
   healing: 100
-  count: 2
+  color: 6
+  recipe:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isRecipeKnown: 0

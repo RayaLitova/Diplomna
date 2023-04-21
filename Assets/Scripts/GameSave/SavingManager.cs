@@ -1,21 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 public class SavingManager : MonoBehaviour
 {
     static string saveName = "";
     static string saveFile;
-    public static GameData gameData = new GameData();
+    public static GameData gameData = null;
+    static GameData loader;
 
     private void Start()
     {
+        if (gameData == null)
+        {
+            gameData = new GameData();
+            gameData.Load("HerbItems", Resources.LoadAll<Usable>("HerbItems/"));
+            gameData.Load("Tea", Resources.LoadAll<Usable>("Tea/"));
+            CraftTea.FillColors();
+        }
+
         if (LoadScene.GetCurrentSceneName() == "MainMenu")
             return;
+        if (LoadScene.GetCurrentSceneName() == "TeaShop" && !gameData.areRecipesGenerated)
+            StartCoroutine(gameData.GenerateRecipes(Resources.LoadAll<Food>("Tea/")));
         LoadGameData();
+        SaveGameData();
     }
     public bool ChangeSaveName()
     {
@@ -46,7 +58,7 @@ public class SavingManager : MonoBehaviour
         if (File.Exists(saveFile))
         {
             string fileContents = File.ReadAllText(saveFile);
-            gameData = JsonUtility.FromJson<GameData>(fileContents);
+            loader = JsonUtility.FromJson<GameData>(fileContents);
         }
     }
 
@@ -87,12 +99,13 @@ public class SavingManager : MonoBehaviour
     public void LoadGameData()
     {
         readFile();
+
         //...
-        for (int i = 0; i < gameData.types.Count; i++)
+        gameData.dungeonLevel = loader.dungeonLevel;
+        gameData.currScene = loader.currScene;
+        for (int i = 0; i < loader.types.Count; i++)
         {
-            if (!gameData.Items.ContainsKey(gameData.types.ElementAt(i)))
-                gameData.Items[gameData.types.ElementAt(i)] = new();
-            gameData.Items[gameData.types.ElementAt(i)][gameData.names.ElementAt(i)] = gameData.counts.ElementAt(i);
+            gameData.Items[loader.types.ElementAt(i)][loader.names.ElementAt(i)] = loader.counts.ElementAt(i);
         }
     }
 
@@ -136,4 +149,24 @@ public class GameData
     public List<string> types = new();
     public List<string> names = new();
     public List<int> counts = new();
+
+    public bool areRecipesGenerated = false;
+
+    public void Load(string name, Usable[] items)
+    {
+        Items[name] = new();
+        foreach (var obj in items)
+            Items[name].Add(obj.name, 0);
+    }
+
+    public IEnumerator GenerateRecipes(Food[] items)
+    {
+        areRecipesGenerated = true;
+        foreach (var e in items)
+        {
+            e.GenerateRecipe();
+            yield return null;
+        }
+    }
+    
 }
