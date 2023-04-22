@@ -120,8 +120,8 @@ public class SavingManager : MonoBehaviour
             for (int i = 0; i < 3; i++)
                 e.recipe[i] = Resources.Load<Herb>("HerbItems/" + gameData.recipes.ElementAt(index + i + 1).RemoveWhitespace());
             e.isRecipeKnown = gameData.recipes.ElementAt(index + 4) == true.ToString() ? true : false;
-            EditorUtility.SetDirty(e);
-            AssetDatabase.SaveAssets();
+            //EditorUtility.SetDirty(e);
+            //AssetDatabase.SaveAssets();
         }
     }
 
@@ -130,8 +130,8 @@ public class SavingManager : MonoBehaviour
         int index = gameData.recipes.FindIndex(x => x == food.name);
         gameData.recipes[index + 4] = true.ToString();
         food.isRecipeKnown = true;
-        EditorUtility.SetDirty(food);
-        AssetDatabase.SaveAssets();
+        //EditorUtility.SetDirty(food);
+        //AssetDatabase.SaveAssets();
     }
 
     public void StartNewGame()
@@ -139,7 +139,6 @@ public class SavingManager : MonoBehaviour
         if (!ChangeSaveName())
             return;
         saveFile = Application.persistentDataPath + "/" + saveName + ".data";
-        Debug.Log(saveFile);
 
         foreach (var e in Resources.LoadAll<Food>("Tea/")) //clear recipe
         {

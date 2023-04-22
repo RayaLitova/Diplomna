@@ -24,11 +24,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "E:\unity\Diplomna\Build\Diplomna.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\unity\Diplomna\Build\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\unity\Diplomna\Build\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "E:\unity\Diplomna\Build\MonoBleedingEdge\*"; DestDir: "{app}\MonoBleedingEdge"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "E:\unity\Diplomna\Build\Diplomna_Data\*"; DestDir: "{app}\Diplomna_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "E:\unity\Diplomna\ReleaseBuild\Diplomna.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\unity\Diplomna\ReleaseBuild\UnityCrashHandler64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\unity\Diplomna\ReleaseBuild\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\unity\Diplomna\ReleaseBuild\MonoBleedingEdge\*"; DestDir: "{app}\MonoBleedingEdge"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "E:\unity\Diplomna\ReleaseBuild\Diplomna_Data\*"; DestDir: "{app}\Diplomna_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
