@@ -1,18 +1,52 @@
 using System.Linq;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 public static class StaticFunctions
 {
-    public static bool CheckForMatch(Usable[] a, Usable[] b, int size)
+    public static bool CheckForMatch<T>(T[] a, T[] b, int size)
     {
+        List<T> tmp = new();
+        tmp.AddRange(b);
         for (int i = 0; i < size; i++)
         {
-            if (!b.Contains(a[i]))
+            if (!tmp.Contains(a[i]))
                 return false;
+            tmp.Remove(a[i]);
         }
         return true;
+    }
+
+    public static bool CheckForMatch<T>(Dictionary<T[], int>.KeyCollection a, T[] b, int size)
+    {
+        foreach (var e in a)
+        {
+            if (CheckForMatch(e, b, size))
+                return true;
+        }
+        return false;
+    }
+
+    public static T[] GetMatch<T>(Dictionary<T[], int>.KeyCollection a, T[] b, int size)
+    {
+        foreach (var e in a)
+        {
+            if (CheckForMatch(e, b, size))
+                return e;
+        }
+        return null;
+    }
+
+    public static bool CheckForMatch<T>(List<T[]> a, T[] b, int size)
+    {
+        foreach (var e in a)
+        {
+            if (CheckForMatch(e, b, size))
+                return true;
+        }
+        return false;
     }
     public static string RemoveWhitespace(this string input)
     {

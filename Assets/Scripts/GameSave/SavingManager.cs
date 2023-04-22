@@ -129,6 +129,10 @@ public class SavingManager : MonoBehaviour
         if (!ChangeSaveName())
             return;
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+
+        foreach (var e in Resources.LoadAll<Food>("Tea/")) //clear recipe
+            e.recipe = new Herb[3];
+
         gameData.GenerateRecipes(Resources.LoadAll<Food>("Tea/"));
         writeFile();
         LoadScene.Load("DungeonScene");
