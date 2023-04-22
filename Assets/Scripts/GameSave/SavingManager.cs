@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEditor;
 
 public class SavingManager : MonoBehaviour
 {
@@ -103,24 +104,29 @@ public class SavingManager : MonoBehaviour
         //...
         gameData.dungeonLevel = loader.dungeonLevel;
         gameData.currScene = loader.currScene;
-        for (int i = 0; i < loader.types.Count; i++)
-            gameData.Items[loader.types.ElementAt(i)][loader.names.ElementAt(i)] = loader.counts.ElementAt(i);
         if(LoadScene.GetCurrentSceneName() == "TeaShop")
             LoadRecipes();
         
+        for (int i = 0; i < loader.types.Count; i++)
+            gameData.Items[loader.types.ElementAt(i)][loader.names.ElementAt(i)] = loader.counts.ElementAt(i);
     }
 
     public void LoadRecipes()
     {
+        Debug.Log("Load");
         gameData.recipes = new List<string>();
         gameData.recipes.Clear();
         gameData.recipes.AddRange(loader.recipes);
         foreach (var e in Resources.LoadAll<Food>("Tea/"))
         {
             int index = gameData.recipes.FindIndex(x => x == e.name);
+            Debug.Log(e.name +" "+index);
             for (int i = 0; i < 3; i++)
+            {
                 e.recipe[i] = Resources.Load<Herb>("HerbItems/" + gameData.recipes.ElementAt(index + i + 1).RemoveWhitespace());
-            
+            }
+            EditorUtility.SetDirty(e);
+            AssetDatabase.SaveAssets();
         }
     }
 

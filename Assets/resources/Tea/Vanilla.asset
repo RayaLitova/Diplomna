@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e05156b28a702a45afa76c7d044994d, type: 3}
-  m_Name: GreenTea 1
+  m_Name: Vanilla
   m_EditorClassIdentifier: 
-  name: r
-  description: asdwas
-  icon: {fileID: 21300000, guid: 475d508c6cf22074cac5a4d286ddef4d, type: 3}
-  cooldown: 100
+  name: Vanilla
+  description: sdg
+  icon: {fileID: 21300000, guid: 6128d735040d3fd4c841330cdceb20a5, type: 3}
+  cooldown: 0
   cooldownTimer: 0
   isCDRapplied: 0
   ui_manager: {fileID: 0}
@@ -25,12 +25,12 @@ MonoBehaviour:
   bonusCrit: 0
   bonusAgility: 0
   bonusMaxHealth: 0
-  bonusRegen: 10
+  bonusRegen: 0
   cooldownReduction: 0
-  healing: 100
-  color: 6
+  healing: 0
+  color: 0
   recipe:
-  - {fileID: 11400000, guid: b101b8fc7fe036142aea455c9e9eb294, type: 2}
-  - {fileID: 11400000, guid: e03a47f4f492a1e4fa9e06c29788b9b7, type: 2}
-  - {fileID: 11400000, guid: 23e9bb9300fd4844dac5798b94bbe9c1, type: 2}
+  - {fileID: 11400000, guid: 637685589d84f9c4c82fcc70d999b510, type: 2}
+  - {fileID: 11400000, guid: 7592f1482c12e0c488d1910317119dd2, type: 2}
+  - {fileID: 11400000, guid: feeca3a938fbf244a9597eeed9bfd63c, type: 2}
   isRecipeKnown: 0

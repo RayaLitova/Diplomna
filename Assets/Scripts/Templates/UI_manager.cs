@@ -54,9 +54,7 @@ public class UI_manager : MonoBehaviour
                 min = tmp;
                 returnValue = "Slot " + (i + 1).ToString();
             }
-            Debug.LogError(tmp);
         }
-        Debug.LogError(returnValue);
         return returnValue;
     }
 }

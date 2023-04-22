@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName = "New Food", menuName = "Food")]
 public class Food : Executable
@@ -114,8 +115,8 @@ public class Food : Executable
                 occupiedRecipes.Add(e.recipe);
         }
         
-        var lookupL = darkColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
-        var lookupD = lightColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
+        var lookupD = darkColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
+        var lookupL = lightColors.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
 
         List<Herb.HerbColor> recipe = new();
 
@@ -134,7 +135,7 @@ public class Food : Executable
                     (CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.White }) || CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.Gray })))
                 {
                     recipe.Add(recipe.First());
-                    int a = Random.Range(0, 2);
+                    int a = UnityEngine.Random.Range(0, 2);
 
                     if (a == 0 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.White }))
                     {
@@ -160,7 +161,7 @@ public class Food : Executable
                     CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.Gray }))))
 
                 {
-                    int a = Random.Range(0, 3);
+                    int a = UnityEngine.Random.Range(0, 3);
 
                     if (a == 0 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White }))
                     {
@@ -205,7 +206,7 @@ public class Food : Executable
                     (CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.First() }) ||
                     CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.ElementAt(1) })))
                 {
-                    int a = Random.Range(0, 2);
+                    int a = UnityEngine.Random.Range(0, 2);
                     if (a == 0 && CraftTea.herbColorCounts[recipe.First()] > 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.First() }))
                     {
                         recipe.Add(recipe.First());
@@ -225,44 +226,48 @@ public class Food : Executable
                 }
             }
         }
-        else if (lookupL[color] != null)
+        else
         {
-            recipe = GetRecipe(lookupL[color].First());
-            if (recipe.Count < 3)
+            try
             {
-                if (recipe.Count == 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White }))
+
+                recipe = GetRecipe(lookupL[color].First());
+                if (recipe.Count < 3)
                 {
-                    recipe.Add(Herb.HerbColor.White);
-                    recipe.Add(Herb.HerbColor.White);
-                    CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White });
+                    if (recipe.Count == 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White }))
+                    {
+                        recipe.Add(Herb.HerbColor.White);
+                        recipe.Add(Herb.HerbColor.White);
+                        CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White });
+
+                    }
+                    else
+                    {
+                        recipe.Add(Herb.HerbColor.White);
+                        CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.White });
+                    }
 
                 }
-                else 
-                {
-                    recipe.Add(Herb.HerbColor.White);
-                    CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.White });
-                }
-                
             }
-        }
-        else if(lookupD[color] != null)
-        {
-            recipe = GetRecipe(lookupD[color].First());
-            if (recipe.Count < 3)
+            catch (InvalidOperationException)
             {
-                if (recipe.Count == 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray }))
+                recipe = GetRecipe(lookupD[color].First());
+                if (recipe.Count < 3)
                 {
-                    recipe.Add(Herb.HerbColor.Gray);
-                    recipe.Add(Herb.HerbColor.Gray);
-                    CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray });
+                    if (recipe.Count == 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray }))
+                    {
+                        recipe.Add(Herb.HerbColor.Gray);
+                        recipe.Add(Herb.HerbColor.Gray);
+                        CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray });
+
+                    }
+                    else
+                    {
+                        recipe.Add(Herb.HerbColor.Gray);
+                        CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.Gray });
+                    }
 
                 }
-                else
-                {
-                    recipe.Add(Herb.HerbColor.Gray);
-                    CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.Gray });
-                }
-
             }
         }
         return FillRecipe(recipe);
@@ -273,7 +278,7 @@ public class Food : Executable
         var lookup = colorCombinations.ToLookup(kvp => kvp.Key, kvp => kvp.Value);
         List<Herb.HerbColor> recipe = new();
 
-        recipe.AddRange(lookup[color].ElementAt(Random.Range(0, lookup[color].Count())));
+        recipe.AddRange(lookup[color].ElementAt(UnityEngine.Random.Range(0, lookup[color].Count())));
 
         return recipe;
     }
@@ -288,16 +293,22 @@ public class Food : Executable
         Debug.Log(name);
         for (int i = 0; i < 3; i++)
         {
+            Debug.Log("Find");
             Herb temp;
             temp = FindHerb(colors.ElementAt(i), recipe);
+            Debug.Log(temp);
             recipe[i] = temp;
         }
         if (StaticFunctions.CheckForMatch(occupiedRecipes, recipe, 3))
-        {   
+        {
+            Debug.Log("MATCH");
             for (int i = 0; i < 3; i++)
             { 
-                recipe[i] = FindHerb(recipe[i].color, recipe);
-                if (recipe[i] != null && !StaticFunctions.CheckForMatch(occupiedRecipes, recipe, 3))
+                var tmp = FindHerb(recipe[i].color, recipe);
+
+                if (tmp != null)
+                    recipe[i] = tmp;
+                if (!StaticFunctions.CheckForMatch(occupiedRecipes, recipe, 3))
                     break;
             
             }
@@ -309,7 +320,7 @@ public class Food : Executable
     {
         Herb[] herbs = Resources.LoadAll<Herb>("HerbItems/");
         Herb result = null;
-        int startIndex = Random.Range(0, herbs.Length);
+        int startIndex = UnityEngine.Random.Range(0, herbs.Length);
         Debug.Log(color);
         for (int i = startIndex; i < herbs.Length; i++)
         {
