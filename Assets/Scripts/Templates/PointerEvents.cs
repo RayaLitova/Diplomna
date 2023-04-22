@@ -6,12 +6,13 @@ using UnityEngine.EventSystems;
 
 public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    private bool isBeingDragged = false;
-    private CanvasGroup canvasGroup;
-    private UI_manager manager;
+    protected bool isBeingDragged = false;
+    protected CanvasGroup canvasGroup;
+    protected UI_manager manager;
 
-    private Vector3 initialPosition;
+    protected Vector3 initialPosition;
     [SerializeField] string UI_manager_obj_name;
+
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -36,7 +37,7 @@ public class PointerEvents : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         canvasGroup.alpha = 0.5f;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
         isBeingDragged = false;
         canvasGroup.blocksRaycasts = true;

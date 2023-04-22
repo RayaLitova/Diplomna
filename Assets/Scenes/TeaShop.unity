@@ -359,6 +359,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11712584}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &14417771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &15031528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2355,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99270249}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &99758467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1001 &105278609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3413,19 +3439,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161822854}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &163889431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &168556369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,19 +3683,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e066dffcb13e22a4489298a8ae2f2518, type: 3}
   m_PrefabInstance: {fileID: 171474666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &174716819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &178361076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,6 +3849,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181829254}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &183811138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &183932636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4960,19 +4973,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 414476, guid: 3a0ede04fa5052c4aa89eb5bfadaeaac, type: 3}
   m_PrefabInstance: {fileID: 218580651}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &224310367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &229263546
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,6 +6235,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269545081}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &271078440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &271167588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7118,19 +7131,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301445189}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &304000785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &305254977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9059,6 +9059,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402139390}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &407352100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &410191665
 GameObject:
   m_ObjectHideFlags: 0
@@ -10265,19 +10278,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481791507}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &484410797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &486472689
 GameObject:
   m_ObjectHideFlags: 0
@@ -12143,6 +12143,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575367351}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &579422304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &582805221
 GameObject:
   m_ObjectHideFlags: 0
@@ -13542,19 +13555,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
   m_PrefabInstance: {fileID: 637634173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &639360846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &641585033
 GameObject:
   m_ObjectHideFlags: 0
@@ -14410,16 +14410,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665211756}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &667266361
+--- !u!114 &665806789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311693}
+  m_GameObject: {fileID: 4231826603430311694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -14912,6 +14912,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684846338}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &690720708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &691589760
 GameObject:
   m_ObjectHideFlags: 0
@@ -15161,16 +15174,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702596630}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &704038176
+--- !u!114 &704001376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311688}
+  m_GameObject: {fileID: 4231826603430311690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -15423,6 +15436,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714156195}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &714722571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &715996890
 GameObject:
   m_ObjectHideFlags: 0
@@ -15742,19 +15768,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740206319}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &742195921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &747809032
 GameObject:
   m_ObjectHideFlags: 0
@@ -16601,19 +16614,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
   m_PrefabInstance: {fileID: 776279693}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &779262430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &783149171
 GameObject:
   m_ObjectHideFlags: 0
@@ -17186,19 +17186,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820659824}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &820978537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &823515922
 GameObject:
   m_ObjectHideFlags: 0
@@ -18321,19 +18308,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd3eea49c64a72a4490f9e7fe4476c7a, type: 3}
   m_PrefabInstance: {fileID: 859431190}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &867968692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &869359347
 GameObject:
   m_ObjectHideFlags: 0
@@ -19117,6 +19091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotsParent: {fileID: 2006734637}
   resultSlot: {fileID: 1893101882}
+  herbBag: {fileID: 1924442141}
+  foodBag: {fileID: 6173882408057863137}
 --- !u!1001 &893568031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20098,6 +20074,11 @@ Transform:
   m_Father: {fileID: 1858246704}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919317199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6633509619613718860, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
+  m_PrefabInstance: {fileID: 1433078302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &924394040
 GameObject:
   m_ObjectHideFlags: 0
@@ -21137,19 +21118,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956549516}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &958280043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &958847014
 GameObject:
   m_ObjectHideFlags: 0
@@ -23246,6 +23214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b6a976d09033e42a8f47d38c82c900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1072306285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1076482213
 GameObject:
   m_ObjectHideFlags: 0
@@ -23715,19 +23696,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084470569}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1092257371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1098318626
 GameObject:
   m_ObjectHideFlags: 0
@@ -25758,6 +25726,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162879691}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &1163893949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1165477410
 GameObject:
   m_ObjectHideFlags: 0
@@ -26081,6 +26062,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173467660}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &1173695532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1174146691
 GameObject:
   m_ObjectHideFlags: 0
@@ -30165,19 +30159,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291125513}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1294692724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1295042216
 GameObject:
   m_ObjectHideFlags: 0
@@ -32816,6 +32797,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: dfaf10a789b169e4190d9831d0420d4c, type: 3}
+--- !u!114 &1393744495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1001 &1395057846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33687,6 +33681,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8484386554813990345, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484386554813990345, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7816921004773528029, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
     - {fileID: 6043640212211322388, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
@@ -34416,6 +34418,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456929161}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &1462347354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1464790350
 GameObject:
   m_ObjectHideFlags: 0
@@ -39511,19 +39526,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680101737}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1684077396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1689687191
 GameObject:
   m_ObjectHideFlags: 0
@@ -40713,19 +40715,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725616338}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1733973653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1733995933
 GameObject:
   m_ObjectHideFlags: 0
@@ -42067,19 +42056,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771617733}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1777268071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1778700618
 GameObject:
   m_ObjectHideFlags: 0
@@ -44649,17 +44625,97 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885454009}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &1885676036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!114 &1893101882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8763442580093829875, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
   m_PrefabInstance: {fileID: 1433078302}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 919317199}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c3c7f47a01f2f349a0a3a6b8e3a35e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1893101884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2496062210854077368, guid: eeab9cb7485e4d04c8ac9da98687a6e5, type: 3}
+  m_PrefabInstance: {fileID: 1433078302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919317199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1893101887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919317199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1893101884}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1893101882}
+        m_TargetAssemblyTypeName: Display, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1893241798
 GameObject:
   m_ObjectHideFlags: 0
@@ -45075,19 +45131,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901271659}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
---- !u!114 &1901957597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231826603430311699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI_manager_obj_name: HerbSlots
 --- !u!1 &1903826855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: dfaf10a789b169e4190d9831d0420d4c, type: 3}
@@ -45605,6 +45648,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923716064}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!1 &1924442141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4231826602441336180, guid: ed9f404fae1d09f43b46fdb8e8254e5d, type: 3}
+  m_PrefabInstance: {fileID: 4231826603430311687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1924936741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46502,6 +46550,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949085176}
   m_CullTransparentMesh: 1
+--- !u!114 &1958556339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1959102012
 GameObject:
   m_ObjectHideFlags: 0
@@ -47563,6 +47624,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991686720}
   m_Mesh: {fileID: -2432090755550338912, guid: 3d01acadacdc67b47a3409f7423c3311, type: 3}
+--- !u!114 &1993606866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1 &1999904100
 GameObject:
   m_ObjectHideFlags: 0
@@ -49327,6 +49401,19 @@ RectTransform:
   m_AnchoredPosition: {x: -15, y: -23}
   m_SizeDelta: {x: 280.553, y: 69.2385}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2083225348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231826603430311691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI_manager_obj_name: HerbSlots
 --- !u!1001 &2089491326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50719,7 +50806,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231826603430311707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -50732,7 +50819,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231826603430311708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -50745,7 +50832,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231826603430311709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -50758,7 +50845,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231826603430311710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -50771,7 +50858,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231826603430311711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aef5363648005429aa3c9c19331f1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 396550092e6fc5f4da6f3874e2f1b7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI_manager_obj_name: HerbSlots
@@ -50870,5 +50957,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 464252937941798326, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937878178976, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252936985005574, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937532804892, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938043410638, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938230136202, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937246538750, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938384015605, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252936827345762, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938282472285, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937653662216, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938009190949, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938243905179, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252936712667435, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938519945135, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938536291045, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252936954737524, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937117253197, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252936526311924, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938533690985, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937239101057, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938387942256, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252937603028844, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+    - {fileID: 464252938501630019, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+--- !u!1 &6173882408057863137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6173882406638208737, guid: 67b7b1254c64ebe47b582b03feaf5d9b, type: 3}
+  m_PrefabInstance: {fileID: 6173882408057863136}
+  m_PrefabAsset: {fileID: 0}

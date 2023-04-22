@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class CraftTea : MonoBehaviour
 {
@@ -11,27 +12,24 @@ public class CraftTea : MonoBehaviour
 
     [SerializeField] private Transform slotsParent;
     [SerializeField] private DisplayFood resultSlot;
+    [SerializeField] private GameObject herbBag;
+    [SerializeField] private GameObject foodBag;
 
     public static bool CombinationAvailable(Herb.HerbColor[] comb)
     { 
         var key = StaticFunctions.GetMatch(colorVariations.Keys, comb, 3);
-        Debug.Log(comb[0] + " " + comb[1] + " " + comb[2]);
         if (key == null)
         {
-            Debug.Log("NULL");
             colorVariations.Add(comb, CalcVariations(comb));
             usedColorVariations.Add(comb, 0);
             if(colorVariations[comb] == 0)
                 return false;
             return true;
         }
-        Debug.Log(key[0] + " " + key[1] + " " + key[2]);
         if (usedColorVariations[key] < colorVariations[key])
         {
-            Debug.Log("Available");
             return true;
         }
-        Debug.Log("NOT AVAILABLE");
         return false;
     }
 
@@ -71,7 +69,11 @@ public class CraftTea : MonoBehaviour
     {
         Herb[] recipe = new Herb[3];
         for (int i = 0; i < slotsParent.childCount; i++)
+        {
             recipe[i] = (Herb)slotsParent.GetChild(i).Find("Herb").GetComponent<DisplayHerb>().Get();
+            if (SavingManager.gameData.Items["HerbItems"][recipe[i].name] <= 0)
+                return;
+        }
 
         if (recipe.Contains(null))
             return; //need 3 herbs 
@@ -80,7 +82,17 @@ public class CraftTea : MonoBehaviour
         {
             if (StaticFunctions.CheckForMatch(e.recipe, recipe, 3))
             {
-                Debug.Log(e.name);
+                for (int i = 0; i < 3; i++)
+                {
+                    SavingManager.gameData.Items["HerbItems"][recipe[i].name]--;
+                    if (herbBag.gameObject.activeInHierarchy)
+                        herbBag.GetComponent<FindHerbSlot>().FindSlot(recipe[i]).Find("Count").GetComponent<Text>().text = SavingManager.gameData.Items["HerbItems"][recipe[i].name].ToString();
+                }
+                SavingManager.gameData.Items["Tea"][e.name]++;
+
+                if (foodBag.gameObject.activeInHierarchy)
+                    foodBag.GetComponent<FillFoodBag>().Fill();
+                UpdateCounts.update = true;
                 resultSlot.DisplayObj(e);
                 e.UnlockRecipe();
                 return; //success

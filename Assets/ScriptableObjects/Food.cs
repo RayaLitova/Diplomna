@@ -351,6 +351,7 @@ public class Food : Executable
         if (Time.time < cooldownTimer)
             return;
 
+        SavingManager.gameData.Items["Tea"][name]--;
         ApplyCooldown();
         CharacterStats characterStats = GameObject.Find("Player").GetComponentInParent<CharacterStats>();
         characterStats.AddBuff();
@@ -402,7 +403,7 @@ public class Food : Executable
     {
         if (isRecipeKnown)
             return;
-        isRecipeKnown = true;
+        SavingManager.SetRecipeKnown(this);
         FindObjectOfType<LoadTeaRecipes>().AddTea(this);
     }
 }

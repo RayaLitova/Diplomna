@@ -104,8 +104,7 @@ public class SavingManager : MonoBehaviour
         //...
         gameData.dungeonLevel = loader.dungeonLevel;
         gameData.currScene = loader.currScene;
-        if(LoadScene.GetCurrentSceneName() == "TeaShop")
-            LoadRecipes();
+        LoadRecipes();
         
         for (int i = 0; i < loader.types.Count; i++)
             gameData.Items[loader.types.ElementAt(i)][loader.names.ElementAt(i)] = loader.counts.ElementAt(i);
@@ -113,21 +112,28 @@ public class SavingManager : MonoBehaviour
 
     public void LoadRecipes()
     {
-        Debug.Log("Load");
         gameData.recipes = new List<string>();
         gameData.recipes.Clear();
         gameData.recipes.AddRange(loader.recipes);
         foreach (var e in Resources.LoadAll<Food>("Tea/"))
         {
             int index = gameData.recipes.FindIndex(x => x == e.name);
-            Debug.Log(e.name +" "+index);
+            Debug.Log(e.name);
             for (int i = 0; i < 3; i++)
-            {
                 e.recipe[i] = Resources.Load<Herb>("HerbItems/" + gameData.recipes.ElementAt(index + i + 1).RemoveWhitespace());
-            }
+            e.isRecipeKnown = gameData.recipes.ElementAt(index + 4) == true.ToString() ? true : false;
             EditorUtility.SetDirty(e);
             AssetDatabase.SaveAssets();
         }
+    }
+
+    public static void SetRecipeKnown(Food food)
+    {
+        int index = gameData.recipes.FindIndex(x => x == food.name);
+        gameData.recipes[index + 4] = true.ToString();
+        food.isRecipeKnown = true;
+        EditorUtility.SetDirty(food);
+        AssetDatabase.SaveAssets();
     }
 
     public void StartNewGame()
@@ -137,7 +143,10 @@ public class SavingManager : MonoBehaviour
         saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
 
         foreach (var e in Resources.LoadAll<Food>("Tea/")) //clear recipe
+        {
             e.recipe = new Herb[3];
+            e.isRecipeKnown = false;
+        }
 
         gameData.GenerateRecipes(Resources.LoadAll<Food>("Tea/"));
         writeFile();
@@ -194,6 +203,7 @@ public class GameData
             recipes.Add(e.name);
             foreach (var i in e.GenerateRecipe())
                 recipes.Add(i.name);
+            recipes.Add(e.isRecipeKnown.ToString());
             
         }
     }

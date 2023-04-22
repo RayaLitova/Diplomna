@@ -13,7 +13,6 @@ public class FillRecipeInSlots : MonoBehaviour
 
     public void Fill()
     {
-        Debug.Log(item);
         for (int i = 0; i < 3; i++)
         {
             herbSlots.transform.GetChild(i).Find("Herb").GetComponent<DisplayHerb>().DisplayObj(item.recipe[i]);
