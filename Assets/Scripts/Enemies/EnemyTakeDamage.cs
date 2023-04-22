@@ -25,7 +25,6 @@ public class EnemyTakeDamage : MonoBehaviour
     }
     public void TakeDamage(CharacterStats playerStats)
     {
-        Debug.Log("TakeDamage");
         enemyAttack.isAttackingDisabled = true;
 
         animationTimer = Time.fixedTime + 1.0f;

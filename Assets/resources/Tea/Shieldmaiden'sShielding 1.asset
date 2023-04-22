@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e05156b28a702a45afa76c7d044994d, type: 3}
-  m_Name: Vanilla 2
+  m_Name: Shieldmaiden'sShielding 1
   m_EditorClassIdentifier: 
-  name: fas
-  description: sdg
-  icon: {fileID: 21300000, guid: 6128d735040d3fd4c841330cdceb20a5, type: 3}
-  cooldown: 0
+  name: Shieldmaiden's Shielding
+  description: A comforting blend of chamomile and honey that gives an additional
+    boost to your defenses.
+  icon: {fileID: 21300000, guid: 8db849cb6a7fd2145a0300343ffaca9f, type: 3}
+  cooldown: 100
   cooldownTimer: 0
   isCDRapplied: 0
   ui_manager: {fileID: 0}
   type: 0
   bonusATK: 0
-  bonusDEF: 0
+  bonusDEF: 50
   bonusCrit: 0
   bonusAgility: 0
   bonusMaxHealth: 0
-  bonusRegen: 0
+  bonusRegen: 3
   cooldownReduction: 0
-  healing: 0
+  healing: 20
   color: 1
   recipe:
   - {fileID: 11400000, guid: 7592f1482c12e0c488d1910317119dd2, type: 2}

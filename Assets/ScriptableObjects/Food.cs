@@ -50,7 +50,7 @@ public class Food : Executable
         Length
     }
 
-    private static FoodColor[] colors = new FoodColor[]
+    public static FoodColor[] colors = new FoodColor[]
         {
             FoodColor.Blue,
             FoodColor.Red,
@@ -64,7 +64,31 @@ public class Food : Executable
             FoodColor.Gray
         };
 
-    private static new List<KeyValuePair<FoodColor, FoodColor>> lightColors = new()
+    public static Dictionary<FoodColor, Color> UIcolors = new Dictionary<FoodColor, Color>()
+    {
+        { FoodColor.Blue, new Color(0, 0, 255)},
+        { FoodColor.LightBlue, new Color(3, 69, 252)},
+        { FoodColor.Navy, new Color(1, 34, 125)},
+        { FoodColor.Red, new Color(255, 0, 0)},
+        { FoodColor.Pink, new Color(255, 66, 183)},
+        { FoodColor.Yellow, new Color(255, 191, 0)},
+        { FoodColor.Green, new Color(24, 161, 0)},
+        { FoodColor.Lime, new Color(139, 255, 135)},
+        { FoodColor.ForestGreen, new Color(8, 51, 1)},
+        { FoodColor.Purple, new Color(98, 0, 255)},
+        { FoodColor.Lilac, new Color(181, 135, 255)},
+        { FoodColor.Eggplant, new Color(44, 2, 92)},
+        { FoodColor.Teal, new Color(12, 145, 78)},
+        { FoodColor.Turquoise, new Color(60, 201, 130)},
+        { FoodColor.YellowGreen, new Color(160, 222, 38)},
+        { FoodColor.Orange, new Color(222, 115, 38)},
+        { FoodColor.Brown, new Color(94, 57, 2)},
+        { FoodColor.LightBrown, new Color(158, 95, 0)},
+        { FoodColor.DarkBrown, new Color(33, 20, 0)},
+        { FoodColor.Gray, new Color(140, 140, 140)},
+    };
+
+    public static new List<KeyValuePair<FoodColor, FoodColor>> lightColors = new()
         {
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.LightBlue, FoodColor.Blue),
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.Pink, FoodColor.Red),
@@ -74,7 +98,7 @@ public class Food : Executable
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.LightBrown, FoodColor.Brown),
         };
 
-    private static List<KeyValuePair<FoodColor, FoodColor>> darkColors = new()
+    public static List<KeyValuePair<FoodColor, FoodColor>> darkColors = new()
         {
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.Navy, FoodColor.Blue),
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.ForestGreen, FoodColor.Green),
@@ -82,7 +106,7 @@ public class Food : Executable
             new KeyValuePair<FoodColor, FoodColor>(FoodColor.DarkBrown, FoodColor.Brown),
         };
 
-    private static List<KeyValuePair<FoodColor, Herb.HerbColor[]>> colorCombinations = new()
+    public static List<KeyValuePair<FoodColor, Herb.HerbColor[]>> colorCombinations = new()
     {
         new KeyValuePair<FoodColor, Herb.HerbColor[]>(FoodColor.Blue, new Herb.HerbColor[1]{Herb.HerbColor.Blue} ),
         new KeyValuePair<FoodColor, Herb.HerbColor[]>(FoodColor.Red, new Herb.HerbColor[1]{ Herb.HerbColor.Red }),
@@ -130,10 +154,14 @@ public class Food : Executable
                 {
                     recipe.Add(recipe.First());
                     recipe.Add(recipe.First());
+                    CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.First(), recipe.First() });
                 }
                 else if (recipe.Count == 1 && CraftTea.herbColorCounts[recipe.First()] == 2 && 
                     (CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.White }) || CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.Gray })))
                 {
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.White });//to ensure both are getting called
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.First(), Herb.HerbColor.Gray });
+
                     recipe.Add(recipe.First());
                     int a = UnityEngine.Random.Range(0, 2);
 
@@ -161,6 +189,10 @@ public class Food : Executable
                     CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.Gray }))))
 
                 {
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White });
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray });
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.Gray });
+
                     int a = UnityEngine.Random.Range(0, 3);
 
                     if (a == 0 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White }))
@@ -206,6 +238,9 @@ public class Food : Executable
                     (CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.First() }) ||
                     CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.ElementAt(1) })))
                 {
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.First() });
+                    CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.ElementAt(1)});
+
                     int a = UnityEngine.Random.Range(0, 2);
                     if (a == 0 && CraftTea.herbColorCounts[recipe.First()] > 1 && CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), recipe.First() }))
                     {
@@ -241,7 +276,7 @@ public class Food : Executable
                         CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.White, Herb.HerbColor.White });
 
                     }
-                    else
+                    else if(CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.White }))
                     {
                         recipe.Add(Herb.HerbColor.White);
                         CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.White });
@@ -261,7 +296,7 @@ public class Food : Executable
                         CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), Herb.HerbColor.Gray, Herb.HerbColor.Gray });
 
                     }
-                    else
+                    else if(CraftTea.CombinationAvailable(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.Gray }))
                     {
                         recipe.Add(Herb.HerbColor.Gray);
                         CraftTea.IncrementUsedCombinations(new Herb.HerbColor[] { recipe.First(), recipe.ElementAt(1), Herb.HerbColor.Gray });
@@ -290,18 +325,14 @@ public class Food : Executable
 
     public Herb[] FillRecipe(List<Herb.HerbColor> colors)
     {
-        Debug.Log(name);
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Find");
             Herb temp;
             temp = FindHerb(colors.ElementAt(i), recipe);
-            Debug.Log(temp);
             recipe[i] = temp;
         }
         if (StaticFunctions.CheckForMatch(occupiedRecipes, recipe, 3))
         {
-            Debug.Log("MATCH");
             for (int i = 0; i < 3; i++)
             { 
                 var tmp = FindHerb(recipe[i].color, recipe);
@@ -321,12 +352,10 @@ public class Food : Executable
         Herb[] herbs = Resources.LoadAll<Herb>("HerbItems/");
         Herb result = null;
         int startIndex = UnityEngine.Random.Range(0, herbs.Length);
-        Debug.Log(color);
         for (int i = startIndex; i < herbs.Length; i++)
         {
             if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
             {
-                Debug.Log("Find " + herbs[i].name + " " + occupied.Contains(herbs[i]));
                 result = herbs[i];
                 break;
             }
@@ -338,7 +367,6 @@ public class Food : Executable
             {
                 if (herbs[i].color == color && occupied != null && !occupied.Contains(herbs[i]))
                 {
-                    Debug.Log("Find " + herbs[i].name + " " + occupied.Contains(herbs[i]));
                     result = herbs[i];
                     break;
                 }

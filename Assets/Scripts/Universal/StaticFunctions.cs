@@ -81,7 +81,7 @@ public static class StaticFunctions
 
         for (int i = 0; i < input.Length; i++)
         {
-            if (input.ToCharArray()[i] == '\\' )
+            if (input.ToCharArray()[i] == '\\' || input.ToCharArray()[i] == '/')
             {
                 nameStartIndex = i;
             }

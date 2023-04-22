@@ -10,28 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e05156b28a702a45afa76c7d044994d, type: 3}
-  m_Name: Dragon'sBreath
+  m_Name: Warrior'sBrew
   m_EditorClassIdentifier: 
-  name: Dragon's Breath
-  description: Dragon's Breath tea is a fiery blend that enhances focus and sharpens
-    senses, providing a temporary boost to attack power.
+  name: Warrior's Brew
+  description: A bold and robust blend of green tea and spices that provides a small
+    boost to both attack power and defense, perfect for charging into battle with
+    confidence.
   icon: {fileID: 21300000, guid: 8db849cb6a7fd2145a0300343ffaca9f, type: 3}
   cooldown: 100
   cooldownTimer: 0
   isCDRapplied: 0
   ui_manager: {fileID: 0}
   type: 0
-  bonusATK: 25
-  bonusDEF: 0
+  bonusATK: 10
+  bonusDEF: 15
   bonusCrit: 0
   bonusAgility: 0
   bonusMaxHealth: 0
   bonusRegen: 3
   cooldownReduction: 0
-  healing: 25
-  color: 3
+  healing: 20
+  color: 8
   recipe:
-  - {fileID: 11400000, guid: b650997290c8cf34980170657bea5c18, type: 2}
-  - {fileID: 11400000, guid: 0e963d78a73934b459ddc326b192b9df, type: 2}
-  - {fileID: 11400000, guid: fd629e990b87c954d82a24d02a1301eb, type: 2}
+  - {fileID: 11400000, guid: b101b8fc7fe036142aea455c9e9eb294, type: 2}
+  - {fileID: 11400000, guid: c6548443693b4c2448c06a624f317091, type: 2}
+  - {fileID: 11400000, guid: 23e9bb9300fd4844dac5798b94bbe9c1, type: 2}
   isRecipeKnown: 0

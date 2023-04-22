@@ -10,27 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e05156b28a702a45afa76c7d044994d, type: 3}
-  m_Name: GreenTea
+  m_Name: Defender'sDraught
   m_EditorClassIdentifier: 
-  name: Green Tea
-  description: asdwas
-  icon: {fileID: 21300000, guid: 475d508c6cf22074cac5a4d286ddef4d, type: 3}
+  name: 'Defender''s Draught '
+  description: A hearty and satisfying blend of herbal tea and grains that provides
+    a small boost to both defense and max health, perfect for withstanding sustained
+    attacks.
+  icon: {fileID: 21300000, guid: 8db849cb6a7fd2145a0300343ffaca9f, type: 3}
   cooldown: 100
   cooldownTimer: 0
   isCDRapplied: 0
   ui_manager: {fileID: 0}
   type: 0
   bonusATK: 0
-  bonusDEF: 0
+  bonusDEF: 20
   bonusCrit: 0
   bonusAgility: 0
-  bonusMaxHealth: 0
-  bonusRegen: 10
+  bonusMaxHealth: 50
+  bonusRegen: 3
   cooldownReduction: 0
-  healing: 100
-  color: 6
+  healing: 20
+  color: 9
   recipe:
-  - {fileID: 11400000, guid: 4f0bc931e73c52e42911f386d4e4600f, type: 2}
   - {fileID: 11400000, guid: 7592f1482c12e0c488d1910317119dd2, type: 2}
-  - {fileID: 11400000, guid: 637685589d84f9c4c82fcc70d999b510, type: 2}
-  isRecipeKnown: 1
+  - {fileID: 11400000, guid: b650997290c8cf34980170657bea5c18, type: 2}
+  - {fileID: 11400000, guid: 0e963d78a73934b459ddc326b192b9df, type: 2}
+  isRecipeKnown: 0

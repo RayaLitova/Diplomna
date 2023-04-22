@@ -10,7 +10,7 @@ public class FillSavesNames : MonoBehaviour
     private void Start()
     {
         filePaths.Clear();
-        filePaths.AddRange(Directory.GetFiles(@"E:\_GameSaves\", "*.data"));
+        filePaths.AddRange(Directory.GetFiles(Application.persistentDataPath + "/" , "*.data"));
         for (int i = 0; i < transform.childCount; i++)
         {
             try

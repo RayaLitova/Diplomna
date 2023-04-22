@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-using System.Collections;
 using UnityEditor;
 
 public class SavingManager : MonoBehaviour
@@ -92,7 +91,7 @@ public class SavingManager : MonoBehaviour
     public void LoadGameData(Text name)
     {
         saveName = name.text;
-        saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+        saveFile = Application.persistentDataPath + "/" + saveName + ".data";
         LoadGameData();
         LoadScene.Load(gameData.currScene);
     }
@@ -118,7 +117,6 @@ public class SavingManager : MonoBehaviour
         foreach (var e in Resources.LoadAll<Food>("Tea/"))
         {
             int index = gameData.recipes.FindIndex(x => x == e.name);
-            Debug.Log(e.name);
             for (int i = 0; i < 3; i++)
                 e.recipe[i] = Resources.Load<Herb>("HerbItems/" + gameData.recipes.ElementAt(index + i + 1).RemoveWhitespace());
             e.isRecipeKnown = gameData.recipes.ElementAt(index + 4) == true.ToString() ? true : false;
@@ -140,7 +138,8 @@ public class SavingManager : MonoBehaviour
     {
         if (!ChangeSaveName())
             return;
-        saveFile = /*Application.persistentDataPath +*/ "E:/_GameSaves/" + saveName + ".data";
+        saveFile = Application.persistentDataPath + "/" + saveName + ".data";
+        Debug.Log(saveFile);
 
         foreach (var e in Resources.LoadAll<Food>("Tea/")) //clear recipe
         {
@@ -156,7 +155,7 @@ public class SavingManager : MonoBehaviour
     public void DeleteSave(string saveName)
     {
         FillSavesNames.filePaths.Remove(saveName);
-        File.Delete("E:/_GameSaves/" + saveName + ".data");
+        File.Delete(saveFile = Application.persistentDataPath + "/" + saveName + ".data");
     }
 
     public void DeleteSave(GameObject nameField)

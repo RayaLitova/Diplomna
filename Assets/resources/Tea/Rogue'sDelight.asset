@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e05156b28a702a45afa76c7d044994d, type: 3}
-  m_Name: GreenTea 1
+  m_Name: Rogue'sDelight
   m_EditorClassIdentifier: 
-  name: r
-  description: asdwas
-  icon: {fileID: 21300000, guid: 475d508c6cf22074cac5a4d286ddef4d, type: 3}
+  name: Rogue's Delight
+  description: A smooth and subtly spiced tea that provides a small boost to both
+    attack power and critical strike chance, perfect for agile and precise combat.
+  icon: {fileID: 21300000, guid: 8db849cb6a7fd2145a0300343ffaca9f, type: 3}
   cooldown: 100
   cooldownTimer: 0
   isCDRapplied: 0
   ui_manager: {fileID: 0}
   type: 0
-  bonusATK: 0
+  bonusATK: 10
   bonusDEF: 0
-  bonusCrit: 0
+  bonusCrit: 10
   bonusAgility: 0
   bonusMaxHealth: 0
-  bonusRegen: 10
+  bonusRegen: 1
   cooldownReduction: 0
-  healing: 100
-  color: 6
+  healing: 50
+  color: 14
   recipe:
+  - {fileID: 11400000, guid: 4f0bc931e73c52e42911f386d4e4600f, type: 2}
   - {fileID: 11400000, guid: e03a47f4f492a1e4fa9e06c29788b9b7, type: 2}
   - {fileID: 11400000, guid: b101b8fc7fe036142aea455c9e9eb294, type: 2}
-  - {fileID: 11400000, guid: c6548443693b4c2448c06a624f317091, type: 2}
   isRecipeKnown: 0
