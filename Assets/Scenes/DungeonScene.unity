@@ -5247,6 +5247,7 @@ GameObject:
   - component: {fileID: 1945515785}
   - component: {fileID: 1945515790}
   - component: {fileID: 1945515791}
+  - component: {fileID: 1945515792}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -5346,6 +5347,18 @@ MonoBehaviour:
   currProgress1: {fileID: 1787503772}
   targetCount2: {fileID: 971731726}
   currProgress2: {fileID: 260826712}
+--- !u!114 &1945515792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945515784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f925795916097b947a7523fd3a8d7f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1946778513
 GameObject:
   m_ObjectHideFlags: 0
